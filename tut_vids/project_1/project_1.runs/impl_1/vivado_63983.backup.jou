@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Sep  2 00:12:15 2026
+# Process ID: 63983
+# Current directory: /home/zkarim28/Zybo/project_1/project_1.runs/impl_1
+# Command line: vivado -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: /home/zkarim28/Zybo/project_1/project_1.runs/impl_1/design_1_wrapper.vdi
+# Journal file: /home/zkarim28/Zybo/project_1/project_1.runs/impl_1/vivado.jou
+# Running On        :fedora
+# Platform          :unknown
+# Operating System  :unknown
+# Processor Detail  :Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+# CPU Frequency     :3999.958 MHz
+# CPU Physical cores:2
+# CPU Logical cores :4
+# Host memory       :16616 MB
+# Swap memory       :8589 MB
+# Total Virtual     :25206 MB
+# Available Virtual :18617 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
