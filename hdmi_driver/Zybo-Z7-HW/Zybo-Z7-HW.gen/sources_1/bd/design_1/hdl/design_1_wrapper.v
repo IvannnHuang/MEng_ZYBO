@@ -2,8 +2,8 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Thu Jul  4 12:23:53 2024
-//Host        : bocos-ro running 64-bit major release  (build 9200)
+//Date        : Fri Sep 11 14:05:16 2026
+//Host        : Ivan¡®sLaptop running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -32,12 +32,6 @@ module design_1_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    hdmi_in_clk_n,
-    hdmi_in_clk_p,
-    hdmi_in_data_n,
-    hdmi_in_data_p,
-    hdmi_in_ddc_scl_io,
-    hdmi_in_ddc_sda_io,
     hdmi_in_hpd_tri_o,
     hdmi_out_clk_n,
     hdmi_out_clk_p,
@@ -66,12 +60,6 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input hdmi_in_clk_n;
-  input hdmi_in_clk_p;
-  input [2:0]hdmi_in_data_n;
-  input [2:0]hdmi_in_data_p;
-  inout hdmi_in_ddc_scl_io;
-  inout hdmi_in_ddc_sda_io;
   output [0:0]hdmi_in_hpd_tri_o;
   output hdmi_out_clk_n;
   output hdmi_out_clk_p;
@@ -101,18 +89,6 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire hdmi_in_clk_n;
-  wire hdmi_in_clk_p;
-  wire [2:0]hdmi_in_data_n;
-  wire [2:0]hdmi_in_data_p;
-  wire hdmi_in_ddc_scl_i;
-  wire hdmi_in_ddc_scl_io;
-  wire hdmi_in_ddc_scl_o;
-  wire hdmi_in_ddc_scl_t;
-  wire hdmi_in_ddc_sda_i;
-  wire hdmi_in_ddc_sda_io;
-  wire hdmi_in_ddc_sda_o;
-  wire hdmi_in_ddc_sda_t;
   wire [0:0]hdmi_in_hpd_tri_o;
   wire hdmi_out_clk_n;
   wire hdmi_out_clk_p;
@@ -149,16 +125,6 @@ module design_1_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .hdmi_in_clk_n(hdmi_in_clk_n),
-        .hdmi_in_clk_p(hdmi_in_clk_p),
-        .hdmi_in_data_n(hdmi_in_data_n),
-        .hdmi_in_data_p(hdmi_in_data_p),
-        .hdmi_in_ddc_scl_i(hdmi_in_ddc_scl_i),
-        .hdmi_in_ddc_scl_o(hdmi_in_ddc_scl_o),
-        .hdmi_in_ddc_scl_t(hdmi_in_ddc_scl_t),
-        .hdmi_in_ddc_sda_i(hdmi_in_ddc_sda_i),
-        .hdmi_in_ddc_sda_o(hdmi_in_ddc_sda_o),
-        .hdmi_in_ddc_sda_t(hdmi_in_ddc_sda_t),
         .hdmi_in_hpd_tri_o(hdmi_in_hpd_tri_o),
         .hdmi_out_clk_n(hdmi_out_clk_n),
         .hdmi_out_clk_p(hdmi_out_clk_p),
@@ -170,16 +136,6 @@ module design_1_wrapper
         .hdmi_out_ddc_sda_i(hdmi_out_ddc_sda_i),
         .hdmi_out_ddc_sda_o(hdmi_out_ddc_sda_o),
         .hdmi_out_ddc_sda_t(hdmi_out_ddc_sda_t));
-  IOBUF hdmi_in_ddc_scl_iobuf
-       (.I(hdmi_in_ddc_scl_o),
-        .IO(hdmi_in_ddc_scl_io),
-        .O(hdmi_in_ddc_scl_i),
-        .T(hdmi_in_ddc_scl_t));
-  IOBUF hdmi_in_ddc_sda_iobuf
-       (.I(hdmi_in_ddc_sda_o),
-        .IO(hdmi_in_ddc_sda_io),
-        .O(hdmi_in_ddc_sda_i),
-        .T(hdmi_in_ddc_sda_t));
   IOBUF hdmi_out_ddc_scl_iobuf
        (.I(hdmi_out_ddc_scl_o),
         .IO(hdmi_out_ddc_scl_io),
