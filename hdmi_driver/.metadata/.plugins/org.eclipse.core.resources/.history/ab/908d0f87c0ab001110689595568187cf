@@ -1,0 +1,553 @@
+/* ------------------------------------------------------------ */
+/*				Include File Definitions						*/
+/* ------------------------------------------------------------ */
+
+#include "video_demo.h"
+#include "video_capture/video_capture.h"
+#include "display_ctrl/display_ctrl.h"
+#include "intc/intc.h"
+#include <stdio.h>
+#include "xuartps.h"
+#include "math.h"
+#include <ctype.h>
+#include <stdlib.h>
+#include "xil_types.h"
+#include "xil_cache.h"
+#include "timer_ps/timer_ps.h"
+#include "xparameters.h"
+
+#include "xil_cache.h"
+
+// ============ FPGA Solver Interface ==========
+#define FPGA_SOLVER_BASE        0xC0000000
+#define REG_SOLVER_X            (FPGA_SOLVER_BASE + 0x00)
+#define REG_SOLVER_Y            (FPGA_SOLVER_BASE + 0x04)
+#define REG_SOLVER_Z            (FPGA_SOLVER_BASE + 0x08)
+#define REG_SOLVER_CONTROL      (FPGA_SOLVER_BASE + 0x10)
+#define REG_SOLVER_SIGMA        (FPGA_SOLVER_BASE + 0x14)
+#define REG_SOLVER_BETA         (FPGA_SOLVER_BASE + 0x18)
+#define REG_SOLVER_RHO          (FPGA_SOLVER_BASE + 0x1C)
+
+// FPGA Solver Control Bits
+#define SOLVER_ENABLE           (1 << 0)
+#define SOLVER_CLEAR_SCREEN     (1 << 1)
+#define SOLVER_RESET            (1 << 2)
+
+// XPAR redefines
+#define DYNCLK_BASEADDR 		XPAR_AXI_DYNCLK_0_S_AXI_LITE_BASEADDR
+#define VDMA_ID 				XPAR_AXIVDMA_0_DEVICE_ID
+#define HDMI_OUT_VTC_ID 		XPAR_V_TC_OUT_DEVICE_ID
+#define HDMI_IN_VTC_ID 			XPAR_V_TC_IN_DEVICE_ID
+#define HDMI_IN_GPIO_ID 		XPAR_AXI_GPIO_VIDEO_DEVICE_ID
+#define HDMI_IN_VTC_IRPT_ID 	XPAR_FABRIC_V_TC_IN_IRQ_INTR
+#define HDMI_IN_GPIO_IRPT_ID 	XPAR_FABRIC_AXI_GPIO_VIDEO_IP2INTC_IRPT_INTR
+#define SCU_TIMER_ID 			XPAR_SCUTIMER_DEVICE_ID
+#define UART_BASEADDR 			XPAR_PS7_UART_1_BASEADDR
+
+/* ------------------------------------------------------------ */
+/*				Global Variables								*/
+/* ------------------------------------------------------------ */
+
+// Display and Video Driver structs
+DisplayCtrl dispCtrl;
+XAxiVdma vdma;
+INTC intc;
+
+// Framebuffers for video data
+u8 frameBuf[DISPLAY_NUM_FRAMES][DEMO_MAX_FRAME] __attribute__((aligned(0x20)));
+u8 *pFrames[DISPLAY_NUM_FRAMES]; //array of pointers to the frame buffers
+
+// Solver state variables
+struct {
+    float sigma;
+    float beta;
+    float rho;
+    int solver_enabled;
+    int trace_mode;
+    /*
+     * Possible values:
+	 *   0 = 2D view (X-Y plane)
+	 *   1 = X-Z plane
+	 *   2 = Y-Z plane
+	 *   3 = 3D isometric projection
+     */
+} lorenz_config = {10.0, 8.33, 28.0, 0, 0};
+
+
+/* ------------------------------------------------------------ */
+/*				Procedure Definitions							*/
+/* ------------------------------------------------------------ */
+
+int main(void)
+{
+	DriverInitialize();
+	DriverRun();
+	return 0;
+}
+
+void DriverInitialize()
+{
+	int Status;                          // Stores return codes from API functions
+	XAxiVdma_Config *vdmaConfig;         // Pointer to VDMA hardware configuration
+	int i;                               // Loop counter
+
+	// Array of pointers to the 3 frame buffers
+	// (display reading, video writing, graphics rendering)
+	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
+	{
+		pFrames[i] = frameBuf[i];
+	}
+
+	// Timer for simple delay
+	TimerInitialize(SCU_TIMER_ID);
+
+	// VDMA driver lookup and initialize
+	vdmaConfig = XAxiVdma_LookupConfig(VDMA_ID);
+	if (!vdmaConfig)
+	{
+		xil_printf("No video DMA found for ID %d\r\n", VDMA_ID);
+		return;
+	}
+	Status = XAxiVdma_CfgInitialize(&vdma, vdmaConfig, vdmaConfig->BaseAddress);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("VDMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	// Display controller initialize and start
+	Status = DisplayInitialize(&dispCtrl, &vdma, HDMI_OUT_VTC_ID,
+							 	 DYNCLK_BASEADDR, pFrames, DEMO_STRIDE);
+
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Display Ctrl initialization failed during driver initialization%d\r\n", Status);
+		return;
+	}
+
+	Status = DisplayStart(&dispCtrl);  // start output display
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Couldn't start display during driver initialization%d\r\n", Status);
+		return;
+	}
+
+	// Initialize Interrupts
+	Status = fnInitInterruptController(&intc);
+	if(Status != XST_SUCCESS) {
+		xil_printf("Error initializing interrupts");
+		return;
+	}
+	fnEnableInterrupts(&intc, &ivt[0], sizeof(ivt)/sizeof(ivt[0]));
+
+	// Todo: Initialize FPGA Solver
+	SolverInitialize();
+
+	// Draw initial test pattern
+	ClearFramebuffer(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
+					 dispCtrl.vMode.height, DEMO_STRIDE);
+}
+
+
+/* ========== FPGA Solver Interface Functions ========== */
+void SolverInitialize()
+{
+    // Write initial parameters to FPGA
+    volatile int *sigma_reg = (int *)REG_SOLVER_SIGMA;
+    volatile int *beta_reg = (int *)REG_SOLVER_BETA;
+    volatile int *rho_reg = (int *)REG_SOLVER_RHO;
+    volatile int *control_reg = (int *)REG_SOLVER_CONTROL;
+
+    // Convert float to fixed-point (7.20 format)
+    // sigma = 10.0 ↙ 0x00000A00
+    *sigma_reg = FloatToFixed(10.0);
+    *beta_reg = FloatToFixed(8.33);
+    *rho_reg = FloatToFixed(28.0);
+
+    // Enable solver
+    *control_reg = SOLVER_ENABLE;
+
+    xil_printf("FPGA Solver initialized\r\n");
+}
+
+// Convert float to 7.20 fixed-point
+int FloatToFixed(float val)
+{
+    return (int)(val * (1 << 20));  // Multiply by 2^20 for fractional bits
+}
+
+// Read solver output
+void ReadSolverOutput(int *x, int *y, int *z)
+{
+    volatile int *x_reg = (int *)REG_SOLVER_X;
+    volatile int *y_reg = (int *)REG_SOLVER_Y;
+    volatile int *z_reg = (int *)REG_SOLVER_Z;
+
+    *x = *x_reg;
+    *y = *y_reg;
+    *z = *z_reg;
+}
+
+// Plot Lorenz points to framebuffer
+void PlotLorenzAttractor(u8 *frame, u32 width, u32 height, u32 stride)
+{
+    int solver_x, solver_y, solver_z;
+    int screen_x, screen_y;
+    u32 pixel_addr;
+    u16 color = 0xFFFF;  // color white
+
+    // Continuously plot solver output
+    for(int iter = 0; iter < 100; iter++)  // Plot 100 points per frame
+    {
+        // Read current solver state from FPGA
+        ReadSolverOutput(&solver_x, &solver_y, &solver_z);
+
+        // Convert fixed-point (7.20) to screen coordinates
+        // Assume solver output in range -64 to +64
+        // Map to screen: 0 to width, 0 to height
+
+        int fixed_x = solver_x >> 20;  // Extract integer part
+        int fixed_y = solver_y >> 20;
+
+        // Map to screen (center at middle)
+        screen_x = (fixed_x + 64) * width / 128;    // Map -64..+64 to 0..width
+        screen_y = (fixed_y + 64) * height / 128;   // Map -64..+64 to 0..height
+
+        // Clamp to screen bounds
+        if (screen_x >= 0 && screen_x < width &&
+            screen_y >= 0 && screen_y < height)
+        {
+            // Plot pixel in 16-bit format (2 bytes per pixel)
+            pixel_addr = (screen_y * stride) + (screen_x * 2);
+
+            // Write 16-bit color
+            frame[pixel_addr] = (u8)(color & 0xFF);
+            frame[pixel_addr + 1] = (u8)((color >> 8) & 0xFF);
+        }
+
+        // Small delay to let solver update
+        TimerDelay(100);
+    }
+
+    // Flush cache to ensure display sees updated pixels
+    Xil_DCacheFlushRange((unsigned int)frame, DEMO_MAX_FRAME);
+}
+
+void ClearFramebuffer(u8 *frame, u32 width, u32 height, u32 stride)
+{
+    u32 i;
+    // Clear to black
+    for (i = 0; i < DEMO_MAX_FRAME; i++)
+    {
+        frame[i] = 0x00;
+    }
+    Xil_DCacheFlushRange((unsigned int)frame, DEMO_MAX_FRAME);
+}
+
+void DriverRun()
+{
+	int nextFrame = 0;
+	char userInput = 0;
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (userInput != 'q')
+	{
+		fRefresh = 0;
+		DriverPrintMenu();
+
+		/* Wait for data on UART */
+		while (!XUartPs_IsReceiveData(UART_BASEADDR) && !fRefresh)
+		{}
+
+		/* Store the first character in the UART receive FIFO and echo it */
+		if (XUartPs_IsReceiveData(UART_BASEADDR))
+		{
+			userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+			xil_printf("%c", userInput);
+		}
+		else  //Refresh triggered by video detect interrupt
+		{
+			userInput = 'r';
+		}
+
+		switch (userInput)
+		{
+		case '1':
+			// Plot Lorenz attractor
+			PlotLorenzAttractor(pFrames[dispCtrl.curFrame],
+							   dispCtrl.vMode.width,
+							   dispCtrl.vMode.height,
+							   DEMO_STRIDE);
+			break;
+
+		case '2':
+			// Clear screen
+			ClearFramebuffer(pFrames[dispCtrl.curFrame],
+							dispCtrl.vMode.width,
+							dispCtrl.vMode.height,
+							DEMO_STRIDE);
+			xil_printf("Screen cleared\r\n");
+			break;
+
+		case '3':
+			// Toggle solver enable
+			lorenz_config.solver_enabled = !lorenz_config.solver_enabled;
+			if (lorenz_config.solver_enabled)
+			{
+				*control_reg |= SOLVER_ENABLE;
+				xil_printf("Solver ENABLED\r\n");
+			}
+			else
+			{
+				*control_reg &= ~SOLVER_ENABLE;
+				xil_printf("Solver PAUSED\r\n");
+			}
+			break;
+
+		case '4':
+			// Reset solver
+			*control_reg |= SOLVER_RESET;
+			TimerDelay(100);
+			*control_reg &= ~SOLVER_RESET;
+			xil_printf("Solver RESET\r\n");
+			break;
+
+		case '5':
+			// Change parameters
+			DriverChangeParameters();
+			break;
+
+		case '6':
+			// Change resolution
+			DriverChangeRes();
+			break;
+
+		case 'q':
+            // Quit
+            *control_reg &= ~SOLVER_ENABLE;  // Disable solver
+            xil_printf("\r\nExiting...\r\n");
+            break;
+
+        default:
+            xil_printf("Invalid selection\r\n");
+            TimerDelay(500000);
+        }
+	}
+
+	return;
+}
+
+void DriverPrintMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*            Lorenz Attractor on FPGA            *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("*Display Resolution: %28s*\n\r", dispCtrl.vMode.label);
+	printf("*Display Pixel Clock Freq. (MHz): %15.3f*\n\r", dispCtrl.pxlFreq);
+	xil_printf("*Solver Status: %32s*\n\r",
+				lorenz_config.solver_enabled ? "RUNNING" : "PAUSED");
+	printf("*Parameters: 考=%.2f  汕=%.2f  老=%.2f*\n\r",
+			lorenz_config.sigma, lorenz_config.beta, lorenz_config.rho);
+	xil_printf("**************************************************\n\r");
+	xil_printf("\n\r");
+	xil_printf("1 - Plot Lorenz Attractor\n\r");
+	xil_printf("2 - Clear Screen\n\r");
+	xil_printf("3 - Toggle Solver (Run/Pause)\n\r");
+	xil_printf("4 - Reset Solver\n\r");
+	xil_printf("5 - Change Parameters\n\r");
+	xil_printf("6 - Change Display Resolution\n\r");
+	xil_printf("q - Quit\n\r");
+	xil_printf("\n\r");
+	xil_printf("Enter a selection: ");
+}
+
+
+/* ========== Parameter Change Menu ========== */
+
+void DriverChangeParameters()
+{
+    char userInput = 0;
+    float newValue;
+    volatile int *sigma_reg = (int *)REG_SOLVER_SIGMA;
+    volatile int *beta_reg = (int *)REG_SOLVER_BETA;
+    volatile int *rho_reg = (int *)REG_SOLVER_RHO;
+
+    int paramSet = 0;
+
+    while (!paramSet)
+    {
+        xil_printf("\x1B[H");
+        xil_printf("\x1B[2J");
+        xil_printf("***** Change Lorenz Parameters *****\n\r");
+        xil_printf("1 - Change 考 (sigma)   [Current: %.2f]\n\r", lorenz_config.sigma);
+        xil_printf("2 - Change 汕 (beta)    [Current: %.2f]\n\r", lorenz_config.beta);
+        xil_printf("3 - Change 老 (rho)     [Current: %.2f]\n\r", lorenz_config.rho);
+        xil_printf("q - Done\n\r");
+        xil_printf("\n\rSelect: ");
+
+        // Wait for input
+        while (!XUartPs_IsReceiveData(UART_BASEADDR))
+        {}
+
+        userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+        xil_printf("%c\n\r", userInput);
+
+        switch (userInput)
+        {
+        case '1':
+            xil_printf("Enter new 考 value (float): ");
+            newValue = ReadFloatFromUART();
+            lorenz_config.sigma = newValue;
+            *sigma_reg = FloatToFixed(newValue);
+            xil_printf("考 set to %.2f\n\r", newValue);
+            TimerDelay(500000);
+            break;
+
+        case '2':
+            xil_printf("Enter new 汕 value (float): ");
+            newValue = ReadFloatFromUART();
+            lorenz_config.beta = newValue;
+            *beta_reg = FloatToFixed(newValue);
+            xil_printf("汕 set to %.2f\n\r", newValue);
+            TimerDelay(500000);
+            break;
+
+        case '3':
+            xil_printf("Enter new 老 value (float): ");
+            newValue = ReadFloatFromUART();
+            lorenz_config.rho = newValue;
+            *rho_reg = FloatToFixed(newValue);
+            xil_printf("老 set to %.2f\n\r", newValue);
+            TimerDelay(500000);
+            break;
+
+        case 'q':
+            paramSet = 1;
+            break;
+
+        default:
+            xil_printf("Invalid selection\n\r");
+            TimerDelay(500000);
+        }
+    }
+}
+
+/* ========== UART Input Helper ========== */
+
+float ReadFloatFromUART()
+{
+    char buffer[32] = {0};
+    int idx = 0;
+    char ch;
+
+    while (idx < 31)
+    {
+        // Wait for character
+        while (!XUartPs_IsReceiveData(UART_BASEADDR))
+        {}
+
+        ch = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+
+        if (ch == '\r' || ch == '\n')
+        {
+            xil_printf("\n\r");
+            break;
+        }
+        else if (ch == '\b' && idx > 0)  // Backspace
+        {
+            idx--;
+            xil_printf("%c", ch);
+        }
+        else if ((ch >= '0' && ch <= '9') || ch == '.' || ch == '-')
+        {
+            buffer[idx++] = ch;
+            xil_printf("%c", ch);
+        }
+    }
+
+    buffer[idx] = '\0';
+    return (float)atof(buffer);
+}
+
+void DriverChangeRes()
+{
+	int fResSet = 0;
+	int status;
+	char userInput = 0;
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!fResSet)
+	{
+		DriverCRMenu();
+
+		/* Wait for data on UART */
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+
+		/* Store the first character in the UART recieve FIFO and echo it */
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+
+		switch (userInput)
+		{
+		case '1':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_640x480);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '2':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_800x600);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '3':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_1280x720);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case 'q':
+			fResSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
+}
+
+void DriverCRMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+    xil_printf("***** Change Display Resolution *****\n\r");
+    xil_printf("*Current: %28s*\n\r", dispCtrl.vMode.label);
+    printf("*Pixel Clock Freq. (MHz): %23.3f*\n\r", dispCtrl.pxlFreq);
+    xil_printf("*\n\r");
+    xil_printf("1 - 640x480\n\r");
+    xil_printf("2 - 1280x720\n\r");
+    xil_printf("3 - 1920x1080\n\r");
+    xil_printf("q - Cancel\n\r");
+    xil_printf("\n\rSelect: ");
+}
+
+

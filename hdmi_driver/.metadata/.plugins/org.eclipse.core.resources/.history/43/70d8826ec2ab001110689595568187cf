@@ -1,0 +1,126 @@
+#ifndef VIDEO_DEMO_H_
+#define VIDEO_DEMO_H_
+
+/* ------------------------------------------------------------ */
+/*				Include File Definitions						*/
+/* ------------------------------------------------------------ */
+
+#include "xil_types.h"
+#include "display_ctrl/display_ctrl.h"
+
+/* ------------------------------------------------------------ */
+/*				FPGA Solver Interface Defines					*/
+/* ------------------------------------------------------------ */
+
+#define FPGA_SOLVER_BASE        0xC0000000
+
+// Solver Register Addresses
+#define REG_SOLVER_X            (FPGA_SOLVER_BASE + 0x00)
+#define REG_SOLVER_Y            (FPGA_SOLVER_BASE + 0x04)
+#define REG_SOLVER_Z            (FPGA_SOLVER_BASE + 0x08)
+#define REG_SOLVER_CONTROL      (FPGA_SOLVER_BASE + 0x10)
+#define REG_SOLVER_SIGMA        (FPGA_SOLVER_BASE + 0x14)
+#define REG_SOLVER_BETA         (FPGA_SOLVER_BASE + 0x18)
+#define REG_SOLVER_RHO          (FPGA_SOLVER_BASE + 0x1C)
+
+// Solver Control Bits
+#define SOLVER_ENABLE           (1 << 0)
+#define SOLVER_CLEAR_SCREEN     (1 << 1)
+#define SOLVER_RESET            (1 << 2)
+
+// Fixed-point format: 7.20 (7 integer bits, 20 fractional bits)
+// Range: -64 to +63.999... with ~1e-6 precision
+#define FIXED_POINT_SHIFT       20
+#define FIXED_POINT_ONE         (1 << FIXED_POINT_SHIFT)
+
+/* ------------------------------------------------------------ */
+/*					Display Configuration						*/
+/* ------------------------------------------------------------ */
+
+#define DEMO_MAX_FRAME          (1920*1080*3)
+#define DEMO_STRIDE             (1920 * 3)
+
+// Color modes for framebuffer
+#define COLOR_MODE_RGB888       0  // 3 bytes per pixel (current default)
+#define COLOR_MODE_RGB565       1  // 2 bytes per pixel (for HDMI efficiency)
+
+/* ------------------------------------------------------------ */
+/*				Lorenz Solver Configuration						*/
+/* ------------------------------------------------------------ */
+
+// Default Lorenz parameters (classic chaotic behavior)
+#define LORENZ_SIGMA_DEFAULT    10.0f
+#define LORENZ_BETA_DEFAULT     8.33f
+#define LORENZ_RHO_DEFAULT      28.0f
+
+// Solver output scaling for screen mapping
+// Assumes solver output in range -64 to +64
+#define SOLVER_COORD_MIN        -64.0f
+#define SOLVER_COORD_MAX        64.0f
+
+// Screen coordinate mapping offsets
+#define SCREEN_CENTER_X_OFFSET  0.5f  // Center X on screen
+#define SCREEN_CENTER_Y_OFFSET  0.5f  // Center Y on screen
+
+// Trace color (RGB565 format: RRRRRGGGGGGBBBBB)
+#define TRACE_COLOR_WHITE       0xFFFF
+#define TRACE_COLOR_RED         0xF800
+#define TRACE_COLOR_GREEN       0x07E0
+#define TRACE_COLOR_BLUE        0x001F
+#define TRACE_COLOR_CYAN        0x07FF
+#define TRACE_COLOR_MAGENTA     0xF81F
+#define TRACE_COLOR_YELLOW      0xFFE0
+
+/* ------------------------------------------------------------ */
+/*					Data Structures								*/
+/* ------------------------------------------------------------ */
+
+// Lorenz solver configuration and state
+typedef struct {
+    float sigma;           // ¦Ò parameter
+    float beta;            // ¦Â parameter
+    float rho;             // ¦Ñ parameter
+    int solver_enabled;    // 0=paused, 1=running
+    int trace_mode;        // 0=X-Y plane, 1=X-Z plane, 2=Y-Z plane, 3=3D projection
+    u16 trace_color;       // Trace color in RGB565
+    int points_per_frame;  // Number of solver points to plot per display frame
+    int clear_on_reset;    // 1=clear screen on reset, 0=leave previous trace
+} LorenzConfig;
+
+/* ------------------------------------------------------------ */
+/*					Procedure Declarations						*/
+/* ------------------------------------------------------------ */
+
+
+// Initialization and main loop
+void DriverInitialize(void);
+void DriverRun(void);
+
+// Menu functions
+void DriverPrintMenu(void);
+void DriverChangeRes(void);
+void DriverCRMenu(void);
+void DriverChangeParameters(void);
+
+// FPGA Solver Interface
+void SolverInitialize(void);
+void ReadSolverOutput(int *x, int *y, int *z);
+int FloatToFixed(float val);
+float FixedToFloat(int val);
+
+// Graphics and framebuffer
+void PlotLorenzAttractor(u8 *frame, u32 width, u32 height, u32 stride);
+void ClearFramebuffer(u8 *frame, u32 width, u32 height, u32 stride);
+void PlotPixel(u8 *frame, u32 x, u32 y, u32 width, u32 stride, u16 color);
+
+// Utility functions
+void ConvertSolverToScreen(int solver_x, int solver_y, int solver_z,
+                          int *screen_x, int *screen_y,
+                          u32 width, u32 height, int projection_mode);
+float ReadFloatFromUART(void);
+void PrintSolverStatus(void);
+
+
+/************************************************************************/
+
+#endif /* VIDEO_DEMO_H_ */
