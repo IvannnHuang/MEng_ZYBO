@@ -1,0 +1,27 @@
+verilog xil_defaultlib --include "D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" \
+"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2a7c/src/mmcme2_drp.v" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_2/sim/design_1_xbar_2.v" \
+"../../../bd/design_1/ip/design_1_xbar_3/sim/design_1_xbar_3.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdata_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tuser_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tstrb_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tkeep_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tid_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdest_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tlast_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/top_design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/sim/design_1_axis_subset_converter_out_0.v" \
+"../../../bd/design_1/ip/design_1_subset_converter_reset_0/sim/design_1_subset_converter_reset_0.v" \
+"../../../bd/design_1/ip/design_1_v_axi4s_vid_out_0_0/sim/design_1_v_axi4s_vid_out_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../bd/design_1/ip/design_1_s00_regslice_0/sim/design_1_s00_regslice_0.v" \
+"../../../bd/design_1/ip/design_1_s01_regslice_0/sim/design_1_s01_regslice_0.v" \
+"../../../bd/design_1/ip/design_1_m00_regslice_0/sim/design_1_m00_regslice_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
