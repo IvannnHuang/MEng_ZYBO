@@ -3,31 +3,47 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Jul  4 12:24:31 2024
-# Process ID: 10680
-# Current directory: D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1
+# Start of session at: Sun Sep 13 18:05:16 2026
+# Process ID: 28464
+# Current directory: C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1
 # Command line: vivado.exe -log design_1_axis_subset_converter_out_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_subset_converter_out_0.tcl
-# Log file: D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.vds
-# Journal file: D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1\vivado.jou
-# Running On        :bocos-ro
+# Log file: C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.vds
+# Journal file: C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1\vivado.jou
+# Running On        :EN-EC-LPH238-59
 # Platform          :Windows Server 2016 or Windows 10
-# Operating System  :19044
-# Processor Detail  :11th Gen Intel(R) Core(TM) i7-11850H @ 2.50GHz
-# CPU Frequency     :2496 MHz
-# CPU Physical cores:8
-# CPU Logical cores :16
-# Host memory       :34065 MB
-# Swap memory       :12348 MB
-# Total Virtual     :46413 MB
-# Available Virtual :30288 MB
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :18136 MB
 #-----------------------------------------------------------
-Sourcing tcl script 'C:/Users/rbocos/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
-Set Board Part RepoPath: C:/Users/rbocos/Downloads/vivado-boards/new
 source design_1_axis_subset_converter_out_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 704.164 ; gain = 274.191
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 517.645 ; gain = 198.930
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Zybo-Z7-HW/repo'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/lorenz_block_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/lorenz_1_0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/test_ip_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/myip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/myip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/myip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/myip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/myip_1_0'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/myip_1_0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/axi_leronz_dda_1_0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/axi_leronz_dda_1_0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/axi_leronz_dda_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/axi_dda_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/ip_repo/lorenz_dda_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axis_subset_converter_out_0
 Command: synth_design -top design_1_axis_subset_converter_out_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -37,30 +53,31 @@ INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 25416
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 17732
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1570.828 ; gain = 448.391
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1384.090 ; gain = 448.398
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/synth/design_1_axis_subset_converter_out_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'top_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/top_design_1_axis_subset_converter_out_0.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axis_subset_converter_v1_1_31_core' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4bab/hdl/axis_subset_converter_v1_1_vl_rfs.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'axis_subset_converter_v1_1_31_core' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4bab/hdl/axis_subset_converter_v1_1_vl_rfs.v:61]
-INFO: [Synth 8-6157] synthesizing module 'tdata_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdata_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tdata_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdata_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tuser_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tuser_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tuser_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tuser_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tid_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tid_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tid_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tid_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tdest_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdest_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tdest_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdest_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tstrb_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tstrb_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tstrb_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tstrb_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tkeep_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tkeep_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tkeep_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tkeep_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6157] synthesizing module 'tlast_design_1_axis_subset_converter_out_0' [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tlast_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'tlast_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tlast_design_1_axis_subset_converter_out_0.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'top_design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/top_design_1_axis_subset_converter_out_0.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_out_0' (0#1) [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/synth/design_1_axis_subset_converter_out_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/synth/design_1_axis_subset_converter_out_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'top_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/top_design_1_axis_subset_converter_out_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axis_subset_converter_v1_1_31_core' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4bab/hdl/axis_subset_converter_v1_1_vl_rfs.v:61]
+INFO: [Synth 8-6155] done synthesizing module 'axis_subset_converter_v1_1_31_core' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4bab/hdl/axis_subset_converter_v1_1_vl_rfs.v:61]
+INFO: [Synth 8-6157] synthesizing module 'tdata_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdata_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tdata_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdata_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tuser_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tuser_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tuser_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tuser_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tid_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tid_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tid_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tid_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tdest_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdest_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tdest_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tdest_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tstrb_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tstrb_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tstrb_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tstrb_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tkeep_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tkeep_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tkeep_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tkeep_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tlast_design_1_axis_subset_converter_out_0' [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tlast_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'tlast_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/tlast_design_1_axis_subset_converter_out_0.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'top_design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/hdl/top_design_1_axis_subset_converter_out_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_out_0' (0#1) [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/synth/design_1_axis_subset_converter_out_0.v:53]
 WARNING: [Synth 8-7129] Port tid[0] in module tlast_design_1_axis_subset_converter_out_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port tdata[23] in module tlast_design_1_axis_subset_converter_out_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port tdata[22] in module tlast_design_1_axis_subset_converter_out_0 is either unconnected or has no load
@@ -163,53 +180,53 @@ WARNING: [Synth 8-7129] Port tdata[23] in module tdest_design_1_axis_subset_conv
 WARNING: [Synth 8-7129] Port tdata[22] in module tdest_design_1_axis_subset_converter_out_0 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1688.070 ; gain = 565.633
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1500.570 ; gain = 564.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1688.070 ; gain = 565.633
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1500.570 ; gain = 564.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1688.070 ; gain = 565.633
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1500.570 ; gain = 564.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1688.070 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1500.570 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/design_1_axis_subset_converter_out_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [d:/Zybo-Z7-HW/proj/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/design_1_axis_subset_converter_out_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/design_1_axis_subset_converter_out_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_axis_subset_converter_out_0/design_1_axis_subset_converter_out_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1692.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1511.031 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1693.086 ; gain = 0.391
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1511.078 ; gain = 0.047
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -232,25 +249,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -268,37 +285,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -316,26 +333,26 @@ Report Cell Usage:
 +-+-----+------+
 +-+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1693.086 ; gain = 565.633
-Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:01:03 . Memory (MB): peak = 1693.086 ; gain = 570.648
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1511.078 ; gain = 564.879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1511.078 ; gain = 575.387
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1693.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1511.078 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1693.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1511.078 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: f1ad9abc
 INFO: [Common 17-83] Releasing license: Synthesis
-39 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:13 . Memory (MB): peak = 1693.086 ; gain = 964.961
-INFO: [Common 17-1381] The checkpoint 'D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axis_subset_converter_out_0, cache-ID = e63f5a02461eae4f
-INFO: [Common 17-1381] The checkpoint 'D:/Zybo-Z7-HW/proj/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1511.078 ; gain = 978.703
+INFO: [Common 17-1381] The checkpoint 'C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axis_subset_converter_out_0, cache-ID = 7de42d527fa84336
+INFO: [Common 17-1381] The checkpoint 'C:/Users/adl94/Documents/MEng/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_axis_subset_converter_out_0_synth_1/design_1_axis_subset_converter_out_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_axis_subset_converter_out_0_utilization_synth.rpt -pb design_1_axis_subset_converter_out_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jul  4 12:26:09 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 13 18:06:12 2026...
