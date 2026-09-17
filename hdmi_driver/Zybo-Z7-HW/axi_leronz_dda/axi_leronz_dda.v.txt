@@ -4,7 +4,6 @@ module dda_v1_0(
     input clk,
     input rst,
     
-    
     input signed [26:0] x_init,
     input signed [26:0] y_init,
     input signed [26:0] z_init,

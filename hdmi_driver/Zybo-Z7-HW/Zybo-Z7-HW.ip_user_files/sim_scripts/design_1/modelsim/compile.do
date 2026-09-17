@@ -9,9 +9,6 @@ vlib modelsim_lib/msim/proc_sys_reset_v5_0_15
 vlib modelsim_lib/msim/axi_infrastructure_v1_1_0
 vlib modelsim_lib/msim/axi_vip_v1_1_17
 vlib modelsim_lib/msim/processing_system7_vip_v1_0_19
-vlib modelsim_lib/msim/axi_lite_ipif_v3_0_4
-vlib modelsim_lib/msim/interrupt_control_v3_1_5
-vlib modelsim_lib/msim/axi_gpio_v2_0_33
 vlib modelsim_lib/msim/generic_baseblocks_v2_1_2
 vlib modelsim_lib/msim/axi_register_slice_v2_1_31
 vlib modelsim_lib/msim/fifo_generator_v13_2_10
@@ -28,6 +25,7 @@ vlib modelsim_lib/msim/axis_infrastructure_v1_1_1
 vlib modelsim_lib/msim/axis_register_slice_v1_1_31
 vlib modelsim_lib/msim/axis_subset_converter_v1_1_31
 vlib modelsim_lib/msim/xlconstant_v1_1_9
+vlib modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vlib modelsim_lib/msim/v_tc_v6_1_14
 vlib modelsim_lib/msim/v_vid_in_axi4s_v4_0_11
 vlib modelsim_lib/msim/v_axi4s_vid_out_v4_0_18
@@ -42,9 +40,6 @@ vmap proc_sys_reset_v5_0_15 modelsim_lib/msim/proc_sys_reset_v5_0_15
 vmap axi_infrastructure_v1_1_0 modelsim_lib/msim/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_17 modelsim_lib/msim/axi_vip_v1_1_17
 vmap processing_system7_vip_v1_0_19 modelsim_lib/msim/processing_system7_vip_v1_0_19
-vmap axi_lite_ipif_v3_0_4 modelsim_lib/msim/axi_lite_ipif_v3_0_4
-vmap interrupt_control_v3_1_5 modelsim_lib/msim/interrupt_control_v3_1_5
-vmap axi_gpio_v2_0_33 modelsim_lib/msim/axi_gpio_v2_0_33
 vmap generic_baseblocks_v2_1_2 modelsim_lib/msim/generic_baseblocks_v2_1_2
 vmap axi_register_slice_v2_1_31 modelsim_lib/msim/axi_register_slice_v2_1_31
 vmap fifo_generator_v13_2_10 modelsim_lib/msim/fifo_generator_v13_2_10
@@ -61,6 +56,7 @@ vmap axis_infrastructure_v1_1_1 modelsim_lib/msim/axis_infrastructure_v1_1_1
 vmap axis_register_slice_v1_1_31 modelsim_lib/msim/axis_register_slice_v1_1_31
 vmap axis_subset_converter_v1_1_31 modelsim_lib/msim/axis_subset_converter_v1_1_31
 vmap xlconstant_v1_1_9 modelsim_lib/msim/xlconstant_v1_1_9
+vmap axi_lite_ipif_v3_0_4 modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vmap v_tc_v6_1_14 modelsim_lib/msim/v_tc_v6_1_14
 vmap v_vid_in_axi4s_v4_0_11 modelsim_lib/msim/v_vid_in_axi4s_v4_0_11
 vmap v_axi4s_vid_out_v4_0_18 modelsim_lib/msim/v_axi4s_vid_out_v4_0_18
@@ -102,7 +98,6 @@ vcom -work proc_sys_reset_v5_0_15  -93  \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib  -93  \
-"../../../bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_proc_sys_reset_fclk0_0/sim/design_1_proc_sys_reset_fclk0_0.vhd" \
 "../../../bd/design_1/ip/design_1_proc_sys_reset_fclk1_0/sim/design_1_proc_sys_reset_fclk1_0.vhd" \
 
@@ -127,18 +122,6 @@ vcom -work xil_defaultlib  -93  \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/TMDS_Encoder.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/rgb2dvi.vhd" \
 "../../../bd/design_1/ip/design_1_rgb2dvi_1_0/sim/design_1_rgb2dvi_1_0.vhd" \
-
-vcom -work axi_lite_ipif_v3_0_4  -93  \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
-
-vcom -work interrupt_control_v3_1_5  -93  \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
-
-vcom -work axi_gpio_v2_0_33  -93  \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4208/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib  -93  \
-"../../../bd/design_1/ip/design_1_axi_gpio_video_0/sim/design_1_axi_gpio_video_0.vhd" \
 
 vlog -work generic_baseblocks_v2_1_2  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
@@ -220,6 +203,9 @@ vlog -work xlconstant_v1_1_9  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/s
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_subset_converter_reset_0/sim/design_1_subset_converter_reset_0.v" \
 
+vcom -work axi_lite_ipif_v3_0_4  -93  \
+"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+
 vcom -work v_tc_v6_1_14  -93  \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/fd54/hdl/v_tc_v6_1_vh_rfs.vhd" \
 
@@ -239,7 +225,12 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_v_tc_out_0/sim/design_1_v_tc_out_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
-"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/integrator.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_solver.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/signed_mult.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver.v" \
+"../../../bd/design_1/ip/design_1_lorenz_dda_driver_0_0/sim/design_1_lorenz_dda_driver_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_31  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/3c06/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
@@ -250,6 +241,7 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sour
 "../../../bd/design_1/ip/design_1_s01_regslice_0/sim/design_1_s01_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_m00_regslice_0/sim/design_1_m00_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../bd/design_1/sim/design_1.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

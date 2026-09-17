@@ -14,12 +14,18 @@ verilog xil_defaultlib --include "D:/xilinx/Vivado/2024.1/data/xilinx_vip/includ
 "../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/sim/design_1_axis_subset_converter_out_0.v" \
 "../../../bd/design_1/ip/design_1_subset_converter_reset_0/sim/design_1_subset_converter_reset_0.v" \
 "../../../bd/design_1/ip/design_1_v_axi4s_vid_out_0_0/sim/design_1_v_axi4s_vid_out_0_0.v" \
-"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/integrator.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_solver.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/signed_mult.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver.v" \
+"../../../bd/design_1/ip/design_1_lorenz_dda_driver_0_0/sim/design_1_lorenz_dda_driver_0_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 "../../../bd/design_1/ip/design_1_s00_regslice_0/sim/design_1_s00_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_s01_regslice_0/sim/design_1_s01_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_m00_regslice_0/sim/design_1_m00_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../bd/design_1/sim/design_1.v" \
 
 verilog xil_defaultlib "glbl.v"
 

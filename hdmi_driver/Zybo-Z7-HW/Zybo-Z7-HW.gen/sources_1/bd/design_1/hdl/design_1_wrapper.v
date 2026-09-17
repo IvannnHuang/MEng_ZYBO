@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Fri Sep 11 14:05:16 2026
+//Date        : Thu Sep 17 16:59:03 2026
 //Host        : Ivan¡®sLaptop running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -32,7 +32,6 @@ module design_1_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    hdmi_in_hpd_tri_o,
     hdmi_out_clk_n,
     hdmi_out_clk_p,
     hdmi_out_data_n,
@@ -60,7 +59,6 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output [0:0]hdmi_in_hpd_tri_o;
   output hdmi_out_clk_n;
   output hdmi_out_clk_p;
   output [2:0]hdmi_out_data_n;
@@ -89,7 +87,6 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [0:0]hdmi_in_hpd_tri_o;
   wire hdmi_out_clk_n;
   wire hdmi_out_clk_p;
   wire [2:0]hdmi_out_data_n;
@@ -125,7 +122,6 @@ module design_1_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .hdmi_in_hpd_tri_o(hdmi_in_hpd_tri_o),
         .hdmi_out_clk_n(hdmi_out_clk_n),
         .hdmi_out_clk_p(hdmi_out_clk_p),
         .hdmi_out_data_n(hdmi_out_data_n),
