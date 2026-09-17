@@ -1,0 +1,14 @@
+timestamp=[2026-09-16 21:08:58], mode=WORKBENCH_START, duration=0:00:09.107, duration_ms=9107, data={}
+timestamp=[2026-09-16 21:08:58], mode=WORKBENCH_UI_INIT, duration=0:00:00.104, duration_ms=104, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-09-16 21:09:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:04.928, duration_ms=4928, data={}
+timestamp=[2026-09-16 23:02:36], mode=PLATFORM_GENERATION, duration=0:00:41.884, duration_ms=41884, data={name=design_1_wrapper}
+timestamp=[2026-09-16 23:02:36], mode=BUILD, duration=0:00:00.469, duration_ms=469, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=true}
+timestamp=[2026-09-16 23:02:44], mode=BUILD, duration=0:00:02.213, duration_ms=2213, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-16 23:11:20], mode=BUILD, duration=0:00:00.481, duration_ms=481, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=true}
+timestamp=[2026-09-16 23:11:21], mode=BUILD, duration=0:00:01.514, duration_ms=1514, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-17 02:00:11], mode=PLATFORM_GENERATION, duration=0:00:20.805, duration_ms=20805, data={name=design_1_wrapper}
+timestamp=[2026-09-17 02:00:17], mode=BUILD, duration=0:00:01.829, duration_ms=1829, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-17 02:12:51], mode=BUILD, duration=0:00:00.460, duration_ms=460, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=true}
+timestamp=[2026-09-17 02:12:52], mode=BUILD, duration=0:00:01.025, duration_ms=1025, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-17 02:13:01], mode=BUILD, duration=0:00:00.505, duration_ms=505, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-17 02:14:06], mode=BUILD, duration=0:00:01.378, duration_ms=1378, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}

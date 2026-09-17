@@ -1,0 +1,142 @@
+#include "switch_reader.h"
+#include "xil_io.h"
+#include <stdio.h>
+#include <string.h>
+
+#define SWITCH_READER_REG0_OFFSET 0x0
+
+u32 SwitchReader_Read(u32 baseAddr)
+{
+	return Xil_In32(baseAddr + SWITCH_READER_REG0_OFFSET);
+}
+
+/*
+ * 5x7 bitmap font for digits '0'-'9'. Each entry is 7 rows, 5 bits per
+ * row (bit 4 = leftmost pixel of the glyph).
+ */
+static const u8 font5x7_digits[10][7] = {
+	{0x0E,0x11,0x13,0x15,0x19,0x11,0x0E}, /* 0 */
+	{0x04,0x0C,0x04,0x04,0x04,0x04,0x0E}, /* 1 */
+	{0x0E,0x11,0x01,0x02,0x04,0x08,0x1F}, /* 2 */
+	{0x1F,0x02,0x04,0x02,0x01,0x11,0x0E}, /* 3 */
+	{0x02,0x06,0x0A,0x12,0x1F,0x02,0x02}, /* 4 */
+	{0x1F,0x10,0x1E,0x01,0x01,0x11,0x0E}, /* 5 */
+	{0x06,0x08,0x10,0x1E,0x11,0x11,0x0E}, /* 6 */
+	{0x1F,0x01,0x02,0x04,0x08,0x08,0x08}, /* 7 */
+	{0x0E,0x11,0x11,0x0E,0x11,0x11,0x0E}, /* 8 */
+	{0x0E,0x11,0x11,0x0F,0x01,0x02,0x0C}, /* 9 */
+};
+
+static const u8 font5x7_minus[7] = {0x00,0x00,0x00,0x1F,0x00,0x00,0x00};
+static const u8 font5x7_point[7] = {0x00,0x00,0x00,0x00,0x00,0x0C,0x0C};
+
+static const u8 *ResolveGlyph(char c)
+{
+	if (c >= '0' && c <= '9')
+		return font5x7_digits[c - '0'];
+	if (c == '-')
+		return font5x7_minus;
+	if (c == '.')
+		return font5x7_point;
+	return NULL;
+}
+
+static void ClearRect(u8 *frame, u32 stride, u32 xOrigin, u32 yOrigin,
+                       u32 width, u32 height)
+{
+	u32 x, y, pixelAddr;
+
+	for (y = 0; y < height; y++)
+	{
+		for (x = 0; x < width; x++)
+		{
+			pixelAddr = ((xOrigin + x) * 3) + ((yOrigin + y) * stride);
+			frame[pixelAddr]     = 0;
+			frame[pixelAddr + 1] = 0;
+			frame[pixelAddr + 2] = 0;
+		}
+	}
+}
+
+static void DrawGlyph(u8 *frame, u32 stride, const u8 rows[7],
+                       u32 xOrigin, u32 yOrigin, u32 scale,
+                       u8 red, u8 blue, u8 green)
+{
+	u32 row, col, sx, sy;
+	u32 x, y, pixelAddr;
+
+	for (row = 0; row < 7; row++)
+	{
+		for (col = 0; col < 5; col++)
+		{
+			if ((rows[row] >> (4 - col)) & 0x1)
+			{
+				for (sy = 0; sy < scale; sy++)
+				{
+					for (sx = 0; sx < scale; sx++)
+					{
+						x = xOrigin + col * scale + sx;
+						y = yOrigin + row * scale + sy;
+						pixelAddr = (x * 3) + (y * stride);
+						frame[pixelAddr]     = red;
+						frame[pixelAddr + 1] = blue;
+						frame[pixelAddr + 2] = green;
+					}
+				}
+			}
+		}
+	}
+}
+
+void SwitchReader_DrawDecimal(u8 *frame, u32 stride, u32 value,
+                               u32 xOrigin, u32 yOrigin, u32 scale,
+                               u8 red, u8 blue, u8 green)
+{
+	char digits[11]; /* max digits for a 32-bit value + null terminator */
+	u32 i, len;
+	u32 glyphAdvance = (5 + 1) * scale; /* 5 px glyph + 1 px spacing */
+	const u32 maxDigits = 10; /* 4294967295 is the longest possible u32 */
+
+	/*
+	 * Clear the full max-width area every time, not just the width of the
+	 * current value - otherwise leftover strokes from a previous, longer
+	 * or differently-shaped number stay lit on screen.
+	 */
+	ClearRect(frame, stride, xOrigin, yOrigin, maxDigits * glyphAdvance, 7 * scale);
+
+	snprintf(digits, sizeof(digits), "%u", value);
+	len = strlen(digits);
+
+	for (i = 0; i < len; i++)
+	{
+		u8 d = digits[i] - '0';
+		DrawGlyph(frame, stride, font5x7_digits[d],
+		          xOrigin + i * glyphAdvance, yOrigin, scale,
+		          red, blue, green);
+	}
+}
+
+void SwitchReader_DrawFloat(u8 *frame, u32 stride, float value, int decimals,
+                             u32 xOrigin, u32 yOrigin, u32 scale,
+                             u8 red, u8 blue, u8 green)
+{
+	char text[16];
+	u32 i, len;
+	u32 glyphAdvance = (5 + 1) * scale;
+	const u32 maxChars = 12; /* enough for e.g. "-1234.5678" plus margin */
+
+	ClearRect(frame, stride, xOrigin, yOrigin, maxChars * glyphAdvance, 7 * scale);
+
+	snprintf(text, sizeof(text), "%.*f", decimals, value);
+	len = strlen(text);
+
+	for (i = 0; i < len; i++)
+	{
+		const u8 *glyph = ResolveGlyph(text[i]);
+		if (glyph != NULL)
+		{
+			DrawGlyph(frame, stride, glyph, xOrigin + i * glyphAdvance, yOrigin,
+			          scale, red, blue, green);
+		}
+	}
+}
