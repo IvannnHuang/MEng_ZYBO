@@ -3,7 +3,7 @@
 -- File: SyncAsync.vhd
 -- Author: Elod Gyorgy
 -- Original Project: HDMI input on 7-series Xilinx FPGA
--- Date: 20 October 2014
+-- Date: 15 December 2017
 --
 -------------------------------------------------------------------------------
 -- (c) 2014 Copyright Digilent Incorporated
@@ -61,9 +61,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity SyncAsync is
    Generic (
       kResetTo : std_logic := '0'; --value when reset and upon init
-      kStages : natural := 2); --double sync by default
+      kStages : natural := 2; --double sync by default
+      kResetPolarity : std_logic := '1'); --aReset active-high by default
    Port (
-      aReset : in STD_LOGIC; -- active-high asynchronous reset
+      aReset : in STD_LOGIC; -- active-high/active-low asynchronous reset
       aIn : in STD_LOGIC;
       OutClk : in STD_LOGIC;
       oOut : out STD_LOGIC);
@@ -77,7 +78,7 @@ begin
 
 Sync: process (OutClk, aReset)
 begin
-   if (aReset = '1') then
+   if (aReset = kResetPolarity) then
       oSyncStages <= (others => kResetTo);
    elsif Rising_Edge(OutClk) then
       oSyncStages <= oSyncStages(oSyncStages'high-1 downto 0) & aIn;
