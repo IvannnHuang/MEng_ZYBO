@@ -303,3 +303,62 @@ con
 
 02:14:41 INFO  : Launch script is exported to file '/home/zkarim28/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI_system/_ide/scripts/debugger_zybo-z7-10-hdmi-default_7.tcl'
 02:43:40 INFO  : Disconnected from the channel tcfchan#7.
+22:37:05 DEBUG : Logs will be stored at '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/IDE.log'.
+22:37:06 INFO  : Launching XSCT server: xsct -n  -interactive /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/temp_xsdb_launch_script.tcl
+22:37:09 INFO  : XSCT server has started successfully.
+22:37:09 INFO  : plnx-install-location is set to ''
+22:37:09 INFO  : Successfully done setting XSCT server connection channel  
+22:37:09 INFO  : Successfully done setting workspace for the tool. 
+22:37:11 INFO  : Successfully done query RDI_DATADIR 
+22:37:12 INFO  : Registering command handlers for Vitis TCF services
+22:37:12 INFO  : Platform repository initialization has completed.
+22:39:01 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+22:39:35 INFO  : Result from executing command 'getProjects': design_1_wrapper
+22:39:35 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|/home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;xilinx_vck190_base_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm;xilinx_vck190_base_dfx_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_dfx_202410_1/xilinx_vck190_base_dfx_202410_1.xpfm;xilinx_vek280_base_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vek280_base_202410_1/xilinx_vek280_base_202410_1.xpfm;xilinx_vek280_base_bdc_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vek280_base_bdc_202410_1/xilinx_vek280_base_bdc_202410_1.xpfm;xilinx_vmk180_base_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vmk180_base_202410_1/xilinx_vmk180_base_202410_1.xpfm;xilinx_zcu102_base_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_202410_1/xilinx_zcu102_base_202410_1.xpfm;xilinx_zcu102_base_dfx_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_dfx_202410_1/xilinx_zcu102_base_dfx_202410_1.xpfm;xilinx_zcu104_base_202410_1|/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu104_base_202410_1/xilinx_zcu104_base_202410_1.xpfm
+22:39:40 INFO  : Checking for BSP changes to sync application flags for project 'Zybo-Z7-10-HDMI'...
+22:40:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:40:13 INFO  : Jtag cable 'Digilent Zybo Z7 210351B7A587A' is selected.
+22:40:13 INFO  : 'jtag frequency' command is executed.
+22:40:13 INFO  : Context for 'APU' is selected.
+22:40:13 INFO  : System reset is completed.
+22:40:16 INFO  : 'after 3000' command is executed.
+22:40:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B7A587A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B7A587A-13722093-0"}' command is executed.
+22:40:18 INFO  : Device configured successfully with "/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/_ide/bitstream/lorenz_as_ip_hdmi.bit"
+22:40:18 INFO  : Context for 'APU' is selected.
+22:40:18 INFO  : Hardware design and registers information is loaded from '/home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/hw/lorenz_as_ip_hdmi.xsa'.
+22:40:18 INFO  : 'configparams force-mem-access 1' command is executed.
+22:40:18 INFO  : Context for 'APU' is selected.
+22:40:18 INFO  : Sourcing of '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/_ide/psinit/ps7_init.tcl' is done.
+22:40:19 INFO  : 'ps7_init' command is executed.
+22:40:19 INFO  : 'ps7_post_config' command is executed.
+22:40:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:40:19 INFO  : The application '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/Debug/Zybo-Z7-10-HDMI.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:40:19 INFO  : 'configparams force-mem-access 0' command is executed.
+22:40:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B7A587A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B7A587A-13722093-0"}
+fpga -file /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/_ide/bitstream/lorenz_as_ip_hdmi.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/hw/lorenz_as_ip_hdmi.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/Debug/Zybo-Z7-10-HDMI.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:40:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:40:19 INFO  : 'con' command is executed.
+22:40:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:40:19 INFO  : Launch script is exported to file '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI_system/_ide/scripts/debugger_zybo-z7-10-hdmi-default_8.tcl'
+22:41:33 INFO  : Disconnected from the channel tcfchan#2.

@@ -12,3 +12,8 @@ timestamp=[2026-09-17 02:12:51], mode=BUILD, duration=0:00:00.460, duration_ms=4
 timestamp=[2026-09-17 02:12:52], mode=BUILD, duration=0:00:01.025, duration_ms=1025, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
 timestamp=[2026-09-17 02:13:01], mode=BUILD, duration=0:00:00.505, duration_ms=505, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
 timestamp=[2026-09-17 02:14:06], mode=BUILD, duration=0:00:01.378, duration_ms=1378, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}
+timestamp=[2026-09-17 22:37:11], mode=WORKBENCH_START, duration=0:00:10.009, duration_ms=10009, data={}
+timestamp=[2026-09-17 22:37:12], mode=WORKBENCH_UI_INIT, duration=0:00:01.422, duration_ms=1422, data={editors_count=3, platform_editors_count=1, projects_count=5, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,Zybo-Z7-10-HDMI,Zybo-Z7-10-HDMI_system,design_1_wrapper,sdx_export_metadata}
+timestamp=[2026-09-17 22:37:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.578, duration_ms=1578, data={}
+timestamp=[2026-09-17 22:39:40], mode=PLATFORM_GENERATION, duration=0:00:18.766, duration_ms=18766, data={name=design_1_wrapper}
+timestamp=[2026-09-17 22:39:43], mode=BUILD, duration=0:00:00.514, duration_ms=514, data={name=Zybo-Z7-10-HDMI, configuration=Debug, clean_build=false}

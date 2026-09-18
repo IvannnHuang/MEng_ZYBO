@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="sdx.custom.platform.repository.locations" value="/home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper"/>
-	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="/home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper"/>
+	<item key="sdx.custom.platform.repository.locations" value="/home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper;/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper"/>
+	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper"/>
 </section>

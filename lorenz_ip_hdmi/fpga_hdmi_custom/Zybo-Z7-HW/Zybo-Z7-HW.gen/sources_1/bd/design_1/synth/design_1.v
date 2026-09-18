@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-//Date        : Thu Sep 17 01:45:45 2026
+//Date        : Thu Sep 17 22:29:35 2026
 //Host        : fedora running 64-bit unknown
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=39,numReposBlks=26,numNonXlnxBlks=5,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=39,numReposBlks=26,numNonXlnxBlks=5,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -891,7 +891,7 @@ module design_1
         .s00_axi_wready(axi_interconnect_gp0_M05_AXI_WREADY),
         .s00_axi_wstrb(axi_interconnect_gp0_M05_AXI_WSTRB),
         .s00_axi_wvalid(axi_interconnect_gp0_M05_AXI_WVALID));
-  design_1_lorenz_reader_0_0 lorenz_reader_0
+  design_1_lorenz_reader_0_1 lorenz_reader_0
        (.s00_axi_aclk(ACLK_2),
         .s00_axi_araddr(axi_interconnect_gp0_M06_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(proc_sys_reset_fclk0_peripheral_aresetn),

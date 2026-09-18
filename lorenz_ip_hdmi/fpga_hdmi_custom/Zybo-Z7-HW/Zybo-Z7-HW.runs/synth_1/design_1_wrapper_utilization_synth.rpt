@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Thu Sep 17 01:48:29 2026
+| Date         : Thu Sep 17 22:30:30 2026
 | Host         : fedora running 64-bit unknown
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -175,7 +175,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | design_1_proc_sys_reset_fclk0_0      |    1 |
 | design_1_proc_sys_reset_0_0          |    1 |
 | design_1_m00_regslice_0              |    1 |
-| design_1_lorenz_reader_0_0           |    1 |
+| design_1_lorenz_reader_0_1           |    1 |
 | design_1_free_counter_0_0            |    1 |
 | design_1_dvi2rgb_0_0                 |    1 |
 | design_1_axis_subset_converter_out_0 |    1 |

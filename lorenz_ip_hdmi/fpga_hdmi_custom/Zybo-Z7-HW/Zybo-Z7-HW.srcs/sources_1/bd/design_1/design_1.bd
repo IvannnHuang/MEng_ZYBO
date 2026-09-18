@@ -3424,8 +3424,8 @@
       "lorenz_reader_0": {
         "vlnv": "user.org:user:lorenz_reader:1.0",
         "ip_revision": "1",
-        "xci_name": "design_1_lorenz_reader_0_0",
-        "xci_path": "ip/design_1_lorenz_reader_0_0/design_1_lorenz_reader_0_0.xci",
+        "xci_name": "design_1_lorenz_reader_0_1",
+        "xci_path": "ip/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_1.xci",
         "inst_hier_path": "lorenz_reader_0"
       }
     },
@@ -3627,8 +3627,8 @@
           "v_tc_out/s_axi_aclk",
           "axi_interconnect_gp0/M05_ACLK",
           "free_counter_0/s00_axi_aclk",
-          "lorenz_reader_0/s00_axi_aclk",
-          "axi_interconnect_gp0/M06_ACLK"
+          "axi_interconnect_gp0/M06_ACLK",
+          "lorenz_reader_0/s00_axi_aclk"
         ]
       },
       "ARESETN_1": {
@@ -3727,8 +3727,8 @@
           "v_tc_out/s_axi_aresetn",
           "axi_interconnect_gp0/M05_ARESETN",
           "free_counter_0/s00_axi_aresetn",
-          "lorenz_reader_0/s00_axi_aresetn",
-          "axi_interconnect_gp0/M06_ARESETN"
+          "axi_interconnect_gp0/M06_ARESETN",
+          "lorenz_reader_0/s00_axi_aresetn"
         ]
       },
       "proc_sys_reset_fclk1_interconnect_aresetn": {

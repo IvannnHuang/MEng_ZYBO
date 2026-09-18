@@ -3,22 +3,22 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Sep 17 01:47:44 2026
-# Process ID: 969097
-# Current directory: /home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1
+# Start of session at: Thu Sep 17 22:29:46 2026
+# Process ID: 1014984
+# Current directory: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: /home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/design_1_wrapper.vds
-# Journal file: /home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/vivado.jou
+# Log file: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/vivado.jou
 # Running On        :fedora
 # Platform          :unknown
 # Operating System  :unknown
 # Processor Detail  :Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
-# CPU Frequency     :3799.749 MHz
+# CPU Frequency     :3800.015 MHz
 # CPU Physical cores:2
 # CPU Logical cores :4
 # Host memory       :16616 MB
 # Swap memory       :8589 MB
 # Total Virtual     :25206 MB
-# Available Virtual :9674 MB
+# Available Virtual :17953 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 17 01:45:48 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 17 22:29:37 2026" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-10:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -5553,7 +5553,7 @@
     </MODULE>
     <MODULE COREREVISION="8" FULLNAME="/dvi2rgb_0" HWVERSION="2.0" INSTANCE="dvi2rgb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dvi2rgb" VLNV="digilentinc.com:ip:dvi2rgb:2.0">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
+        <DOCUMENT SOURCE="/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kAddBUFG" VALUE="false"/>
@@ -5883,7 +5883,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_lorenz_reader_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_lorenz_reader_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C40000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C4FFFF"/>
@@ -6158,8 +6158,8 @@
             <CONNECTION INSTANCE="v_tc_out" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_interconnect_gp0" PORT="M05_ARESETN"/>
             <CONNECTION INSTANCE="free_counter_0" PORT="s00_axi_aresetn"/>
-            <CONNECTION INSTANCE="lorenz_reader_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_interconnect_gp0" PORT="M06_ARESETN"/>
+            <CONNECTION INSTANCE="lorenz_reader_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
@@ -7273,8 +7273,8 @@
             <CONNECTION INSTANCE="v_tc_out" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_gp0" PORT="M05_ACLK"/>
             <CONNECTION INSTANCE="free_counter_0" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="lorenz_reader_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_gp0" PORT="M06_ACLK"/>
+            <CONNECTION INSTANCE="lorenz_reader_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="133333344" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
@@ -8002,7 +8002,7 @@
     </MODULE>
     <MODULE COREREVISION="8" FULLNAME="/rgb2dvi_1" HWVERSION="1.4" INSTANCE="rgb2dvi_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
+        <DOCUMENT SOURCE="/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kClkPrimitive" VALUE="PLL"/>
