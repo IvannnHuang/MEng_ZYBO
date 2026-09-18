@@ -1,7 +1,7 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.1
-| Date         : Fri Sep 18 00:04:00 2026
-| Host         : fedora
+| Date         : Fri Sep 18 13:04:38 2026
+| Host         : IvanLaptop
 | Design       : design_1
 | Device       : xc7z010-clg400-1--
 -------------------------------------

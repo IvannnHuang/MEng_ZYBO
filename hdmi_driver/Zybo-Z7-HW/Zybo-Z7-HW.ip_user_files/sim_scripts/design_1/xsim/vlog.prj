@@ -1,4 +1,4 @@
-verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" \
+verilog xil_defaultlib --include "D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" --include "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2a7c/src/mmcme2_drp.v" \
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 "../../../bd/design_1/ip/design_1_xbar_2/sim/design_1_xbar_2.v" \
@@ -14,11 +14,8 @@ verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2024.1/data/xilinx_vip/in
 "../../../bd/design_1/ip/design_1_axis_subset_converter_out_0/sim/design_1_axis_subset_converter_out_0.v" \
 "../../../bd/design_1/ip/design_1_subset_converter_reset_0/sim/design_1_subset_converter_reset_0.v" \
 "../../../bd/design_1/ip/design_1_v_axi4s_vid_out_0_0/sim/design_1_v_axi4s_vid_out_0_0.v" \
-"../../../bd/design_1/ipshared/9fb1/hdl/integrator.v" \
-"../../../bd/design_1/ipshared/9fb1/hdl/lorenz_solver.v" \
-"../../../bd/design_1/ipshared/9fb1/hdl/signed_mult.v" \
-"../../../bd/design_1/ipshared/9fb1/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/9fb1/hdl/lorenz_dda_driver.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver.v" \
 "../../../bd/design_1/ip/design_1_lorenz_dda_driver_0_0/sim/design_1_lorenz_dda_driver_0_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 "../../../bd/design_1/ip/design_1_s00_regslice_0/sim/design_1_s00_regslice_0.v" \

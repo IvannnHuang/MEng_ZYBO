@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date             : Fri Sep 18 00:08:29 2026
-| Host             : fedora running 64-bit unknown
+| Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date             : Fri Sep 18 13:08:10 2026
+| Host             : IvanLaptop running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7z010clg400-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.876        |
+| Total On-Chip Power (W)  | 1.877        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.748        |
+| Dynamic (W)              | 1.749        |
 | Device Static (W)        | 0.128        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 63.4         |
@@ -54,21 +54,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.040 |        8 |       --- |             --- |
 | Slice Logic              |     0.016 |    18647 |       --- |             --- |
-|   LUT as Logic           |     0.013 |     6189 |     17600 |           35.16 |
+|   LUT as Logic           |     0.013 |     6186 |     17600 |           35.15 |
 |   CARRY4                 |     0.002 |      414 |      4400 |            9.41 |
-|   Register               |    <0.001 |     9542 |     35200 |           27.11 |
+|   Register               |    <0.001 |     9541 |     35200 |           27.11 |
 |   F7/F8 Muxes            |    <0.001 |      150 |     17600 |            0.85 |
 |   LUT as Shift Register  |    <0.001 |      236 |      6000 |            3.93 |
 |   Others                 |     0.000 |      668 |       --- |             --- |
 |   LUT as Distributed RAM |     0.000 |       18 |      6000 |            0.30 |
-| Signals                  |     0.025 |    14575 |       --- |             --- |
+| Signals                  |     0.025 |    14538 |       --- |             --- |
 | Block RAM                |     0.004 |      8.5 |        60 |           14.17 |
 | MMCM                     |     0.107 |        1 |         2 |           50.00 |
 | DSPs                     |     0.011 |       12 |        80 |           15.00 |
 | I/O                      |     0.140 |       10 |       100 |           10.00 |
 | PS7                      |     1.406 |        1 |       --- |             --- |
 | Static Power             |     0.128 |          |           |                 |
-| Total                    |     1.876 |          |           |                 |
+| Total                    |     1.877 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -158,14 +158,14 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     1.748 |
+| design_1_wrapper         |     1.749 |
 |   design_1_i             |     1.741 |
 |     axi_dynclk_0         |     0.110 |
 |       U0                 |     0.110 |
 |     axi_interconnect_gp0 |     0.005 |
 |       s00_couplers       |     0.004 |
 |       xbar               |     0.001 |
-|     axi_interconnect_hp0 |     0.007 |
+|     axi_interconnect_hp0 |     0.008 |
 |       m00_couplers       |     0.004 |
 |       xbar               |     0.002 |
 |     axi_vdma_0           |     0.022 |

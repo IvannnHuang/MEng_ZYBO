@@ -1,9 +1,9 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-//Date        : Thu Sep 17 23:59:31 2026
-//Host        : fedora running 64-bit unknown
+//Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+//Date        : Fri Sep 18 12:43:10 2026
+//Host        : IvanLaptop running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
@@ -638,12 +638,12 @@ module design_1
         .s_axis_tvalid(axi_vdma_0_M_AXIS_MM2S_TVALID));
   design_1_lorenz_dda_driver_0_0 lorenz_dda_driver_0
        (.s00_axi_aclk(ACLK_2),
-        .s00_axi_araddr(axi_interconnect_gp0_M02_AXI_ARADDR[6:0]),
+        .s00_axi_araddr(axi_interconnect_gp0_M02_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(proc_sys_reset_fclk0_peripheral_aresetn),
         .s00_axi_arprot(axi_interconnect_gp0_M02_AXI_ARPROT),
         .s00_axi_arready(axi_interconnect_gp0_M02_AXI_ARREADY),
         .s00_axi_arvalid(axi_interconnect_gp0_M02_AXI_ARVALID),
-        .s00_axi_awaddr(axi_interconnect_gp0_M02_AXI_AWADDR[6:0]),
+        .s00_axi_awaddr(axi_interconnect_gp0_M02_AXI_AWADDR[3:0]),
         .s00_axi_awprot(axi_interconnect_gp0_M02_AXI_AWPROT),
         .s00_axi_awready(axi_interconnect_gp0_M02_AXI_AWREADY),
         .s00_axi_awvalid(axi_interconnect_gp0_M02_AXI_AWVALID),
