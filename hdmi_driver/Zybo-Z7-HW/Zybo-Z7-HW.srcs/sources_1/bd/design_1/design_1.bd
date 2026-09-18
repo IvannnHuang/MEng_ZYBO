@@ -6,8 +6,9 @@
       "gen_directory": "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.1"
+      "synth_flow_mode": "None",
+      "tool_version": "2024.1",
+      "validated": "true"
     },
     "design_tree": {
       "axi_dynclk_0": "",
@@ -43,7 +44,8 @@
       "axis_subset_converter_out": "",
       "subset_converter_reset": "",
       "v_axi4s_vid_out_0": "",
-      "v_tc_out": ""
+      "v_tc_out": "",
+      "lorenz_dda_driver_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2965,6 +2967,13 @@
             "value": "false"
           }
         }
+      },
+      "lorenz_dda_driver_0": {
+        "vlnv": "xilinx.com:user:lorenz_dda_driver:1.0",
+        "ip_revision": "13",
+        "xci_name": "design_1_lorenz_dda_driver_0_0",
+        "xci_path": "ip\\design_1_lorenz_dda_driver_0_0\\design_1_lorenz_dda_driver_0_0.xci",
+        "inst_hier_path": "lorenz_dda_driver_0"
       }
     },
     "interface_nets": {
@@ -2990,6 +2999,12 @@
         "interface_ports": [
           "axi_dynclk_0/S_AXI_LITE",
           "axi_interconnect_gp0/M01_AXI"
+        ]
+      },
+      "axi_interconnect_gp0_M02_AXI": {
+        "interface_ports": [
+          "axi_interconnect_gp0/M02_AXI",
+          "lorenz_dda_driver_0/S00_AXI"
         ]
       },
       "axi_interconnect_gp0_M03_AXI": {
@@ -3092,7 +3107,8 @@
           "axi_interconnect_gp0/M04_ACLK",
           "axi_vdma_0/s_axi_lite_aclk",
           "proc_sys_reset_fclk0/slowest_sync_clk",
-          "v_tc_out/s_axi_aclk"
+          "v_tc_out/s_axi_aclk",
+          "lorenz_dda_driver_0/s00_axi_aclk"
         ]
       },
       "ARESETN_1": {
@@ -3139,7 +3155,8 @@
           "axi_interconnect_gp0/M03_ARESETN",
           "axi_interconnect_gp0/M04_ARESETN",
           "axi_vdma_0/axi_resetn",
-          "v_tc_out/s_axi_aresetn"
+          "v_tc_out/s_axi_aresetn",
+          "lorenz_dda_driver_0/s00_axi_aresetn"
         ]
       },
       "proc_sys_reset_fclk1_interconnect_aresetn": {
@@ -3185,6 +3202,13 @@
                 "address_block": "/axi_vdma_0/S_AXI_LITE/Reg",
                 "offset": "0x43000000",
                 "range": "64K"
+              },
+              "SEG_lorenz_dda_driver_0_S00_AXI_reg": {
+                "address_block": "/lorenz_dda_driver_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C10000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_v_tc_out_Reg": {
                 "address_block": "/v_tc_out/ctrl/Reg",
