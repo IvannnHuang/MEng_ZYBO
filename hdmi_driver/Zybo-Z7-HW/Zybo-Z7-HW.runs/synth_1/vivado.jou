@@ -1,24 +1,24 @@
 #-----------------------------------------------------------
 # Vivado v2024.1 (64-bit)
-# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Sep 17 17:04:34 2026
-# Process ID: 26428
-# Current directory: C:/Users/qijin/Documents/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1
-# Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: C:/Users/qijin/Documents/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/design_1_wrapper.vds
-# Journal file: C:/Users/qijin/Documents/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1\vivado.jou
-# Running On        :Ivan¡®sLaptop
-# Platform          :Windows Server 2016 or Windows 10
-# Operating System  :26200
-# Processor Detail  :Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
-# CPU Frequency     :2592 MHz
-# CPU Physical cores:6
-# CPU Logical cores :12
-# Host memory       :16877 MB
-# Swap memory       :8053 MB
-# Total Virtual     :24930 MB
-# Available Virtual :7591 MB
+# Start of session at: Fri Sep 18 00:00:20 2026
+# Process ID: 1038028
+# Current directory: /home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/vivado.jou
+# Running On        :fedora
+# Platform          :unknown
+# Operating System  :unknown
+# Processor Detail  :Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+# CPU Frequency     :3800.037 MHz
+# CPU Physical cores:2
+# CPU Logical cores :4
+# Host memory       :16616 MB
+# Swap memory       :8589 MB
+# Total Virtual     :25206 MB
+# Available Virtual :17777 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

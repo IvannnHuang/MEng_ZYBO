@@ -1,0 +1,745 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Fri Sep 18 00:08:23 2026
+| Host         : fedora running 64-bit unknown
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 132
++-----------+----------+---------------------------------------------+------------+
+| Rule      | Severity | Description                                 | Violations |
++-----------+----------+---------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                | 3          |
+| TIMING-9  | Warning  | Unknown CDC Logic                           | 1          |
+| TIMING-16 | Warning  | Large setup violation                       | 126        |
+| ULMTCS-1  | Warning  | Control Sets use limits recommend reduction | 1          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 1          |
++-----------+----------+---------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gpregsm1.curr_fwft_state[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR
+ (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gpregsm1.curr_fwft_state[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR
+ (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gpregsm1.curr_fwft_state[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i_reg/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR,
+design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR
+ (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -4.463 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -4.744 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -5.055 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_27__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -5.085 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_26__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -5.130 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -5.178 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -5.230 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_27__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -5.279 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -5.299 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -5.321 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -5.325 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_23__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -5.373 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -5.415 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -5.516 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -5.532 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -5.551 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -5.558 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_26__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -5.573 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_24__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -5.606 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -5.609 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -5.627 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -5.632 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -5.648 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -5.662 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -5.671 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -5.743 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -5.747 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -5.753 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -5.782 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_23__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -5.785 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_24__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -5.789 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -5.813 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -5.814 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -5.846 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_15__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -5.863 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -5.882 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -5.883 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -5.939 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_8__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -5.946 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -5.962 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -5.987 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -5.990 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -5.993 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_18__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -6.021 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[6]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -6.036 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -6.055 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_4__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -6.056 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_10_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -6.057 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -6.064 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -6.066 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_7__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -6.086 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_20__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -6.086 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_22__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -6.087 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_9__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -6.087 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_20__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -6.103 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -6.113 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_21__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -6.114 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_14__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -6.119 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -6.127 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_14__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -6.135 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -6.136 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -6.139 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[20]_replica/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -6.143 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_25__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -6.152 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -6.155 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_25__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -6.185 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -6.190 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -6.204 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -6.209 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -6.212 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -6.220 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -6.222 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -6.230 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -6.232 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -6.235 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -6.245 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_2__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -6.251 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -6.268 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_5__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -6.281 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_22__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -6.302 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_15__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -6.304 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_1__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -6.314 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_12__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -6.325 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -6.333 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_13__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -6.336 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -6.345 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_13__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -6.346 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -6.349 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -6.362 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_16__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -6.363 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_6__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -6.365 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -6.373 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_17__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -6.375 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -6.389 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_17__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -6.403 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_18__1_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -6.403 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_21__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -6.417 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_11__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -6.439 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -6.459 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -6.460 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -6.470 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -6.486 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_19__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -6.487 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -6.490 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_19__0_psdsp_1/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -6.492 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -6.504 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[6]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -6.510 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_16__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -6.524 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_12__1_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -6.533 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -6.535 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -6.551 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -6.560 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -6.573 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -6.591 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#116 Warning
+Large setup violation  
+There is a large setup violation of -6.594 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#117 Warning
+Large setup violation  
+There is a large setup violation of -6.610 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#118 Warning
+Large setup violation  
+There is a large setup violation of -6.616 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out_i_11__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#119 Warning
+Large setup violation  
+There is a large setup violation of -6.646 ns between design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/slv_reg_dt_reg[3]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_z/v1_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#120 Warning
+Large setup violation  
+There is a large setup violation of -6.652 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#121 Warning
+Large setup violation  
+There is a large setup violation of -6.654 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#122 Warning
+Large setup violation  
+There is a large setup violation of -6.663 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#123 Warning
+Large setup violation  
+There is a large setup violation of -6.736 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[23]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/lorenz_dda_driver_slave_lite_v1_0_S00_AXI_inst/mult_out__1_i_3__0_psdsp/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#124 Warning
+Large setup violation  
+There is a large setup violation of -6.760 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#125 Warning
+Large setup violation  
+There is a large setup violation of -6.798 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#126 Warning
+Large setup violation  
+There is a large setup violation of -6.806 ns between design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_y/v1_reg[1]/C (clocked by clk_fpga_0) and design_1_i/lorenz_dda_driver_0/inst/solver_i/integrator_x/v1_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+ULMTCS-1#1 Warning
+Control Sets use limits recommend reduction  
+This design uses 355 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '11' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_rgb2dvi_1_0/src/rgb2dvi.xdc (Line: 5)
+Related violations: <none>
+
+
