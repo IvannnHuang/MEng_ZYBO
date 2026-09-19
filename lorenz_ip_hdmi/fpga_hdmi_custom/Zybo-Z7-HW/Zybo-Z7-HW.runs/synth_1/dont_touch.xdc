@@ -69,8 +69,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_v_
 # IP: bd/design_1/ip/design_1_v_vid_in_axi4s_0_0/design_1_v_vid_in_axi4s_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_v_vid_in_axi4s_0_0 || ORIG_REF_NAME==design_1_v_vid_in_axi4s_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_free_counter_0_0/design_1_free_counter_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_free_counter_0_0 || ORIG_REF_NAME==design_1_free_counter_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_lorenz_reader_0_1 || ORIG_REF_NAME==design_1_lorenz_reader_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
@@ -86,8 +86,5 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_m0
 
 # IP: bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_1 || ORIG_REF_NAME==design_1_auto_pc_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_lorenz_reader_0_1 || ORIG_REF_NAME==design_1_lorenz_reader_0_1} -quiet] -quiet
 
 # XDC: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/design_1_ooc.xdc

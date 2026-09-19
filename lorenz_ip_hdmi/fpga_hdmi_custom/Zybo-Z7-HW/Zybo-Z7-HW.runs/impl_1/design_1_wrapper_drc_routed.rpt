@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Thu Sep 17 22:33:23 2026
-| Host         : fedora running 64-bit unknown
+| Date         : Sat Sep 19 17:09:30 2026
+| Host         : dhcp-vl2042-15607.redrover.cornell.edu running 64-bit unknown
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
 | Device       : xc7z010clg400-1
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 36
+             Violations found: 37
 +-----------+----------+-------------------------+------------+
 | Rule      | Severity | Description             | Violations |
 +-----------+----------+-------------------------+------------+
-| DPIP-1    | Warning  | Input pipelining        | 8          |
+| DPIP-1    | Warning  | Input pipelining        | 9          |
 | DPOP-1    | Warning  | PREG Output pipelining  | 10         |
 | DPOP-2    | Warning  | MREG Output pipelining  | 10         |
 | PDCN-1569 | Warning  | LUT equation term check | 3          |
@@ -51,30 +51,35 @@ Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__0 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__1 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__0 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__1 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_y/mult_out__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__0 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__1 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__0 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
+Input pipelining  
+DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__1 input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z1/mult_out__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
 Input pipelining  
 DSP design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z2/mult_out input design_1_i/lorenz_reader_0/inst/solver_i/multiplier_z2/mult_out/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
@@ -181,17 +186,17 @@ Related violations: <none>
 
 PDCN-1569#1 Warning
 LUT equation term check  
-Used physical LUT pin 'A2' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A1' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A4)+((~A4)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#2 Warning
 LUT equation term check  
-Used physical LUT pin 'A6' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A5)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A2' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A4)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#3 Warning
 LUT equation term check  
-Used physical LUT pin 'A6' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A5)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A4' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 RTSTAT-10#1 Warning

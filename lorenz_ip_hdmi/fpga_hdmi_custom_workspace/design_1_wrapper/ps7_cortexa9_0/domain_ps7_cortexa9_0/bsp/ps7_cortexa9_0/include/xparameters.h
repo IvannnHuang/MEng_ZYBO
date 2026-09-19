@@ -231,17 +231,6 @@
 
 /******************************************************************/
 
-/* Definitions for driver FREE_COUNTER */
-#define XPAR_FREE_COUNTER_NUM_INSTANCES 1
-
-/* Definitions for peripheral FREE_COUNTER_0 */
-#define XPAR_FREE_COUNTER_0_DEVICE_ID 0
-#define XPAR_FREE_COUNTER_0_S00_AXI_BASEADDR 0x43C30000
-#define XPAR_FREE_COUNTER_0_S00_AXI_HIGHADDR 0x43C3FFFF
-
-
-/******************************************************************/
-
 
 /* Peripheral Definitions for peripheral PS7_AFI_0 */
 #define XPAR_PS7_AFI_0_S_AXI_BASEADDR 0xF8008000

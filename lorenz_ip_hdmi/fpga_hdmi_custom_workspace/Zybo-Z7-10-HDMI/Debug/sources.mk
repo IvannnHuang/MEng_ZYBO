@@ -18,10 +18,8 @@ ELFSIZE :=
 SUBDIRS := \
 src/display_ctrl \
 src/dynclk \
-src/free_counter \
 src/intc \
 src/lorenz_plot \
-src/switch_reader \
 src/timer_ps \
 src/video_capture \
 src \

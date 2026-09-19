@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/zkarim28/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_xbar_2_synth_1'
+HD_PWD='/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_xbar_2_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

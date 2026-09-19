@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -71,6 +72,7 @@ set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.board} [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.1 [current_project]
 set_property ip_repo_paths {
+  /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/down_counter_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/free_counter_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/switch_reader_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/ip_repo/lorenz_reader_1_0

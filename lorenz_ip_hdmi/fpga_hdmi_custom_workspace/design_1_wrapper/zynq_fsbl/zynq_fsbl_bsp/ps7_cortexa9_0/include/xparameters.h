@@ -175,6 +175,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver DOWN_COUNTER */
+#define XPAR_DOWN_COUNTER_NUM_INSTANCES 1
+
+/* Definitions for peripheral DOWN_COUNTER_0 */
+#define XPAR_DOWN_COUNTER_0_DEVICE_ID 0
+#define XPAR_DOWN_COUNTER_0_S00_AXI_BASEADDR 0x43C50000
+#define XPAR_DOWN_COUNTER_0_S00_AXI_HIGHADDR 0x43C5FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver DYNCLK */
 #define XPAR_DDYNCLK_NUM_INSTANCES 1
 
@@ -440,6 +451,17 @@
 /******************************************************************/
 
 /* Definition for input Clock */
+/* Definitions for driver LORENZ_READER */
+#define XPAR_LORENZ_READER_NUM_INSTANCES 1
+
+/* Definitions for peripheral LORENZ_READER_0 */
+#define XPAR_LORENZ_READER_0_DEVICE_ID 0
+#define XPAR_LORENZ_READER_0_S00_AXI_BASEADDR 0x43C40000
+#define XPAR_LORENZ_READER_0_S00_AXI_HIGHADDR 0x43C4FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver QSPIPS */
 #define XPAR_XQSPIPS_NUM_INSTANCES 1
 

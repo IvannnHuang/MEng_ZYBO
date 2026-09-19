@@ -3,22 +3,22 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Sep 17 22:30:42 2026
-# Process ID: 1015188
+# Start of session at: Sat Sep 19 17:05:26 2026
+# Process ID: 331261
 # Current directory: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1
 # Command line: vivado -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 # Log file: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/design_1_wrapper.vdi
 # Journal file: /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/vivado.jou
-# Running On        :fedora
+# Running On        :dhcp-vl2042-15607.redrover.cornell.edu
 # Platform          :unknown
 # Operating System  :unknown
 # Processor Detail  :Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
-# CPU Frequency     :3635.674 MHz
+# CPU Frequency     :3200.257 MHz
 # CPU Physical cores:2
 # CPU Logical cores :4
 # Host memory       :16616 MB
 # Swap memory       :8589 MB
 # Total Virtual     :25206 MB
-# Available Virtual :18297 MB
+# Available Virtual :17103 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

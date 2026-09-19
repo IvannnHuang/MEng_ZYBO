@@ -7,13 +7,14 @@
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Thu Sep 17 22:29:46 2026
+  **** Start of session at: Sat Sep 19 17:04:18 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1665.707 ; gain = 24.832 ; free physical = 952 ; free virtual = 16718
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1664.770 ; gain = 27.832 ; free physical = 904 ; free virtual = 15608
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/down_counter_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/free_counter_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/switch_reader_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/ip_repo/lorenz_reader_1_0'.
@@ -32,147 +33,171 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1015014
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 330884
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2493.391 ; gain = 421.684 ; free physical = 303 ; free virtual = 15862
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2491.516 ; gain = 420.715 ; free physical = 238 ; free virtual = 14804
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dynclk_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_dynclk_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dynclk_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_dynclk_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_video_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_gpio_video_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_video_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_gpio_video_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_interconnect_gp0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1187]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_ZD2IXJ' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3582]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_ZD2IXJ' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3582]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_13ZP1O6' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3707]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_13ZP1O6' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3707]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_Y154GK' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3853]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_Y154GK' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3853]
-INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_15LWNJP' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3985]
-INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_15LWNJP' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3985]
-INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_WF9HZL' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4117]
-INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_WF9HZL' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4117]
-INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_175LJ1S' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4249]
-INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_175LJ1S' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4249]
-INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_VDCDSI' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4395]
-INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_VDCDSI' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4395]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_119IHAT' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4541]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_119IHAT' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4541]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_2' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_2' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_interconnect_gp0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1187]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_interconnect_hp0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2444]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_17E8JHA' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3056]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_m00_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_m00_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_m00_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_m00_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_17E8JHA' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3056]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_S4BDUK' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4846]
-INFO: [Synth 8-6157] synthesizing module 'design_1_s00_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_s00_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_s00_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_s00_regslice_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'design_1_s00_regslice_0' is unconnected for instance 's00_regslice' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4973]
-WARNING: [Synth 8-7023] instance 's00_regslice' of module 'design_1_s00_regslice_0' has 34 connections declared, but only 33 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4973]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_S4BDUK' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4846]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_12AUBLP' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5009]
-INFO: [Synth 8-6157] synthesizing module 'design_1_s01_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_s01_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_s01_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_s01_regslice_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'design_1_s01_regslice_0' is unconnected for instance 's01_regslice' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5160]
-WARNING: [Synth 8-7023] instance 's01_regslice' of module 'design_1_s01_regslice_0' has 40 connections declared, but only 39 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5160]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_12AUBLP' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5009]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_xbar_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_3' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_xbar_3_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3027]
-WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3044]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3045]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3047]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3048]
-WARNING: [Synth 8-7071] port 's_axi_bid' of module 'design_1_xbar_3' is unconnected for instance 'xbar' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2977]
-WARNING: [Synth 8-7071] port 's_axi_rid' of module 'design_1_xbar_3' is unconnected for instance 'xbar' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2977]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'design_1_xbar_3' has 78 connections declared, but only 76 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2977]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_interconnect_hp0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2444]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_vdma_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_vdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_vdma_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axi_vdma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_frame_ptr_out' of module 'design_1_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:759]
-WARNING: [Synth 8-7071] port 's2mm_frame_ptr_out' of module 'design_1_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:759]
-WARNING: [Synth 8-7023] instance 'axi_vdma_0' of module 'design_1_axi_vdma_0_0' has 67 connections declared, but only 65 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:759]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_in_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axis_subset_converter_in_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_in_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axis_subset_converter_in_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axis_subset_converter_out_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_out_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_axis_subset_converter_out_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axis_tkeep' of module 'design_1_axis_subset_converter_out_0' is unconnected for instance 'axis_subset_converter_out' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:838]
-WARNING: [Synth 8-7023] instance 'axis_subset_converter_out' of module 'design_1_axis_subset_converter_out_0' has 14 connections declared, but only 13 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:838]
-INFO: [Synth 8-6157] synthesizing module 'design_1_dvi2rgb_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_dvi2rgb_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_dvi2rgb_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_dvi2rgb_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'aPixelClkLckd' of module 'design_1_dvi2rgb_0_0' is unconnected for instance 'dvi2rgb_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:852]
-WARNING: [Synth 8-7023] instance 'dvi2rgb_0' of module 'design_1_dvi2rgb_0_0' has 20 connections declared, but only 19 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:852]
-INFO: [Synth 8-6157] synthesizing module 'design_1_free_counter_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_free_counter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_free_counter_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_free_counter_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_lorenz_reader_0_1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_lorenz_reader_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_lorenz_reader_0_1' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_lorenz_reader_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:916]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:916]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:916]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'design_1_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:916]
-INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_fclk0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_fclk0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_fclk0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_fclk0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:924]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:924]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:924]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_fclk0' of module 'design_1_proc_sys_reset_fclk0_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:924]
-INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_fclk1_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_fclk1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_fclk1_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_proc_sys_reset_fclk1_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:932]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:932]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:932]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_fclk1' of module 'design_1_proc_sys_reset_fclk1_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:932]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 119 connections declared, but only 113 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:940]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rgb2dvi_1_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_rgb2dvi_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rgb2dvi_1_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_rgb2dvi_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dynclk_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dynclk_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_video_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_gpio_video_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_video_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_gpio_video_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_interconnect_gp0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1145]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_ZD2IXJ' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3686]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_ZD2IXJ' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3686]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_13ZP1O6' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3811]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_13ZP1O6' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3811]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_Y154GK' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3957]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_Y154GK' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3957]
+INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_15LWNJP' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4089]
+INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_15LWNJP' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4089]
+INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_WF9HZL' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4221]
+INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_WF9HZL' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4221]
+INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_175LJ1S' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4353]
+INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_175LJ1S' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4353]
+INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_VDCDSI' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4499]
+INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_VDCDSI' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4499]
+INFO: [Synth 8-6157] synthesizing module 'm07_couplers_imp_17XV38Z' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4645]
+INFO: [Synth 8-6155] done synthesizing module 'm07_couplers_imp_17XV38Z' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4645]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_119IHAT' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4791]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_119IHAT' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:4791]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_2' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_2' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_interconnect_gp0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1145]
+WARNING: [Synth 8-7071] port 'M06_AXI_araddr' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_arprot' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_arvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_awaddr' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_awprot' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_awvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_bready' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_rready' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_wdata' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_wstrb' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M06_AXI_wvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_araddr' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_arprot' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_arvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_awaddr' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_awprot' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_awvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_bready' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_rready' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_wdata' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_wstrb' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7071] port 'M07_AXI_wvalid' of module 'design_1_axi_interconnect_gp0_0' is unconnected for instance 'axi_interconnect_gp0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+WARNING: [Synth 8-7023] instance 'axi_interconnect_gp0' of module 'design_1_axi_interconnect_gp0_0' has 201 connections declared, but only 179 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:483]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_interconnect_hp0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2548]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_17E8JHA' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3160]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_m00_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_m00_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_m00_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_m00_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_17E8JHA' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3160]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_S4BDUK' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5096]
+INFO: [Synth 8-6157] synthesizing module 'design_1_s00_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_s00_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_s00_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_s00_regslice_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'design_1_s00_regslice_0' is unconnected for instance 's00_regslice' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5223]
+WARNING: [Synth 8-7023] instance 's00_regslice' of module 'design_1_s00_regslice_0' has 34 connections declared, but only 33 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5223]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_S4BDUK' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5096]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_12AUBLP' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5259]
+INFO: [Synth 8-6157] synthesizing module 'design_1_s01_regslice_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_s01_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_s01_regslice_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_s01_regslice_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'design_1_s01_regslice_0' is unconnected for instance 's01_regslice' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5410]
+WARNING: [Synth 8-7023] instance 's01_regslice' of module 'design_1_s01_regslice_0' has 40 connections declared, but only 39 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5410]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_12AUBLP' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:5259]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_xbar_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_3' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_xbar_3_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3131]
+WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3148]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3149]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3151]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'design_1_xbar_3' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3152]
+WARNING: [Synth 8-7071] port 's_axi_bid' of module 'design_1_xbar_3' is unconnected for instance 'xbar' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3081]
+WARNING: [Synth 8-7071] port 's_axi_rid' of module 'design_1_xbar_3' is unconnected for instance 'xbar' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3081]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'design_1_xbar_3' has 78 connections declared, but only 76 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:3081]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_interconnect_hp0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:2548]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_vdma_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_vdma_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axi_vdma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_frame_ptr_out' of module 'design_1_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:739]
+WARNING: [Synth 8-7071] port 's2mm_frame_ptr_out' of module 'design_1_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:739]
+WARNING: [Synth 8-7023] instance 'axi_vdma_0' of module 'design_1_axi_vdma_0_0' has 67 connections declared, but only 65 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:739]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_in_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axis_subset_converter_in_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_in_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axis_subset_converter_in_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axis_subset_converter_out_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_out_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_axis_subset_converter_out_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axis_tkeep' of module 'design_1_axis_subset_converter_out_0' is unconnected for instance 'axis_subset_converter_out' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:818]
+WARNING: [Synth 8-7023] instance 'axis_subset_converter_out' of module 'design_1_axis_subset_converter_out_0' has 14 connections declared, but only 13 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:818]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dvi2rgb_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_dvi2rgb_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dvi2rgb_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_dvi2rgb_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'aPixelClkLckd' of module 'design_1_dvi2rgb_0_0' is unconnected for instance 'dvi2rgb_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:832]
+WARNING: [Synth 8-7023] instance 'dvi2rgb_0' of module 'design_1_dvi2rgb_0_0' has 20 connections declared, but only 19 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:832]
+INFO: [Synth 8-6157] synthesizing module 'design_1_lorenz_reader_0_1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_lorenz_reader_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_lorenz_reader_0_1' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_lorenz_reader_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:874]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:874]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:874]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'design_1_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:874]
+INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_fclk0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_fclk0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_fclk0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_fclk0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:882]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:882]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_proc_sys_reset_fclk0_0' is unconnected for instance 'proc_sys_reset_fclk0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:882]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_fclk0' of module 'design_1_proc_sys_reset_fclk0_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:882]
+INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_fclk1_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_fclk1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_fclk1_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_proc_sys_reset_fclk1_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:890]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:890]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_proc_sys_reset_fclk1_0' is unconnected for instance 'proc_sys_reset_fclk1' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:890]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_fclk1' of module 'design_1_proc_sys_reset_fclk1_0' has 10 connections declared, but only 7 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:890]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 119 connections declared, but only 113 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:898]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rgb2dvi_1_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_rgb2dvi_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rgb2dvi_1_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_rgb2dvi_1_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_1_subset_converter_reset_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_subset_converter_reset_0/synth/design_1_subset_converter_reset_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_9_xlconstant' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/e2d2/hdl/xlconstant_v1_1_vl_rfs.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_9_xlconstant' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/e2d2/hdl/xlconstant_v1_1_vl_rfs.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_subset_converter_reset_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_subset_converter_reset_0/synth/design_1_subset_converter_reset_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_axi4s_vid_out_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_axi4s_vid_out_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'vid_vblank' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'vid_hblank' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'vid_field_id' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'locked' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'overflow' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'underflow' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'fifo_read_level' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'status' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7071] port 'sof_state_out' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'design_1_v_axi4s_vid_out_0_0' has 32 connections declared, but only 23 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1068]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_in_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_tc_in_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_in_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_tc_in_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_tc_out_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_out_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_tc_out_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'fsync_out' of module 'design_1_v_tc_out_0' is unconnected for instance 'v_tc_out' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1122]
-WARNING: [Synth 8-7023] instance 'v_tc_out' of module 'design_1_v_tc_out_0' has 33 connections declared, but only 32 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1122]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_vid_in_axi4s_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_vid_in_axi4s_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_vid_in_axi4s_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-1014984-fedora/realtime/design_1_v_vid_in_axi4s_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'fid' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7071] port 'vtd_vblank' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7071] port 'vtd_hblank' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7071] port 'vtd_field_id' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7071] port 'overflow' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7071] port 'underflow' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
-WARNING: [Synth 8-7023] instance 'v_vid_in_axi4s_0' of module 'design_1_v_vid_in_axi4s_0_0' has 28 connections declared, but only 22 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1155]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_axi4s_vid_out_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_axi4s_vid_out_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'vid_vblank' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'vid_hblank' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'vid_field_id' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'locked' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'overflow' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'underflow' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'fifo_read_level' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'status' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7071] port 'sof_state_out' of module 'design_1_v_axi4s_vid_out_0_0' is unconnected for instance 'v_axi4s_vid_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'design_1_v_axi4s_vid_out_0_0' has 32 connections declared, but only 23 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1026]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_in_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_tc_in_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_in_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_tc_in_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_out_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_tc_out_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_out_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_tc_out_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'fsync_out' of module 'design_1_v_tc_out_0' is unconnected for instance 'v_tc_out' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1080]
+WARNING: [Synth 8-7023] instance 'v_tc_out' of module 'design_1_v_tc_out_0' has 33 connections declared, but only 32 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1080]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_vid_in_axi4s_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_vid_in_axi4s_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_vid_in_axi4s_0_0' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/.Xil/Vivado-330734-dhcp-vl2042-15607.redrover.cornell.edu/realtime/design_1_v_vid_in_axi4s_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'fid' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7071] port 'vtd_vblank' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7071] port 'vtd_hblank' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7071] port 'vtd_field_id' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7071] port 'overflow' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7071] port 'underflow' of module 'design_1_v_vid_in_axi4s_0_0' is unconnected for instance 'v_vid_in_axi4s_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
+WARNING: [Synth 8-7023] instance 'v_vid_in_axi4s_0' of module 'design_1_v_vid_in_axi4s_0_0' has 28 connections declared, but only 22 given [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/synth/design_1.v:1113]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_6_xlconcat' [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_6_xlconcat' (0#1) [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
@@ -283,18 +308,18 @@ WARNING: [Synth 8-7129] Port In103[0] in module xlconcat_v2_1_6_xlconcat is eith
 WARNING: [Synth 8-7129] Port In104[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2581.359 ; gain = 509.652 ; free physical = 193 ; free virtual = 15754
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2580.484 ; gain = 509.684 ; free physical = 176 ; free virtual = 14698
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2593.234 ; gain = 521.527 ; free physical = 193 ; free virtual = 15754
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2592.359 ; gain = 521.559 ; free physical = 176 ; free virtual = 14698
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2593.234 ; gain = 521.527 ; free physical = 193 ; free virtual = 15754
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2592.359 ; gain = 521.559 ; free physical = 176 ; free virtual = 14698
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2599.172 ; gain = 0.000 ; free physical = 193 ; free virtual = 15753
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2598.297 ; gain = 0.000 ; free physical = 171 ; free virtual = 14694
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -345,8 +370,6 @@ Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/
 Finished Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_v_tc_out_0/design_1_v_tc_out_0/design_1_v_tc_out_0_in_context.xdc] for cell 'design_1_i/v_tc_out'
 Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_v_vid_in_axi4s_0_0/design_1_v_vid_in_axi4s_0_0/design_1_v_vid_in_axi4s_0_0_in_context.xdc] for cell 'design_1_i/v_vid_in_axi4s_0'
 Finished Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_v_vid_in_axi4s_0_0/design_1_v_vid_in_axi4s_0_0/design_1_v_vid_in_axi4s_0_0_in_context.xdc] for cell 'design_1_i/v_vid_in_axi4s_0'
-Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_free_counter_0_0/design_1_free_counter_0_0/design_1_free_counter_0_0_in_context.xdc] for cell 'design_1_i/free_counter_0'
-Finished Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_free_counter_0_0/design_1_free_counter_0_0/design_1_free_counter_0_0_in_context.xdc] for cell 'design_1_i/free_counter_0'
 Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_0_in_context.xdc] for cell 'design_1_i/lorenz_reader_0'
 Finished Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_1/design_1_lorenz_reader_0_0_in_context.xdc] for cell 'design_1_i/lorenz_reader_0'
 Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]
@@ -363,26 +386,26 @@ Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/
 Finished Parsing XDC File [/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.188 ; gain = 0.000 ; free physical = 178 ; free virtual = 15744
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2697.312 ; gain = 0.000 ; free physical = 177 ; free virtual = 14699
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.188 ; gain = 0.000 ; free physical = 186 ; free virtual = 15752
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2697.312 ; gain = 0.000 ; free physical = 175 ; free virtual = 14699
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_i/proc_sys_reset_0' at clock pin 'slowest_sync_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_i/v_tc_in' at clock pin 'clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_i/v_vid_in_axi4s_0' at clock pin 'vid_io_in_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 200 ; free virtual = 15766
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 174 ; free virtual = 14696
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 200 ; free virtual = 15766
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 174 ; free virtual = 14696
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -706,13 +729,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/v_axi4s_vid_out_0. (co
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/v_tc_in. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/v_tc_out. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/v_vid_in_axi4s_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/free_counter_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/lorenz_reader_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 196 ; free virtual = 15763
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 173 ; free virtual = 14700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 195 ; free virtual = 15762
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 170 ; free virtual = 14702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -735,25 +757,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 194 ; free virtual = 15766
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 170 ; free virtual = 14700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 194 ; free virtual = 15765
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 183 ; free virtual = 14716
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 192 ; free virtual = 15763
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 183 ; free virtual = 14718
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 192 ; free virtual = 15763
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 183 ; free virtual = 14718
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -771,37 +793,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -824,17 +846,16 @@ Report BlackBoxes:
 |11    |design_1_axis_subset_converter_in_0  |         1|
 |12    |design_1_axis_subset_converter_out_0 |         1|
 |13    |design_1_dvi2rgb_0_0                 |         1|
-|14    |design_1_free_counter_0_0            |         1|
-|15    |design_1_lorenz_reader_0_1           |         1|
-|16    |design_1_proc_sys_reset_0_0          |         1|
-|17    |design_1_proc_sys_reset_fclk0_0      |         1|
-|18    |design_1_proc_sys_reset_fclk1_0      |         1|
-|19    |design_1_processing_system7_0_0      |         1|
-|20    |design_1_rgb2dvi_1_0                 |         1|
-|21    |design_1_v_axi4s_vid_out_0_0         |         1|
-|22    |design_1_v_tc_in_0                   |         1|
-|23    |design_1_v_tc_out_0                  |         1|
-|24    |design_1_v_vid_in_axi4s_0_0          |         1|
+|14    |design_1_lorenz_reader_0_1           |         1|
+|15    |design_1_proc_sys_reset_0_0          |         1|
+|16    |design_1_proc_sys_reset_fclk0_0      |         1|
+|17    |design_1_proc_sys_reset_fclk1_0      |         1|
+|18    |design_1_processing_system7_0_0      |         1|
+|19    |design_1_rgb2dvi_1_0                 |         1|
+|20    |design_1_v_axi4s_vid_out_0_0         |         1|
+|21    |design_1_v_tc_in_0                   |         1|
+|22    |design_1_v_tc_out_0                  |         1|
+|23    |design_1_v_vid_in_axi4s_0_0          |         1|
 +------+-------------------------------------+----------+
 
 Report Cell Usage: 
@@ -848,49 +869,48 @@ Report Cell Usage:
 |6     |design_1_axis_subset_converter_in  |     1|
 |7     |design_1_axis_subset_converter_out |     1|
 |8     |design_1_dvi2rgb_0                 |     1|
-|9     |design_1_free_counter_0            |     1|
-|10    |design_1_lorenz_reader_0           |     1|
-|11    |design_1_m00_regslice              |     1|
-|12    |design_1_proc_sys_reset_0          |     1|
-|13    |design_1_proc_sys_reset_fclk0      |     1|
-|14    |design_1_proc_sys_reset_fclk1      |     1|
-|15    |design_1_processing_system7_0      |     1|
-|16    |design_1_rgb2dvi_1                 |     1|
-|17    |design_1_s00_regslice              |     1|
-|18    |design_1_s01_regslice              |     1|
-|19    |design_1_v_axi4s_vid_out_0         |     1|
-|20    |design_1_v_tc_in                   |     1|
-|21    |design_1_v_tc_out                  |     1|
-|22    |design_1_v_vid_in_axi4s_0          |     1|
-|23    |design_1_xbar                      |     2|
-|25    |IOBUF                              |     4|
-|26    |OBUF                               |     1|
+|9     |design_1_lorenz_reader_0           |     1|
+|10    |design_1_m00_regslice              |     1|
+|11    |design_1_proc_sys_reset_0          |     1|
+|12    |design_1_proc_sys_reset_fclk0      |     1|
+|13    |design_1_proc_sys_reset_fclk1      |     1|
+|14    |design_1_processing_system7_0      |     1|
+|15    |design_1_rgb2dvi_1                 |     1|
+|16    |design_1_s00_regslice              |     1|
+|17    |design_1_s01_regslice              |     1|
+|18    |design_1_v_axi4s_vid_out_0         |     1|
+|19    |design_1_v_tc_in                   |     1|
+|20    |design_1_v_tc_out                  |     1|
+|21    |design_1_v_vid_in_axi4s_0          |     1|
+|22    |design_1_xbar                      |     2|
+|24    |IOBUF                              |     4|
+|25    |OBUF                               |     1|
 +------+-----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15759
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14706
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2698.188 ; gain = 521.527 ; free physical = 188 ; free virtual = 15759
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2698.188 ; gain = 626.480 ; free physical = 188 ; free virtual = 15758
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2697.312 ; gain = 521.559 ; free physical = 171 ; free virtual = 14708
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2697.312 ; gain = 626.512 ; free physical = 171 ; free virtual = 14708
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2698.188 ; gain = 0.000 ; free physical = 530 ; free virtual = 16101
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2697.312 ; gain = 0.000 ; free physical = 230 ; free virtual = 14761
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.188 ; gain = 0.000 ; free physical = 531 ; free virtual = 16101
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2697.312 ; gain = 0.000 ; free physical = 224 ; free virtual = 14760
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Synth Design complete | Checksum: 4505a8ed
+Synth Design complete | Checksum: 81bdc55c
 INFO: [Common 17-83] Releasing license: Synthesis
-119 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
+120 Infos, 191 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 2698.188 ; gain = 963.691 ; free physical = 531 ; free virtual = 16101
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2075.188; main = 1686.424; forked = 438.858
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4414.422; main = 2666.176; forked = 1748.246
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.188 ; gain = 0.000 ; free physical = 531 ; free virtual = 16101
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:37 . Memory (MB): peak = 2697.312 ; gain = 962.754 ; free physical = 224 ; free virtual = 14760
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2057.266; main = 1684.691; forked = 422.043
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4350.164; main = 2665.301; forked = 1684.863
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2697.312 ; gain = 0.000 ; free physical = 224 ; free virtual = 14760
 INFO: [Common 17-1381] The checkpoint '/home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Sep 17 22:30:30 2026...
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 19 17:05:14 2026...

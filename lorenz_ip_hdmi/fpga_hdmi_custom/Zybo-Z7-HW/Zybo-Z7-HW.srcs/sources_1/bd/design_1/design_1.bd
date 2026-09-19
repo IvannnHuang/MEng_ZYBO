@@ -31,7 +31,8 @@
         "m03_couplers": {},
         "m04_couplers": {},
         "m05_couplers": {},
-        "m06_couplers": {}
+        "m06_couplers": {},
+        "m07_couplers": {}
       },
       "axi_interconnect_hp0": {
         "xbar": "",
@@ -54,7 +55,6 @@
       "v_tc_in": "",
       "v_tc_out": "",
       "v_vid_in_axi4s_0": "",
-      "free_counter_0": "",
       "lorenz_reader_0": ""
     },
     "interface_ports": {
@@ -1682,7 +1682,7 @@
         "xci_name": "design_1_axi_interconnect_gp0_0",
         "parameters": {
           "NUM_MI": {
-            "value": "7"
+            "value": "8"
           }
         },
         "interface_ports": {
@@ -1722,6 +1722,11 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M06_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M07_AXI": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -1868,6 +1873,22 @@
           "M06_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M07_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M07_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M07_ARESETN"
+              }
+            }
+          },
+          "M07_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -1879,7 +1900,7 @@
             "inst_hier_path": "axi_interconnect_gp0/xbar",
             "parameters": {
               "NUM_MI": {
-                "value": "7"
+                "value": "8"
               },
               "NUM_SI": {
                 "value": "1"
@@ -1899,7 +1920,8 @@
                   "M03_AXI",
                   "M04_AXI",
                   "M05_AXI",
-                  "M06_AXI"
+                  "M06_AXI",
+                  "M07_AXI"
                 ]
               }
             }
@@ -2397,6 +2419,62 @@
                 ]
               }
             }
+          },
+          "m07_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m07_couplers_to_m07_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
@@ -2448,6 +2526,12 @@
               "M06_AXI"
             ]
           },
+          "m07_couplers_to_axi_interconnect_gp0": {
+            "interface_ports": [
+              "m07_couplers/M_AXI",
+              "M07_AXI"
+            ]
+          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -2494,6 +2578,12 @@
             "interface_ports": [
               "xbar/M06_AXI",
               "m06_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m07_couplers": {
+            "interface_ports": [
+              "xbar/M07_AXI",
+              "m07_couplers/S_AXI"
             ]
           }
         },
@@ -2582,6 +2672,18 @@
               "m06_couplers/M_ARESETN"
             ]
           },
+          "M07_ACLK_1": {
+            "ports": [
+              "M07_ACLK",
+              "m07_couplers/M_ACLK"
+            ]
+          },
+          "M07_ARESETN_1": {
+            "ports": [
+              "M07_ARESETN",
+              "m07_couplers/M_ARESETN"
+            ]
+          },
           "S00_ACLK_1": {
             "ports": [
               "S00_ACLK",
@@ -2605,7 +2707,8 @@
               "m03_couplers/S_ACLK",
               "m04_couplers/S_ACLK",
               "m05_couplers/S_ACLK",
-              "m06_couplers/S_ACLK"
+              "m06_couplers/S_ACLK",
+              "m07_couplers/S_ACLK"
             ]
           },
           "axi_interconnect_gp0_ARESETN_net": {
@@ -2619,7 +2722,8 @@
               "m03_couplers/S_ARESETN",
               "m04_couplers/S_ARESETN",
               "m05_couplers/S_ARESETN",
-              "m06_couplers/S_ARESETN"
+              "m06_couplers/S_ARESETN",
+              "m07_couplers/S_ARESETN"
             ]
           }
         }
@@ -3414,13 +3518,6 @@
           }
         }
       },
-      "free_counter_0": {
-        "vlnv": "user.org:user:free_counter:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_1_free_counter_0_0",
-        "xci_path": "ip/design_1_free_counter_0_0/design_1_free_counter_0_0.xci",
-        "inst_hier_path": "free_counter_0"
-      },
       "lorenz_reader_0": {
         "vlnv": "user.org:user:lorenz_reader:1.0",
         "ip_revision": "1",
@@ -3481,12 +3578,6 @@
       "axi_interconnect_gp0_M05_AXI": {
         "interface_ports": [
           "axi_interconnect_gp0/M05_AXI",
-          "free_counter_0/S00_AXI"
-        ]
-      },
-      "axi_interconnect_gp0_M06_AXI": {
-        "interface_ports": [
-          "axi_interconnect_gp0/M06_AXI",
           "lorenz_reader_0/S00_AXI"
         ]
       },
@@ -3626,9 +3717,9 @@
           "v_tc_in/s_axi_aclk",
           "v_tc_out/s_axi_aclk",
           "axi_interconnect_gp0/M05_ACLK",
-          "free_counter_0/s00_axi_aclk",
           "axi_interconnect_gp0/M06_ACLK",
-          "lorenz_reader_0/s00_axi_aclk"
+          "lorenz_reader_0/s00_axi_aclk",
+          "axi_interconnect_gp0/M07_ACLK"
         ]
       },
       "ARESETN_1": {
@@ -3726,9 +3817,9 @@
           "v_tc_in/s_axi_aresetn",
           "v_tc_out/s_axi_aresetn",
           "axi_interconnect_gp0/M05_ARESETN",
-          "free_counter_0/s00_axi_aresetn",
           "axi_interconnect_gp0/M06_ARESETN",
-          "lorenz_reader_0/s00_axi_aresetn"
+          "lorenz_reader_0/s00_axi_aresetn",
+          "axi_interconnect_gp0/M07_ARESETN"
         ]
       },
       "proc_sys_reset_fclk1_interconnect_aresetn": {
@@ -3804,13 +3895,6 @@
                 "address_block": "/axi_vdma_0/S_AXI_LITE/Reg",
                 "offset": "0x43000000",
                 "range": "64K"
-              },
-              "SEG_free_counter_0_S00_AXI_reg": {
-                "address_block": "/free_counter_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x43C30000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_lorenz_reader_0_S00_AXI_reg": {
                 "address_block": "/lorenz_reader_0/S00_AXI/S00_AXI_reg",

@@ -29,8 +29,6 @@
 #include "video_capture/video_capture.h"
 #include "display_ctrl/display_ctrl.h"
 #include "intc/intc.h"
-#include "switch_reader/switch_reader.h"
-#include "free_counter/free_counter.h"
 #include "lorenz_plot/lorenz_plot.h"
 #include <stdio.h>
 #include "xuartps.h"
@@ -56,26 +54,33 @@
 #define HDMI_IN_GPIO_IRPT_ID 	XPAR_FABRIC_AXI_GPIO_VIDEO_IP2INTC_IRPT_INTR
 #define SCU_TIMER_ID 			XPAR_SCUTIMER_DEVICE_ID
 #define UART_BASEADDR 			XPAR_PS7_UART_1_BASEADDR
+/* ============================================================== */
+/* ===== EDIT HERE IF YOUR LORENZ IP HAS A DIFFERENT NAME  ======= */
+/* ============================================================== */
 /*
- * switch_reader is only defined here if that IP is actually present in the
- * current hardware build (i.e. XPAR_SWITCH_READER_0_S00_AXI_BASEADDR exists
- * in xparameters.h). This keeps the project building even when only
- * free_counter has been added to the block design so far.
- * Update the macro name below if your switch_reader instance is not
- * "switch_reader_0".
+ * "lorenz_reader_0" below is just the name THIS project's Lorenz IP
+ * instance was given in the Vivado block design. Xilinx auto-generates
+ * the macro XPAR_<instance-name>_S00_AXI_BASEADDR from that name into
+ * xparameters.h, so if your own block design named the IP instance
+ * something else (e.g. "lorenz_block_0"), the macro below will not
+ * exist and this code will not find your IP.
+ *
+ * FIX: open your project's xparameters.h, search for "LORENZ", and
+ * copy the exact *_S00_AXI_BASEADDR macro name you find there. Paste
+ * it into BOTH lines directly below, replacing
+ * XPAR_LORENZ_READER_0_S00_AXI_BASEADDR.
+ *
+ * That's it - this is the ONLY place in the whole project that needs
+ * to change. Nothing else in video_demo.c or in lorenz_plot.c ever
+ * references the IP instance name directly.
  */
-#ifdef XPAR_SWITCH_READER_0_S00_AXI_BASEADDR
-#define HAVE_SWITCH_READER
-#define SWITCH_READER_BASEADDR	XPAR_SWITCH_READER_0_S00_AXI_BASEADDR
-#endif
-/* Update this if your free_counter instance in the block design is not "free_counter_0" */
-#define FREE_COUNTER_BASEADDR	XPAR_FREE_COUNTER_0_S00_AXI_BASEADDR
-/* Same pattern as switch_reader: only enabled once lorenz_reader is actually
- * in the hardware build. Update the macro name if your instance is not
- * "lorenz_reader_0". */
-#ifdef XPAR_LORENZ_READER_0_S00_AXI_BASEADDR
+#ifdef XPAR_LORENZ_READER_0_S00_AXI_BASEADDR                    /* <-- EDIT: replace with your macro */
 #define HAVE_LORENZ_READER
+#define LORENZ_READER_BASEADDR	XPAR_LORENZ_READER_0_S00_AXI_BASEADDR /* <-- EDIT: replace with your macro */
 #endif
+/* ============================================================== */
+/* ===================== END EDIT SECTION ========================= */
+/* ============================================================== */
 
 /* ------------------------------------------------------------ */
 /*				Global Variables								*/
@@ -292,32 +297,6 @@ void DemoRun()
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
 			break;
-#ifdef HAVE_SWITCH_READER
-		case '9':
-		{
-			u32 switchVal = SwitchReader_Read(SWITCH_READER_BASEADDR);
-			SwitchReader_DrawDecimal(pFrames[dispCtrl.curFrame], DEMO_STRIDE,
-			                          switchVal, 50, 50, 8, 255, 255, 255);
-			Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
-			xil_printf("\n\rSwitch value: %lu", (unsigned long) switchVal);
-			TimerDelay(500000);
-			break;
-		}
-#endif
-		case 'c':
-		{
-			xil_printf("\n\rLive counter - press any key to stop\n\r");
-			while (!XUartPs_IsReceiveData(UART_BASEADDR))
-			{
-				u32 counterVal = FreeCounter_Read(FREE_COUNTER_BASEADDR);
-				SwitchReader_DrawDecimal(pFrames[dispCtrl.curFrame], DEMO_STRIDE,
-				                          counterVal, 50, 50, 8, 255, 255, 255);
-				Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
-				TimerDelay(1000000);
-			}
-			XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET); /* consume the key that stopped the loop */
-			break;
-		}
 #ifdef HAVE_LORENZ_READER
 		case 'l':
 		{
@@ -326,7 +305,7 @@ void DemoRun()
 			LorenzPlot_ClearAll(pFrames[dispCtrl.curFrame], DEMO_STRIDE);
 			while (!XUartPs_IsReceiveData(UART_BASEADDR))
 			{
-				LorenzPlot_Update(pFrames[dispCtrl.curFrame], DEMO_STRIDE);
+				LorenzPlot_Update(pFrames[dispCtrl.curFrame], DEMO_STRIDE, LORENZ_READER_BASEADDR);
 				Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
 				TimerDelay(30000);
 			}
@@ -370,10 +349,6 @@ void DemoPrintMenu()
 	xil_printf("6 - Change Video Framebuffer Index\n\r");
 	xil_printf("7 - Grab Video Frame and invert colors\n\r");
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
-#ifdef HAVE_SWITCH_READER
-	xil_printf("9 - Read switches and print decimal value to Display Framebuffer\n\r");
-#endif
-	xil_printf("c - Show live free-running counter on Display Framebuffer (any key to stop)\n\r");
 #ifdef HAVE_LORENZ_READER
 	xil_printf("l - Plot live Lorenz X/Y/Z as scrolling charts (any key to stop)\n\r");
 #endif

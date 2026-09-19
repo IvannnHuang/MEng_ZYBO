@@ -1,4 +1,4 @@
-22:39:43 **** Incremental Build of configuration Debug for project Zybo-Z7-10-HDMI ****
+17:12:59 **** Incremental Build of configuration Debug for project Zybo-Z7-10-HDMI ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,5 +6,5 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 make[1]: Nothing to be done for 'main-build'.
 
-22:39:43 Build Finished (took 483ms)
+17:12:59 Build Finished (took 496ms)
 

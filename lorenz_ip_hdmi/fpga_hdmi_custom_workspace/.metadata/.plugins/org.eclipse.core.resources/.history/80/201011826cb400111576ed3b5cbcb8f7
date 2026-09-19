@@ -1,0 +1,14 @@
+#include "down_counter.h"
+#include "xil_io.h"
+
+#define DOWN_COUNTER_REG0_OFFSET 0x0
+
+/*
+ * AXI read disabled: down_counter is no longer used by video_demo.c.
+ */
+#if 0
+u32 DownCounter_Read(u32 baseAddr)
+{
+	return Xil_In32(baseAddr + DOWN_COUNTER_REG0_OFFSET);
+}
+#endif

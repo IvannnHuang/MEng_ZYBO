@@ -1,0 +1,14 @@
+#ifndef DOWN_COUNTER_H_
+#define DOWN_COUNTER_H_
+
+#include "xil_types.h"
+
+/*
+ * Reads register 0 of the down_counter AXI4-Lite IP: a value that
+ * decrements on its own inside the FPGA fabric, once per AXI clock,
+ * from 1000 down to 0 (see count_value in
+ * down_counter_slave_lite_v1_0_S00_AXI.v).
+ */
+u32 DownCounter_Read(u32 baseAddr);
+
+#endif /* DOWN_COUNTER_H_ */

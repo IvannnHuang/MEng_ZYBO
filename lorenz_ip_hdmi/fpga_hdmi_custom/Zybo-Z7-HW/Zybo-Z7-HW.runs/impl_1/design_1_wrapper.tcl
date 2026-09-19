@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config  -id {17-179}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -117,6 +118,7 @@ OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.cache/wt [current_project]
   set_property parent.project_path /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/Zybo-Z7-HW/Zybo-Z7-HW.xpr [current_project]
   set_property ip_repo_paths {
+  /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/down_counter_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/free_counter_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/fpga_hdmi_custom/ip_repo/switch_reader_1_0
   /home/zkarim28/Meng/MEng_ZYBO/lorenz_ip_hdmi/ip_repo/lorenz_reader_1_0

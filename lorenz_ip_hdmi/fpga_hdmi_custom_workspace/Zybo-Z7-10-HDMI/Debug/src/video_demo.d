@@ -30,8 +30,7 @@ src/video_demo.o src/video_demo.o: ../src/video_demo.c \
  /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xil_spinlock.h \
  ../src/display_ctrl/display_ctrl.h ../src/display_ctrl/vga_modes.h \
  ../src/display_ctrl/xvtc.h ../src/display_ctrl/../dynclk/dynclk.h \
- ../src/intc/intc.h ../src/switch_reader/switch_reader.h \
- ../src/free_counter/free_counter.h ../src/lorenz_plot/lorenz_plot.h \
+ ../src/intc/intc.h ../src/lorenz_plot/lorenz_plot.h \
  /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xuartps.h \
  /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xuartps_hw.h \
  /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xplatform_info.h \
@@ -74,8 +73,6 @@ src/video_demo.o src/video_demo.o: ../src/video_demo.c \
 ../src/display_ctrl/xvtc.h:
 ../src/display_ctrl/../dynclk/dynclk.h:
 ../src/intc/intc.h:
-../src/switch_reader/switch_reader.h:
-../src/free_counter/free_counter.h:
 ../src/lorenz_plot/lorenz_plot.h:
 /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xuartps.h:
 /home/zkarim28/fpga_hdmi_custom_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xuartps_hw.h:

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Thu Sep 17 01:47:11 2026
-| Host         : fedora running 64-bit unknown
+| Date         : Sat Sep 19 17:04:06 2026
+| Host         : dhcp-vl2042-15607.redrover.cornell.edu running 64-bit unknown
 | Command      : report_utilization -file design_1_xbar_2_utilization_synth.rpt -pb design_1_xbar_2_utilization_synth.pb
 | Design       : design_1_xbar_2
 | Device       : xc7z010clg400-1
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  252 |     0 |          0 |     17600 |  1.43 |
-|   LUT as Logic          |  252 |     0 |          0 |     17600 |  1.43 |
+| Slice LUTs*             |  290 |     0 |          0 |     17600 |  1.65 |
+|   LUT as Logic          |  290 |     0 |          0 |     17600 |  1.65 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
 | Slice Registers         |  136 |     0 |          0 |     35200 |  0.39 |
 |   Register as Flip Flop |  136 |     0 |          0 |     35200 |  0.39 |
@@ -150,11 +150,11 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  136 |        Flop & Latch |
-| LUT6     |   93 |                 LUT |
-| LUT5     |   84 |                 LUT |
-| LUT4     |   56 |                 LUT |
-| LUT3     |   49 |                 LUT |
-| LUT2     |   17 |                 LUT |
+| LUT6     |  128 |                 LUT |
+| LUT4     |  101 |                 LUT |
+| LUT5     |   65 |                 LUT |
+| LUT2     |   18 |                 LUT |
+| LUT3     |   11 |                 LUT |
 | LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 
