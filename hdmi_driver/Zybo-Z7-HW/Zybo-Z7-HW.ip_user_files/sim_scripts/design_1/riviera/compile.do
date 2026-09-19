@@ -118,7 +118,6 @@ vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../Zybo-Z7-HW.gen/sourc
 
 vcom -work xil_defaultlib -93  -incr \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/ClockGen.vhd" \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsync.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsyncReset.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/DVI_Constants.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/OutputSERDES.vhd" \
@@ -228,11 +227,8 @@ vcom -work xil_defaultlib -93  -incr \
 "../../../bd/design_1/ip/design_1_v_tc_out_0/sim/design_1_v_tc_out_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_15 -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_17 -l processing_system7_vip_v1_0_19 -l generic_baseblocks_v2_1_2 -l axi_register_slice_v2_1_31 -l fifo_generator_v13_2_10 -l axi_data_fifo_v2_1_30 -l axi_crossbar_v2_1_32 -l lib_pkg_v1_0_4 -l lib_fifo_v1_0_19 -l blk_mem_gen_v8_4_8 -l lib_bmg_v1_0_17 -l lib_srl_fifo_v1_0_4 -l axi_datamover_v5_1_33 -l axi_vdma_v6_3_19 -l axis_infrastructure_v1_1_1 -l axis_register_slice_v1_1_31 -l axis_subset_converter_v1_1_31 -l xlconstant_v1_1_9 -l axi_lite_ipif_v3_0_4 -l v_tc_v6_1_14 -l v_vid_in_axi4s_v4_0_11 -l v_axi4s_vid_out_v4_0_18 -l v_tc_v6_2_8 -l axi_protocol_converter_v2_1_31 \
-"../../../bd/design_1/ipshared/5ae0/hdl/integrator.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_solver.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/signed_mult.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver.v" \
 "../../../bd/design_1/ip/design_1_lorenz_dda_driver_0_0/sim/design_1_lorenz_dda_driver_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_31  -incr -v2k5 "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_15 -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_17 -l processing_system7_vip_v1_0_19 -l generic_baseblocks_v2_1_2 -l axi_register_slice_v2_1_31 -l fifo_generator_v13_2_10 -l axi_data_fifo_v2_1_30 -l axi_crossbar_v2_1_32 -l lib_pkg_v1_0_4 -l lib_fifo_v1_0_19 -l blk_mem_gen_v8_4_8 -l lib_bmg_v1_0_17 -l lib_srl_fifo_v1_0_4 -l axi_datamover_v5_1_33 -l axi_vdma_v6_3_19 -l axis_infrastructure_v1_1_1 -l axis_register_slice_v1_1_31 -l axis_subset_converter_v1_1_31 -l xlconstant_v1_1_9 -l axi_lite_ipif_v3_0_4 -l v_tc_v6_1_14 -l v_vid_in_axi4s_v4_0_11 -l v_axi4s_vid_out_v4_0_18 -l v_tc_v6_2_8 -l axi_protocol_converter_v2_1_31 \

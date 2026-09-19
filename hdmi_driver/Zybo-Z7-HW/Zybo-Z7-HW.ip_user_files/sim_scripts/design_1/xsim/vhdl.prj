@@ -6,7 +6,6 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_proc_sys_reset_fclk0_0/sim/design_1_proc_sys_reset_fclk0_0.vhd" \
 "../../../bd/design_1/ip/design_1_proc_sys_reset_fclk1_0/sim/design_1_proc_sys_reset_fclk1_0.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/ClockGen.vhd" \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsync.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsyncReset.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/DVI_Constants.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/OutputSERDES.vhd" \

@@ -100,3 +100,12 @@ operable program or batch file.
 13:24:56 INFO  : Successfully done setting XSCT server connection channel  
 13:24:59 INFO  : Successfully done setting workspace for the tool. 
 13:24:59 INFO  : Successfully done query RDI_DATADIR 
+00:10:09 DEBUG : Logs will be stored at '/home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/IDE.log'.
+00:10:14 INFO  : Launching XSCT server: xsct -n  -interactive /home/zkarim28/Meng/MEng_ZYBO/hdmi_driver/temp_xsdb_launch_script.tcl
+00:10:15 INFO  : Registering command handlers for Vitis TCF services
+00:10:18 INFO  : Platform repository initialization has completed.
+00:10:18 INFO  : XSCT server has started successfully.
+00:10:18 INFO  : plnx-install-location is set to ''
+00:10:18 INFO  : Successfully done setting XSCT server connection channel  
+00:10:18 INFO  : Successfully done query RDI_DATADIR 
+00:10:18 INFO  : Successfully done setting workspace for the tool. 

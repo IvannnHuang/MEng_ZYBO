@@ -115,7 +115,6 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sour
 
 vcom -work xil_defaultlib  -93  \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/ClockGen.vhd" \
-"../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsync.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/SyncAsyncReset.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/DVI_Constants.vhd" \
 "../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/d57c/src/OutputSERDES.vhd" \
@@ -225,11 +224,8 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_v_tc_out_0/sim/design_1_v_tc_out_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
-"../../../bd/design_1/ipshared/5ae0/hdl/integrator.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_solver.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/signed_mult.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/5ae0/hdl/lorenz_dda_driver.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/3969/hdl/lorenz_dda_driver.v" \
 "../../../bd/design_1/ip/design_1_lorenz_dda_driver_0_0/sim/design_1_lorenz_dda_driver_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_31  -incr -mfcu  "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/b28c/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/a4a8/hdl" "+incdir+../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/434f/hdl" "+incdir+D:/xilinx/Vivado/2024.1/data/xilinx_vip/include" \
