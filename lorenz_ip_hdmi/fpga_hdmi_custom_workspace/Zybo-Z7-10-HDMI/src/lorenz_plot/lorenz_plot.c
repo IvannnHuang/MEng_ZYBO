@@ -13,7 +13,14 @@
 #define LORENZ_X_OFFSET 0x0
 #define LORENZ_Y_OFFSET 0x4
 #define LORENZ_Z_OFFSET 0x8
-#define LORENZ_CTRL_OFFSET 0xC /* bit 0: 1 = run, 0 = pause (see lorenz_reader.v) */
+/*
+ * Bit 0: 1 = run, 0 = pause. Bits [31:1]: speed divider N - the
+ * solver advances one step every (N+1) AXI clock cycles instead of
+ * every cycle (0 = full speed). See lorenz_reader.v.
+ */
+#define LORENZ_CTRL_OFFSET 0xC
+#define LORENZ_CTRL_RUN_BIT     0x1u
+#define LORENZ_CTRL_SPEED_SHIFT 1u
 
 /* Q7.20 fixed point <-> float, same format the IP/solver uses. */
 typedef signed int lorenz_fix;
@@ -261,12 +268,28 @@ void LorenzPlot_Update(u8 *frame, u32 stride, u32 baseAddr)
 	LorenzPlot_DrawFloat(frame, stride, z, 2, 20, TEXT_Y + 80,        TEXT_SCALE, 0,   0,   255);
 }
 
+/*
+ * Start/Stop/SetSpeed all read-modify-write LORENZ_CTRL_OFFSET so
+ * they only ever touch their own field - starting/stopping never
+ * resets the speed you last set, and changing speed never pauses (or
+ * un-pauses) the solver.
+ */
 void Lorenz_Start(u32 baseAddr)
 {
-	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, 1);
+	u32 ctrl = Xil_In32(baseAddr + LORENZ_CTRL_OFFSET);
+	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, ctrl | LORENZ_CTRL_RUN_BIT);
 }
 
 void Lorenz_Stop(u32 baseAddr)
 {
-	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, 0);
+	u32 ctrl = Xil_In32(baseAddr + LORENZ_CTRL_OFFSET);
+	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, ctrl & ~LORENZ_CTRL_RUN_BIT);
+}
+
+void Lorenz_SetSpeed(u32 baseAddr, u32 cyclesPerStep)
+{
+	u32 ctrl = Xil_In32(baseAddr + LORENZ_CTRL_OFFSET);
+	u32 divVal = (cyclesPerStep > 0) ? (cyclesPerStep - 1) : 0;
+	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET,
+	          (ctrl & LORENZ_CTRL_RUN_BIT) | (divVal << LORENZ_CTRL_SPEED_SHIFT));
 }

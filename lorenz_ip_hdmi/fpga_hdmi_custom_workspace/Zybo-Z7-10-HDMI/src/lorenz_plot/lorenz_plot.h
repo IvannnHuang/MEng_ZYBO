@@ -41,9 +41,20 @@ void LorenzPlot_Update(u8 *frame, u32 stride, u32 baseAddr);
  *
  * The AXI-Lite bus itself is never touched by this - only a control
  * register bit inside the IP - so these calls always succeed regardless
- * of whether the solver is currently running or already paused.
+ * of whether the solver is currently running or already paused. Both
+ * preserve whatever speed was last set with Lorenz_SetSpeed().
  */
 void Lorenz_Start(u32 baseAddr);
 void Lorenz_Stop(u32 baseAddr);
+
+/*
+ * Sets how many AXI clock cycles elapse per Lorenz integration step:
+ * 1 = full speed (the power-on default, identical to the original
+ * always-on behavior), larger values slow the simulation down. This
+ * changes how fast the attractor evolves, not s00_axi_aclk itself -
+ * see the speed_div comment in lorenz_reader.v. Preserves whatever
+ * run/pause state is currently set.
+ */
+void Lorenz_SetSpeed(u32 baseAddr, u32 cyclesPerStep);
 
 #endif /* LORENZ_PLOT_H_ */

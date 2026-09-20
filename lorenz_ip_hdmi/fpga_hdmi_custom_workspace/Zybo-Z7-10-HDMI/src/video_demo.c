@@ -305,6 +305,9 @@ void DemoRun()
 			 * or after returning to this menu) should pick the trace back
 			 * up rather than wipe it. */
 			static u8 lorenzInitialized = 0;
+			/* Cycles per integration step; 1 = full speed. Persists
+			 * across pauses and menu round-trips via '+'/'-' below. */
+			static u32 lorenzCyclesPerStep = 1;
 			u8 lorenzViewing = 1;
 
 			if (!lorenzInitialized)
@@ -318,7 +321,7 @@ void DemoRun()
 			 * paused from a previous visit to this menu, this continues
 			 * it from exactly the x/y/z it was paused at. */
 			Lorenz_Start(LORENZ_READER_BASEADDR);
-			xil_printf("\n\rPlotting Lorenz X/Y/Z - press any key to pause\n\r");
+			xil_printf("\n\rPlotting Lorenz X/Y/Z - '+'/'-' to change speed, any other key to pause\n\r");
 
 			while (lorenzViewing)
 			{
@@ -328,7 +331,21 @@ void DemoRun()
 					Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
 					TimerDelay(30000);
 				}
-				XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET); /* consume the key that paused it */
+				userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+				xil_printf("%c", userInput);
+
+				if (userInput == '+' || userInput == '-')
+				{
+					/* Speed change only - keep viewing, don't pause. */
+					if (userInput == '+' && lorenzCyclesPerStep > 1)
+						lorenzCyclesPerStep >>= 1;
+					else if (userInput == '-' && lorenzCyclesPerStep < (1u << 24))
+						lorenzCyclesPerStep <<= 1;
+
+					Lorenz_SetSpeed(LORENZ_READER_BASEADDR, lorenzCyclesPerStep);
+					xil_printf("\n\rSpeed: %lu cycle(s)/step\n\r", (unsigned long) lorenzCyclesPerStep);
+					continue;
+				}
 
 				/* Freeze the solver in hardware - not just the display
 				 * loop - so it isn't silently still running (and drifting
@@ -393,7 +410,7 @@ void DemoPrintMenu()
 	xil_printf("7 - Grab Video Frame and invert colors\n\r");
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
 #ifdef HAVE_LORENZ_READER
-	xil_printf("l - Plot live Lorenz X/Y/Z (any key to pause, 'g' to resume)\n\r");
+	xil_printf("l - Plot live Lorenz X/Y/Z ('+'/'-' speed, any key to pause, 'g' resume)\n\r");
 #endif
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");

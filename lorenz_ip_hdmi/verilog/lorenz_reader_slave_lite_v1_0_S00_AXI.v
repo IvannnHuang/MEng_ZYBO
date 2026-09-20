@@ -21,12 +21,13 @@
 		input wire signed [26:0] x_next,
 		input wire signed [26:0] y_next,
 		input wire signed [26:0] z_next,
-		// >>> USER EDIT (start/stop feature): this output exposes
-		// slv_reg3 (offset 0xC) straight back up to the top-level
-		// wrapper, which reads bit 0 as a run/pause flag - see the
-		// matching comment in lorenz_reader.v. Ports in this slot can
-		// go either direction; this one happens to flow out instead
-		// of in, unlike x_next/y_next/z_next above.
+		// >>> USER EDIT (start/stop + speed feature): this output
+		// exposes slv_reg3 (offset 0xC) straight back up to the
+		// top-level wrapper, which reads bit 0 as a run/pause flag and
+		// bits [31:1] as a speed divider - see the matching comment in
+		// lorenz_reader.v. Ports in this slot can go either direction;
+		// this one happens to flow out instead of in, unlike
+		// x_next/y_next/z_next above.
 		output wire [C_S_AXI_DATA_WIDTH-1:0] ctrl_reg,
 
 		// User ports ends

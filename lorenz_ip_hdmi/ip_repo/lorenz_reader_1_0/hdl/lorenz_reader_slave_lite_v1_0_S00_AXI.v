@@ -18,8 +18,8 @@
 		input wire signed [26:0] x_next,
 		input wire signed [26:0] y_next,
 		input wire signed [26:0] z_next,
-		// Control register, PS-writable at offset 0xC (slv_reg3). Bit 0 is used by the 
-		// top-level module as a solver hold/freeze flag.
+		// Control register, PS-writable at offset 0xC (slv_reg3). Bit 0 is used by the
+		// top-level module as a solver hold/freeze flag; bits [31:1] as a speed divider.
 		output wire [C_S_AXI_DATA_WIDTH-1:0] ctrl_reg,
 
 		// User ports ends

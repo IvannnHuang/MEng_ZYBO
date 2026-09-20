@@ -108,26 +108,42 @@ without touching a physical clock signal anywhere:
   value as a new output port, `ctrl_reg` (added in the same `// Users to
   add ports here` slot as `x_next`/`y_next`/`z_next`, just flowing the
   opposite direction).
-- `lorenz_reader.v` takes `ctrl_reg[0]` as `run` and feeds it into `solver`
-  (which just passes it straight through to each `integrator`), and also
-  gates the periodic `restart_counter` so a pause doesn't eat into that
-  countdown.
-- `integrator.sv`'s register update becomes
-  `v1new = reset ? InitialOut : (run ? adder_out : v1)` - when `run` is 0
-  the register simply holds its current value every cycle instead of
-  advancing. Since `x`/`y`/`z` are nothing but these registers' current
-  contents, "paused" and "the state x/y/z were last computed to" are the
-  same thing - resuming is just letting the register update again, with no
-  separate save/restore step needed.
+- `lorenz_reader.v` takes `ctrl_reg[0]` as `run`. `integrator.sv`'s
+  register update is `v1new = reset ? InitialOut : (run-ish ? adder_out :
+  v1)` - when the signal driving that port is 0 the register simply holds
+  its current value every cycle instead of advancing. Since `x`/`y`/`z`
+  are nothing but these registers' current contents, "paused" and "the
+  state x/y/z were last computed to" are the same thing - resuming is
+  just letting the register update again, with no separate save/restore
+  step needed.
 
-**Why this isn't done by literally stopping `s00_axi_aclk`:** that same
-clock also runs the AXI-Lite bus and the control register's own write
-path. Gating it off would make the register write that's supposed to
-*resume* the solver impossible to deliver in the first place - a deadlock.
-Ad-hoc combinational clock gating is also generally avoided in FPGA
-designs (glitch risk on the clock net) in favor of exactly this pattern: a
-synchronous enable/hold on the data path, with the clock itself left
-running everywhere.
+**Speed control reuses the same register and the same trick.** Bits
+`[31:1]` of `ctrl_reg` are a speed divider `N`: `lorenz_reader.v` runs a
+free-running `speed_counter` and derives a one-cycle `tick` pulse that
+fires every `(N+1)` AXI clock cycles instead of every single cycle -
+`tick = run && (speed_counter >= speed_div)`. `tick`, not `run` directly,
+is what's wired into `solver`'s (and therefore each `integrator`'s) `run`
+port, and it's also what gates the periodic `restart_counter` (so slowing
+down doesn't change how many *steps* happen between restarts, only how
+long each step takes in wall-clock time). `N=0` - the power-on/reset
+default - means full speed, one step per cycle, identical to the
+original always-on behavior. Software sets this with `Lorenz_SetSpeed()`
+in the same `lorenz_plot.c`, which read-modify-writes `ctrl_reg` so
+changing speed never disturbs the run/pause bit and vice versa. No
+changes were needed in `integrator.sv`, `solver.sv`, or the AXI slave
+file for this - `slv_reg3` was already a full 32-bit, fully
+software-writable register, and `integrator.sv`'s "run" port already
+meant exactly "advance on cycles where this is asserted," which is still
+true whether it's driven by a plain pause flag or a derived tick pulse.
+
+**Why none of this is done by literally stopping `s00_axi_aclk`:** that
+same clock also runs the AXI-Lite bus and the control register's own
+write path. Gating it off would make the register write that's supposed
+to *resume* (or speed back up) the solver impossible to deliver in the
+first place - a deadlock. Ad-hoc combinational clock gating is also
+generally avoided in FPGA designs (glitch risk on the clock net) in
+favor of exactly this pattern: a synchronous enable/hold/divide on the
+data path, with the clock itself left running everywhere.
 
 ## Recipe: adding a new custom register-mapped AXI-Lite IP
 
