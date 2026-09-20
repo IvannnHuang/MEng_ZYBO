@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="zkarim28" Host="dhcp-vl2042-15607.redrover.cornell.edu" Pid="331220" HostCore="4" HostMemory="16226708">
-    </Process>
-</ProcessHandle>
