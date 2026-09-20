@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File .\scripts\Convert-VitisMakefiles.ps1 -Root .
