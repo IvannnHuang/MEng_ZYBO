@@ -23,10 +23,11 @@
 //// integrator /////////////////////////////////
 /////////////////////////////////////////////////
 
-module integrator(out, funct, InitialOut, clk, reset);
+module integrator(out, funct, InitialOut, clk, reset, run);
 
     input                   clk;
     input                   reset;
+    input                   run;        // 0 = hold v1 (pause); 1 = integrate normally
     input signed [26:0]  funct;      //the dV/dt function
     input signed [26:0]  InitialOut;  //the initial state variable V
 
@@ -44,7 +45,10 @@ module integrator(out, funct, InitialOut, clk, reset);
     // OG code did not line up with HW Block diagram
     // Funtionality is the same
     assign adder_out = v1 + funct;   // Adder
-    assign v1new = reset ? InitialOut : adder_out; // Mux
+    // reset always wins; otherwise hold the current value unless running -
+    // this is what lets a paused solver resume from exactly where it left
+    // off instead of losing state or drifting while nobody is polling it.
+    assign v1new = reset ? InitialOut : (run ? adder_out : v1); // Mux
 
     assign out = v1; // Assign output
 

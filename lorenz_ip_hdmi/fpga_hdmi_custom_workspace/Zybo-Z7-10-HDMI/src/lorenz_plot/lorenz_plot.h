@@ -32,4 +32,18 @@ void LorenzPlot_ClearAll(u8 *frame, u32 stride);
  */
 void LorenzPlot_Update(u8 *frame, u32 stride, u32 baseAddr);
 
+/*
+ * Pause/resume the solver in hardware. Stop() freezes every integrator
+ * register in place (see integrator.sv's "run" input) rather than
+ * clearing them, so a later Start() resumes computing x/y/z from exactly
+ * the values they were paused at - not from the initial conditions, and
+ * not from wherever they'd have drifted to if left running unobserved.
+ *
+ * The AXI-Lite bus itself is never touched by this - only a control
+ * register bit inside the IP - so these calls always succeed regardless
+ * of whether the solver is currently running or already paused.
+ */
+void Lorenz_Start(u32 baseAddr);
+void Lorenz_Stop(u32 baseAddr);
+
 #endif /* LORENZ_PLOT_H_ */

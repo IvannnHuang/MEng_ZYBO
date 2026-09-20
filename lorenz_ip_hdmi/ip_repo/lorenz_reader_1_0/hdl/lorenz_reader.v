@@ -58,25 +58,46 @@
 	wire signed [26:0] y_next;
 	wire signed [26:0] z_next;
 
+	// PS-writable control register (offset 0xC / slv_reg3). Bit 0 is a
+	// run/pause flag: the CPU writes 1 to start (or resume) the solver
+	// and 0 to pause it, from software on the terminal - no separate
+	// "reset to zero" step needed, since pausing just holds every
+	// integrator's register in place (see integrator.sv) rather than
+	// clearing it. Resuming continues from exactly those held values.
+	//
+	// This does NOT gate s00_axi_aclk itself - the AXI-Lite bus (and
+	// this control register's own write path) must keep running so the
+	// CPU can issue the resume command in the first place; gating the
+	// literal clock net would deadlock that and risks glitches besides.
+	// A synchronous hold has the identical effect on the solver's state
+	// without any of that risk.
+	wire [C_S00_AXI_DATA_WIDTH-1:0] ctrl_reg;
+	wire run = ctrl_reg[0];
+
 	// Left completely unsupervised, this Euler-integrated fixed-point
 	// solver numerically decays to (0,0,0) after tens of millions of
 	// cycles (same failure mode documented in fibonacci_bram.sv, which
 	// avoids it by capturing every single cycle). Since the CPU here
 	// only polls occasionally, we instead periodically restart the
 	// solver back to its initial conditions - same technique, same
-	// period (2048 cycles) as the proven-working BRAM path.
+	// period (2048 cycles) as the proven-working BRAM path. This counter
+	// only advances while running, so a pause doesn't eat into the
+	// countdown and doesn't trigger an unexpected restart right as the
+	// solver resumes.
 	localparam integer RESTART_PERIOD = 2048;
 	reg [31:0] restart_counter;
 	always @(posedge s00_axi_aclk) begin
 		if (~s00_axi_aresetn) begin
 			restart_counter <= 32'd0;
-		end else if (restart_counter == RESTART_PERIOD-1) begin
-			restart_counter <= 32'd0;
-		end else begin
-			restart_counter <= restart_counter + 1'b1;
+		end else if (run) begin
+			if (restart_counter == RESTART_PERIOD-1) begin
+				restart_counter <= 32'd0;
+			end else begin
+				restart_counter <= restart_counter + 1'b1;
+			end
 		end
 	end
-	wire solver_reset = (~s00_axi_aresetn) | (restart_counter == RESTART_PERIOD-1);
+	wire solver_reset = (~s00_axi_aresetn) | (run && restart_counter == RESTART_PERIOD-1);
 
 	// The solver lives entirely inside this IP, clocked by the same
 	// S_AXI_ACLK the AXI-Lite bus runs on - no external ports, no
@@ -85,6 +106,7 @@
 	solver solver_i (
 		.clk(s00_axi_aclk),
 		.reset(solver_reset),
+		.run(run),
 
 		.x_next(x_next),
 		.y_next(y_next),
@@ -108,6 +130,7 @@
 		.x_next(x_next),
 		.y_next(y_next),
 		.z_next(z_next),
+		.ctrl_reg(ctrl_reg),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

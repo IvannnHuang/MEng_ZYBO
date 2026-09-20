@@ -23,9 +23,10 @@
 //// solver (Lorenz system ODE solver) ///////////
 //////////////////////////////////////////////////
 
-module solver (clk, reset, x_next, y_next, z_next, x_0, y_0, z_0, beta, sig, rho, dt);
+module solver (clk, reset, run, x_next, y_next, z_next, x_0, y_0, z_0, beta, sig, rho, dt);
     input clk;
     input reset;
+    input run; // 0 = pause (hold x/y/z); 1 = integrate. Passed straight to each integrator.
 
     input signed [26:0] x_0;
     input signed [26:0] y_0;
@@ -65,7 +66,8 @@ module solver (clk, reset, x_next, y_next, z_next, x_0, y_0, z_0, beta, sig, rho
         .funct(funct_x),
         .InitialOut(x_0),
         .clk(clk),
-        .reset(reset)
+        .reset(reset),
+        .run(run)
     );
     // y
     // y = y + [(x >>> dt) * (rho - z)] - (y >>> dt)
@@ -81,7 +83,8 @@ module solver (clk, reset, x_next, y_next, z_next, x_0, y_0, z_0, beta, sig, rho
         .funct(funct_y),
         .InitialOut(y_0),
         .clk(clk),
-        .reset(reset)
+        .reset(reset),
+        .run(run)
     );
     // z
     // z = z + z + [(x >>> dt) * y] - [beta * (z >>> dt)]
@@ -101,6 +104,7 @@ module solver (clk, reset, x_next, y_next, z_next, x_0, y_0, z_0, beta, sig, rho
         .funct(funct_z),
         .InitialOut(z_0),
         .clk(clk),
-        .reset(reset)
+        .reset(reset),
+        .run(run)
     );
 endmodule

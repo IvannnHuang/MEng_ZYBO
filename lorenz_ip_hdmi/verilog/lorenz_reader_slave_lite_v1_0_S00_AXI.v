@@ -21,6 +21,13 @@
 		input wire signed [26:0] x_next,
 		input wire signed [26:0] y_next,
 		input wire signed [26:0] z_next,
+		// >>> USER EDIT (start/stop feature): this output exposes
+		// slv_reg3 (offset 0xC) straight back up to the top-level
+		// wrapper, which reads bit 0 as a run/pause flag - see the
+		// matching comment in lorenz_reader.v. Ports in this slot can
+		// go either direction; this one happens to flow out instead
+		// of in, unlike x_next/y_next/z_next above.
+		output wire [C_S_AXI_DATA_WIDTH-1:0] ctrl_reg,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -148,7 +155,8 @@
 	assign S_AXI_ARREADY	= axi_arready;
 	assign S_AXI_RRESP	= axi_rresp;
 	assign S_AXI_RVALID	= axi_rvalid;
-	 //state machine varibles 
+	assign ctrl_reg = slv_reg3;
+	 //state machine varibles
 	 reg [1:0] state_write;
 	 reg [1:0] state_read;
 	 //State machine local parameters

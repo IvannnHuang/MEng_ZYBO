@@ -21,6 +21,10 @@ IP later, re-copy the files here to keep this folder in sync.
 | `lorenz_reader.v` | Vivado AXI4-peripheral wizard **template, edited**. Top-level IP wrapper. |
 | `lorenz_reader_slave_lite_v1_0_S00_AXI.v` | Vivado AXI4-peripheral wizard **template, edited**. The AXI-Lite register interface. |
 
+`integrator.sv` and `solver.sv` also carry a `run` input (see "Start/stop
+from software" below) - a synchronous hold/pause line, not a template edit,
+since these two files have no wizard content to begin with.
+
 The `.v`/`.sv` files themselves are annotated in place with
 `>>> USER EDIT <<<` comment blocks marking exactly what was added and where,
 so you can diff them mentally against a fresh wizard-generated file.
@@ -90,6 +94,40 @@ wizard boilerplate falls away identically in both.
   has the identical gotcha at the identical location.
 - The wizard's own `// Add user logic here` slot at the very end of this
   file, like in `lorenz_reader.v`, was left empty.
+
+## Start/stop from software
+
+The solver can be paused and resumed from the terminal on the PS side,
+without touching a physical clock signal anywhere:
+
+- `slv_reg3` (AXI offset `0xC`) is now a real control register instead of
+  an unused scratch register. Bit 0 is a run/pause flag: software writes
+  `1` to run and `0` to pause (see `Lorenz_Start`/`Lorenz_Stop` in
+  `fpga_hdmi_custom_workspace/Zybo-Z7-10-HDMI/src/lorenz_plot/lorenz_plot.c`).
+- `lorenz_reader_slave_lite_v1_0_S00_AXI.v` exposes that register's live
+  value as a new output port, `ctrl_reg` (added in the same `// Users to
+  add ports here` slot as `x_next`/`y_next`/`z_next`, just flowing the
+  opposite direction).
+- `lorenz_reader.v` takes `ctrl_reg[0]` as `run` and feeds it into `solver`
+  (which just passes it straight through to each `integrator`), and also
+  gates the periodic `restart_counter` so a pause doesn't eat into that
+  countdown.
+- `integrator.sv`'s register update becomes
+  `v1new = reset ? InitialOut : (run ? adder_out : v1)` - when `run` is 0
+  the register simply holds its current value every cycle instead of
+  advancing. Since `x`/`y`/`z` are nothing but these registers' current
+  contents, "paused" and "the state x/y/z were last computed to" are the
+  same thing - resuming is just letting the register update again, with no
+  separate save/restore step needed.
+
+**Why this isn't done by literally stopping `s00_axi_aclk`:** that same
+clock also runs the AXI-Lite bus and the control register's own write
+path. Gating it off would make the register write that's supposed to
+*resume* the solver impossible to deliver in the first place - a deadlock.
+Ad-hoc combinational clock gating is also generally avoided in FPGA
+designs (glitch risk on the clock net) in favor of exactly this pattern: a
+synchronous enable/hold on the data path, with the clock itself left
+running everywhere.
 
 ## Recipe: adding a new custom register-mapped AXI-Lite IP
 

@@ -13,6 +13,7 @@
 #define LORENZ_X_OFFSET 0x0
 #define LORENZ_Y_OFFSET 0x4
 #define LORENZ_Z_OFFSET 0x8
+#define LORENZ_CTRL_OFFSET 0xC /* bit 0: 1 = run, 0 = pause (see lorenz_reader.v) */
 
 /* Q7.20 fixed point <-> float, same format the IP/solver uses. */
 typedef signed int lorenz_fix;
@@ -258,4 +259,14 @@ void LorenzPlot_Update(u8 *frame, u32 stride, u32 baseAddr)
 	LorenzPlot_DrawFloat(frame, stride, x, 2, 20, TEXT_Y,             TEXT_SCALE, 255, 0,   0);
 	LorenzPlot_DrawFloat(frame, stride, y, 2, 20, TEXT_Y + 40,        TEXT_SCALE, 0,   255, 0);
 	LorenzPlot_DrawFloat(frame, stride, z, 2, 20, TEXT_Y + 80,        TEXT_SCALE, 0,   0,   255);
+}
+
+void Lorenz_Start(u32 baseAddr)
+{
+	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, 1);
+}
+
+void Lorenz_Stop(u32 baseAddr)
+{
+	Xil_Out32(baseAddr + LORENZ_CTRL_OFFSET, 0);
 }

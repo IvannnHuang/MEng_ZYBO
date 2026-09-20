@@ -18,6 +18,9 @@
 		input wire signed [26:0] x_next,
 		input wire signed [26:0] y_next,
 		input wire signed [26:0] z_next,
+		// Control register, PS-writable at offset 0xC (slv_reg3). Bit 0 is used by the 
+		// top-level module as a solver hold/freeze flag.
+		output wire [C_S_AXI_DATA_WIDTH-1:0] ctrl_reg,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -140,6 +143,7 @@
 	assign S_AXI_ARREADY	= axi_arready;
 	assign S_AXI_RRESP	= axi_rresp;
 	assign S_AXI_RVALID	= axi_rvalid;
+	assign ctrl_reg = slv_reg3;
 	 //state machine varibles 
 	 reg [1:0] state_write;
 	 reg [1:0] state_read;

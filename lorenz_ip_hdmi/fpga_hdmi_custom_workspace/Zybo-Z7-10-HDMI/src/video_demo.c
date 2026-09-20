@@ -300,16 +300,59 @@ void DemoRun()
 #ifdef HAVE_LORENZ_READER
 		case 'l':
 		{
-			xil_printf("\n\rPlotting Lorenz X/Y/Z - press any key to stop\n\r");
-			LorenzPlot_Init();
-			LorenzPlot_ClearAll(pFrames[dispCtrl.curFrame], DEMO_STRIDE);
-			while (!XUartPs_IsReceiveData(UART_BASEADDR))
+			/* Only clear the screen/re-init plot ranges the first time we
+			 * ever enter Lorenz mode - re-entering later (after a pause,
+			 * or after returning to this menu) should pick the trace back
+			 * up rather than wipe it. */
+			static u8 lorenzInitialized = 0;
+			u8 lorenzViewing = 1;
+
+			if (!lorenzInitialized)
 			{
-				LorenzPlot_Update(pFrames[dispCtrl.curFrame], DEMO_STRIDE, LORENZ_READER_BASEADDR);
-				Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
-				TimerDelay(30000);
+				LorenzPlot_Init();
+				LorenzPlot_ClearAll(pFrames[dispCtrl.curFrame], DEMO_STRIDE);
+				lorenzInitialized = 1;
 			}
-			XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET); /* consume the key that stopped the loop */
+
+			/* Resume (or start) the solver in hardware. If it was left
+			 * paused from a previous visit to this menu, this continues
+			 * it from exactly the x/y/z it was paused at. */
+			Lorenz_Start(LORENZ_READER_BASEADDR);
+			xil_printf("\n\rPlotting Lorenz X/Y/Z - press any key to pause\n\r");
+
+			while (lorenzViewing)
+			{
+				while (!XUartPs_IsReceiveData(UART_BASEADDR))
+				{
+					LorenzPlot_Update(pFrames[dispCtrl.curFrame], DEMO_STRIDE, LORENZ_READER_BASEADDR);
+					Xil_DCacheFlushRange((unsigned int) pFrames[dispCtrl.curFrame], DEMO_MAX_FRAME);
+					TimerDelay(30000);
+				}
+				XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET); /* consume the key that paused it */
+
+				/* Freeze the solver in hardware - not just the display
+				 * loop - so it isn't silently still running (and drifting
+				 * further into the attractor) while nobody is watching. */
+				Lorenz_Stop(LORENZ_READER_BASEADDR);
+				xil_printf("\n\rPaused - press 'g' to resume, any other key returns to the menu\n\r");
+
+				while (!XUartPs_IsReceiveData(UART_BASEADDR))
+				{}
+				userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+				xil_printf("%c", userInput);
+
+				if (userInput == 'g' || userInput == 'G')
+				{
+					Lorenz_Start(LORENZ_READER_BASEADDR);
+					xil_printf("\n\rResumed - press any key to pause\n\r");
+				}
+				else
+				{
+					/* Back to the main menu. The solver stays paused in
+					 * hardware until 'l' is pressed again. */
+					lorenzViewing = 0;
+				}
+			}
 			break;
 		}
 #endif
@@ -350,7 +393,7 @@ void DemoPrintMenu()
 	xil_printf("7 - Grab Video Frame and invert colors\n\r");
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
 #ifdef HAVE_LORENZ_READER
-	xil_printf("l - Plot live Lorenz X/Y/Z as scrolling charts (any key to stop)\n\r");
+	xil_printf("l - Plot live Lorenz X/Y/Z (any key to pause, 'g' to resume)\n\r");
 #endif
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
