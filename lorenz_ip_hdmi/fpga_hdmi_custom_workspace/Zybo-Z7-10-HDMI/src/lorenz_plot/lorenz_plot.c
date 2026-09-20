@@ -150,6 +150,8 @@ typedef struct {
 	float minH, maxH;
 	float minV, maxV;
 	u8 red, blue, green;
+	int hasLast; /* 0 until the first point is plotted, or right after a clear */
+	int lastPx, lastPy;
 } PhasePlot;
 
 static PhasePlot plotXY, plotYZ, plotXZ;
@@ -170,6 +172,7 @@ static void PhasePlot_Init(PhasePlot *plot, u32 xOrigin, u32 yOrigin,
 	plot->red = red;
 	plot->blue = blue;
 	plot->green = green;
+	plot->hasLast = 0;
 }
 
 static void PhasePlot_Clear(u8 *frame, u32 stride, PhasePlot *plot)
@@ -186,13 +189,70 @@ static void PhasePlot_Clear(u8 *frame, u32 stride, PhasePlot *plot)
 			frame[addr + 2] = 0;
 		}
 	}
+
+	/* Nothing on screen to connect a line to anymore. */
+	plot->hasLast = 0;
+}
+
+/* Small 2x2 dot so a single point is still visible on an HDMI display. */
+static void PhasePlot_DrawDot(u8 *frame, u32 stride, PhasePlot *plot, int px, int py)
+{
+	int dx, dy, x, y;
+	u32 addr;
+
+	for (dy = 0; dy < 2 && (py + dy) < (int) plot->height; dy++)
+	{
+		for (dx = 0; dx < 2 && (px + dx) < (int) plot->width; dx++)
+		{
+			x = (int) plot->xOrigin + px + dx;
+			y = (int) plot->yOrigin + py + dy;
+			addr = ((u32) x * 3) + ((u32) y * stride);
+			frame[addr]     = plot->red;
+			frame[addr + 1] = plot->blue;
+			frame[addr + 2] = plot->green;
+		}
+	}
+}
+
+/*
+ * Bresenham line, drawn directly into the frame buffer between two
+ * absolute (already xOrigin/yOrigin-offset) pixel coordinates. Both
+ * endpoints are always inside the plot's rectangle (callers only ever
+ * pass in-bounds points), so every point the line passes through is
+ * too - no separate clipping needed.
+ */
+static void PhasePlot_DrawLine(u8 *frame, u32 stride, int x0, int y0, int x1, int y1,
+                                u8 red, u8 blue, u8 green)
+{
+	int dx = (x1 > x0) ? (x1 - x0) : (x0 - x1);
+	int dy = (y1 > y0) ? (y0 - y1) : (y1 - y0); /* negative abs(y1-y0) */
+	int sx = (x0 < x1) ? 1 : -1;
+	int sy = (y0 < y1) ? 1 : -1;
+	int err = dx + dy;
+	int e2;
+	u32 addr;
+
+	for (;;)
+	{
+		addr = ((u32) x0 * 3) + ((u32) y0 * stride);
+		frame[addr]     = red;
+		frame[addr + 1] = blue;
+		frame[addr + 2] = green;
+
+		if (x0 == x1 && y0 == y1)
+			break;
+
+		e2 = 2 * err;
+		if (e2 >= dy) { err += dy; x0 += sx; }
+		if (e2 <= dx) { err += dx; y0 += sy; }
+	}
 }
 
 static void PhasePlot_AddPoint(u8 *frame, u32 stride, PhasePlot *plot,
                                 float hVal, float vVal)
 {
 	float th, tv;
-	u32 px, py, dx, dy, x, y, addr;
+	int px, py, dx, dy;
 
 	th = (hVal - plot->minH) / (plot->maxH - plot->minH);
 	if (th < 0.0f) th = 0.0f;
@@ -202,22 +262,45 @@ static void PhasePlot_AddPoint(u8 *frame, u32 stride, PhasePlot *plot,
 	if (tv < 0.0f) tv = 0.0f;
 	if (tv > 1.0f) tv = 1.0f;
 
-	px = (u32) (th * (plot->width - 1));
-	py = (plot->height - 1) - (u32) (tv * (plot->height - 1));
+	px = (int) (th * (plot->width - 1));
+	py = (int) (plot->height - 1) - (int) (tv * (plot->height - 1));
 
-	/* Draw a small 2x2 dot so points are visible on an HDMI display */
-	for (dy = 0; dy < 2 && (py + dy) < plot->height; dy++)
+	if (plot->hasLast)
 	{
-		for (dx = 0; dx < 2 && (px + dx) < plot->width; dx++)
+		dx = (px > plot->lastPx) ? (px - plot->lastPx) : (plot->lastPx - px);
+		dy = (py > plot->lastPy) ? (py - plot->lastPy) : (plot->lastPy - py);
+
+		/*
+		 * The solver periodically restarts itself in hardware (see
+		 * RESTART_PERIOD in lorenz_reader.v) to avoid fixed-point
+		 * drift-to-zero, which snaps x/y/z back to the initial
+		 * conditions. An unusually large jump between two
+		 * consecutive samples means we straddled one of those
+		 * restarts (or a hardware pause/resume), not a genuine
+		 * fast move through the attractor - draw a fresh dot there
+		 * instead of a long streak connecting two unrelated parts
+		 * of the trace.
+		 */
+		if (dx > (int) (plot->width / 3) || dy > (int) (plot->height / 3))
 		{
-			x = plot->xOrigin + px + dx;
-			y = plot->yOrigin + py + dy;
-			addr = (x * 3) + (y * stride);
-			frame[addr]     = plot->red;
-			frame[addr + 1] = plot->blue;
-			frame[addr + 2] = plot->green;
+			PhasePlot_DrawDot(frame, stride, plot, px, py);
+		}
+		else
+		{
+			PhasePlot_DrawLine(frame, stride,
+			                    (int) plot->xOrigin + plot->lastPx, (int) plot->yOrigin + plot->lastPy,
+			                    (int) plot->xOrigin + px, (int) plot->yOrigin + py,
+			                    plot->red, plot->blue, plot->green);
 		}
 	}
+	else
+	{
+		PhasePlot_DrawDot(frame, stride, plot, px, py);
+	}
+
+	plot->lastPx = px;
+	plot->lastPy = py;
+	plot->hasLast = 1;
 }
 
 /*

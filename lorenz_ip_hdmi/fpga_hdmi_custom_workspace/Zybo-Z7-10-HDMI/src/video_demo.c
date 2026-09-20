@@ -305,21 +305,32 @@ void DemoRun()
 			 * or after returning to this menu) should pick the trace back
 			 * up rather than wipe it. */
 			static u8 lorenzInitialized = 0;
-			/* Cycles per integration step; 1 = full speed. Persists
-			 * across pauses and menu round-trips via '+'/'-' below. */
-			static u32 lorenzCyclesPerStep = 1;
+			/*
+			 * Cycles per integration step; 1 = full speed. Persists
+			 * across pauses and menu round-trips via '+'/'-' below.
+			 *
+			 * Starts at 2^31 (2147483648), the largest value the
+			 * hardware's 31-bit speed field (ctrl_reg[31:1] in
+			 * lorenz_reader.v) can hold - so drawing starts deliberately
+			 * slow and visible rather than at full speed. At a 100 MHz
+			 * AXI clock that's ~21.5 seconds per step; press '+' to
+			 * speed it back up.
+			 */
+			static u32 lorenzCyclesPerStep = 7483648u;
 			u8 lorenzViewing = 1;
 
 			if (!lorenzInitialized)
 			{
 				LorenzPlot_Init();
 				LorenzPlot_ClearAll(pFrames[dispCtrl.curFrame], DEMO_STRIDE);
+				Lorenz_SetSpeed(LORENZ_READER_BASEADDR, lorenzCyclesPerStep);
 				lorenzInitialized = 1;
 			}
 
 			/* Resume (or start) the solver in hardware. If it was left
 			 * paused from a previous visit to this menu, this continues
-			 * it from exactly the x/y/z it was paused at. */
+			 * it from exactly the x/y/z it was paused at (and at
+			 * whatever speed was last set). */
 			Lorenz_Start(LORENZ_READER_BASEADDR);
 			xil_printf("\n\rPlotting Lorenz X/Y/Z - '+'/'-' to change speed, any other key to pause\n\r");
 
@@ -339,8 +350,8 @@ void DemoRun()
 					/* Speed change only - keep viewing, don't pause. */
 					if (userInput == '+' && lorenzCyclesPerStep > 1)
 						lorenzCyclesPerStep >>= 1;
-					else if (userInput == '-' && lorenzCyclesPerStep < (1u << 24))
-						lorenzCyclesPerStep <<= 1;
+					else if (userInput == '-' && lorenzCyclesPerStep < 2147483648u)
+						lorenzCyclesPerStep <<= 1; /* 2147483648 = 2^31, the hardware speed field's max */
 
 					Lorenz_SetSpeed(LORENZ_READER_BASEADDR, lorenzCyclesPerStep);
 					xil_printf("\n\rSpeed: %lu cycle(s)/step\n\r", (unsigned long) lorenzCyclesPerStep);
