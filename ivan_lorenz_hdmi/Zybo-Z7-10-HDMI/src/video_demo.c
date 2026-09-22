@@ -218,7 +218,7 @@ void DemoRun()
 	u8 paused = 0;
 	/* Current Lorenz parameters (classic sigma=10, rho=28, beta=8/3); dtShift is a raw HW shift count, not Q6.20 - kept as vars so 's' can show/update them. */
 	float x0 = 0.5f, y0 = 0.0f, z0 = 0.0f;
-	float sigma = 10.0f, rho = 25.0f, beta = (8.0f / 3.0f);
+	float sigma = 10.0f, rho = 25.0f, beta = 2.0f;
 	u32 dtShift = 10u;
 #endif
 
