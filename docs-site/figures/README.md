@@ -35,7 +35,15 @@ Drop screenshots here; pages reference them by name. If the file exists it is sh
 | `step-display-panel-closeup` | present (`step-display-panel-closeup.jpg`) | Parameter panel: initial values on the left, live X/Y/Z on the right | 02-build-log/08-plotter-demo.html |
 | `step-export-hardware-dialog` | present (`step-export-hardware-dialog.png`) | File → Export → Export Hardware… (tick 'Include bitstream' in the dialog that opens) | 02-build-log/05-bitstream-xsa.html |
 | `step-ip-block-design` | present (`step-ip-block-design.png`) | Whole design_1 with lorenz_dda_driver_0 added (highlighted) | 02-build-log/04-block-design.html |
+| `step-ip-first-edit-window-add-ip-repository` | present (`step-ip-first-edit-window-add-ip-repository.png`) | Settings → IP → Repository: list is empty; + opens the folder browser (IP's own folder selected) | 02-build-log/03-custom-ip.html |
+| `step-ip-first-edit-window-include-new-ip-folder` | present (`step-ip-first-edit-window-include-new-ip-folder.png`) | After Select → OK: '1 repository was added to the project', IPs (1) found | 02-build-log/03-custom-ip.html |
+| `step-ip-first-edit-window-lookup-new-ip-in-catalog` | present (`step-ip-first-edit-window-lookup-new-ip-in-catalog.png`) | IP Catalog, searched by name: the IP now appears under User Repository → AXI Peripheral | 02-build-log/03-custom-ip.html |
+| `step-ip-first-edit-window-open-second-edit-window-in-catalog` | present (`step-ip-first-edit-window-open-second-edit-window-in-catalog.png`) | Right-click the IP in the catalog → Edit in IP Packager | 02-build-log/03-custom-ip.html |
+| `step-ip-first-edit-window-setting` | present (`step-ip-first-edit-window-setting.png`) | First editor window: Tools → Settings, about to open IP → Repository | 02-build-log/03-custom-ip.html |
+| `step-ip-open-first-edit-window` | present (`step-ip-open-first-edit-window.png`) | Wizard's Peripheral Generation Summary page: 'Edit IP' selected, click Finish | 02-build-log/03-custom-ip.html |
 | `step-ip-packager-summary` | present (`step-ip-packager-summary.png`) | IP Packager, Review and Package, running from the short-path project d:/xilinx/temp/lorenz_dda_driver_v1_0_project3 | 02-build-log/01-environment.html, 02-build-log/03-custom-ip.html |
+| `step-ip-second-edit-window-repackage-ip-page` | present (`step-ip-second-edit-window-repackage-ip-page.png`) | Package IP, Review and Package: Re-Package IP applies the edits | 02-build-log/03-custom-ip.html |
+| `step-ip-second-edit-window-view` | present (`step-ip-second-edit-window-view.png`) | Second editor window: Sources now lists the IP's real .v files; Package IP tab open | 02-build-log/03-custom-ip.html |
 | `step-ip-upgrade-report` | text only | Report IP Status showing lorenz_dda_driver_0 needing upgrade | 02-build-log/04-block-design.html |
 | `step-repo-ip-settings` | present (`step-repo-ip-settings.png`) | Project Settings → IP → Repository listing ip_repo/lorenz_dda_driver_1_0 | 02-build-log/04-block-design.html |
 | `step-sd-boot-running` | present (`step-sd-boot-running.jpg`) | Boot-mode jumper JP5 on the SD position | 02-build-log/09-run-sd-boot.html |

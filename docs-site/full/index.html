@@ -15,8 +15,6 @@
 <a class="l sub2" href="02-build-log/05-ps-driver-plotter.html">05 Attempt 3 · PS driver and plotter</a>
 <a class="l sub2" href="02-build-log/06-ui-performance.html">06 Attempt 3 · UI and speed</a>
 <a class="l sub2" href="02-build-log/07-sd-boot-repo.html">07 Attempt 3 · SD boot and repo</a>
-<h4>STUDENT DEMO</h4>
-<a class="l sub2" href="../clean/student-demo/01-ps-c-files.html">01 PS - C Files</a>
 <h4>Reference</h4>
 <a class="l" href="issues.html">Issues</a>
 <a class="l" href="gotchas.html">Gotchas</a>
@@ -48,7 +46,6 @@
 <p class="links">Highlighted boxes are new. Control path: PS → GP0 → interconnect → Lorenz IP (write parameters, pulse step, read x/y/z). Video path: the CPU draws into DDR; the VDMA streams it through the stock Digilent TX chain to HDMI. The PL only computes numbers; the CPU draws the picture.</p>
 
 <h2>Timeline of attempts</h2><table><tr><th>Attempt</th><th>Dates (local)</th><th>Design</th><th>IP address</th><th>Outcome</th></tr><tr><td>1</td><td>09-11 → 09-21</td><td><code>hdmi_driver</code>: hand-simplified, HDMI-out only</td><td>0x43C10000</td><td>No UART, no video — abandoned (<a href="issues.html#i-08">I-08</a>)</td></tr><tr><td>2</td><td>09-21 evening</td><td><code>ivan_lorenz_hdmi</code>: fresh Digilent project + IP</td><td>0x43C30000</td><td>HP0 interconnect corruption, stale bitstream, black box — restarted (<a href="issues.html#i-09">I-09</a>, <a href="issues.html#i-12">I-12</a>, <a href="issues.html#i-13">I-13</a>)</td></tr><tr><td>3</td><td>09-22</td><td><code>ivan_lorenz_hdmi</code>: fresh Digilent project again</td><td>0x43C30000</td><td><b>Works</b>; boots from SD</td></tr></table><p class="links">Transcript timestamps are UTC; Vivado logs are local (EDT = UTC−4); dates above are local. Attempt boundaries are my reading of the chat and your answers.</p>
-<h2>STUDENT DEMO</h2><div class="card"><a href="../clean/student-demo/01-ps-c-files.html"><b>01 PS - C Files</b></a><p>Instructor notes: supplied scaffold, student implementation tasks, drawing helpers, and pending release tests.</p></div>
 <h2>Contents</h2><div class="card toc"><ul>
 <li><a href="01-architecture.html"><b>01 Architecture</b></a> — original demo vs my changes, data flow, the solver</li>
 <li><a href="02-build-log/00-background.html"><b>00 Background (Feb-Sep 17)</b></a> — From commit history only — no chat record of these weeks.</li>

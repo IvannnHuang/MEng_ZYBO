@@ -15,8 +15,6 @@
 <a class="l sub2" href="02-build-log/05-ps-driver-plotter.html">05 Attempt 3 · PS driver and plotter</a>
 <a class="l sub2" href="02-build-log/06-ui-performance.html">06 Attempt 3 · UI and speed</a>
 <a class="l sub2" href="02-build-log/07-sd-boot-repo.html">07 Attempt 3 · SD boot and repo</a>
-<h4>STUDENT DEMO</h4>
-<a class="l sub2" href="../clean/student-demo/01-ps-c-files.html">01 PS - C Files</a>
 <h4>Reference</h4>
 <a class="l cur" href="issues.html">Issues</a>
 <a class="l" href="gotchas.html">Gotchas</a>
@@ -50,7 +48,7 @@
 ($env:COMPUTERNAME.ToCharArray() | ForEach-Object { [int]$_ }) -join ','   # any value &gt; 127 is a problem (8216 = U+2018)
 Rename-Computer -NewName "IvanLaptop" -Restart                        # plain ASCII, letters/digits/hyphen</code></pre></div>
 <figure class="fig missing"><img src="../figures/issue-spawn-failed.png" alt="Vivado messages with the repeated Spawn failed error" onload="this.parentNode.classList.remove('missing')" onerror="this.parentNode.classList.add('missing')"><div class="ph"><b>FIGURE PLACEHOLDER</b><br>save screenshot as <code>docs-site/figures/issue-spawn-failed.png</code></div><figcaption><b>Figure.</b> Vivado messages with the repeated Spawn failed error</figcaption></figure>
-<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-spawn">01.7 Package the IP: Vivado 'Spawn failed'</a></p>
+<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-spawn">01.8 Package the IP: Vivado 'Spawn failed'</a></p>
 </article>
 <article class="issue-entry" id="i-02"><h3><span class="id">I-02</span><code>[Common 17-680]</code> path length exceeds 260 bytes <span class="tag resolved">resolved</span></h3>
 <dl class="kv"><dt>Symptom</dt><dd>Synthesis of the IP stops: 'Path length exceeds 260-Byte maximum allowed by Windows'.</dd><dt>Trigger</dt><dd>Right after I-01 was fixed; still in the IP packager project.</dd></dl>
@@ -59,7 +57,7 @@ Rename-Computer -NewName "IvanLaptop" -Restart                        # plain AS
 <div class="block did"><div class="label">Fix / workaround</div><ul><li>Edit/package the IP from a short folder outside <code>MEng_ZYBO</code>; keep the IP source in <code>ip_repo/lorenz_dda_driver_1_0</code>.</li><li>Delete the stale <code>lorenz_dda_driver_v1_0_project*</code> folders. After this the IP synthesised and repackaged.</li></ul></div>
 <figure class="fig missing"><img src="../figures/issue-path-length.png" alt="The 17-680 message" onload="this.parentNode.classList.remove('missing')" onerror="this.parentNode.classList.add('missing')"><div class="ph"><b>FIGURE PLACEHOLDER</b><br>save screenshot as <code>docs-site/figures/issue-path-length.png</code></div><figcaption><b>Figure.</b> The 17-680 message</figcaption></figure>
 <p>Short packaging project used: <code>d:/xilinx/temp/lorenz_dda_driver_v1_0_project3</code>.</p>
-<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-path">01.8 Package the IP: path over 260 bytes</a></p>
+<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-path">01.9 Package the IP: path over 260 bytes</a></p>
 </article>
 <article class="issue-entry" id="i-03"><h3><span class="id">I-03</span>IP instance upgrade: stale definition / port-width warnings <span class="tag resolved">resolved</span></h3>
 <dl class="kv"><dt>Symptom</dt><dd><code>ip_upgrade.log</code> ends in CAUTION with <code>IP_Flow 19-4706</code> (port width differs), <code>19-3374</code> (disabled parameter ignored) and Critical Warning <code>Coretcl 2-1280</code>.</dd><dt>Trigger</dt><dd>Report IP Status → Upgrade Selected on <code>design_1_lorenz_dda_driver_0_0</code> after repackaging the IP.</dd></dl>
@@ -86,7 +84,7 @@ save_bd_design</code></pre></div>
 An attempt to modify the value of disabled parameter 'C_S00_AXI_ADDR_WIDTH' from '7' to '5'
   has been ignored for IP 'design_1_lorenz_dda_driver_0_0'</code></pre></div>
 <figure class="fig"><img loading="lazy" src="../figures/issue-ip-upgrade-report.png" alt="ip_upgrade.log: upgraded port widths 7 differ from original width 5"><figcaption><b>Figure.</b> ip_upgrade.log: upgraded port widths 7 differ from original width 5</figcaption></figure>
-<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-repo">01.9 Integrate: instance upgraded against a stale definition</a> · <a href="02-build-log/04-attempt3-hardware.html#step-ip-upgrade">04.6 Upgrade the instance to revision 3</a></p>
+<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-repo">01.10 Integrate: instance upgraded against a stale definition</a> · <a href="02-build-log/04-attempt3-hardware.html#step-ip-upgrade">04.6 Upgrade the instance to revision 3</a></p>
 </article>
 <article class="issue-entry" id="i-04"><h3><span class="id">I-04</span><code>[BD 41-2670]</code> incomplete address path on <code>M04_AXI</code> <span class="tag resolved">resolved</span></h3>
 <dl class="kv"><dt>Symptom</dt><dd><code>validate_bd_design</code> warns about <code>axi_interconnect_gp0/M04_AXI</code> having no address segment.</dd><dt>Trigger</dt><dd>Validation after the IP upgrade (attempt 1).</dd></dl>
@@ -98,7 +96,7 @@ get_bd_intf_nets -of_objects [get_bd_intf_pins axi_interconnect_gp0/M04_AXI]   ;
 set_property CONFIG.NUM_MI 4 [get_bd_cells axi_interconnect_gp0]
 validate_bd_design
 save_bd_design          ;# not save_bd_design_as</code></pre></div>
-<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-nummi">01.10 Integrate: validate warning on &lt;code&gt;M04_AXI&lt;/code&gt;</a></p>
+<p class="links">Seen in: <a href="02-build-log/01-ip-packaging.html#step-p-nummi">01.11 Integrate: validate warning on &lt;code&gt;M04_AXI&lt;/code&gt;</a></p>
 </article>
 <article class="issue-entry" id="i-05"><h3><span class="id">I-05</span>Solver stuck at (0,0,0) <span class="tag resolved">resolved</span></h3>
 <dl class="kv"><dt>Symptom</dt><dd>No software could make x/y/z leave zero (found by reading the RTL, before running).</dd><dt>Trigger</dt><dd>Planning the PS driver (attempt 1).</dd></dl>
