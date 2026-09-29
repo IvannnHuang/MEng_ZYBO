@@ -64,16 +64,13 @@ module lorenz_dda_driver #(
         .enable (enable),
         .load   (load),
         .done   (done),
-
         .x_init (x_init),
         .y_init (y_init),
         .z_init (z_init),
-
         .sig (sigma),
         .rho  (rho),
         .beta (beta),
         .dt   (dt),
-
         .x_next (x_next),
         .y_next (y_next),
         .z_next (z_next)
