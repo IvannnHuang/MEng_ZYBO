@@ -1,0 +1,549 @@
+2026-10-13T16:46:01.868282700255-16:46:01 **** Build of project design_1_wrapper ****
+000-buildplatform.bat 50389 design_1_wrapper  
+000-'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-'\gnuwin\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-XSDB Server Channel: tcfchan#1
+000-Cleaning the zynq_fsbl application.
+000-rm -rf  sd.o  nand.o  image_mover.o  md5.o  fsbl_hooks.o  main.o  nor.o  qspi.o  rsa.o  ps7_init.o  pcap.o  fsbl_handoff.o zynq
+000-_fsbl_bsp/ps7_cortexa9_0/lib/libxil.a fsbl.elf *.o
+000-
+000-Building the zynq_fsbl application.
+000-make: Entering directory 'D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/zynq_fsbl/zynq_fsbl_bsp'
+000-
+000-make --no-print-directory seq_libs
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/axivdma_v6_15/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/axivdma_v6_15/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+000-s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+000-startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_10/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-non
+000-e-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=
+000-hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_12/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_12/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+000-abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+000-d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_2/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/ddrps_v1_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_8/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/devcfg_v3_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_10/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dmaps_v2_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/dynclk_v1_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dynclk_v1_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_20/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/emacps_v3_20/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_13/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/gpiops_v3_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_11/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/gpio_v4_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/iicps_v3_19/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/iicps_v3_19/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-no
+000-ne-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi
+000-=hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_12/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/qspips_v3_12/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scugic_v5_3/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scugic_v5_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_6/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scutimer_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+000-s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+000-startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_5/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/sdps_v4_3/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/sdps_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "
+000-ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostar
+000-tfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/standalone_v9_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/standalone_v9_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi
+000--as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -
+000-nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_14/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/uartps_v3_14/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_9/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/usbps_v2_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/vtc_v8_6/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/vtc_v8_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "A
+000-RCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostart
+000-files -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_7/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/xadcps_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/xilffs_v5_2/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/xilffs_v5_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/xilrsa_v1_8/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/xilrsa_v1_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make libs in ps7_cortexa9_0/libsrc/dynclk_v1_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dynclk_v1_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "A
+000-RCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostart
+000-files -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Compiling ddynclk"
+000-
+000-In file included from ddynclk.h:16,
+000-                 from ddynclk.c:4:
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:266:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper214-1-1'clkReg.fltr_lockH' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.fltr_lockH' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.fltr_lockH' was declared here0-ddynclk.c:365:33: note: 'clkReg.fltr_lockH' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:265:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper214-1-1'clkReg.lockL' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.lockL' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.lockL' was declared here0-ddynclk.c:365:33: note: 'clkReg.lockL' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:264:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper214-1-1'clkReg.divclk' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.divclk' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.divclk' was declared here0-ddynclk.c:365:33: note: 'clkReg.divclk' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:262:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper214-1-1'clkReg.clkFBL' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.clkFBL' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.clkFBL' was declared here0-ddynclk.c:365:33: note: 'clkReg.clkFBL' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:261:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper214-1-1'clkReg.clk0L' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.clk0L' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.clk0L' was declared here0-ddynclk.c:365:33: note: 'clkReg.clk0L' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'dglnt_dynclk_divider',
+000-    inlined from 'dglnt_dynclk_divider' at ddynclk.c:187:17,
+000-    inlined from 'dglnt_dynclk_find_reg' at ddynclk.c:243:22,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:387:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper201-1-1'clkMode.maindiv' may be used uninitialized [-Wmaybe-uninitialized]1-ddynclk.c:201:20: warning: 'clkMode.maindiv' may be used uninitialized [-Wmaybe-uninitialized]
+000-  201 |         if (divide & 0x1) {
+000-      |             ~~~~~~~^~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper366-1-1'clkMode.maindiv' was declared here0-ddynclk.c:366:34: note: 'clkMode.maindiv' was declared here
+000-  366 |         struct dglnt_dynclk_mode clkMode;
+000-      |                                  ^~~~~~~
+000-arm-none-eabi-ar: creating ../../../lib/libxil.a
+000-"Running Make libs in ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-
+000-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=ha
+000-rd -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Compiling mandelbrot_driver..."
+000-
+000-arm-xilinx-eabi-gcc.exe: warning: (ildcard: linker input file unused because linking not done
+000-arm-xilinx-eabi-gcc.exe: error: (ildcard: linker input file not found: No such file or directory
+000-arm-xilinx-eabi-gcc.exe: warning: *.c): linker input file unused because linking not done
+000-arm-xilinx-eabi-gcc.exe: error: *.c): linker input file not found: Invalid argument
+000/design_1_wrapper0-1-1make[2]: *** [Makefile:18: libs] Error 12-make[2]: *** [Makefile:18: libs] Error 1
+000/design_1_wrapper0-1-1make[1]: *** [Makefile:46: ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src/make.libs] Error 22-make[1]: *** [Makefile:46: ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src/make.libs] Error 2
+000/design_1_wrapper0-1-1make: *** [Makefile:18: all] Error 22-make: *** [Makefile:18: all] Error 2
+000-make: Leaving directory 'D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/zynq_fsbl/zynq_fsbl_bsp'
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c sd.c -o sd.o -Izynq_fsbl_bsp/ps7_cort
+000-exa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c nand.c -o nand.o -Izynq_fsbl_bsp/ps7_
+000-cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c image_mover.c -o image_mover.o -Izynq
+000-_fsbl_bsp/ps7_cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c md5.c -o md5.o -Izynq_fsbl_bsp/ps7_co
+000-rtexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c fsbl_hooks.c -o fsbl_hooks.o -Izynq_f
+000-sbl_bsp/ps7_cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c main.c -o main.o -Izynq_fsbl_bsp/ps7_
+000-cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c rsa.c -o rsa.o -Izynq_fsbl_bsp/ps7_co
+000-rtexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c nor.c -o nor.o -Izynq_fsbl_bsp/ps7_co
+000-rtexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c qspi.c -o qspi.o -Izynq_fsbl_bsp/ps7_
+000-cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c ps7_init.c -o ps7_init.o -Izynq_fsbl_
+000-bsp/ps7_cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c pcap.c -o pcap.o -Izynq_fsbl_bsp/ps7_
+000-cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc  -O2 -c -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -c fsbl_handoff.S -o fsbl_handoff.o -Izy
+000-nq_fsbl_bsp/ps7_cortexa9_0/include -I.
+000-
+000-arm-none-eabi-gcc -o fsbl.elf fsbl_handoff.o fsbl_hooks.o image_mover.o main.o md5.o nand.o nor.o pcap.o ps7_init.o qspi.o rsa.
+000-o sd.o -MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard   -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id
+000-=none -specs=Xilinx.spec  -lrsa -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-
+000-group -Wl,--start-group,-lrsa,-lxil,-lgcc,-lc,--end-group                                          -Wl,--gc-sections -Lzynq_fsb
+000-l_bsp/ps7_cortexa9_0/lib -L./ -Tlscript.ld
+000-
+000/design_1_wrapper0-1-1cannot find -lrsa: No such file or directory2-d:/xilinx/vitis/2024.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/bin/arm-xilinx-eabi/../../libexec/arm-xilinx-eabi/gcc/arm-xilinx-eabi/12.2.0/ld.exe: cannot find -lrsa: No such file or directory
+000-collect2.exe: error: ld returned 1 exit status
+000/design_1_wrapper0-1-1make: *** [Makefile:27: fsbl.elf] Error 12-make: *** [Makefile:27: fsbl.elf] Error 1
+000-Building the BSP Library for domain  - domain_ps7_cortexa9_0 on processor ps7_cortexa9_0
+000-make --no-print-directory seq_libs
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/axivdma_v6_15/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/axivdma_v6_15/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+000-s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+000-startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_10/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-non
+000-e-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=
+000-hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_12/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_12/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+000-abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+000-d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_2/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/ddrps_v1_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_8/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/devcfg_v3_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_10/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dmaps_v2_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/dynclk_v1_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dynclk_v1_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_20/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/emacps_v3_20/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_13/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/gpiops_v3_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_11/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/gpio_v4_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/iicps_v3_19/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/iicps_v3_19/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-no
+000-ne-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi
+000-=hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_12/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/qspips_v3_12/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scugic_v5_3/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scugic_v5_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_6/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scutimer_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+000-s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+000-startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_5/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/sdps_v4_3/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/sdps_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "
+000-ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostar
+000-tfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/standalone_v9_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/standalone_v9_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi
+000--as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -
+000-nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_14/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/uartps_v3_14/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+000-" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+000-tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_9/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/usbps_v2_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+000-"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+000-rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/vtc_v8_6/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/vtc_v8_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "A
+000-RCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostart
+000-files -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_7/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/xadcps_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+000- "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+000-artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make libs in ps7_cortexa9_0/libsrc/dynclk_v1_1/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/dynclk_v1_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" "A
+000-RCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostart
+000-files -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Compiling ddynclk"
+000-
+000-In file included from ddynclk.h:16,
+000-                 from ddynclk.c:4:
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:266:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper/ps7_cortexa9_0/domain_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include/xil_io.h214-1-1'clkReg.fltr_lockH' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.fltr_lockH' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.fltr_lockH' was declared here0-ddynclk.c:365:33: note: 'clkReg.fltr_lockH' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:265:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper/ps7_cortexa9_0/domain_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include/xil_io.h214-1-1'clkReg.lockL' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.lockL' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.lockL' was declared here0-ddynclk.c:365:33: note: 'clkReg.lockL' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:264:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper/ps7_cortexa9_0/domain_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include/xil_io.h214-1-1'clkReg.divclk' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.divclk' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.divclk' was declared here0-ddynclk.c:365:33: note: 'clkReg.divclk' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:262:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper/ps7_cortexa9_0/domain_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include/xil_io.h214-1-1'clkReg.clkFBL' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.clkFBL' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.clkFBL' was declared here0-ddynclk.c:365:33: note: 'clkReg.clkFBL' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'Xil_Out32',
+000-    inlined from 'dglnt_dynclk_write_reg' at ddynclk.c:261:2,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:388:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper/ps7_cortexa9_0/domain_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include/xil_io.h214-1-1'clkReg.clk0L' may be used uninitialized [-Wmaybe-uninitialized]1-../../../include/xil_io.h:214:20: warning: 'clkReg.clk0L' may be used uninitialized [-Wmaybe-uninitialized]
+000-  214 |         *LocalAddr = Value;
+000-      |         ~~~~~~~~~~~^~~~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper365-1-1'clkReg.clk0L' was declared here0-ddynclk.c:365:33: note: 'clkReg.clk0L' was declared here
+000-  365 |         struct dglnt_dynclk_reg clkReg;
+000-      |                                 ^~~~~~
+000-In function 'dglnt_dynclk_divider',
+000-    inlined from 'dglnt_dynclk_divider' at ddynclk.c:187:17,
+000-    inlined from 'dglnt_dynclk_find_reg' at ddynclk.c:243:22,
+000-    inlined from 'dglnt_dynclk_set_rate' at ddynclk.c:387:2,
+000-    inlined from 'DDynClk_SetRate' at ddynclk.c:438:11:
+000/design_1_wrapper201-1-1'clkMode.maindiv' may be used uninitialized [-Wmaybe-uninitialized]1-ddynclk.c:201:20: warning: 'clkMode.maindiv' may be used uninitialized [-Wmaybe-uninitialized]
+000-  201 |         if (divide & 0x1) {
+000-      |             ~~~~~~~^~~~~
+000-ddynclk.c: In function 'DDynClk_SetRate':
+000/design_1_wrapper366-1-1'clkMode.maindiv' was declared here0-ddynclk.c:366:34: note: 'clkMode.maindiv' was declared here
+000-  366 |         struct dglnt_dynclk_mode clkMode;
+000-      |                                  ^~~~~~~
+000-arm-none-eabi-ar: creating ../../../lib/libxil.a
+000-"Running Make libs in ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src"
+000-
+000-make -C ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-
+000-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=ha
+000-rd -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000-"Compiling mandelbrot_driver..."
+000-
+000-arm-xilinx-eabi-gcc.exe: warning: (ildcard: linker input file unused because linking not done
+000-arm-xilinx-eabi-gcc.exe: error: (ildcard: linker input file not found: No such file or directory
+000-arm-xilinx-eabi-gcc.exe: warning: *.c): linker input file unused because linking not done
+000-arm-xilinx-eabi-gcc.exe: error: *.c): linker input file not found: Invalid argument
+000/design_1_wrapper0-1-1make[2]: *** [Makefile:18: libs] Error 12-make[2]: *** [Makefile:18: libs] Error 1
+000/design_1_wrapper0-1-1make[1]: *** [Makefile:46: ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src/make.libs] Error 22-make[1]: *** [Makefile:46: ps7_cortexa9_0/libsrc/mandelbrot_driver_v1_0/src/make.libs] Error 2
+000/design_1_wrapper0-1-1make: *** [Makefile:18: all] Error 22-make: *** [Makefile:18: all] Error 2
+000-Failed to build  the bsp sources for domain - domain_ps7_cortexa9_0
+000-Failed to generate the platform.
+000-Reason: Failed to build the  zynq_fsbl application.
+000-    invoked from within
+000-"::tcf::eval -progress {apply {{msg} {puts $msg}}} {tcf_send_command tcfchan#0 xsdb eval s es {{platform active design_1_wrapper; platform generate }}}"
+000-    (procedure "::tcf::send_command" line 4)
+000-    invoked from within
+000-"tcf send_command $::xsdb::curchan xsdb eval s es [list "platform active $PLATFORM_NAME; platform generate $target"]"
+000-    invoked from within
+000-"if { $iswindows == 1 } {    
+000-
+000-    set XSDB_PORT [lindex $argv 0]
+000-    set PLATFORM_NAME [lindex $argv 1]
+000-    set arglen [llength $argv]
+000-    set lastind..."
+000-    (file "D:/xilinx/Vitis/2024.1\scripts\vitis\util\buildplatform.tcl" line 11)
+00255-
+16:46:26 Build Finished (took 24s.804ms)
+

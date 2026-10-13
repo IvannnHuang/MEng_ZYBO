@@ -1,0 +1,41 @@
+10:00:46 DEBUG : Logs will be stored at 'D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/IDE.log'.
+10:00:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\xilinx\projects\MEng_ZYBO\Lab2\Mandelbrot_hdmi\temp_xsdb_launch_script.tcl
+10:00:50 INFO  : Platform repository initialization has completed.
+10:00:50 INFO  : Registering command handlers for Vitis TCF services
+10:00:50 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+10:00:50 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+10:00:50 ERROR : (XSDB Server)'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+10:00:53 INFO  : XSCT server has started successfully.
+10:00:53 INFO  : Successfully done setting XSCT server connection channel  
+10:00:53 INFO  : plnx-install-location is set to ''
+10:00:53 INFO  : Successfully done setting workspace for the tool. 
+10:00:53 INFO  : Successfully done query RDI_DATADIR 
+10:01:30 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+10:01:32 INFO  : [Import] Updating active build configuration of the system project 'Zybo-Z7-10-HDMI_system' to 'Debug' after the import.
+14:40:59 INFO  : Result from executing command 'removePlatformRepo': 
+14:42:17 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+16:45:23 DEBUG : Logs will be stored at 'D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/IDE.log'.
+16:45:23 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\xilinx\projects\MEng_ZYBO\Lab2\Mandelbrot_hdmi\temp_xsdb_launch_script.tcl
+16:45:23 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:45:23 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:45:23 ERROR : (XSDB Server)'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:45:26 INFO  : XSCT server has started successfully.
+16:45:26 INFO  : Platform repository initialization has completed.
+16:45:27 INFO  : Registering command handlers for Vitis TCF services
+16:45:27 INFO  : plnx-install-location is set to ''
+16:45:27 INFO  : Successfully done setting XSCT server connection channel  
+16:45:27 INFO  : Successfully done query RDI_DATADIR 
+16:45:27 INFO  : Successfully done setting workspace for the tool. 
+16:45:57 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
