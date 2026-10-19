@@ -8,12 +8,13 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/video_capture/subdir.mk
 -include src/timer_ps/subdir.mk
--include src/intc/subdir.mk
+-include src/mandel/subdir.mk
 -include src/dynclk/subdir.mk
 -include src/display_ctrl/subdir.mk
 -include src/subdir.mk
+-include removed_src/video_capture/subdir.mk
+-include removed_src/intc/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -42,10 +43,10 @@ all:
 main-build: Zybo-Z7-10-HDMI.elf secondary-outputs
 
 # Tool invocations
-Zybo-Z7-10-HDMI.elf: $(OBJS) D:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src/lscript.ld $(USER_OBJS)
+Zybo-Z7-10-HDMI.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 gcc linker'
-	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,D:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src/lscript.ld -LD:/Zybo-Z7-SW/ws/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "Zybo-Z7-10-HDMI.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "Zybo-Z7-10-HDMI.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
