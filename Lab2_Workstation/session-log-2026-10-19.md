@@ -170,7 +170,7 @@ The PS side already moved `video_capture.c` / `intc.c` to `removed_src/`, but th
 5. When DSPs run out, look at narrower multipliers, sharing, or LUT-based multipliers. Check timing as fill rises.
 
 ## For the partner
-[`C_CODE_CHANGES.md`](C_CODE_CHANGES.md) lists the 3 C files that changed against the last commit, with exact repo paths to copy from, steps, and the full `mandel.c` diff.
+[`C_CODE_CHANGES.md`](../C_CODE_CHANGES.md) (repo root) lists the 3 C files that changed against the last commit, with exact repo paths to copy from, steps, and the full `mandel.c` diff.
 
 ## Next up
 1. **Now:** switch Vitis/Vivado to `Lab2_Workstation`. Rebuild, reflash, press `m` to test the TT port-number fix. Record any `usb:   ...` lines here.

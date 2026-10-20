@@ -16,9 +16,9 @@ Status: builds clean (`-Wall`, no warnings). The mouse driver **has not been con
 
 | Change | Copy **from** (this repo) | Copy **to** (your project) |
 |---|---|---|
-| **New** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c`](Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c) | `Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c` |
-| **New** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h`](Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h) | `Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h` |
-| **Changed** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c`](Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c) | `Zybo-Z7-10-HDMI/src/mandel/mandel.c` |
+| **New** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c`](Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c) | `Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.c` |
+| **New** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h`](Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h) | `Zybo-Z7-10-HDMI/src/usbmouse/usbmouse.h` |
+| **Changed** | [`Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c`](Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c) | `Zybo-Z7-10-HDMI/src/mandel/mandel.c` |
 
 The same three files are also at `Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-10-HDMI/src/...`. They are identical; use either.
 
@@ -191,4 +191,4 @@ The UART prints which step failed. For a failed request it also prints `qTD tok=
 | `50` / `60` | Babble / buffer error |
 | `USBSTS` bit 4 set | Controller couldn't reach memory |
 
-More detail: [`session-log-2026-10-19.md`](session-log-2026-10-19.md), section "USB mouse panning".
+More detail: [`session-log-2026-10-19.md`](Lab2_Workstation/session-log-2026-10-19.md), section "USB mouse panning".
