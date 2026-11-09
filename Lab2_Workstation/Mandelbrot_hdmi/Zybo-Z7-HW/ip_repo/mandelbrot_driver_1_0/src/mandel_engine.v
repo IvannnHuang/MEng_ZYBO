@@ -112,8 +112,19 @@ module mandel_engine #(
     end
 
     wire disp_active = busy_r && (disp_y < FH) && ({1'b0, disp_y} < {1'b0, rd_row} + ROWS);
-    wire disp_fire   = disp_active && found;
-    wire [NSOLV-1:0] s_in_valid = disp_fire ? ({{(NSOLV-1){1'b0}}, 1'b1} << sel) : {NSOLV{1'b0}};
+    wire test_ready, test_valid, test_inside;
+    wire [XW-1:0] test_x;
+    wire [YW-1:0] test_y;
+    wire signed [W-1:0] test_cr, test_ci;
+    wire disp_fire = disp_active && test_ready;
+    // One shared classifier; the entire pipeline stalls when its head cannot dispatch.
+    mandel_inside #(.W(W), .F(F), .XW(XW), .YW(YW)) u_inside (
+        .clk(clk), .rst(clr), .in_valid(disp_active), .in_ready(test_ready),
+        .in_x(disp_x), .in_y(disp_y), .in_cr(cr_cur), .in_ci(ci_cur),
+        .out_valid(test_valid), .out_ready(found), .out_inside(test_inside),
+        .out_x(test_x), .out_y(test_y), .out_cr(test_cr), .out_ci(test_ci)
+    );
+    wire [NSOLV-1:0] s_in_valid = (test_valid && found) ? ({{(NSOLV-1){1'b0}}, 1'b1} << sel) : {NSOLV{1'b0}};
 
     always @(posedge clk) begin
         if (clr) begin
@@ -150,10 +161,11 @@ module mandel_engine #(
                 .max_iter  (max_r),
                 .in_valid  (s_in_valid[g]),
                 .in_ready  (s_in_ready[g]),
-                .in_x      (disp_x),
-                .in_y      (disp_y),
-                .in_cr     (cr_cur),
-                .in_ci     (ci_cur),
+                .in_inside (test_inside && (max_r != 0)),
+                .in_x      (test_x),
+                .in_y      (test_y),
+                .in_cr     (test_cr),
+                .in_ci     (test_ci),
                 .out_valid (s_out_valid[g]),
                 .out_ready (s_out_ready[g]),
                 .out_x     (s_out_x[g*XW +: XW]),
@@ -395,4 +407,80 @@ module mandel_engine #(
     assign m_wvalid  = (f_cnt != 5'd0);
     assign m_bready  = 1'b1;
 
+endmodule
+
+// Shared conservative inside-set classifier. Four 18x18 products (Q4.14).
+// Eight elastic stages; all data and valid bits freeze together under backpressure.
+// See tests/INSIDE_SET.md for the error bound and numerical limitations.
+module mandel_inside #(
+    parameter W=27, F=23, XW=11, YW=11
+)(
+    input wire clk, rst, in_valid,
+    output wire in_ready,
+    input wire [XW-1:0] in_x,
+    input wire [YW-1:0] in_y,
+    input wire signed [W-1:0] in_cr, in_ci,
+    output wire out_valid,
+    input wire out_ready,
+    output reg out_inside,
+    output wire [XW-1:0] out_x,
+    output wire [YW-1:0] out_y,
+    output wire signed [W-1:0] out_cr, out_ci
+);
+    localparam T=14;
+    reg [7:0] v, eligible;
+    wire advance = ~v[7] | out_ready;
+    reg [XW-1:0] xs[0:7];
+    reg [YW-1:0] ys[0:7];
+    reg signed [W-1:0] crs[0:7], cis[0:7];
+    assign in_ready=advance;
+    assign out_valid=v[7];
+    assign out_x=xs[7];
+    assign out_y=ys[7];
+    assign out_cr=crs[7];
+    assign out_ci=cis[7];
+    // F<T remains a valid engine configuration: disable this optional shortcut.
+    wire signed [17:0] tx = (F>=T) ? (in_cr >>> (F-T)) : 18'sd0;
+    wire signed [17:0] ty = (F>=T) ? (in_ci >>> (F-T)) : 18'sd0;
+    wire box = (F>=T) && (in_cr >= -(5*(1 << F)/4)) &&
+               (in_cr <= (1 << F)/2) &&
+               (in_ci >= -(1 << F)) && (in_ci <= (1 << F));
+    reg signed [17:0] u0, y0, b0, u1, u2, u3;
+    (* use_dsp="yes" *) reg signed [35:0] xx1, yy1, bb1;
+    reg signed [35:0] xx2, yy2, bb2, yy3, yy4, yy5, yy6;
+    reg signed [17:0] q3, q4, qu4;
+    (* use_dsp="yes" *) reg signed [35:0] product5;
+    reg signed [35:0] product6;
+    reg bulb3, bulb4, bulb5, bulb6;
+    wire signed [36:0] qsum = $signed({xx2[35],xx2}) + $signed({yy2[35],yy2});
+    wire signed [36:0] bsum = $signed({bb2[35],bb2}) + $signed({yy2[35],yy2});
+    integer j;
+    always @(posedge clk) begin
+        if (rst) begin
+            v<=0;
+            eligible<=0;
+            out_inside<=0;
+        end else if (advance) begin
+            v <= {v[6:0],in_valid};
+            eligible <= {eligible[6:0],box};
+            xs[0]<=in_x; ys[0]<=in_y; crs[0]<=in_cr; cis[0]<=in_ci;
+            for (j=1;j<8;j=j+1) begin
+                xs[j]<=xs[j-1]; ys[j]<=ys[j-1];
+                crs[j]<=crs[j-1]; cis[j]<=cis[j-1];
+            end
+            u0<=tx-18'sd4096; y0<=ty; b0<=tx+18'sd16384;
+            xx1<=u0*u0; yy1<=y0*y0; bb1<=b0*b0; u1<=u0;
+            xx2<=xx1; yy2<=yy1; bb2<=bb1; u2<=u1;
+            q3<=qsum >>> T; u3<=u2; yy3<=yy2;
+            // Radius^2=1/16 with an inward 1/512 margin (Q28).
+            bulb3 <= (bsum + 37'sd524288 < 37'sd16777216);
+            q4<=q3; qu4<=q3+u3; yy4<=yy3; bulb4<=bulb3;
+            product5<=q4*qu4; yy5<=yy4; bulb5<=bulb4;
+            product6<=product5; yy6<=yy5; bulb6<=bulb5;
+            // q*(q+u) < y^2/4, with an inward 1/128 margin (Q28).
+            out_inside<=eligible[6] && (bulb6 ||
+                ($signed({product6[35],product6}) + 37'sd2097152 <
+                 ($signed({yy6[35],yy6}) >>> 2)));
+        end
+    end
 endmodule

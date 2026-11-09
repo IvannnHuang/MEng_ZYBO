@@ -14,6 +14,7 @@ module mandel_solver #(
     input  wire                 rst,        // synchronous, active high
     input  wire        [IW-1:0] max_iter,   // must not change while busy
 
+    input  wire                 in_inside,  // shared conservative classifier
     input  wire                 in_valid,   // new pixel
     output wire                 in_ready,
     input  wire        [XW-1:0] in_x,
@@ -81,7 +82,7 @@ module mandel_solver #(
 
     // One-pixel input buffer: in_ready is a flip-flop, so the dispenser's "first free solver"
     // scan never runs through this ring's recirculate logic in the same clock.
-    reg                 ib_v;
+    reg                 ib_v, ib_inside;
     reg        [XW-1:0] ib_x;
     reg        [YW-1:0] ib_y;
     reg signed [W-1:0]  ib_cr, ib_ci;
@@ -97,6 +98,7 @@ module mandel_solver #(
         else if (in_valid & ~ib_v)    ib_v <= 1'b1;
         else if (inject)              ib_v <= 1'b0;
         if (in_valid & ~ib_v) begin
+            ib_inside <= in_inside;
             ib_x  <= in_x;
             ib_y  <= in_y;
             ib_cr <= in_cr;
@@ -121,12 +123,12 @@ module mandel_solver #(
 
     // New pixel starts with z = 0: saved products 0, count 0.
     wire                 e_v    = recirc | inject;
-    wire                 e_f    = recirc & h_f;
+    wire                 e_f    = recirc ? h_f : ib_inside;
     wire        [XW-1:0] e_x    = recirc ? h_x    : ib_x;
     wire        [YW-1:0] e_y    = recirc ? h_y    : ib_y;
     wire signed [W-1:0]  e_cr   = recirc ? h_cr   : ib_cr;
     wire signed [W-1:0]  e_ci   = recirc ? h_ci   : ib_ci;
-    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : {IW{1'b0}};
+    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : (ib_inside ? max_iter : {IW{1'b0}});
     wire signed [W-1:0]  e_zr2  = recirc ? h_zr2  : {W{1'b0}};
     wire signed [W-1:0]  e_zi2  = recirc ? h_zi2  : {W{1'b0}};
     wire signed [W-1:0]  e_zrzi = recirc ? h_zrzi : {W{1'b0}};
