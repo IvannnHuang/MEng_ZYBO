@@ -35,8 +35,7 @@ ASSEMBLY_OBJECTS  = $(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildc
 NON_LTO_OBJECTS = $(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildcard microblaze_interrupt_handler.c))))
 
 NON_LTO_FILES = $(wildcard microblaze_interrupt_handler.c)
-INCLUDEFILES=*.h
-
+INCLUDEFILES=$(wildcard *.h)
 ECC_FLAGS_NO_FLTO1 = $(subst -flto,,$(ECC_FLAGS))
 ECC_FLAGS_NO_FLTO = $(subst -ffat-lto-objects,,$(ECC_FLAGS_NO_FLTO1))
 

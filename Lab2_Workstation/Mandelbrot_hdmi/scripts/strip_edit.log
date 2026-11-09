@@ -1,0 +1,190 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov  9 16:39:36 2026
+# Process ID: 11844
+# Current directory: C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/scripts
+# Command line: vivado.exe -mode batch -nojournal -log strip_edit.log -source strip_hdmi_in.tcl
+# Log file: C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/scripts/strip_edit.log
+# Journal file: 
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :20274 MB
+#-----------------------------------------------------------
+source strip_hdmi_in.tcl
+# set here [file dirname [file normalize [info script]]]
+# set hw   [file normalize $here/../Zybo-Z7-HW]
+# set do_build [expr {[lsearch $argv build] >= 0}]
+# proc say {msg} { puts "STRIP: $msg" }
+# open_project $hw/Zybo-Z7-HW.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/zk67/MEng_ZYBO/Lab2/Mandelbrot_hdmi/Zybo-Z7-HW' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 573.152 ; gain = 255.516
+# open_bd_design C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/sources_1/bd/design_1/design_1.bd
+Reading block design file <C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- digilentinc.com:ip:axi_dynclk:1.2 - axi_dynclk_0
+Adding component instance block -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_fclk0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_fclk1
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_1
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_gp0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_hp0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding component instance block -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding component instance block -- xilinx.com:ip:axis_subset_converter:1.1 - axis_subset_converter_in
+Adding component instance block -- xilinx.com:ip:axis_subset_converter:1.1 - axis_subset_converter_out
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - subset_converter_reset
+Adding component instance block -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding component instance block -- xilinx.com:ip:v_tc:6.2 - v_tc_in
+Adding component instance block -- xilinx.com:ip:v_tc:6.2 - v_tc_out
+Adding component instance block -- xilinx.com:ip:v_vid_in_axi4s:5.0 - v_vid_in_axi4s_0
+Adding component instance block -- xilinx.com:user:mandelbrot_driver:1.0 - mandelbrot_driver_0
+Successfully read diagram <design_1> from block design file <C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/sources_1/bd/design_1/design_1.bd>
+# set rx_cells {dvi2rgb_0 v_vid_in_axi4s_0 v_tc_in axis_subset_converter_in proc_sys_reset_0 axi_gpio_video}
+# set rx_ports {hdmi_in hdmi_in_ddc hdmi_in_hpd}
+# delete_bd_objs [get_bd_intf_nets -quiet -of_objects [get_bd_intf_ports $rx_ports]]
+# delete_bd_objs [get_bd_intf_ports $rx_ports]
+# delete_bd_objs [get_bd_cells $rx_cells]
+# say "deleted cells: $rx_cells; ports: $rx_ports"
+STRIP: deleted cells: dvi2rgb_0 v_vid_in_axi4s_0 v_tc_in axis_subset_converter_in proc_sys_reset_0 axi_gpio_video; ports: hdmi_in hdmi_in_ddc hdmi_in_hpd
+# set_property CONFIG.c_include_s2mm {0} [get_bd_cells axi_vdma_0]
+WARNING: [BD 41-1684] Pin /axi_vdma_0/m_axi_s2mm_aclk is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /axi_vdma_0/s_axis_s2mm_aclk is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /axi_vdma_0/s2mm_introut is now disabled. All connections to this pin have been removed. 
+# say "axi_vdma_0: write channel (S2MM) off"
+STRIP: axi_vdma_0: write channel (S2MM) off
+# set hp0 axi_interconnect_hp0
+# foreach p {S01_AXI S02_AXI} {
+#     delete_bd_objs [get_bd_intf_nets -quiet -of_objects [get_bd_intf_pins $hp0/$p]]
+# }
+# foreach p {S01_ACLK S01_ARESETN S02_ACLK S02_ARESETN} {
+#     set n [get_bd_nets -quiet -of_objects [get_bd_pins $hp0/$p]]
+#     if {$n ne ""} { disconnect_bd_net $n [get_bd_pins $hp0/$p] }
+# }
+# set_property CONFIG.NUM_SI {2} [get_bd_cells $hp0]
+# connect_bd_intf_net [get_bd_intf_pins mandelbrot_driver_0/M00_AXI] [get_bd_intf_pins $hp0/S01_AXI]
+# connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0]        [get_bd_pins $hp0/S01_ACLK]
+# connect_bd_net [get_bd_pins proc_sys_reset_fclk0/peripheral_aresetn] [get_bd_pins $hp0/S01_ARESETN]
+# say "$hp0: NUM_SI=2, mandelbrot M00_AXI -> S01 on FCLK0"
+STRIP: axi_interconnect_hp0: NUM_SI=2, mandelbrot M00_AXI -> S01 on FCLK0
+# set gp0 axi_interconnect_gp0
+# foreach p {M02_AXI M03_AXI M04_AXI M05_AXI} {
+#     delete_bd_objs [get_bd_intf_nets -quiet -of_objects [get_bd_intf_pins $gp0/$p]]
+# }
+# foreach p {M04_ACLK M04_ARESETN M05_ACLK M05_ARESETN} {
+#     set n [get_bd_nets -quiet -of_objects [get_bd_pins $gp0/$p]]
+#     if {$n ne ""} { disconnect_bd_net $n [get_bd_pins $gp0/$p] }
+# }
+# set_property CONFIG.NUM_MI {4} [get_bd_cells $gp0]
+# connect_bd_intf_net [get_bd_intf_pins $gp0/M02_AXI] [get_bd_intf_pins v_tc_out/ctrl]
+# connect_bd_intf_net [get_bd_intf_pins $gp0/M03_AXI] [get_bd_intf_pins mandelbrot_driver_0/S00_AXI]
+# foreach p {M02_ACLK M03_ACLK} {
+#     if {[get_bd_nets -quiet -of_objects [get_bd_pins $gp0/$p]] eq ""} {
+#         connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins $gp0/$p]
+#     }
+# }
+# foreach p {M02_ARESETN M03_ARESETN} {
+#     if {[get_bd_nets -quiet -of_objects [get_bd_pins $gp0/$p]] eq ""} {
+#         connect_bd_net [get_bd_pins proc_sys_reset_fclk0/peripheral_aresetn] [get_bd_pins $gp0/$p]
+#     }
+# }
+# say "$gp0: NUM_MI=4 (M02 v_tc_out, M03 mandelbrot)"
+STRIP: axi_interconnect_gp0: NUM_MI=4 (M02 v_tc_out, M03 mandelbrot)
+# delete_bd_objs [get_bd_nets -quiet -of_objects [get_bd_pins v_tc_out/irq]]
+# set_property CONFIG.NUM_PORTS {2} [get_bd_cells xlconcat_0]
+WARNING: [BD 41-1684] Pin /xlconcat_0/In3 is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /xlconcat_0/In4 is now disabled. All connections to this pin have been removed. 
+# connect_bd_net [get_bd_pins v_tc_out/irq] [get_bd_pins xlconcat_0/In1]
+# say "xlconcat_0: NUM_PORTS=2"
+STRIP: xlconcat_0: NUM_PORTS=2
+# foreach n [get_bd_nets -quiet] {
+#     set ends [expr {[llength [get_bd_pins -quiet -of_objects $n]] + [llength [get_bd_ports -quiet -of_objects $n]]}]
+#     if {$ends < 2} { say "removing dangling net $n"; delete_bd_objs $n }
+# }
+STRIP: removing dangling net /axi_gpio_video_ip2intc_irpt
+STRIP: removing dangling net /dvi2rgb_0_PixelClk
+STRIP: removing dangling net /dvi2rgb_0_aPixelClkLckd
+STRIP: removing dangling net /proc_sys_reset_0_peripheral_aresetn
+STRIP: removing dangling net /proc_sys_reset_0_peripheral_reset
+STRIP: removing dangling net /processing_system7_0_FCLK_CLK2
+STRIP: removing dangling net /v_tc_in_irq
+# foreach n [get_bd_intf_nets -quiet] {
+#     set ends [expr {[llength [get_bd_intf_pins -quiet -of_objects $n]] + [llength [get_bd_intf_ports -quiet -of_objects $n]]}]
+#     if {$ends < 2} { say "removing dangling intf net $n"; delete_bd_objs $n }
+# }
+STRIP: removing dangling intf net /axis_subset_converter_in_M_AXIS
+STRIP: removing dangling intf net /dvi2rgb_0_RGB
+STRIP: removing dangling intf net /v_vid_in_axi4s_0_video_out
+STRIP: removing dangling intf net /v_vid_in_axi4s_0_vtiming_out
+# set_property CONFIG.PCW_EN_CLK2_PORT {0} [get_bd_cells processing_system7_0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+# say "processing_system7_0: FCLK_CLK2 off"
+STRIP: processing_system7_0: FCLK_CLK2 off
+# proc pin_addr {space seg offset range} {
+#     if {[catch {assign_bd_address -offset $offset -range $range -target_address_space [get_bd_addr_spaces $space] [get_bd_addr_segs $seg] -force} err]} {
+#         say "address $seg: $err"
+#     }
+# }
+# assign_bd_address -quiet
+# pin_addr processing_system7_0/Data   axi_vdma_0/S_AXI_LITE/Reg                         0x43000000 64K
+# pin_addr processing_system7_0/Data   axi_dynclk_0/S_AXI_LITE/S_AXI_LITE_reg            0x43C00000 64K
+# pin_addr processing_system7_0/Data   mandelbrot_driver_0/S00_AXI/S00_AXI_reg           0x43C10000 64K
+# pin_addr processing_system7_0/Data   v_tc_out/ctrl/Reg                                 0x43C30000 64K
+# pin_addr mandelbrot_driver_0/M00_AXI processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM      0x00000000 1G
+# pin_addr axi_vdma_0/Data_MM2S        processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM      0x00000000 1G
+# foreach s [get_bd_addr_segs -quiet -of_objects [get_bd_addr_spaces -quiet]] {
+#     say "addr [get_property NAME $s]  [get_property OFFSET $s]  [get_property RANGE $s]"
+# }
+STRIP: addr S_AXI_LITE_reg    0x00001000
+STRIP: addr SEG_processing_system7_0_HP0_DDR_LOWOCM  0x00000000  0x40000000
+STRIP: addr Reg    0x00000100
+STRIP: addr SEG_processing_system7_0_HP0_DDR_LOWOCM  0x00000000  0x40000000
+STRIP: addr S00_AXI_reg    0x00001000
+STRIP: addr SEG_axi_dynclk_0_S_AXI_LITE_reg  0x43C00000  0x00010000
+STRIP: addr SEG_axi_vdma_0_Reg  0x43000000  0x00010000
+STRIP: addr SEG_mandelbrot_driver_0_S00_AXI_reg  0x43C10000  0x00010000
+STRIP: addr SEG_v_tc_out_Reg  0x43C30000  0x00010000
+STRIP: addr HP0_DDR_LOWOCM    0x40000000
+STRIP: addr Reg    0x00010000
+# validate_bd_design
+INFO: [digilentinc.com:ip:axi_dynclk:1.2-17] /axi_dynclk_0FREQ_HZ of 100000000 propagated into CONFIG.kRefClkFreqHz
+# save_bd_design
+Wrote  : <C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_hdmi\Zybo-Z7-HW\Zybo-Z7-HW.srcs\sources_1\bd\design_1\design_1.bd> 
+# say "block design validated and saved"
+STRIP: block design validated and saved
+# if {!$do_build} { say "edit-only run done (rerun with -tclargs build to implement)"; close_project; return }
+STRIP: edit-only run done (rerun with -tclargs build to implement)
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 16:39:53 2026...

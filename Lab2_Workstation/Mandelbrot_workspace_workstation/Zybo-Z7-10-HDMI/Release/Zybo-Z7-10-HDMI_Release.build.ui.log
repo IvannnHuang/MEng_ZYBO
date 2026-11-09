@@ -1,0 +1,11 @@
+2026-11-09T16:05:50.070189700255-16:05:50 **** Incremental Build of configuration Release for project Zybo-Z7-10-HDMI ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000/Zybo-Z7-10-HDMI0-1-1make[1]: *** No rule to make target 'D:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src/lscript.ld', needed by 'Zybo-Z7-10-HDMI.elf'.  Stop.2-make[1]: *** No rule to make target 'D:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src/lscript.ld', needed by 'Zybo-Z7-10-HDMI.elf'.  Stop.
+000/Zybo-Z7-10-HDMI0-1-1make: *** [makefile:41: all] Error 22-make: *** [makefile:41: all] Error 2
+00255-
+16:05:50 Build Finished (took 424ms)
+

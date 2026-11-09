@@ -28,3 +28,9 @@ domain -report -json
 platform clean
 platform generate
 platform generate
+platform active {design_1_wrapper}
+platform config -updatehw {C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa}
+platform clean
+platform generate
+platform clean
+platform generate

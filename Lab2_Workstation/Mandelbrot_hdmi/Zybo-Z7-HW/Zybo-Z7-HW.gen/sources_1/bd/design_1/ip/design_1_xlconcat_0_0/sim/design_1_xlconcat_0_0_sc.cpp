@@ -189,8 +189,8 @@ design_1_xlconcat_0_0_sc::design_1_xlconcat_0_0_sc(const sc_core::sc_module_name
     model_param_props.addLong("IN125_WIDTH", "1");
     model_param_props.addLong("IN126_WIDTH", "1");
     model_param_props.addLong("IN127_WIDTH", "1");
-    model_param_props.addLong("dout_width", "5");
-    model_param_props.addLong("NUM_PORTS", "5");
+    model_param_props.addLong("dout_width", "2");
+    model_param_props.addLong("NUM_PORTS", "2");
     model_param_props.addString("COMPONENT_NAME", "design_1_xlconcat_0_0");
 
   mp_impl = new design_1_xlconcat_0_0_core("inst", model_param_props);

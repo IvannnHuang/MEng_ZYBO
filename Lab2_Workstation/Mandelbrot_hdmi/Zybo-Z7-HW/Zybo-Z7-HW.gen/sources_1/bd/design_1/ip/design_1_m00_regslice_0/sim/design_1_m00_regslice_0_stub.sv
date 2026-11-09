@@ -68,7 +68,7 @@ typedef bit bit_as_bool;
 module design_1_m00_regslice_0 (
   input bit_as_bool aclk,
   input bit_as_bool aresetn,
-  input bit [1 : 0] s_axi_awid,
+  input bit [0 : 0] s_axi_awid,
   input bit [31 : 0] s_axi_awaddr,
   input bit [3 : 0] s_axi_awlen,
   input bit [2 : 0] s_axi_awsize,
@@ -79,17 +79,17 @@ module design_1_m00_regslice_0 (
   input bit [3 : 0] s_axi_awqos,
   input bit_as_bool s_axi_awvalid,
   output bit_as_bool s_axi_awready,
-  input bit [1 : 0] s_axi_wid,
+  input bit [0 : 0] s_axi_wid,
   input bit [63 : 0] s_axi_wdata,
   input bit [7 : 0] s_axi_wstrb,
   input bit_as_bool s_axi_wlast,
   input bit_as_bool s_axi_wvalid,
   output bit_as_bool s_axi_wready,
-  output bit [1 : 0] s_axi_bid,
+  output bit [0 : 0] s_axi_bid,
   output bit [1 : 0] s_axi_bresp,
   output bit_as_bool s_axi_bvalid,
   input bit_as_bool s_axi_bready,
-  input bit [1 : 0] s_axi_arid,
+  input bit [0 : 0] s_axi_arid,
   input bit [31 : 0] s_axi_araddr,
   input bit [3 : 0] s_axi_arlen,
   input bit [2 : 0] s_axi_arsize,
@@ -100,13 +100,13 @@ module design_1_m00_regslice_0 (
   input bit [3 : 0] s_axi_arqos,
   input bit_as_bool s_axi_arvalid,
   output bit_as_bool s_axi_arready,
-  output bit [1 : 0] s_axi_rid,
+  output bit [0 : 0] s_axi_rid,
   output bit [63 : 0] s_axi_rdata,
   output bit [1 : 0] s_axi_rresp,
   output bit_as_bool s_axi_rlast,
   output bit_as_bool s_axi_rvalid,
   input bit_as_bool s_axi_rready,
-  output bit [1 : 0] m_axi_awid,
+  output bit [0 : 0] m_axi_awid,
   output bit [31 : 0] m_axi_awaddr,
   output bit [3 : 0] m_axi_awlen,
   output bit [2 : 0] m_axi_awsize,
@@ -117,17 +117,17 @@ module design_1_m00_regslice_0 (
   output bit [3 : 0] m_axi_awqos,
   output bit_as_bool m_axi_awvalid,
   input bit_as_bool m_axi_awready,
-  output bit [1 : 0] m_axi_wid,
+  output bit [0 : 0] m_axi_wid,
   output bit [63 : 0] m_axi_wdata,
   output bit [7 : 0] m_axi_wstrb,
   output bit_as_bool m_axi_wlast,
   output bit_as_bool m_axi_wvalid,
   input bit_as_bool m_axi_wready,
-  input bit [1 : 0] m_axi_bid,
+  input bit [0 : 0] m_axi_bid,
   input bit [1 : 0] m_axi_bresp,
   input bit_as_bool m_axi_bvalid,
   output bit_as_bool m_axi_bready,
-  output bit [1 : 0] m_axi_arid,
+  output bit [0 : 0] m_axi_arid,
   output bit [31 : 0] m_axi_araddr,
   output bit [3 : 0] m_axi_arlen,
   output bit [2 : 0] m_axi_arsize,
@@ -138,7 +138,7 @@ module design_1_m00_regslice_0 (
   output bit [3 : 0] m_axi_arqos,
   output bit_as_bool m_axi_arvalid,
   input bit_as_bool m_axi_arready,
-  input bit [1 : 0] m_axi_rid,
+  input bit [0 : 0] m_axi_rid,
   input bit [63 : 0] m_axi_rdata,
   input bit [1 : 0] m_axi_rresp,
   input bit_as_bool m_axi_rlast,
@@ -155,7 +155,7 @@ module design_1_m00_regslice_0 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
 *);
   input bit aclk;
   input bit aresetn;
-  input bit [1 : 0] s_axi_awid;
+  input bit [0 : 0] s_axi_awid;
   input bit [31 : 0] s_axi_awaddr;
   input bit [3 : 0] s_axi_awlen;
   input bit [2 : 0] s_axi_awsize;
@@ -166,17 +166,17 @@ module design_1_m00_regslice_0 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   input bit [3 : 0] s_axi_awqos;
   input bit s_axi_awvalid;
   output wire s_axi_awready;
-  input bit [1 : 0] s_axi_wid;
+  input bit [0 : 0] s_axi_wid;
   input bit [63 : 0] s_axi_wdata;
   input bit [7 : 0] s_axi_wstrb;
   input bit s_axi_wlast;
   input bit s_axi_wvalid;
   output wire s_axi_wready;
-  output wire [1 : 0] s_axi_bid;
+  output wire [0 : 0] s_axi_bid;
   output wire [1 : 0] s_axi_bresp;
   output wire s_axi_bvalid;
   input bit s_axi_bready;
-  input bit [1 : 0] s_axi_arid;
+  input bit [0 : 0] s_axi_arid;
   input bit [31 : 0] s_axi_araddr;
   input bit [3 : 0] s_axi_arlen;
   input bit [2 : 0] s_axi_arsize;
@@ -187,13 +187,13 @@ module design_1_m00_regslice_0 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   input bit [3 : 0] s_axi_arqos;
   input bit s_axi_arvalid;
   output wire s_axi_arready;
-  output wire [1 : 0] s_axi_rid;
+  output wire [0 : 0] s_axi_rid;
   output wire [63 : 0] s_axi_rdata;
   output wire [1 : 0] s_axi_rresp;
   output wire s_axi_rlast;
   output wire s_axi_rvalid;
   input bit s_axi_rready;
-  output wire [1 : 0] m_axi_awid;
+  output wire [0 : 0] m_axi_awid;
   output wire [31 : 0] m_axi_awaddr;
   output wire [3 : 0] m_axi_awlen;
   output wire [2 : 0] m_axi_awsize;
@@ -204,17 +204,17 @@ module design_1_m00_regslice_0 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   output wire [3 : 0] m_axi_awqos;
   output wire m_axi_awvalid;
   input bit m_axi_awready;
-  output wire [1 : 0] m_axi_wid;
+  output wire [0 : 0] m_axi_wid;
   output wire [63 : 0] m_axi_wdata;
   output wire [7 : 0] m_axi_wstrb;
   output wire m_axi_wlast;
   output wire m_axi_wvalid;
   input bit m_axi_wready;
-  input bit [1 : 0] m_axi_bid;
+  input bit [0 : 0] m_axi_bid;
   input bit [1 : 0] m_axi_bresp;
   input bit m_axi_bvalid;
   output wire m_axi_bready;
-  output wire [1 : 0] m_axi_arid;
+  output wire [0 : 0] m_axi_arid;
   output wire [31 : 0] m_axi_araddr;
   output wire [3 : 0] m_axi_arlen;
   output wire [2 : 0] m_axi_arsize;
@@ -225,7 +225,7 @@ module design_1_m00_regslice_0 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [1 : 0] m_axi_rid;
+  input bit [0 : 0] m_axi_rid;
   input bit [63 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;

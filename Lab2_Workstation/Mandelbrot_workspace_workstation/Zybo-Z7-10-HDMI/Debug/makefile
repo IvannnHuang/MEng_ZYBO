@@ -14,8 +14,6 @@ RM := rm -rf
 -include src/dynclk/subdir.mk
 -include src/display_ctrl/subdir.mk
 -include src/subdir.mk
--include removed_src/video_capture/subdir.mk
--include removed_src/intc/subdir.mk
 -include subdir.mk
 -include objects.mk
 

@@ -68,24 +68,18 @@ typedef bit bit_as_bool;
 module design_1_xlconcat_0_0 (
   input bit [0 : 0] In0,
   input bit [0 : 0] In1,
-  input bit [0 : 0] In2,
-  input bit [0 : 0] In3,
-  input bit [0 : 0] In4,
-  output bit [4 : 0] dout
+  output bit [1 : 0] dout
 );
 endmodule
 `endif
 
 `ifdef XCELIUM
 (* XMSC_MODULE_EXPORT *)
-module design_1_xlconcat_0_0 (In0,In1,In2,In3,In4,dout)
+module design_1_xlconcat_0_0 (In0,In1,dout)
 (* integer foreign = "SystemC";
 *);
   input bit [0 : 0] In0;
   input bit [0 : 0] In1;
-  input bit [0 : 0] In2;
-  input bit [0 : 0] In3;
-  input bit [0 : 0] In4;
-  output wire [4 : 0] dout;
+  output wire [1 : 0] dout;
 endmodule
 `endif

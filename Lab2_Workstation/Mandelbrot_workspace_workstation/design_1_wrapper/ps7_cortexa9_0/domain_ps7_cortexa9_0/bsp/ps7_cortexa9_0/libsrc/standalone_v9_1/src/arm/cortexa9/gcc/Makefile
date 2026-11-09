@@ -39,8 +39,7 @@ OBJECTS =	$(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildcard *.c)))
 
 ASSEMBLY_OBJECTS  = $(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildcard *.S))))
 
-INCLUDEFILES=*.h
-
+INCLUDEFILES=$(wildcard *.h)
 libs: $(LIBS)
 
 standalone_libs: $(OBJECTS) $(ASSEMBLY_OBJECTS)

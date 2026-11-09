@@ -35,7 +35,7 @@ ASSEMBLY_OBJECTS  = $(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildc
 
 NON_LTO_OBJECTS = $(addprefix $(RELEASEDIR),$(addsuffix .o,$(basename _exit.c)))
 
-INCLUDEFILES=*.h
+INCLUDEFILES=$(wildcard *.h)
 INCLUDEFILES+=includes_ps/*.h
 
 libs: $(LIBS)

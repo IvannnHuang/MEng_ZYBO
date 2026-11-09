@@ -16,8 +16,6 @@ ELFSIZE :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-removed_src/intc \
-removed_src/video_capture \
 src/display_ctrl \
 src/dynclk \
 src/mandel \

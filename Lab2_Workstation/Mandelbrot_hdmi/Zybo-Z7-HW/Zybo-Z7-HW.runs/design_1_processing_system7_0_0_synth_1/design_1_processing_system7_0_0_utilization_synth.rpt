@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Tue Oct 13 16:18:38 2026
-| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Date         : Mon Nov  9 16:41:48 2026
+| Host         : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_processing_system7_0_0_utilization_synth.rpt -pb design_1_processing_system7_0_0_utilization_synth.pb
 | Design       : design_1_processing_system7_0_0
 | Device       : xc7z010clg400-1
@@ -116,7 +116,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    3 |     0 |          0 |        32 |  9.38 |
+| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |          0 |         8 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         2 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         2 |  0.00 |
@@ -151,7 +151,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+----------------------+
 | BIBUF    |  130 |                   IO |
 | LUT1     |   26 |                  LUT |
-| BUFG     |    3 |                Clock |
+| BUFG     |    2 |                Clock |
 | PS7      |    1 | Specialized Resource |
 +----------+------+----------------------+
 

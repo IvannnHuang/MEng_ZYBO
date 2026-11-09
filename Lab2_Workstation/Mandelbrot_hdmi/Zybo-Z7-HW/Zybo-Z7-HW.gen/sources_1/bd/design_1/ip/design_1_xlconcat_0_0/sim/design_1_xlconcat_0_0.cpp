@@ -61,15 +61,12 @@
 
 
 #ifdef XILINX_SIMULATOR
-design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), In2("In2"), In3("In3"), In4("In4"), dout("dout")
+design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), dout("dout")
 {
 
   // initialize pins
   mp_impl->In0(In0);
   mp_impl->In1(In1);
-  mp_impl->In2(In2);
-  mp_impl->In3(In3);
-  mp_impl->In4(In4);
   mp_impl->dout(dout);
 
 }
@@ -84,15 +81,12 @@ void design_1_xlconcat_0_0::before_end_of_elaboration()
 
 
 #ifdef XM_SYSTEMC
-design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), In2("In2"), In3("In3"), In4("In4"), dout("dout")
+design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), dout("dout")
 {
 
   // initialize pins
   mp_impl->In0(In0);
   mp_impl->In1(In1);
-  mp_impl->In2(In2);
-  mp_impl->In3(In3);
-  mp_impl->In4(In4);
   mp_impl->dout(dout);
 
 }
@@ -107,15 +101,12 @@ void design_1_xlconcat_0_0::before_end_of_elaboration()
 
 
 #ifdef RIVIERA
-design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), In2("In2"), In3("In3"), In4("In4"), dout("dout")
+design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm), In0("In0"), In1("In1"), dout("dout")
 {
 
   // initialize pins
   mp_impl->In0(In0);
   mp_impl->In1(In1);
-  mp_impl->In2(In2);
-  mp_impl->In3(In3);
-  mp_impl->In4(In4);
   mp_impl->dout(dout);
 
 }
@@ -130,14 +121,11 @@ void design_1_xlconcat_0_0::before_end_of_elaboration()
 
 
 #ifdef VCSSYSTEMC
-design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm),  In0("In0"), In1("In1"), In2("In2"), In3("In3"), In4("In4"), dout("dout")
+design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm),  In0("In0"), In1("In1"), dout("dout")
 {
   // initialize pins
   mp_impl->In0(In0);
   mp_impl->In1(In1);
-  mp_impl->In2(In2);
-  mp_impl->In3(In3);
-  mp_impl->In4(In4);
   mp_impl->dout(dout);
 
   // Instantiate Socket Stubs
@@ -155,14 +143,11 @@ void design_1_xlconcat_0_0::before_end_of_elaboration()
 
 
 #ifdef MTI_SYSTEMC
-design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm),  In0("In0"), In1("In1"), In2("In2"), In3("In3"), In4("In4"), dout("dout")
+design_1_xlconcat_0_0::design_1_xlconcat_0_0(const sc_core::sc_module_name& nm) : design_1_xlconcat_0_0_sc(nm),  In0("In0"), In1("In1"), dout("dout")
 {
   // initialize pins
   mp_impl->In0(In0);
   mp_impl->In1(In1);
-  mp_impl->In2(In2);
-  mp_impl->In3(In3);
-  mp_impl->In4(In4);
   mp_impl->dout(dout);
 
   // Instantiate Socket Stubs

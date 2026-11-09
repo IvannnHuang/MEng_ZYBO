@@ -22,11 +22,10 @@ RELEASEDIR=../../../lib
 INCLUDEDIR=../../../include
 INCLUDES=-I./. -I${INCLUDEDIR}
 
-OUTS = *.o
+OUTS = $(wildcard *.o)
 OBJECTS =	$(addsuffix .o, $(basename $(wildcard *.c)))
 ASSEMBLY_OBJECTS  = $(addsuffix .o, $(basename $(wildcard *.S)))
-INCLUDEFILES=*.h
-
+INCLUDEFILES=$(wildcard *.h)
 libs: $(LIBS) clean
 
 standalone_libs: $(LIBSOURCES)
