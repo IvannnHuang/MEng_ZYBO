@@ -233,6 +233,24 @@ Each colour = one iterator's LUTs/FFs/DSPs as placed by Vivado (`scripts/chip_vi
 | 8 | max_iter=17, n_active=255 clamps to 8 | 11,704 | 8,818 |
 | 9 | Wide view after reset during a frame | 350,131 | 88,686 |
 
+#### Primary progression: original iterator scaling, then the shared test
+
+Keep the original no-shortcut 1-8 iterator results in the primary scaling plot.
+Add the new shortcut-enabled result as a ninth point, at eight iterators.
+Do not replace the original values with the shortcut-enabled supporting sweep.
+
+| Iterators | Shared cardioid/bulb test | Board ms |
+|---|---|---:|
+| 1 | off | 3165.939 |
+| 2 | off | 1583.112 |
+| 3 | off | 1055.970 |
+| 4 | off | 792.852 |
+| 5 | off | 635.012 |
+| 6 | off | 530.081 |
+| 7 | off | 455.675 |
+| 8 | off | 399.400 |
+| 8 | **on** | **93.442** |
+
 #### Board validation: latest configuration measured
 
 The user ran `b` and then `f` on the board. The main record is **93.442 ms
