@@ -25,7 +25,8 @@ INCLUDEDIR=../../../include/
 
 INCLUDES=-I./. -I${INCLUDEDIR}
 
-INCLUDEFILES=$(wildcard *.h)
+INCLUDEFILES=*.h
+
 SRCFILES:=$(wildcard *.c)
 
 ASSEMBLY_SRCFILES:=$(wildcard *.S)

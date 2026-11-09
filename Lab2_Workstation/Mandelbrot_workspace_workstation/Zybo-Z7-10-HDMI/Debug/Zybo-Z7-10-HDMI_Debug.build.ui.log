@@ -1,4 +1,4 @@
-2026-11-09T16:58:52.853224600255-16:58:52 **** Build of configuration Debug for project Zybo-Z7-10-HDMI ****
+2026-11-09T17:48:02.301032400255-17:48:02 **** Build of configuration Debug for project Zybo-Z7-10-HDMI ****
 000-make all 
 000-make --no-print-directory pre-build
 000-a9-linaro-pre-build-step
@@ -96,5 +96,5 @@
 000-'Finished building: Zybo-Z7-10-HDMI.elf.size'
 000-' '
 00255-
-16:58:55 Build Finished (took 2s.196ms)
+17:48:04 Build Finished (took 2s.209ms)
 

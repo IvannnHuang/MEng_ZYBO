@@ -28,7 +28,8 @@ INCLUDES=-I./. -I${INCLUDEDIR}
 SRCFILES:=$(wildcard *.c)
 
 ASSEMBLY_SRCFILES:=$(wildcard *.S)
-INCLUDEFILES=$(wildcard *.h)
+INCLUDEFILES=*.h
+
 COBJS	=	$(addprefix $(RELEASEDIR),$(addsuffix .o, $(basename $(wildcard *.c))))
 AOBJS1	=	$(RELEASEDIR)asm_vectors.o
 AOBJS2	=	$(RELEASEDIR)translation_table.o
