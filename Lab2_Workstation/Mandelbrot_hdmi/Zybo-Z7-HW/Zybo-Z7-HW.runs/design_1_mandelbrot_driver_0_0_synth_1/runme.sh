@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=D:/xilinx/Vitis/2024.1/bin;D:/xilinx/Vivado/2024.1/ids_lite/ISE/bin/nt64;D:/xilinx/Vivado/2024.1/ids_lite/ISE/lib/nt64:D:/xilinx/Vivado/2024.1/bin
+  PATH=C:/Xilinx/Vitis/2024.1/bin;C:/Xilinx/Vivado/2024.1/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2024.1/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2024.1/bin
 else
-  PATH=D:/xilinx/Vitis/2024.1/bin;D:/xilinx/Vivado/2024.1/ids_lite/ISE/bin/nt64;D:/xilinx/Vivado/2024.1/ids_lite/ISE/lib/nt64:D:/xilinx/Vivado/2024.1/bin:$PATH
+  PATH=C:/Xilinx/Vitis/2024.1/bin;C:/Xilinx/Vivado/2024.1/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2024.1/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2024.1/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1'
+HD_PWD='C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

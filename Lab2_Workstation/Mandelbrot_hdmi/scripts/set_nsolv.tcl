@@ -10,9 +10,25 @@ set here [file dirname [file normalize [info script]]]
 set hw   [file normalize $here/../Zybo-Z7-HW]
 set out  [file normalize $here/../..]
 set n    [lindex $argv 0]
-if {![string is integer -strict $n] || $n < 1 || $n > 255} { error "usage: -tclargs <NSOLV 1..255>" }
+set repack [expr {[lsearch $argv repackage] >= 0}]
+if {![string is integer -strict $n] || $n < 1 || $n > 255} { error "usage: -tclargs <NSOLV 1..255> ?repackage?" }
 
 open_project $hw/Zybo-Z7-HW.xpr
+
+# After editing the IP's Verilog in ip_repo, the IP must be re-packaged and upgraded,
+# otherwise Vivado keeps using its cached copy of the old source.
+if {$repack} {
+    set core [ipx::open_core $hw/ip_repo/mandelbrot_driver_1_0/component.xml]
+    ipx::update_checksums $core
+    set_property core_revision [expr {[get_property core_revision $core] + 1}] $core
+    ipx::save_core $core
+    ipx::unload_core $core
+    update_ip_catalog -rebuild             ;# all repos the project knows (here: ip_repo/mandelbrot_driver_1_0)
+    upgrade_ip [get_ips -filter {NAME =~ "*mandelbrot_driver*"}]
+    report_ip_status -file $out/ip_status_after_repackage.rpt
+    puts "NSOLV: IP re-packaged and upgraded"
+}
+
 open_bd_design [get_files design_1.bd]
 set_property CONFIG.NSOLV $n [get_bd_cells mandelbrot_driver_0]
 puts "NSOLV: mandelbrot_driver_0 NSOLV = [get_property CONFIG.NSOLV [get_bd_cells mandelbrot_driver_0]]"

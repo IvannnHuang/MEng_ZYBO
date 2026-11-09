@@ -165,41 +165,53 @@ module mandel_engine #(
     endgenerate
 
     // ===================================================== result arbiter
-    // Round-robin: one finished pixel per clock goes to the row buffer; the others circle once more.
-    reg       [7:0] rr_ptr;
-    reg             g_found;
-    reg       [7:0] g_idx;
-    integer         k, idx;
-    always @(*) begin
-        g_found = 1'b0;
-        g_idx   = 8'd0;
-        for (k = 0; k < NSOLV; k = k + 1) begin
-            idx = rr_ptr + k;
-            if (idx >= NSOLV) idx = idx - NSOLV;
-            if (!g_found && s_out_valid[idx]) begin
-                g_found = 1'b1;
-                g_idx   = idx;
-            end
+    // Two stages so the pick and the data move are in different clocks:
+    //   1. pick: a registered one-hot grant, round-robin (requests above the last winner first)
+    //   2. move: the granted solver's output is taken through a one-hot AND-OR mux
+    // A solver holds its result until it sees out_ready, so the result is still there when the
+    // registered grant arrives. The solver granted this clock is masked out of the next pick.
+    reg  [NSOLV-1:0] grant;                   // stage 1 result, one-hot or zero
+    reg  [NSOLV-1:0] last;                    // one-hot of the most recent winner
+    wire [NSOLV-1:0] req     = s_out_valid & ~grant;
+    wire [NSOLV-1:0] above   = ~((last << 1) - 1'b1) & ~last;   // positions strictly above the last winner
+    wire [NSOLV-1:0] req_hi  = req & above;
+    wire [NSOLV-1:0] pick_hi = req_hi & (~req_hi + 1'b1);       // lowest set bit
+    wire [NSOLV-1:0] pick_lo = req    & (~req    + 1'b1);
+    wire [NSOLV-1:0] pick    = (|req_hi) ? pick_hi : pick_lo;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            grant <= {NSOLV{1'b0}};
+            last  <= {{(NSOLV-1){1'b0}}, 1'b1} << (NSOLV-1);     // so solver 0 is first
+        end else begin
+            grant <= pick;
+            if (|pick) last <= pick;
         end
     end
-    assign s_out_ready = g_found ? ({{(NSOLV-1){1'b0}}, 1'b1} << g_idx) : {NSOLV{1'b0}};
+    assign s_out_ready = grant;
 
     reg            w1_v;                      // granted result, registered
     reg   [XW-1:0] w1_x;
     reg   [YW-1:0] w1_y;
     reg   [IW-1:0] w1_cnt;
-    always @(posedge clk) begin
-        if (rst) begin
-            rr_ptr <= 8'd0;
-            w1_v   <= 1'b0;
-        end else begin
-            w1_v <= g_found;
-            if (g_found)
-                rr_ptr <= (g_idx == NSOLV-1) ? 8'd0 : g_idx + 1'b1;
+    reg   [XW-1:0] mx_x;
+    reg   [YW-1:0] mx_y;
+    reg   [IW-1:0] mx_cnt;
+    integer        k;
+    always @(*) begin                         // one-hot AND-OR mux
+        mx_x = {XW{1'b0}}; mx_y = {YW{1'b0}}; mx_cnt = {IW{1'b0}};
+        for (k = 0; k < NSOLV; k = k + 1) begin
+            mx_x   = mx_x   | (s_out_x[k*XW +: XW]   & {XW{grant[k]}});
+            mx_y   = mx_y   | (s_out_y[k*YW +: YW]   & {YW{grant[k]}});
+            mx_cnt = mx_cnt | (s_out_cnt[k*IW +: IW] & {IW{grant[k]}});
         end
-        w1_x   <= s_out_x[g_idx*XW +: XW];
-        w1_y   <= s_out_y[g_idx*YW +: YW];
-        w1_cnt <= s_out_cnt[g_idx*IW +: IW];
+    end
+    always @(posedge clk) begin
+        if (rst) w1_v <= 1'b0;
+        else     w1_v <= |grant;
+        w1_x   <= mx_x;
+        w1_y   <= mx_y;
+        w1_cnt <= mx_cnt;
     end
 
     // ======================================================== colour (lab palette)

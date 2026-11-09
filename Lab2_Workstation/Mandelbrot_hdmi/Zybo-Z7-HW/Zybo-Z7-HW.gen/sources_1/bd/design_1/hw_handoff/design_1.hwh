@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov  9 16:41:03 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov  9 17:38:47 2026" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-10:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -4416,7 +4416,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="6" FULLNAME="/mandelbrot_driver_0" HWVERSION="1.0" INSTANCE="mandelbrot_driver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mandelbrot_driver" VLNV="xilinx.com:user:mandelbrot_driver:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/mandelbrot_driver_0" HWVERSION="1.0" INSTANCE="mandelbrot_driver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mandelbrot_driver" VLNV="xilinx.com:user:mandelbrot_driver:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -4426,7 +4426,7 @@
         <PARAMETER NAME="C_M00_AXI_DATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="6"/>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="NSOLV" VALUE="4"/>
+        <PARAMETER NAME="NSOLV" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_mandelbrot_driver_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C10000"/>
@@ -4812,9 +4812,9 @@
             <CONNECTION INSTANCE="axi_interconnect_gp0" PORT="M03_ARESETN"/>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="v_tc_out" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_interconnect_hp0" PORT="S01_ARESETN"/>
             <CONNECTION INSTANCE="mandelbrot_driver_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="mandelbrot_driver_0" PORT="m00_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_interconnect_hp0" PORT="S01_ARESETN"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
@@ -5925,9 +5925,9 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="proc_sys_reset_fclk0" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="v_tc_out" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_interconnect_hp0" PORT="S01_ACLK"/>
             <CONNECTION INSTANCE="mandelbrot_driver_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="mandelbrot_driver_0" PORT="m00_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_interconnect_hp0" PORT="S01_ACLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="133333344" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">

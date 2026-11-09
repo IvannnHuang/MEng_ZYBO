@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov  9 17:37:44 2026
+# Process ID: 26092
+# Current directory: C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/scripts
+# Command line: vivado.exe -mode batch -nojournal -log pipe8_build.log -source set_nsolv.tcl -tclargs 8 repackage
+# Log file: C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/scripts/pipe8_build.log
+# Journal file: 
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :20759 MB
+#-----------------------------------------------------------
+source set_nsolv.tcl
+# set here [file dirname [file normalize [info script]]]
+# set hw   [file normalize $here/../Zybo-Z7-HW]
+# set out  [file normalize $here/../..]
+# set n    [lindex $argv 0]
+# set repack [expr {[lsearch $argv repackage] >= 0}]
+# if {![string is integer -strict $n] || $n < 1 || $n > 255} { error "usage: -tclargs <NSOLV 1..255> ?repackage?" }
+# open_project $hw/Zybo-Z7-HW.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 545.836 ; gain = 228.281
+# if {$repack} {
+#     set core [ipx::open_core $hw/ip_repo/mandelbrot_driver_1_0/component.xml]
+#     ipx::update_checksums $core
+#     ipx::increment_core_revision $core
+#     ipx::save_core $core
+#     ipx::unload_core $core
+#     update_ip_catalog -rebuild -repo_path $hw/ip_repo
+#     upgrade_ip [get_ips -filter {NAME =~ "*mandelbrot_driver*"}]
+#     report_ip_status -file $out/ip_status_after_repackage.rpt
+#     puts "NSOLV: IP re-packaged and upgraded"
+# }
+invalid command name "ipx::increment_core_revision"
+    while executing
+"ipx::increment_core_revision $core"
+    invoked from within
+"if {$repack} {
+    set core [ipx::open_core $hw/ip_repo/mandelbrot_driver_1_0/component.xml]
+    ipx::update_checksums $core
+    ipx::increment_core_r..."
+    (file "set_nsolv.tcl" line 20)
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 17:37:53 2026...

@@ -79,11 +79,30 @@ module mandel_solver #(
     reg        [YW-1:0] o_y;
     reg        [IW-1:0] o_cnt;
 
+    // One-pixel input buffer: in_ready is a flip-flop, so the dispenser's "first free solver"
+    // scan never runs through this ring's recirculate logic in the same clock.
+    reg                 ib_v;
+    reg        [XW-1:0] ib_x;
+    reg        [YW-1:0] ib_y;
+    reg signed [W-1:0]  ib_cr, ib_ci;
+
     wire emit   = h_v & h_f & ~o_v;        // finished pixel moves to the output buffer
     wire recirc = h_v & ~emit;             // HEAD stays in the ring
-    wire inject = ~recirc & in_valid;      // new pixel enters the free slot
+    wire inject = ~recirc & ib_v;          // buffered pixel enters the free slot
 
-    assign in_ready  = ~recirc;
+    assign in_ready  = ~ib_v;
+
+    always @(posedge clk) begin
+        if (rst)                      ib_v <= 1'b0;
+        else if (in_valid & ~ib_v)    ib_v <= 1'b1;
+        else if (inject)              ib_v <= 1'b0;
+        if (in_valid & ~ib_v) begin
+            ib_x  <= in_x;
+            ib_y  <= in_y;
+            ib_cr <= in_cr;
+            ib_ci <= in_ci;
+        end
+    end
     assign out_valid = o_v;
     assign out_x     = o_x;
     assign out_y     = o_y;
@@ -103,10 +122,10 @@ module mandel_solver #(
     // New pixel starts with z = 0: saved products 0, count 0.
     wire                 e_v    = recirc | inject;
     wire                 e_f    = recirc & h_f;
-    wire        [XW-1:0] e_x    = recirc ? h_x    : in_x;
-    wire        [YW-1:0] e_y    = recirc ? h_y    : in_y;
-    wire signed [W-1:0]  e_cr   = recirc ? h_cr   : in_cr;
-    wire signed [W-1:0]  e_ci   = recirc ? h_ci   : in_ci;
+    wire        [XW-1:0] e_x    = recirc ? h_x    : ib_x;
+    wire        [YW-1:0] e_y    = recirc ? h_y    : ib_y;
+    wire signed [W-1:0]  e_cr   = recirc ? h_cr   : ib_cr;
+    wire signed [W-1:0]  e_ci   = recirc ? h_ci   : ib_ci;
     wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : {IW{1'b0}};
     wire signed [W-1:0]  e_zr2  = recirc ? h_zr2  : {W{1'b0}};
     wire signed [W-1:0]  e_zi2  = recirc ? h_zi2  : {W{1'b0}};
@@ -219,6 +238,6 @@ module mandel_solver #(
         for (j = 0; j < ML; j = j + 1)
             any_m = any_m | m_v[j];
     end
-    assign idle = ~(a_v | any_m | h_v | o_v);
+    assign idle = ~(ib_v | a_v | any_m | h_v | o_v);
 
 endmodule

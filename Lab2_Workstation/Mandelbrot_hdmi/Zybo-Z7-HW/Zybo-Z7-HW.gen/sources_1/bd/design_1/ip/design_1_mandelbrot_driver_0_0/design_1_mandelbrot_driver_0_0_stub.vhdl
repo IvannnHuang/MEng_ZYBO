@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Tue Oct 13 16:36:47 2026
--- Host        : IvanLaptop running 64-bit major release  (build 9200)
+-- Date        : Mon Nov  9 17:39:38 2026
+-- Host        : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               d:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/design_1_mandelbrot_driver_0_0_stub.vhdl
+--               c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/design_1_mandelbrot_driver_0_0_stub.vhdl
 -- Design      : design_1_mandelbrot_driver_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

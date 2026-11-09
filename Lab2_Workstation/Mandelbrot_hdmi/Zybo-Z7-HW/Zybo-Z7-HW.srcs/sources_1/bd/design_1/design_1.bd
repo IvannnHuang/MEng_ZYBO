@@ -2914,13 +2914,13 @@
       },
       "mandelbrot_driver_0": {
         "vlnv": "xilinx.com:user:mandelbrot_driver:1.0",
-        "ip_revision": "6",
+        "ip_revision": "8",
         "xci_name": "design_1_mandelbrot_driver_0_0",
         "xci_path": "ip\\design_1_mandelbrot_driver_0_0\\design_1_mandelbrot_driver_0_0.xci",
         "inst_hier_path": "mandelbrot_driver_0",
         "parameters": {
           "NSOLV": {
-            "value": "4"
+            "value": "8"
           }
         },
         "interface_ports": {
@@ -3073,9 +3073,9 @@
           "axi_vdma_0/s_axi_lite_aclk",
           "proc_sys_reset_fclk0/slowest_sync_clk",
           "v_tc_out/s_axi_aclk",
+          "axi_interconnect_hp0/S01_ACLK",
           "mandelbrot_driver_0/s00_axi_aclk",
-          "mandelbrot_driver_0/m00_axi_aclk",
-          "axi_interconnect_hp0/S01_ACLK"
+          "mandelbrot_driver_0/m00_axi_aclk"
         ]
       },
       "ARESETN_1": {
@@ -3134,9 +3134,9 @@
           "axi_interconnect_gp0/M03_ARESETN",
           "axi_vdma_0/axi_resetn",
           "v_tc_out/s_axi_aresetn",
+          "axi_interconnect_hp0/S01_ARESETN",
           "mandelbrot_driver_0/s00_axi_aresetn",
-          "mandelbrot_driver_0/m00_axi_aresetn",
-          "axi_interconnect_hp0/S01_ARESETN"
+          "mandelbrot_driver_0/m00_axi_aresetn"
         ]
       },
       "proc_sys_reset_fclk1_interconnect_aresetn": {

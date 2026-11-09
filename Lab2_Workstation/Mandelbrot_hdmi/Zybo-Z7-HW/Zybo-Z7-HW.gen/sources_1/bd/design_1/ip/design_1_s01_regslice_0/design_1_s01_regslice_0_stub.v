@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
 // Date        : Mon Nov  9 16:42:23 2026
 // Host        : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_s01_regslice_0/design_1_s01_regslice_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_s01_regslice_0 -prefix
+//               design_1_s01_regslice_0_ design_1_s01_regslice_0_stub.v
 // Design      : design_1_s01_regslice_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
