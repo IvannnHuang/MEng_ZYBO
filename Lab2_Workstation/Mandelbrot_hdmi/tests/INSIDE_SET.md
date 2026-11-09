@@ -71,7 +71,7 @@ Build with Vivado closed, from `Mandelbrot_hdmi/scripts`:
 ```
 
 Reports use `*_inside_set*` names so baseline timing/utilization reports survive.
-The script exports the bitstream and XSA; board render time still needs a board run.
+The script exports the bitstream and XSA. The subsequent user-supplied board run measured **93.442 ms / 9,344,232 clocks** with eight solvers. See `BOARD-RESULTS-inside-set-2026-11-09.txt` for the UART capture and configuration conditions.
 
 Add `-FullFrame` to the regression command to also simulate the software default
 1920x1080 view (Q4.23 step 18641, left -24186816, top 10066140,

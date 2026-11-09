@@ -1,0 +1,23 @@
+Board result supplied by the user, 2026-11-09
+Configuration: 8 pipelined Q4.23 iterators + shared Q4.14 cardioid/bulb test
+RTL: 1828dd9; routed build/results: 294024d
+
+Select: b
+
+ solvers   FPGA ms
+    1       717.474
+    2       358.541
+    3       239.443
+    4       180.355
+    5       145.233
+    6       122.064
+    7       105.965
+    8        93.442
+
+Select: f
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 8 of 8
+  FPGA render: 93.442 ms (9344232 clocks)  STATUS 0x2

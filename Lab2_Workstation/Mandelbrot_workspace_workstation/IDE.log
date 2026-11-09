@@ -813,3 +813,79 @@ con
 
 17:48:26 INFO  : Launch script is exported to file 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI_system\_ide\scripts\debugger_zybo-z7-10-hdmi-default_16.tcl'
 17:52:13 INFO  : Disconnected from the channel tcfchan#4.
+18:29:45 DEBUG : Logs will be stored at 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/IDE.log'.
+18:29:46 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\temp_xsdb_launch_script.tcl
+18:29:46 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+18:29:46 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+18:29:46 ERROR : (XSDB Server)'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+18:29:48 INFO  : XSCT server has started successfully.
+18:29:48 INFO  : plnx-install-location is set to ''
+18:29:48 INFO  : Successfully done setting XSCT server connection channel  
+18:29:48 INFO  : Successfully done setting workspace for the tool. 
+18:29:49 INFO  : Platform repository initialization has completed.
+18:29:49 INFO  : Registering command handlers for Vitis TCF services
+18:29:49 INFO  : Successfully done query RDI_DATADIR 
+18:30:07 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+18:30:27 INFO  : Result from executing command 'getProjects': design_1_wrapper
+18:30:27 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;xilinx_zcu102_base_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_202410_1/xilinx_zcu102_base_202410_1.xpfm;xilinx_zcu102_base_dfx_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_dfx_202410_1/xilinx_zcu102_base_dfx_202410_1.xpfm;xilinx_zcu104_base_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu104_base_202410_1/xilinx_zcu104_base_202410_1.xpfm
+18:31:05 INFO  : Result from executing command 'removePlatformRepo': 
+18:31:46 INFO  : Result from executing command 'getProjects': design_1_wrapper
+18:31:46 INFO  : Result from executing command 'getPlatforms': xilinx_zcu102_base_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_202410_1/xilinx_zcu102_base_202410_1.xpfm;xilinx_zcu102_base_dfx_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu102_base_dfx_202410_1/xilinx_zcu102_base_dfx_202410_1.xpfm;xilinx_zcu104_base_202410_1|C:/Xilinx/Vitis/2024.1/base_platforms/xilinx_zcu104_base_202410_1/xilinx_zcu104_base_202410_1.xpfm
+18:31:46 INFO  : Checking for BSP changes to sync application flags for project 'Zybo-Z7-10-HDMI'...
+18:33:34 INFO  : Checking for BSP changes to sync application flags for project 'Zybo-Z7-10-HDMI'...
+18:33:40 INFO  : The hardware specification used by project 'Zybo-Z7-10-HDMI' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:33:40 INFO  : The file 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+18:33:40 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI\_ide\bitstream' in project 'Zybo-Z7-10-HDMI'.
+18:33:40 INFO  : The file 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI\_ide\psinit\ps7_init.tcl' stored in project is removed.
+18:33:44 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI\_ide\psinit' in project 'Zybo-Z7-10-HDMI'.
+18:33:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351B7A58DA' is selected.
+18:33:48 INFO  : 'jtag frequency' command is executed.
+18:33:48 INFO  : Context for 'APU' is selected.
+18:33:48 INFO  : System reset is completed.
+18:33:51 INFO  : 'after 3000' command is executed.
+18:33:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B7A58DA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B7A58DA-13722093-0"}' command is executed.
+18:33:52 INFO  : Device configured successfully with "C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/_ide/bitstream/design_1_wrapper.bit"
+18:33:52 INFO  : Context for 'APU' is selected.
+18:33:52 INFO  : Hardware design and registers information is loaded from 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+18:33:52 INFO  : 'configparams force-mem-access 1' command is executed.
+18:33:52 INFO  : Context for 'APU' is selected.
+18:33:52 INFO  : Sourcing of 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/_ide/psinit/ps7_init.tcl' is done.
+18:33:52 INFO  : 'ps7_init' command is executed.
+18:33:52 INFO  : 'ps7_post_config' command is executed.
+18:33:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:53 INFO  : The application 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/Debug/Zybo-Z7-10-HDMI.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:33:53 INFO  : 'configparams force-mem-access 0' command is executed.
+18:33:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B7A58DA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B7A58DA-13722093-0"}
+fpga -file C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/Debug/Zybo-Z7-10-HDMI.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:53 INFO  : 'con' command is executed.
+18:33:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:33:53 INFO  : Launch script is exported to file 'C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\Zybo-Z7-10-HDMI_system\_ide\scripts\debugger_zybo-z7-10-hdmi-default_17.tcl'

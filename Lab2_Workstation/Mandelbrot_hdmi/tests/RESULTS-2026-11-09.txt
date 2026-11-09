@@ -19,5 +19,7 @@ ALL ENGINE COMPARISONS PASSED
 FULL FRAME PASSED: cycles=9344200 at 100MHz = 93.442000 ms (simulation, ideal AXI)
 
 Full-frame time is RTL simulation with ideal AXI at 100MHz, not a board measurement.
-Board not tested: no Zybo USB serial port present. Vitis platform update remains pending.
+SUBSEQUENT BOARD RESULT (user UART capture): 93.442 ms / 9344232 clocks / STATUS 0x2.
+1080p, max_iter=1000, 8 of 8 solvers, full view. Updated Vitis hardware tested.
+Board exceeds ideal-AXI simulation by 32 clocks (0.00032 ms).
 Generated bitstream and XSA are from the routed inside-set build. Vivado closed.

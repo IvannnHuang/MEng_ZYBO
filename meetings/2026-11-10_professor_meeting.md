@@ -2,6 +2,34 @@
 
 Topic: porting ECE 5760 Lab 2 (Mandelbrot) from the DE1-SoC to the Zybo Z7-10.
 
+## Latest measured configuration: eight iterators + shared inside-set test
+
+**93.442 ms on the board (9,344,232 clocks)** for the full 1920x1080 view,
+max_iter 1000, 100 MHz, eight of eight Q4.23 iterators. The shared conservative
+Q4.14 cardioid/bulb test adds four DSPs: total 76/80 DSPs, 11,707 LUTs,
+WNS +0.236 ns. The preceding eight-iterator configuration took 399.4 ms.
+This is a new algorithm/configuration result with the same iterator count.
+
+The goal is to understand the full capabilities and tradeoffs of the Zybo
+Z7-10 / Zynq-7010, not match or beat the DE1 board's render time. Keep
+configuration milestones as the main progression and per-configuration active
+solver sweeps as supporting evidence.
+
+| Active solvers, latest configuration | Board ms |
+|---|---:|
+| 1 | 717.474 |
+| 2 | 358.541 |
+| 3 | 239.443 |
+| 4 | 180.355 |
+| 5 | 145.233 |
+| 6 | 122.064 |
+| 7 | 105.965 |
+| 8 | **93.442** |
+
+Detailed measurement conditions, simulation comparison, source diffs and reports:
+`Lab2_Workstation/OPTIMIZATION_LOG.md` step 4. Earlier baseline observations below
+remain historical; the old inside-test projections are superseded by this run.
+
 ## 1. Where we are: Mandelbrot IP v1
 - Working on the Zybo Z7-10: the IP renders the full set at **1920×1080** and writes the frame **straight into DDR** (AXI master on HP0); the VDMA shows it over HDMI.
 - The ARM only sets the view (centre, zoom, max_iter) and starts a render. The menu takes UART keys, board buttons, and a USB mouse (pan / click to zoom, same as the DE1 lab; mouse driver still being brought up).
@@ -79,13 +107,13 @@ Measured v1 cost (hierarchical utilization): each solver ≈ **9 DSPs, ~850 LUTs
 
 Order of attack, by expected gain. Measure resources and render time after every step.
 1. **Strip the HDMI input**: frees LUTs/FFs/BRAM/1 MMCM, but no DSPs.
-2. **Skip the inside of the set, once per pixel.** ~97 % of the frame's work is inside-the-set pixels running to 1000 iterations, and the main cardioid + period-2 bulb are ~91 % of the set's area. Unlike the DE1 (a rectangle check inside every iterator, because exact checks cost DSPs per iterator), our engine has a single dispenser, so **one shared exact cardioid/bulb test** (~5 multiplies total) can serve all solvers. Estimate: 792 → **~90 ms** with 4 solvers.
-3. **More solvers up to the DSP limit**: 8 at Q4.23 (~2×; ~45 ms combined with step 2).
+2. **Shared inside-set test: done.** A conservative Q4.14 cardioid/bulb classifier serves all eight Q4.23 solvers, using four DSPs. Measured: **93.442 ms with eight solvers**, **180.355 ms with four active solvers**. The earlier 90/45 ms projections are superseded.
+3. **Eight pipelined solvers: done.** The preceding configuration took 399.4 ms; adding the shared test keeps eight built solvers and reduces work per pixel.
 4. **Number width as an IP parameter**: fewer DSPs per multiply → more solvers (LUTs become the limit, ~12–15 solvers), less zoom depth.
 5. **Raise the clock**: today 100 MHz meets timing with only +0.255 ns slack (worst path: the `zr × zi` multiply in a solver). Going faster needs a deeper multiply pipeline first.
 
 ### Decisions already made (2026-11-09)
-- **Goal:** the biggest speed-up curve the Z7-10 allows, shown as a table like the report's Table 1 (1..N solvers, then each optimization).
+- **Goal:** characterize the Zybo Z7-10 capabilities through measured configuration milestones, resource costs, precision and timing tradeoffs; active-solver curves support each configuration.
 - **Benchmark:** the board's 16:9 full view, x[−2.88, 1.38] × y[−1.2, 1.2], at max_iter 1000.
 - **Precision:** the number width becomes an **IP parameter**. Benchmark several widths (zoom depth vs number of iterators) so the choice can be made per course.
 - **Version 1:** a label only. The current IP is "v1"; no separate frozen copy.

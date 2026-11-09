@@ -7,7 +7,7 @@ Running record of every optimization step: what changed in the code, what it cos
 2. **DE1 vs Zybo DSP side-by-side** (done below): how many multiplies each board can do at each width.
 3. **Chip-viewer pictures** for every step: Vivado → *Open Implemented Design* → *Device* tab → highlight the Mandelbrot IP (and the solvers) → save a screenshot into `Lab2_Workstation/figures/chip_<step>.png`. Script: `Mandelbrot_hdmi/scripts/chip_view.tcl` (opens the GUI, colours the blocks; take the screenshot, then close Vivado).
 4. **Exact code changes per optimization** (below, as diffs), so the next step can be planned from what changed and what it cost.
-5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board validation is next, before another optimization.
+5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board timing is now measured; record each configuration before another optimization.
 
 ## DSPs: how many multiplications fit
 | | DE1-SoC (Cyclone V 5CSEMA5) | Zybo Z7-10 (Zynq xc7z010) |
@@ -30,7 +30,7 @@ So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is t
 | HDMI input removed | `strip-hdmi-in` `4ab3558` | 4 | 36 (45 %) | 8,187 (46.5 %) | +0.223 | 792.2 |
 | 8 iterators, original engine | `nsolv-8` `5b7b0e5` | 8 | 72 (90 %) | 11,496 (65 %) | **−0.731** | 399.9 (out of spec) |
 | 8 iterators, pipelined engine | `engine-pipeline` `e226f79` | 8 | 72 (90 %) | 11,267 (64 %) | +0.147 | **399.4** |
-| Shared inside-set classifier | `shared-inside-set` `1828dd9` | 8 | 76 (95 %) | 11,707 (66.52 %) | +0.236 | 93.442 (simulation); board pending |
+| Shared inside-set classifier | `shared-inside-set` `1828dd9` | 8 | 76 (95 %) | 11,707 (66.52 %) | +0.236 | **93.442 (board)** |
 
 ### Step 1: remove HDMI input (no RTL change)
 - Block design only: `Mandelbrot_hdmi/scripts/strip_hdmi_in.tcl` deletes `dvi2rgb`, `v_vid_in_axi4s`, `v_tc_in`, `axis_subset_converter_in`, the RX reset, `axi_gpio_video`; turns off the VDMA write channel and FCLK2; moves the IP to `hp0/S01` (FCLK0). Constraints: HDMI RX pins commented out in `Zybo-Z7-Master.xdc`.
@@ -206,13 +206,15 @@ Each colour = one iterator's LUTs/FFs/DSPs as placed by Vivado (`scripts/chip_vi
 - Shared eight-stage classifier ahead of the dispenser-to-solver handoff. Four 18x18 multiplies in Q4.14, with conservative inward margins: cardioid 1/128, bulb 1/512. Uncertain points keep the original Q4.23 iteration arithmetic. Accepted inside pixels use the existing solver/arbiter output path with count=max_iter.
 - Measured routed resources: **76/80 DSPs**, **11,707 LUTs (66.52%)**, **13,529 FFs**, **11 BRAM tiles**. Compared with the pipelined baseline: +4 DSPs, +440 LUTs. Classifier hierarchy: 347 total LUTs, 152 FFs, 4 DSPs (see hierarchical report; synthesis can move logic across module boundaries).
 - Timing: **+0.236 ns WNS at 100 MHz**, **+0.024 ns overall worst hold slack**; all setup/hold/pulse-width constraints met. Separate `bus_skew_inside_set.rpt` verifies nine CDC bus-skew constraints; minimum slack +6.203 ns.
-- Generated the bitstream and exported `Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa`. Vivado is closed. The existing Vitis platform still uses the preceding build until its hardware specification is updated.
+- Generated the bitstream and exported `Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa`. Vivado is closed. The updated Vitis platform was used for the board run reported by the user.
 - Numerical validation: 1,000,000 coordinates compared with exact integer cardioid/bulb inequalities; **152,578 accepted interior points, zero false positives**. Error-bound derivation: `Mandelbrot_hdmi/tests/INSIDE_SET.md`.
 - Direct classifier RTL validation: **65,536 coordinates, 9,920 hits**, exact agreement with the numerical model and metadata under random input gaps/output stalls.
 - Engine validation: ten 128x64 frames; **identical iteration counts and AXI output bytes** against frozen baseline RTL. Includes full/wide view, deep zoom, cardioid, bulb, exterior, active counts 0/1/3/8/255, max_iter 0/1/17/1000, row-buffer wrap, repeated frames, and reset with a populated pipeline.
 - Wide-view regression with eight solvers: **350,132 -> 88,685 cycles (3.95x)**. This is a reduced-size simulation, not the 1080p board benchmark.
 - Full 1920x1080 software-default view, max_iter=1000, eight solvers: **9,344,200 cycles = 93.442 ms at 100 MHz** in RTL simulation with an ideal AXI sink. Checked all 2,073,600 result events, 777,600 output beats, and 48,600 bursts. This is **not a board measurement**, and cannot establish the board speedup over the prior 399.4 ms result.
-- **Board render time: pending.** No Zybo USB serial port was detected (only the workstation COM1). Do not substitute simulation times for board measurements.
+- **Board result (user UART capture): 93.442 ms, 9,344,232 clocks, STATUS 0x2.** Full 1920x1080 view, max_iter=1000, eight of eight solvers, 100 MHz. The simulation used 9,344,200 clocks: the board run is 32 clocks (0.00032 ms) longer and rounds to the same displayed milliseconds.
+- **Configuration record:** eight pipelined Q4.23 iterators + shared Q4.14 conservative cardioid/bulb test. The iterator count stays at eight; this optimization reduces work per pixel. Compared with the preceding eight-iterator configuration, 399.4 -> 93.442 ms (4.27x within the same Zybo system).
+- **Project goal:** characterize the Zybo Z7-10 / Zynq-7010 capabilities and the tradeoffs among arithmetic precision, DSP/LUT use, clock timing, and render time. The DE1 comparison explains architectural differences; matching or beating its render time is not the objective.
 - **Chip-view screenshot: pending.** Run `scripts/chip_view.tcl` on this branch to capture the new placement. The earlier `chip_8iter_pipelined.png` remains the baseline image.
 - Reproduce: `powershell -NoProfile -ExecutionPolicy Bypass -File Lab2_Workstation/Mandelbrot_hdmi/tests/run_compare.ps1` (add `-FullFrame` for the optional 1080p estimate).
 
@@ -231,13 +233,33 @@ Each colour = one iterator's LUTs/FFs/DSPs as placed by Vivado (`scripts/chip_vi
 | 8 | max_iter=17, n_active=255 clamps to 8 | 11,704 | 8,818 |
 | 9 | Wide view after reset during a frame | 350,131 | 88,686 |
 
-#### Board validation still to do
+#### Board validation: latest configuration measured
 
-Connect and power the Zybo. In Vitis, update the `design_1_wrapper` platform's hardware
-specification from the new XSA, build the platform/application, and run with FPGA
-programming enabled. Use `f`, then `b`; record the 1-8 solver curve and full-set
-8-solver render time, and check pan/zoom visually. Commit and push the measured
-results before starting another optimization.
+The user ran `b` and then `f` on the board. The main record is **93.442 ms
+for the eight-iterator + shared inside-set configuration**. The sweep below
+changes the number of active solvers inside that same built configuration;
+it is supporting scaling data, not eight separate optimization steps.
+
+| Active solvers (of 8 built) | FPGA render time (ms) |
+|---|---:|
+| 1 | 717.474 |
+| 2 | 358.541 |
+| 3 | 239.443 |
+| 4 | 180.355 |
+| 5 | 145.233 |
+| 6 | 122.064 |
+| 7 | 105.965 |
+| 8 | **93.442** |
+
+`f` readback: x[-2.8832931519, 1.3810709715], y[-1.1977552176, 1.1999773979],
+centre (-0.75, 0), zoom x1, step 18641 LSB, max_iter 1000, solvers 8 of 8.
+`FPGA render: 93.442 ms (9344232 clocks) STATUS 0x2`.
+Raw UART capture: `Mandelbrot_hdmi/tests/BOARD-RESULTS-inside-set-2026-11-09.txt`.
+
+The one-active-solver result is now 717.474 ms because it also benefits from
+the shared classifier. Keep the preceding configuration's solver sweep as
+historical data. Pan/zoom visual confirmation and a new chip-view screenshot
+remain open; no further RTL optimization was made with this results update.
 
 #### Exact RTL diff (`9926fd7` -> `1828dd9`, zero context)
 
