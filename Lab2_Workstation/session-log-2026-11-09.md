@@ -125,6 +125,21 @@ Then: validate → synthesis → implementation → check timing (WNS ≥ 0) →
 | Bonded IOBs | 29 | |
 | WNS | | |
 
+## Branches
+- `main`: v1 (with HDMI input), untouched.
+- `strip-hdmi-in`: checkpoint commit `4ab3558`, HDMI input removed, 4 iterators, **tested on board**. Not merged, not pushed.
+- `nsolv-8` (from `strip-hdmi-in`): the 8-iterator experiment. If it fails, `git switch strip-hdmi-in` returns to the tested design. Close Vitis/Vivado before switching.
+
+## Step 5: 8 iterators (`nsolv-8`)
+- `scripts/set_nsolv.tcl -tclargs 8` sets the IP parameter `NSOLV`, rebuilds, writes `util_nsolv8*.rpt` / `timing_nsolv8.rpt`, and exports the XSA. No software change: the app reads the built count from `N_ACTIVE[15:8]`, and `b` times 1..N.
+- Expected: ~395 ms, 72/80 DSPs, ~66 % LUTs. Risk: timing at 100 MHz (WNS was +0.22 ns at 4).
+- **Result (17:19): fits, but timing fails.** LUTs 11,496 (65.3 %), FFs 13,318 (37.8 %), BRAM 11 (18.3 %), **DSPs 72/80 (90 %)**. WNS **−0.731 ns**, 22 failing paths on `clk_fpga_0` (`paths_nsolv8.rpt`, from `scripts/failing_paths.tcl`):
+  - 16 × **result arbiter**: `SOLV[3]/o_v` → `w1_x`/`w1_y` (round-robin pick of 1 of 8 + 8:1 data mux in one clock), worst −0.731.
+  - 6 × **dispenser → solver entry**: `SOLV[6]/h_v`, `SOLV[7]/o_v` → `a_zr` ("first free solver" scan over 8 + inject mux + adder in one clock), worst −0.448.
+  - The multipliers are fine. The coordination logic is what doesn't scale.
+- Committed on `nsolv-8` as `5b7b0e5` (record only). **Switched back to `strip-hdmi-in`** (tested 4-iterator design: XSA, bitstream and Vitis platform restored by git). Notes, scripts and the 8-iterator reports were copied over to this branch.
+- **Fix plan:** (1) register the arbiter's grant, move the data the next clock; (2) one-pixel input buffer per solver so the dispenser never waits on the ring combinationally. Verify in simulation before rebuilding. Throughput unchanged (results are rare vs iterations).
+
 ## After this: speed-up work (plan, re-ordered by expected gain)
 1. **Shared cardioid + period-2-bulb test in the dispenser**: est. ~8× (792 → ~90 ms at 4 solvers). The DE1's rectangle version gave 43 → 19.5 → 14.66 ms; ours can use the exact formulas because it's one shared unit, not one per iterator.
 2. More solvers up to the DSP limit (8 at Q4.23): ~2×. Speed-up table for 1..N.

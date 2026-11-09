@@ -1,0 +1,139 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Mon Nov  9 17:20:26 2026
+| Host         : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
+| Command      : report_timing -setup -max_paths 40 -nworst 1 -unique_pins -sort_by slack -path_type summary -file C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/paths_nsolv8.rpt
+| Design       : design_1_wrapper
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_y_reg[1]/D
+                                                              -0.731        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[7]/D
+                                                              -0.584        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[5]/D
+                                                              -0.581        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[3]/D
+                                                              -0.535        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_y_reg[2]/D
+                                                              -0.520        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[8]/D
+                                                              -0.500        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[9]/D
+                                                              -0.460        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[21]_replica_3/D
+                                                              -0.448        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[0]/D
+                                                              -0.417        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[4]/D
+                                                              -0.409        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[6]/D
+                                                              -0.377        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[10]/D
+                                                              -0.342        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[21]_replica/D
+                                                              -0.259        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[2]/D
+                                                              -0.177        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_x_reg[1]/D
+                                                              -0.151        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[21]_replica_1/D
+                                                              -0.140        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[20]_replica_2/D
+                                                              -0.113        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/w1_y_reg[0]/D
+                                                              -0.109        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[23]_replica/D
+                                                              -0.036        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[17]_replica/D
+                                                              -0.031        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[23]_replica_4/D
+                                                              -0.021        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zi_reg[21]_replica_3/D
+                                                              -0.016        
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/a_zr_reg[18]_replica_1/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[0][19]/D
+                                                              0.007         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/a_zi_reg[20]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[0][17]/D
+                                                              0.028         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[21]/D
+                                                              0.043         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[22]_replica_4/D
+                                                              0.047         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/a_zi_reg[20]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[0][19]/D
+                                                              0.049         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/a_zr_reg[23]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[0][19]/D
+                                                              0.060         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/a_zr_reg[18]_replica_1/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[0][18]/D
+                                                              0.067         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/a_zr_reg[18]_replica_1/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[0][17]/D
+                                                              0.086         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[21]_replica_2/D
+                                                              0.087         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/h_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[20]_replica/D
+                                                              0.090         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/a_zr_reg[23]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[0][18]/D
+                                                              0.120         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[19]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[0][17]/D
+                                                              0.122         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/a_zi_reg[20]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[0][18]/D
+                                                              0.123         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[19]_replica/D
+                                                              0.127         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/a_zr_reg[19]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[0][19]/D
+                                                              0.130         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/o_v_reg/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/a_zr_reg[23]_replica_1/D
+                                                              0.130         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/a_zr_reg[17]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[0][19]/D
+                                                              0.133         
+design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/a_zi_reg[20]/C
+                               design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[0][16]__0/D
+                                                              0.139         
+
+
+

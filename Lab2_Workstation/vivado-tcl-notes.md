@@ -56,6 +56,19 @@ C:\Xilinx\Vivado\2024.1\bin\vivado.bat -mode batch -nojournal -log strip_build.l
 - Build run 2026-11-09 (16:41 → 16:45): OK. LUTs 11,623 → 8,187, registers 17,152 → 11,089, BRAM tiles 18 → 11, MMCMs 2 → 1, DSPs unchanged; WNS +0.223 ns at 100 MHz.
 - Edit run 2026-11-09: OK, block design validated. 4× `[PSU-1..4] negative DQS skew` critical warnings: these are Digilent's board-preset DDR values, identical in v1, printed whenever the PS block is re-configured. Not caused by the edit.
 
+## Changing the number of iterators: `Mandelbrot_hdmi/scripts/set_nsolv.tcl`
+```bat
+C:\Xilinx\Vivado\2024.1\bin\vivado.bat -mode batch -nojournal -log nsolv8_build.log -source set_nsolv.tcl -tclargs 8
+```
+- Same as double-clicking the IP in the block design and changing **NSOLV**, or in the Tcl console: `set_property CONFIG.NSOLV 8 [get_bd_cells mandelbrot_driver_0]`.
+- Then rebuilds and exports; reports land in `Lab2_Workstation/` as `util_nsolv<N>.rpt`, `util_nsolv<N>_hier.rpt`, `timing_nsolv<N>.rpt`.
+
+## Block diagram picture: `Mandelbrot_hdmi/scripts/export_bd_svg.tcl`
+```bat
+C:\Xilinx\Vivado\2024.1\bin\vivado.bat -mode gui -nojournal -source export_bd_svg.tcl
+```
+- `write_bd_layout -format svg` only works with the GUI (batch mode gives `[BD 5-349]`), so this opens Vivado briefly and exits on its own. Output: `Lab2_Workstation/design_1_stripped.svg`.
+
 ## To run next
 
 ### Plain utilization totals (quick check)
