@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Mon Nov  9 17:42:20 2026
+| Date             : Mon Nov  9 18:18:55 2026
 | Host             : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.135        |
+| Total On-Chip Power (W)  | 2.144        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.001        |
+| Dynamic (W)              | 2.010        |
 | Device Static (W)        | 0.134        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 60.4         |
-| Junction Temperature (C) | 49.6         |
+| Max Ambient (C)          | 60.3         |
+| Junction Temperature (C) | 49.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.054 |        7 |       --- |             --- |
-| Slice Logic              |     0.092 |    30353 |       --- |             --- |
-|   LUT as Logic           |     0.078 |    10645 |     17600 |           60.48 |
-|   CARRY4                 |     0.008 |     1336 |      4400 |           30.36 |
-|   Register               |     0.004 |    13672 |     35200 |           38.84 |
-|   LUT as Shift Register  |     0.001 |      476 |      6000 |            7.93 |
+| Clocks                   |     0.053 |        7 |       --- |             --- |
+| Slice Logic              |     0.094 |    30917 |       --- |             --- |
+|   LUT as Logic           |     0.079 |    10949 |     17600 |           62.21 |
+|   CARRY4                 |     0.008 |     1396 |      4400 |           31.73 |
+|   Register               |     0.004 |    13529 |     35200 |           38.43 |
+|   LUT as Shift Register  |     0.002 |      612 |      6000 |           10.20 |
 |   LUT as Distributed RAM |    <0.001 |      146 |      6000 |            2.43 |
-|   F7/F8 Muxes            |    <0.001 |      153 |     17600 |            0.87 |
-|   Others                 |     0.000 |      619 |       --- |             --- |
-| Signals                  |     0.122 |    25294 |       --- |             --- |
-| Block RAM                |     0.013 |       11 |        60 |           18.33 |
+|   F7/F8 Muxes            |    <0.001 |      152 |     17600 |            0.86 |
+|   Others                 |     0.000 |      623 |       --- |             --- |
+| Signals                  |     0.127 |    25529 |       --- |             --- |
+| Block RAM                |     0.012 |       11 |        60 |           18.33 |
 | MMCM                     |     0.107 |        1 |         2 |           50.00 |
-| DSPs                     |     0.067 |       72 |        80 |           90.00 |
+| DSPs                     |     0.071 |       76 |        80 |           95.00 |
 | I/O                      |     0.140 |       18 |       100 |           18.00 |
 | PS7                      |     1.406 |        1 |       --- |             --- |
 | Static Power             |     0.134 |          |           |                 |
-| Total                    |     2.135 |          |           |                 |
+| Total                    |     2.143 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.359 |       0.350 |      0.009 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.368 |       0.359 |      0.009 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.068 |       0.059 |      0.009 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.043 |       0.042 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -158,20 +158,20 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     2.001 |
-|   design_1_i             |     1.993 |
+| design_1_wrapper         |     2.010 |
+|   design_1_i             |     2.002 |
 |     axi_dynclk_0         |     0.109 |
 |       U0                 |     0.109 |
 |     axi_interconnect_gp0 |     0.004 |
-|       s00_couplers       |     0.004 |
-|     axi_interconnect_hp0 |     0.013 |
+|       s00_couplers       |     0.003 |
+|     axi_interconnect_hp0 |     0.012 |
 |       m00_couplers       |     0.004 |
 |       s01_couplers       |     0.006 |
 |       xbar               |     0.002 |
 |     axi_vdma_0           |     0.011 |
 |       U0                 |     0.011 |
-|     mandelbrot_driver_0  |     0.294 |
-|       inst               |     0.294 |
+|     mandelbrot_driver_0  |     0.304 |
+|       inst               |     0.304 |
 |     processing_system7_0 |     1.407 |
 |       inst               |     1.407 |
 |     rgb2dvi_1            |     0.134 |

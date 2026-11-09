@@ -2914,7 +2914,7 @@
       },
       "mandelbrot_driver_0": {
         "vlnv": "xilinx.com:user:mandelbrot_driver:1.0",
-        "ip_revision": "8",
+        "ip_revision": "9",
         "xci_name": "design_1_mandelbrot_driver_0_0",
         "xci_path": "ip\\design_1_mandelbrot_driver_0_0\\design_1_mandelbrot_driver_0_0.xci",
         "inst_hier_path": "mandelbrot_driver_0",

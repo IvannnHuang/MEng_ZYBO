@@ -8,11 +8,12 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Mon Nov  9 17:38:55 2026
+  **** Start of session at: Mon Nov  9 18:15:04 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_mandelbrot_driver_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 518.828 ; gain = 200.848
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
@@ -28,25 +29,27 @@ INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 27208
+INFO: [Synth 8-7075] Helper process launched with PID 13584
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1383.816 ; gain = 448.398
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1383.203 ; gain = 446.551
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_mandelbrot_driver_0_0' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver.v:4]
-INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:204]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:340]
-INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
-INFO: [Synth 8-6157] synthesizing module 'mandel_engine' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_engine.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mandel_solver' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mandel_solver' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mandel_engine' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_engine.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/hdl/mandelbrot_driver.v:4]
+INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver.v:4]
+INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:204]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:340]
+INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mandel_engine' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mandel_solver' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_solver' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mandel_inside' [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:415]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_inside' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:415]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_engine' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/hdl/mandelbrot_driver.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_mandelbrot_driver_0_0' (0#1) [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element fb_r_reg was removed.  [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_engine.v:74]
-WARNING: [Synth 8-3936] Found unconnected internal register 'w1_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_engine.v:213]
-WARNING: [Synth 8-3936] Found unconnected internal register 'mx_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_engine.v:202]
+WARNING: [Synth 8-6014] Unused sequential element fb_r_reg was removed.  [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:74]
+WARNING: [Synth 8-3936] Found unconnected internal register 'w1_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:225]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mx_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:214]
 WARNING: [Synth 8-7129] Port m_bresp[1] in module mandel_engine is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_bresp[0] in module mandel_engine is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module mandelbrot_driver_slave_lite_v1_0_S00_AXI is either unconnected or has no load
@@ -58,45 +61,45 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module mandelbrot_driver_slave_l
 WARNING: [Synth 8-7129] Port m00_axi_aclk in module mandelbrot_driver is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m00_axi_aresetn in module mandelbrot_driver is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1512.379 ; gain = 576.961
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.512 ; gain = 578.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1512.379 ; gain = 576.961
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.512 ; gain = 578.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1512.379 ; gain = 576.961
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.512 ; gain = 578.859
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1512.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1515.512 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1613.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1629.570 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 1619.500 ; gain = 5.672
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1637.949 ; gain = 8.379
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
@@ -117,7 +120,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -125,10 +128,14 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   54 Bit       Adders := 24    
+	   3 Input   38 Bit       Adders := 1     
+	   2 Input   37 Bit       Adders := 2     
+	   3 Input   37 Bit       Adders := 1     
 	   4 Input   29 Bit       Adders := 8     
 	   2 Input   29 Bit       Adders := 8     
 	   2 Input   28 Bit       Adders := 8     
 	   2 Input   27 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 3     
 	   2 Input   16 Bit       Adders := 8     
 	   3 Input   14 Bit       Adders := 1     
 	   2 Input   12 Bit       Adders := 1     
@@ -143,18 +150,20 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 1     
 	               54 Bit    Registers := 24    
 	               48 Bit    Registers := 96    
+	               36 Bit    Registers := 4     
 	               32 Bit    Registers := 7     
-	               27 Bit    Registers := 124   
+	               27 Bit    Registers := 140   
+	               18 Bit    Registers := 9     
 	               16 Bit    Registers := 42    
 	               12 Bit    Registers := 8     
-	               11 Bit    Registers := 101   
-	                8 Bit    Registers := 4     
+	               11 Bit    Registers := 117   
+	                8 Bit    Registers := 6     
 	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 95    
+	                1 Bit    Registers := 108   
 +---RAMs : 
 	             128K Bit	(16384 X 8 bit)          RAMs := 1     
 	             1024 Bit	(16 X 64 bit)          RAMs := 1     
@@ -165,14 +174,14 @@ Detailed RTL Component Info :
 	   8 Input   32 Bit        Muxes := 6     
 	   2 Input   27 Bit        Muxes := 42    
 	   3 Input   27 Bit        Muxes := 16    
-	   2 Input   16 Bit        Muxes := 8     
+	   2 Input   16 Bit        Muxes := 24    
 	   2 Input   11 Bit        Muxes := 16    
 	   2 Input    8 Bit        Muxes := 4     
 	   7 Input    8 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 5     
-	   2 Input    1 Bit        Muxes := 61    
+	   2 Input    1 Bit        Muxes := 69    
 	   3 Input    1 Bit        Muxes := 13    
 	   8 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -191,105 +200,160 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:184]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/2463/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '37' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '20' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[0]' and it is trimmed from '48' to '17' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_solver.v:186]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx2_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:455]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx1_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4fe2/src/mandel_engine.v:472]
 INFO: [Common 17-14] Message 'Synth 8-3936' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+DSP Report: Generating DSP yy2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register y0_reg is absorbed into DSP yy2_reg.
+DSP Report: register y0_reg is absorbed into DSP yy2_reg.
+DSP Report: register yy2_reg is absorbed into DSP yy2_reg.
+DSP Report: register yy1_reg is absorbed into DSP yy2_reg.
+DSP Report: operator yy10 is absorbed into DSP yy2_reg.
+DSP Report: Generating DSP xx2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u0_reg is absorbed into DSP xx2_reg.
+DSP Report: register u0_reg is absorbed into DSP xx2_reg.
+DSP Report: register xx2_reg is absorbed into DSP xx2_reg.
+DSP Report: register xx1_reg is absorbed into DSP xx2_reg.
+DSP Report: operator xx10 is absorbed into DSP xx2_reg.
+DSP Report: Generating DSP product6_reg, operation Mode is: (A''*B2)'.
+DSP Report: register qu4_reg is absorbed into DSP product6_reg.
+DSP Report: register q3_reg is absorbed into DSP product6_reg.
+DSP Report: register q4_reg is absorbed into DSP product6_reg.
+DSP Report: register product6_reg is absorbed into DSP product6_reg.
+DSP Report: register product5_reg is absorbed into DSP product6_reg.
+DSP Report: operator product50 is absorbed into DSP product6_reg.
+DSP Report: Generating DSP bb2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register b0_reg is absorbed into DSP bb2_reg.
+DSP Report: register b0_reg is absorbed into DSP bb2_reg.
+DSP Report: register bb2_reg is absorbed into DSP bb2_reg.
+DSP Report: register bb1_reg is absorbed into DSP bb2_reg.
+DSP Report: operator bb10 is absorbed into DSP bb2_reg.
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP SOLV[1].u_solver/m_pri_reg[0], operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register SOLV[1].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
+DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP SOLV[1].u_solver/m_pii_reg[0], operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register SOLV[1].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
+DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP SOLV[1].u_solver/m_prr_reg[0], operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register SOLV[1].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
+DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
 DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
 DSP Report: operator p_1_out is absorbed into DSP p_1_out.
 DSP Report: operator p_0_out is absorbed into DSP p_1_out.
@@ -476,36 +540,6 @@ DSP Report: operator p_0_out is absorbed into DSP p_1_out.
 DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
 DSP Report: operator p_1_out is absorbed into DSP p_1_out.
 DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP SOLV[1].u_solver/m_pri_reg[0], operation Mode is: (PCIN>>17)+A*B.
-DSP Report: register SOLV[1].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP SOLV[1].u_solver/m_pii_reg[0], operation Mode is: (PCIN>>17)+A*B.
-DSP Report: register SOLV[1].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP SOLV[1].u_solver/m_prr_reg[0], operation Mode is: (PCIN>>17)+A*B.
-DSP Report: register SOLV[1].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
 DSP Report: Generating DSP SOLV[0].u_solver/m_pri_reg[0], operation Mode is: (PCIN>>17)+A*B.
 DSP Report: register SOLV[0].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[0].u_solver/m_pri_reg[0].
 DSP Report: operator p_1_out is absorbed into DSP SOLV[0].u_solver/m_pri_reg[0].
@@ -552,6 +586,54 @@ WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module design_1_mandelbrot_dri
 WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module design_1_mandelbrot_driver_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m00_axi_aclk in module design_1_mandelbrot_driver_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m00_axi_aresetn in module design_1_mandelbrot_driver_0_0 is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][15]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][14]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][13]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][12]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][11]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][10]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][9]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][8]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][7]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][6]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][5]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][4]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][3]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][2]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][1]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pri_reg[0][0]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][15]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][14]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][13]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][12]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][11]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][10]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][9]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][8]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][7]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][6]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][5]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][4]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][3]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][2]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][1]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_pii_reg[0][0]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][15]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][14]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][13]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][12]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][11]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][10]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][9]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][8]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][7]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][6]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][5]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][4]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][3]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][2]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][1]__1) is unused and will be removed from module mandel_engine.
+WARNING: [Synth 8-3332] Sequential element (SOLV[1].u_solver/m_prr_reg[0][0]__1) is unused and will be removed from module mandel_engine.
 WARNING: [Synth 8-3332] Sequential element (SOLV[2].u_solver/m_pri_reg[0][15]__1) is unused and will be removed from module mandel_engine.
 WARNING: [Synth 8-3332] Sequential element (SOLV[2].u_solver/m_pri_reg[0][14]__1) is unused and will be removed from module mandel_engine.
 WARNING: [Synth 8-3332] Sequential element (SOLV[2].u_solver/m_pri_reg[0][13]__1) is unused and will be removed from module mandel_engine.
@@ -604,60 +686,14 @@ WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][15]__1
 WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][14]__1) is unused and will be removed from module mandel_engine.
 WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][13]__1) is unused and will be removed from module mandel_engine.
 WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][12]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][11]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][10]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][9]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][8]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][7]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][6]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][5]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][4]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][3]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][2]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][1]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pri_reg[0][0]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][15]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][14]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][13]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][12]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][11]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][10]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][9]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][8]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][7]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][6]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][5]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][4]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][3]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][2]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][1]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_pii_reg[0][0]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][15]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][14]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][13]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][12]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][11]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][10]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][9]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][8]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][7]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][6]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][5]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][4]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][3]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][2]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][1]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[3].u_solver/m_prr_reg[0][0]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[4].u_solver/m_pri_reg[0][15]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[4].u_solver/m_pri_reg[0][14]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[4].u_solver/m_pri_reg[0][13]__1) is unused and will be removed from module mandel_engine.
-WARNING: [Synth 8-3332] Sequential element (SOLV[4].u_solver/m_pri_reg[0][12]__1) is unused and will be removed from module mandel_engine.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
- Sort Area is  p_1_out_0 : 0 0 : 2701 4038 : Used 1 time 0
- Sort Area is  p_1_out_0 : 0 1 : 1337 4038 : Used 1 time 0
+ Sort Area is  product6_reg_3 : 0 0 : 2604 2604 : Used 1 time 100
+ Sort Area is  bb2_reg_5 : 0 0 : 2586 2586 : Used 1 time 100
+ Sort Area is  xx2_reg_2 : 0 0 : 2586 2586 : Used 1 time 100
+ Sort Area is  yy2_reg_0 : 0 0 : 2586 2586 : Used 1 time 100
  Sort Area is  p_1_out_11 : 0 0 : 2701 4038 : Used 1 time 0
  Sort Area is  p_1_out_11 : 0 1 : 1337 4038 : Used 1 time 0
  Sort Area is  p_1_out_13 : 0 0 : 2701 4038 : Used 1 time 0
@@ -692,12 +728,14 @@ Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elaps
  Sort Area is  p_1_out_2f : 0 1 : 1337 4038 : Used 1 time 0
  Sort Area is  p_1_out_31 : 0 0 : 2701 4038 : Used 1 time 0
  Sort Area is  p_1_out_31 : 0 1 : 1337 4038 : Used 1 time 0
- Sort Area is  p_1_out_5 : 0 0 : 2701 4038 : Used 1 time 0
- Sort Area is  p_1_out_5 : 0 1 : 1337 4038 : Used 1 time 0
- Sort Area is  p_1_out_7 : 0 0 : 2701 4038 : Used 1 time 0
- Sort Area is  p_1_out_7 : 0 1 : 1337 4038 : Used 1 time 0
- Sort Area is  p_1_out_9 : 0 0 : 2701 4038 : Used 1 time 0
- Sort Area is  p_1_out_9 : 0 1 : 1337 4038 : Used 1 time 0
+ Sort Area is  p_1_out_33 : 0 0 : 2701 4038 : Used 1 time 0
+ Sort Area is  p_1_out_33 : 0 1 : 1337 4038 : Used 1 time 0
+ Sort Area is  p_1_out_35 : 0 0 : 2701 4038 : Used 1 time 0
+ Sort Area is  p_1_out_35 : 0 1 : 1337 4038 : Used 1 time 0
+ Sort Area is  p_1_out_37 : 0 0 : 2701 4038 : Used 1 time 0
+ Sort Area is  p_1_out_37 : 0 1 : 1337 4038 : Used 1 time 0
+ Sort Area is  p_1_out_6 : 0 0 : 2701 4038 : Used 1 time 0
+ Sort Area is  p_1_out_6 : 0 1 : 1337 4038 : Used 1 time 0
  Sort Area is  p_1_out_b : 0 0 : 2701 4038 : Used 1 time 0
  Sort Area is  p_1_out_b : 0 1 : 1337 4038 : Used 1 time 0
  Sort Area is  p_1_out_d : 0 0 : 2701 4038 : Used 1 time 0
@@ -720,12 +758,12 @@ Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elaps
  Sort Area is  p_1_out_2a : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_2c : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_2e : 0 0 : 1297 1297 : Used 1 time 0
- Sort Area is  p_1_out_3 : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_30 : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_32 : 0 0 : 1297 1297 : Used 1 time 0
- Sort Area is  p_1_out_6 : 0 0 : 1297 1297 : Used 1 time 0
- Sort Area is  p_1_out_8 : 0 0 : 1297 1297 : Used 1 time 0
- Sort Area is  p_1_out_a : 0 0 : 1297 1297 : Used 1 time 0
+ Sort Area is  p_1_out_34 : 0 0 : 1297 1297 : Used 1 time 0
+ Sort Area is  p_1_out_36 : 0 0 : 1297 1297 : Used 1 time 0
+ Sort Area is  p_1_out_38 : 0 0 : 1297 1297 : Used 1 time 0
+ Sort Area is  p_1_out_9 : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_c : 0 0 : 1297 1297 : Used 1 time 0
  Sort Area is  p_1_out_e : 0 0 : 1297 1297 : Used 1 time 0
 ---------------------------------------------------------------------------------
@@ -754,6 +792,10 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 +--------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name   | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +--------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mandel_inside | (A2*B2)'       | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A2*B2)'       | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A''*B2)'      | 18     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A2*B2)'       | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
 |mandel_solver | A*B            | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |mandel_solver | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |mandel_solver | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 1    | 
@@ -836,13 +878,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1619.500 ; gain = 684.082
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1637.949 ; gain = 701.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -874,7 +916,7 @@ INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_1 (imp
 INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1652.480 ; gain = 717.062
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1662.906 ; gain = 726.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -892,37 +934,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1675.227 ; gain = 738.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1675.227 ; gain = 738.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.227 ; gain = 738.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.227 ; gain = 738.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.242 ; gain = 738.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.242 ; gain = 738.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -932,9 +974,19 @@ Static Shift Register Report:
 +-------------------------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name                    | RTL Name                                    | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +-------------------------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/m_f_reg[1]   | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[2].u_solver/h_ci_reg[26] | 4      | 544   | NO           | NO                 | YES               | 544    | 0       | 
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[2].u_solver/h_v_reg      | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/u3_reg[17]           | 4      | 18    | NO           | NO                 | YES               | 18     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/yy6_reg[35]          | 4      | 34    | NO           | NO                 | YES               | 34     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/bulb6_reg            | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/xs_reg[7][10]        | 8      | 11    | NO           | NO                 | YES               | 11     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/ys_reg[7][2]         | 8      | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/crs_reg[7][26]       | 8      | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/crs_reg[7][19]       | 4      | 11    | NO           | NO                 | YES               | 11     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/cis_reg[7][26]       | 8      | 27    | NO           | NO                 | YES               | 27     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/m_f_reg[1]   | 3      | 136   | NO           | NO                 | YES               | 136    | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/h_ci_reg[26] | 4      | 544   | NO           | NO                 | YES               | 544    | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/v_reg[7]             | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/eligible_reg[6]      | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/h_v_reg      | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
 +-------------------------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -1020,6 +1072,10 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |mandel_solver | (PCIN>>17+A*B)' | 17     | 18     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |mandel_solver | (PCIN>>17+A*B)' | 17     | 18     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |mandel_solver | (PCIN>>17+A*B)' | 17     | 18     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|mandel_inside | ((A''*B'')')'   | 30     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A'*B')')'     | 30     | 18     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A''*B')')'    | 30     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A'*B')')'     | 30     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
 +--------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -1033,49 +1089,49 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |  1166|
-|2     |DSP48E1  |    72|
-|4     |LUT1     |    93|
-|5     |LUT2     |  3145|
-|6     |LUT3     |  1306|
-|7     |LUT4     |  1260|
-|8     |LUT5     |   570|
-|9     |LUT6     |  2216|
-|10    |MUXF7    |     3|
-|11    |MUXF8    |     1|
-|12    |RAM32M   |    11|
-|13    |RAMB36E1 |     4|
-|14    |SRL16E   |   560|
-|15    |FDRE     |  5031|
-|16    |FDSE     |   432|
+|1     |CARRY4   |  1226|
+|2     |DSP48E1  |    76|
+|7     |LUT1     |   103|
+|8     |LUT2     |  3397|
+|9     |LUT3     |  1307|
+|10    |LUT4     |  1431|
+|11    |LUT5     |   544|
+|12    |LUT6     |  2200|
+|13    |MUXF7    |     2|
+|14    |MUXF8    |     1|
+|15    |RAM32M   |    11|
+|16    |RAMB36E1 |     4|
+|17    |SRL16E   |   811|
+|18    |FDRE     |  4935|
+|19    |FDSE     |   432|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.242 ; gain = 738.590
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 499 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1665.055 ; gain = 622.516
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1665.055 ; gain = 729.637
+Synthesis finished with 0 errors, 0 critical warnings and 501 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1675.242 ; gain = 616.152
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1675.242 ; gain = 738.590
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1665.055 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1257 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1675.242 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1320 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1665.055 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1675.242 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 11 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 11 instances
 
-Synth Design complete | Checksum: 80c8896d
+Synth Design complete | Checksum: e6583623
 INFO: [Common 17-83] Releasing license: Synthesis
-55 Infos, 223 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 223 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1665.055 ; gain = 1132.035
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1665.055 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1675.242 ; gain = 1140.965
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1675.242 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mandelbrot_driver_0_0, cache-ID = 84c2d5f1ad7b6093
-INFO: [Coretcl 2-1174] Renamed 11 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1665.055 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mandelbrot_driver_0_0, cache-ID = c191cf4bc63683b0
+INFO: [Coretcl 2-1174] Renamed 12 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1675.242 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_mandelbrot_driver_0_0_utilization_synth.rpt -pb design_1_mandelbrot_driver_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 17:39:39 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 18:15:57 2026...

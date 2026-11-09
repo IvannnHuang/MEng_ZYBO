@@ -1,0 +1,23 @@
+Validation of shared-inside-set, RTL commit 1828dd9, Vivado/xsim 2024.1
+Baseline: engine-pipeline 9926fd7 (pushed before optimization)
+1,000,000 exact-integer checks: 152578 accepted points, zero false positives
+Routed: DSP=76/80 LUT=11707 FF=13529 BRAM=11 WNS=+0.236ns WHS=+0.024ns
+CDC: 9 bus-skew constraints, minimum slack +6.203ns
+
+ALL CLASSIFIER VECTORS PASSED: 65536 coordinates, 9920 hits, random input gaps and output stalls
+PASS frame=0 max_iter=1000 nact=8 baseline=350132 optimized=88685
+PASS frame=1 max_iter=1000 nact=3 baseline=926475 optimized=192656
+PASS frame=2 max_iter=1000 nact=8 baseline=119912 optimized=119929
+PASS frame=3 max_iter=1000 nact=8 baseline=1028160 optimized=8426
+PASS frame=4 max_iter=1000 nact=1 baseline=8192159 optimized=24733
+PASS frame=5 max_iter=1000 nact=8 baseline=8431 optimized=8442
+PASS frame=6 max_iter=0 nact=8 baseline=8420 optimized=8425
+PASS frame=7 max_iter=1 nact=0 baseline=24723 optimized=24731
+PASS frame=8 max_iter=17 nact=255 baseline=11704 optimized=8818
+PASS frame=9 max_iter=1000 nact=8 baseline=350131 optimized=88686
+ALL ENGINE COMPARISONS PASSED
+FULL FRAME PASSED: cycles=9344200 at 100MHz = 93.442000 ms (simulation, ideal AXI)
+
+Full-frame time is RTL simulation with ideal AXI at 100MHz, not a board measurement.
+Board not tested: no Zybo USB serial port present. Vitis platform update remains pending.
+Generated bitstream and XSA are from the routed inside-set build. Vivado closed.

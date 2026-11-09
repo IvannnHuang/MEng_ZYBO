@@ -9,7 +9,7 @@
 		</DisplayName>
 		<Description value="AXI slave IP for mandelbrot driver">
 		</Description>
-		<CoreRevision value="8">
+		<CoreRevision value="9">
 		</CoreRevision>
 		<ComponentPath value="component.xml">
 		</ComponentPath>

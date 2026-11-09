@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Mon Nov  9 17:39:38 2026
+// Date        : Mon Nov  9 18:15:56 2026
 // Host        : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/design_1_mandelbrot_driver_0_0_stub.v

@@ -7,7 +7,7 @@ Running record of every optimization step: what changed in the code, what it cos
 2. **DE1 vs Zybo DSP side-by-side** (done below): how many multiplies each board can do at each width.
 3. **Chip-viewer pictures** for every step: Vivado → *Open Implemented Design* → *Device* tab → highlight the Mandelbrot IP (and the solvers) → save a screenshot into `Lab2_Workstation/figures/chip_<step>.png`. Script: `Mandelbrot_hdmi/scripts/chip_view.tcl` (opens the GUI, colours the blocks; take the screenshot, then close Vivado).
 4. **Exact code changes per optimization** (below, as diffs), so the next step can be planned from what changed and what it cost.
-5. Next optimization: shared cardioid + period-2-bulb test in the dispenser (DSP budget: only 8 left, see below).
+5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board validation is next, before another optimization.
 
 ## DSPs: how many multiplications fit
 | | DE1-SoC (Cyclone V 5CSEMA5) | Zybo Z7-10 (Zynq xc7z010) |
@@ -30,6 +30,7 @@ So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is t
 | HDMI input removed | `strip-hdmi-in` `4ab3558` | 4 | 36 (45 %) | 8,187 (46.5 %) | +0.223 | 792.2 |
 | 8 iterators, original engine | `nsolv-8` `5b7b0e5` | 8 | 72 (90 %) | 11,496 (65 %) | **−0.731** | 399.9 (out of spec) |
 | 8 iterators, pipelined engine | `engine-pipeline` `e226f79` | 8 | 72 (90 %) | 11,267 (64 %) | +0.147 | **399.4** |
+| Shared inside-set classifier | `shared-inside-set` `1828dd9` | 8 | 76 (95 %) | 11,707 (66.52 %) | +0.236 | 93.442 (simulation); board pending |
 
 ### Step 1: remove HDMI input (no RTL change)
 - Block design only: `Mandelbrot_hdmi/scripts/strip_hdmi_in.tcl` deletes `dvi2rgb`, `v_vid_in_axi4s`, `v_tc_in`, `axis_subset_converter_in`, the RX reset, `axi_gpio_video`; turns off the VDMA write channel and FCLK2; moves the IP to `hp0/S01` (FCLK0). Constraints: HDMI RX pins commented out in `Zybo-Z7-Master.xdc`.
@@ -199,6 +200,170 @@ index 26ecc59..3485426 100644
 
 Each colour = one iterator's LUTs/FFs/DSPs as placed by Vivado (`scripts/chip_view.tcl`, screenshot of the Device view). Together they cover most of the fabric; the DSP columns are the narrow strips they cluster around.
 
-### Step 4 (next): shared inside-set test
+### Step 4: shared inside-set test (implemented 2026-11-09)
 - DSP budget: **8 DSPs free**. An exact 27-bit cardioid/bulb test needs ~5 multiplies ≈ 15 DSPs at 27-bit, too many. Options: narrower numbers for the test (it only has to be conservative), or LUT multipliers (LUTs at 64 %).
-- Record the diff, DSPs, LUTs, WNS and render time here when done.
+- Implemented on `shared-inside-set`, RTL/test commit `1828dd9`; baseline checkpoint `9926fd7` was committed and pushed to GitHub **before** this step began.
+- Shared eight-stage classifier ahead of the dispenser-to-solver handoff. Four 18x18 multiplies in Q4.14, with conservative inward margins: cardioid 1/128, bulb 1/512. Uncertain points keep the original Q4.23 iteration arithmetic. Accepted inside pixels use the existing solver/arbiter output path with count=max_iter.
+- Measured routed resources: **76/80 DSPs**, **11,707 LUTs (66.52%)**, **13,529 FFs**, **11 BRAM tiles**. Compared with the pipelined baseline: +4 DSPs, +440 LUTs. Classifier hierarchy: 347 total LUTs, 152 FFs, 4 DSPs (see hierarchical report; synthesis can move logic across module boundaries).
+- Timing: **+0.236 ns WNS at 100 MHz**, **+0.024 ns overall worst hold slack**; all setup/hold/pulse-width constraints met. Separate `bus_skew_inside_set.rpt` verifies nine CDC bus-skew constraints; minimum slack +6.203 ns.
+- Generated the bitstream and exported `Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa`. Vivado is closed. The existing Vitis platform still uses the preceding build until its hardware specification is updated.
+- Numerical validation: 1,000,000 coordinates compared with exact integer cardioid/bulb inequalities; **152,578 accepted interior points, zero false positives**. Error-bound derivation: `Mandelbrot_hdmi/tests/INSIDE_SET.md`.
+- Direct classifier RTL validation: **65,536 coordinates, 9,920 hits**, exact agreement with the numerical model and metadata under random input gaps/output stalls.
+- Engine validation: ten 128x64 frames; **identical iteration counts and AXI output bytes** against frozen baseline RTL. Includes full/wide view, deep zoom, cardioid, bulb, exterior, active counts 0/1/3/8/255, max_iter 0/1/17/1000, row-buffer wrap, repeated frames, and reset with a populated pipeline.
+- Wide-view regression with eight solvers: **350,132 -> 88,685 cycles (3.95x)**. This is a reduced-size simulation, not the 1080p board benchmark.
+- Full 1920x1080 software-default view, max_iter=1000, eight solvers: **9,344,200 cycles = 93.442 ms at 100 MHz** in RTL simulation with an ideal AXI sink. Checked all 2,073,600 result events, 777,600 output beats, and 48,600 bursts. This is **not a board measurement**, and cannot establish the board speedup over the prior 399.4 ms result.
+- **Board render time: pending.** No Zybo USB serial port was detected (only the workstation COM1). Do not substitute simulation times for board measurements.
+- **Chip-view screenshot: pending.** Run `scripts/chip_view.tcl` on this branch to capture the new placement. The earlier `chip_8iter_pipelined.png` remains the baseline image.
+- Reproduce: `powershell -NoProfile -ExecutionPolicy Bypass -File Lab2_Workstation/Mandelbrot_hdmi/tests/run_compare.ps1` (add `-FullFrame` for the optional 1080p estimate).
+
+#### Regression cycle counts (simulation with random AXI stalls)
+
+| Frame | Description | Baseline | Inside-set |
+|---|---|---:|---:|
+| 0 | Wide view, 8 solvers, max_iter=1000 | 350,132 | 88,685 |
+| 1 | Wide view, 3 solvers | 926,475 | 192,656 |
+| 2 | Deep zoom, 8 solvers | 119,912 | 119,929 |
+| 3 | Cardioid interior | 1,028,160 | 8,426 |
+| 4 | Bulb interior, 1 solver | 8,192,159 | 24,733 |
+| 5 | Exterior | 8,431 | 8,442 |
+| 6 | max_iter=0 | 8,420 | 8,425 |
+| 7 | max_iter=1, n_active=0 clamps to 1 | 24,723 | 24,731 |
+| 8 | max_iter=17, n_active=255 clamps to 8 | 11,704 | 8,818 |
+| 9 | Wide view after reset during a frame | 350,131 | 88,686 |
+
+#### Board validation still to do
+
+Connect and power the Zybo. In Vitis, update the `design_1_wrapper` platform's hardware
+specification from the new XSA, build the platform/application, and run with FPGA
+programming enabled. Use `f`, then `b`; record the 1-8 solver curve and full-set
+8-solver render time, and check pan/zoom visually. Commit and push the measured
+results before starting another optimization.
+
+#### Exact RTL diff (`9926fd7` -> `1828dd9`, zero context)
+
+```diff
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
+index 5406a3b..7541fea 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
+@@ -115,2 +115,13 @@ module mandel_engine #(
+-    wire disp_fire   = disp_active && found;
+-    wire [NSOLV-1:0] s_in_valid = disp_fire ? ({{(NSOLV-1){1'b0}}, 1'b1} << sel) : {NSOLV{1'b0}};
++    wire test_ready, test_valid, test_inside;
++    wire [XW-1:0] test_x;
++    wire [YW-1:0] test_y;
++    wire signed [W-1:0] test_cr, test_ci;
++    wire disp_fire = disp_active && test_ready;
++    // One shared classifier; the entire pipeline stalls when its head cannot dispatch.
++    mandel_inside #(.W(W), .F(F), .XW(XW), .YW(YW)) u_inside (
++        .clk(clk), .rst(clr), .in_valid(disp_active), .in_ready(test_ready),
++        .in_x(disp_x), .in_y(disp_y), .in_cr(cr_cur), .in_ci(ci_cur),
++        .out_valid(test_valid), .out_ready(found), .out_inside(test_inside),
++        .out_x(test_x), .out_y(test_y), .out_cr(test_cr), .out_ci(test_ci)
++    );
++    wire [NSOLV-1:0] s_in_valid = (test_valid && found) ? ({{(NSOLV-1){1'b0}}, 1'b1} << sel) : {NSOLV{1'b0}};
+@@ -153,4 +164,5 @@ module mandel_engine #(
+-                .in_x      (disp_x),
+-                .in_y      (disp_y),
+-                .in_cr     (cr_cur),
+-                .in_ci     (ci_cur),
++                .in_inside (test_inside && (max_r != 0)),
++                .in_x      (test_x),
++                .in_y      (test_y),
++                .in_cr     (test_cr),
++                .in_ci     (test_ci),
+@@ -398,0 +411,76 @@ endmodule
++
++// Shared conservative inside-set classifier. Four 18x18 products (Q4.14).
++// Eight elastic stages; all data and valid bits freeze together under backpressure.
++// See tests/INSIDE_SET.md for the error bound and numerical limitations.
++module mandel_inside #(
++    parameter W=27, F=23, XW=11, YW=11
++)(
++    input wire clk, rst, in_valid,
++    output wire in_ready,
++    input wire [XW-1:0] in_x,
++    input wire [YW-1:0] in_y,
++    input wire signed [W-1:0] in_cr, in_ci,
++    output wire out_valid,
++    input wire out_ready,
++    output reg out_inside,
++    output wire [XW-1:0] out_x,
++    output wire [YW-1:0] out_y,
++    output wire signed [W-1:0] out_cr, out_ci
++);
++    localparam T=14;
++    reg [7:0] v, eligible;
++    wire advance = ~v[7] | out_ready;
++    reg [XW-1:0] xs[0:7];
++    reg [YW-1:0] ys[0:7];
++    reg signed [W-1:0] crs[0:7], cis[0:7];
++    assign in_ready=advance;
++    assign out_valid=v[7];
++    assign out_x=xs[7];
++    assign out_y=ys[7];
++    assign out_cr=crs[7];
++    assign out_ci=cis[7];
++    // F<T remains a valid engine configuration: disable this optional shortcut.
++    wire signed [17:0] tx = (F>=T) ? (in_cr >>> (F-T)) : 18'sd0;
++    wire signed [17:0] ty = (F>=T) ? (in_ci >>> (F-T)) : 18'sd0;
++    wire box = (F>=T) && (in_cr >= -(5*(1 << F)/4)) &&
++               (in_cr <= (1 << F)/2) &&
++               (in_ci >= -(1 << F)) && (in_ci <= (1 << F));
++    reg signed [17:0] u0, y0, b0, u1, u2, u3;
++    (* use_dsp="yes" *) reg signed [35:0] xx1, yy1, bb1;
++    reg signed [35:0] xx2, yy2, bb2, yy3, yy4, yy5, yy6;
++    reg signed [17:0] q3, q4, qu4;
++    (* use_dsp="yes" *) reg signed [35:0] product5;
++    reg signed [35:0] product6;
++    reg bulb3, bulb4, bulb5, bulb6;
++    wire signed [36:0] qsum = $signed({xx2[35],xx2}) + $signed({yy2[35],yy2});
++    wire signed [36:0] bsum = $signed({bb2[35],bb2}) + $signed({yy2[35],yy2});
++    integer j;
++    always @(posedge clk) begin
++        if (rst) begin
++            v<=0;
++            eligible<=0;
++            out_inside<=0;
++        end else if (advance) begin
++            v <= {v[6:0],in_valid};
++            eligible <= {eligible[6:0],box};
++            xs[0]<=in_x; ys[0]<=in_y; crs[0]<=in_cr; cis[0]<=in_ci;
++            for (j=1;j<8;j=j+1) begin
++                xs[j]<=xs[j-1]; ys[j]<=ys[j-1];
++                crs[j]<=crs[j-1]; cis[j]<=cis[j-1];
++            end
++            u0<=tx-18'sd4096; y0<=ty; b0<=tx+18'sd16384;
++            xx1<=u0*u0; yy1<=y0*y0; bb1<=b0*b0; u1<=u0;
++            xx2<=xx1; yy2<=yy1; bb2<=bb1; u2<=u1;
++            q3<=qsum >>> T; u3<=u2; yy3<=yy2;
++            // Radius^2=1/16 with an inward 1/512 margin (Q28).
++            bulb3 <= (bsum + 37'sd524288 < 37'sd16777216);
++            q4<=q3; qu4<=q3+u3; yy4<=yy3; bulb4<=bulb3;
++            product5<=q4*qu4; yy5<=yy4; bulb5<=bulb4;
++            product6<=product5; yy6<=yy5; bulb6<=bulb5;
++            // q*(q+u) < y^2/4, with an inward 1/128 margin (Q28).
++            out_inside<=eligible[6] && (bulb6 ||
++                ($signed({product6[35],product6}) + 37'sd2097152 <
++                 ($signed({yy6[35],yy6}) >>> 2)));
++        end
++    end
++endmodule
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_solver.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_solver.v
+index 3485426..20dafd7 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_solver.v
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_solver.v
+@@ -16,0 +17 @@ module mandel_solver #(
++    input  wire                 in_inside,  // shared conservative classifier
+@@ -84 +85 @@ module mandel_solver #(
+-    reg                 ib_v;
++    reg                 ib_v, ib_inside;
+@@ -99,0 +101 @@ module mandel_solver #(
++            ib_inside <= in_inside;
+@@ -124 +126 @@ module mandel_solver #(
+-    wire                 e_f    = recirc & h_f;
++    wire                 e_f    = recirc ? h_f : ib_inside;
+@@ -129 +131 @@ module mandel_solver #(
+-    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : {IW{1'b0}};
++    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : (ib_inside ? max_iter : {IW{1'b0}});
+```
