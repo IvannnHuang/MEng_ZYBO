@@ -322,3 +322,8 @@ cost and routed base before choosing a target. Re-run the same study at
 - Put the presentation/plan update on the website's **meeting-native18-plan**
   branch. Do not push or merge main. Present the local HTML or branch source
   until the user explicitly chooses to publish the website branch.
+
+
+## End-of-session summary and precision clarification
+
+See [SESSION_SUMMARY_2026-11-09.md](SESSION_SUMMARY_2026-11-09.md) for the complete session record. All three variants still render 1920x1080 RGB888. Reducing solver width changes fractional arithmetic precision (23/20/14 bits), boundary detail and sampling zoom limits, not the framebuffer pixel count. The user's visual impression is plausible; matched-view zoom screenshots remain to be collected. The summary and full plan are downloadable from the website draft's zybo.html. Testing remains on hold; no main branch is pushed.
