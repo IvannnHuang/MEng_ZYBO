@@ -2,7 +2,7 @@
 
 For: porting the workstation's C changes into `Lab2/` (your laptop setup).
 Compared against: the last commit's `Lab2/Mandelbrot_hdmi/Zybo-Z7-10-HDMI/src/`.
-Status: builds clean (`-Wall`, no warnings). The mouse driver **has not been confirmed on the board yet**: the mouse is detected, and the last fix (for the first descriptor read failing) is untested.
+Status update (2026-11-09): USB mouse implementation, including pan and click-to-zoom, is **complete and confirmed by the user**. The porting instructions and historical diff below are retained.
 
 ## What it does
 - Plug a USB mouse into the Zybo Z7's USB **host** port. The board's USB host jumper must be set.

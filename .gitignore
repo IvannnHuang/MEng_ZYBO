@@ -40,3 +40,6 @@ objects.mk
 sources.mk
 subdir.mk
 *.prj
+
+# Generated Vitis platform staging/BSP copies
+_platform/

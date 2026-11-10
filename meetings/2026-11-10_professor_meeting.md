@@ -131,3 +131,49 @@ USB mouse pan/zoom is complete (user confirmed). Keep the existing board results
 as the baseline; next measure solver precision versus resources, image fidelity
 and zoom depth on this Zybo. See `Lab2_Workstation/REFERENCES_AND_OPTIMIZATION_IDEAS.md`
 for the Reddit-discovered lecture link and the reviewed Cornell lab/background.
+
+## Session wrap-up: discussion/action items (2026-11-09)
+
+### Amber's idea: Lab 1 C as reusable student-facing functions
+
+Amber suggested revisiting the Lab 1 C program, explaining its hardware/control
+flow, and extracting documented functions that students can call in class.
+First review the existing code; agree inputs, units, initialization/state,
+hardware dependencies and usage examples. Decide whether "class functions"
+means C helpers for classroom use or actual C++ classes. **Future work only:
+no Lab 1 refactor or language conversion implemented this session.**
+
+### Justify the 27-bit iterator limit and tailor the next dataset to the Zybo
+
+| Item | Altera/Intel DE1-SoC | Zybo Z7-10 |
+|---|---|---|
+| DSP blocks | 87 | 80 |
+| Native multiplier mode | One 27x27 or two 18x18 per block | Signed 25x18 per DSP48E1 |
+| DSPs per current 27x27 product | 1 | 3, measured |
+| Products per solver | 3 | 3 |
+| DSPs per 27-bit solver | 3 | 9, measured |
+| DSP arithmetic for the demonstrated count | 24 solvers use 72 blocks | 8 use 72; 9 need 81, exceeding 80 |
+
+The shared Zybo inside-set test adds four DSPs: eight solvers total 76; nine
+would need 85. Thus eight is the limit for **this 27-bit/DSP mapping**, not a
+universal limit on the board's parallelism. The main difference from the DE1 is
+native multiplier width. A 48-bit accumulator does not make a 48x48 multiplier.
+For equal-width squares/products to fit both ports of a Zybo DSP, use at most
+18-bit signed inputs; 25x18 is asymmetric and does not accommodate 25x25.
+
+Keep the complete 27-bit render dataset. Add precision-labeled datasets rather
+than replacing it: 24-bit is already built (6 DSPs/solver), while native 18x18
+is a future experiment. The 21-bit synthesis case uses LUT assistance to reach
+3 DSPs/solver; do not call it a native 21x21 DSP. Explore mixed 25x18 operand
+formats only after explaining their numerical consequences. Record image/zoom
+accuracy and frame cycles alongside area/timing; multiplier pipeline latency
+(ML=2 here) is a different quantity from full-frame rendering time.
+
+Vendor references and the complete handoff: `Lab2_Workstation/SESSION_WRAPUP_2026-11-09.md`.
+
+### User-owned board step
+
+The workstation platform and application are prepared on `solver-precision-board`.
+The user will program/run on **COM5**, check Q4.20 / 24 bits / eight solvers,
+and collect `f`, `b`, and mouse/zoom observations. Board results remain pending.
+Stop further hardware implementation here; save/push the session and next steps.

@@ -444,3 +444,18 @@ an unmeasured precision variant. Use a separate checkout while Vitis is open.
 The 21-bit mapping trades LUT logic for DSP savings. These results are specific
 to the current solver, part and synthesis flow, not a claim of native 21x21
 DSP multiplication. Narrower precision must be labeled as a different configuration.
+
+### Board preparation and session wrap-up
+
+With Vitis closed, the workstation switched to `solver-precision-board`.
+Updated/regenerated the existing platform and successfully built the imported
+application. Verified precision-aware ELF, identical source/platform/export XSA,
+and refreshed the stale application launch bitstream to match the XSA.
+Hashes: `precision/WORKSTATION-BOARD-PREP.json`. User reports COM5 and will program
+and run the board; no board measurements are added here.
+
+Keep 27-bit render results unchanged. The 24-bit experiment reduces DSP cost but
+does not yet test the clean native 18x18 equal-width case. That is a separate,
+future dataset, not an implementation started in this wrap-up. DSP-width reasoning,
+Amber's deferred Lab 1 C/student-functions idea and next steps are recorded in
+`SESSION_WRAPUP_2026-11-09.md` and the meeting notes.

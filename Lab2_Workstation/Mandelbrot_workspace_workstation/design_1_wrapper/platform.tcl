@@ -44,3 +44,4 @@ platform config -updatehw {C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_h
 platform generate -domains 
 platform clean
 platform generate
+platform generate

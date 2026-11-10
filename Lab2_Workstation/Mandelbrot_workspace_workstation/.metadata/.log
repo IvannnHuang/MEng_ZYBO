@@ -12934,3 +12934,52 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.]. Thread: 
 
 !ENTRY com.xilinx.sdk.utils 1 0 2026-11-09 18:33:53.370
 !MESSAGE Tool usage for 'TCF_APP_DEBUG' updated to '1'
+!SESSION 2026-11-09 20:14:32.544 -----------------------------------------------
+eclipse.buildId=2023.2
+java.version=11.0.16.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.xilinx.sdx.cmdline.service 49263
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.xilinx.sdx.cmdline.service 49263 -data C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:35.290
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa], Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-11-09 20:14:35.768
+!MESSAGE Indexed 'Zybo-Z7-10-HDMI' (6 sources, 81 headers) in 0.443 sec: 3,647 declarations; 5,577 references; 0 unresolved inclusions; 2 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.917
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa], Result: [null, ]. Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.923
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.928
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.929
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.931
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-11-09 20:14:36.932
+!MESSAGE Generating MD5 hash for file: C:\Users\zk67\MEng_ZYBO\Lab2_Workstation\Mandelbrot_workspace_workstation\design_1_wrapper\export\design_1_wrapper\sw\design_1_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.934
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.936
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-0: Building selected projects in workspace
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.987
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode batch], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-09 20:14:36.988
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode batch], Result: [null, ]. Thread: Thread-18
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-11-09 20:14:39.983
+!MESSAGE The workspace will exit with unsaved changes in this session.

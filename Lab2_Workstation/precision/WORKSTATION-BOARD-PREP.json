@@ -1,0 +1,11 @@
+{
+  "configuration": "8 solvers, SOLVER_W=24, Q4.20, shared test, 100MHz",
+  "xsa_sha256": "a3469e89baa95a2c1b10595686eeff176f7bcde20ef04c6f16fd179b4a65b2f3",
+  "bitstream_sha256": "52a33d47e196ab76fcb2c7db0fab0f173a4321ee93701491860d5c4a9b455cda",
+  "elf_sha256": "1ef6b71e71b2e1d264d84aa32690e6f06d0e03b5a38c6480839ba62e8bc3d8b2",
+  "elf_bytes": 580324,
+  "launch_bitstream_matches_xsa": true,
+  "platform_and_export_xsa_match": true,
+  "serial_port_reported_by_user": "COM5",
+  "board_execution": "pending; user will program and run"
+}

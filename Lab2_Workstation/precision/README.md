@@ -4,7 +4,7 @@ Reference board configuration: 27-bit Q4.23 solvers + shared conservative
 inside-set test, 93.442 ms, 76 DSPs, 11,707 LUTs, WNS +0.236 ns at 100 MHz.
 Saved branch: `shared-inside-set`, checkpoint `aa8c828`.
 Experiment branch/worktree: `solver-precision`, `C:/Users/zk67/zybo-precision`.
-The workstation project open in Vitis is not switched or overwritten.
+The experiment initially used an isolated checkout while Vitis was open. After Vitis was closed, the main workstation checkout was prepared on `solver-precision-board`; the saved 27-bit baseline remains available on `shared-inside-set`.
 
 ## What changes
 
@@ -88,11 +88,12 @@ Do not use the workstation branch's same-named XSA for this experiment.
 
 ## Board step still required
 
-Use a separate Vitis workspace for the experiment (the checkout contains
-copied IDE metadata whose paths may still name the original workspace).
-Create/update a platform from the precision worktree XSA and import a copy of
-the application's source from the precision worktree, including its updated
-`src/mandel/mandel.c`. Build and program the board. The UART should report Q4.20,
+The existing workspace `C:/Users/zk67/MEng_ZYBO/Lab2_Workstation/Mandelbrot_workspace_workstation`
+is now prepared on branch `solver-precision-board`: platform updated/generated,
+application imported and built, and its stale launch bitstream refreshed from
+the matching 24-bit XSA. Reopen that workspace in Vitis, refresh the projects,
+and run with FPGA programming enabled. The user will handle programming and
+UART capture on **COM5**. The UART should report Q4.20,
 24 bits, minimum step 8 LSB, and eight built solvers. Run `f`, `b`, boundary
 views and mouse pan/zoom. Record the board time as a new precision-labeled
 configuration. Keep 93.442 ms as the 27-bit board reference until then.
@@ -126,3 +127,10 @@ cycles (93.442 ms): at eight solvers the lower precision saves resources and
 slightly changes numerical work; it does not improve this simulated render time.
 The full-frame check counted 2,073,600 results, 777,600 data beats and 48,600 bursts.
 A new board time and visual/zoom validation remain pending.
+
+
+## Session stopped here
+
+No further hardware variant or Lab 1 refactoring is being implemented.
+See `../SESSION_WRAPUP_2026-11-09.md` for Amber's teaching-function proposal,
+the native 18x18 dataset plan and remaining board observations.

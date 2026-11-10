@@ -102,3 +102,14 @@ A running to-do list of changes planned for the ZYBO Lorenz docs site. Organized
 - [ ] Require the **final demo to run from an SD card alone**, with students demonstrating the *actual boot process* of their own bitstream
   - Goal: prevent students from simply borrowing another student's already-flashed SD card
 - [ ] **At the end of the semester, make all Lorenz code private** so future students can't simply copy it
+
+
+## Lab / meeting follow-up - Amber's Lab 1 C idea (2026-11-09)
+
+- [ ] Revisit the Lab 1 C program and explain how each part interacts with the FPGA/peripherals.
+- [ ] Identify reusable, documented functions students can call in class: inputs, units, initialization/state, hardware dependencies and usage examples.
+- [ ] Agree with Amber whether "class functions" means C classroom helpers or C++ classes before choosing a language change.
+- [ ] Write the API proposal in the lab and meeting notes, then review it before implementation.
+
+**Suggested by Amber; future work only. No Lab 1 refactoring or classes implemented.**
+Session handoff and FPGA dataset plan: `../Lab2_Workstation/SESSION_WRAPUP_2026-11-09.md`.
