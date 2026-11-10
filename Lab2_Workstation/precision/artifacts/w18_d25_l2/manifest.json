@@ -63,6 +63,11 @@
       "bytes": 359
     }
   },
-  "board_measurement": null,
+  "board_measurement": {
+    "record": "../../hybrid18/board_results.json",
+    "clocks": 3389695,
+    "ms_uart": 33.897,
+    "source": "User-supplied canonical full-set f render; 27 of 27 solvers"
+  },
   "note": "Metadata and embedded .bit verified. Board measurements, if supplied, are linked separately from simulation results."
 }

@@ -1,0 +1,17 @@
+Select: f
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 27 of 27
+  FPGA render: 33.897 ms (3389695 clocks)  STATUS 0x2
+
+------------------------- Mandelbrot (FPGA) -------------------------
+ f  full set (BTN0)        +/- zoom x2 about centre (BTN1/BTN2)
+ w a s d  pan 1/4 screen   z  zoom x2 about a pixel (x y)
+ g  go to centre + zoom    1 2 3  report regions
+ i  set max_iter           n  set solvers used
+ r  re-render (BTN3)       b  time vs solvers (1..27)
+ p  render on PS (ARM)     x  IP register dump
+ mouse: move to pan, left click zoom in, right click zoom out   m  re-detect USB mouse
+Select:

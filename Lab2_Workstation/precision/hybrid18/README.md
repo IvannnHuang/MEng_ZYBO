@@ -44,7 +44,7 @@ mask/lowest-bit carry chains with constant-range OR reductions. Grant order,
 registered stages, precision, solvers and clock stay unchanged. The short engine
 check now also checks every observed pick against a sequential round-robin policy.
 
-## Final verified build: ready for the user's board run
+## Final verified build: user board-measured at 33.897 ms
 
 The prefix arbiter retry reduced LUTs to 15,366 but narrowly missed setup
 (-0.077 ns; hold +0.026 ns). Evidence: attempt2_prefix_arbiter/.
@@ -66,7 +66,11 @@ Verified named files under ../artifacts/w18_d25_l2/:
 XSA SHA256: 4198637c523551994e8a1def968fe39ea52d53a3142ebafa8a738153ce33d742
 XSA metadata: SOLVER_W=18, NSOLV=27, LUT_SOLVERS=2.
 Embedded .bit matches the implemented/named .bit. Format register 0x4d420e12.
-No hybrid board time has been measured yet.
+User canonical f: **33.897 ms (3,389,695 clocks)**, 27 of 27 solvers,
+centre (-0.75,0), step 18641, max_iter 1000, STATUS 0x2.
+Raw UART, CSV and JSON are saved in this directory. This is 1.64608 ms
+(about 4.63%) less render time than the 25-solver 35.54303 ms measurement.
+No sweep or precision banner was supplied; visual deep-zoom validation remains separate.
 
 Reproduce in this checkout, from the repository root (Vivado 2024.1):
 1. Build via scripts/build_precision.tcl -tclargs 27 18 repackage 2.

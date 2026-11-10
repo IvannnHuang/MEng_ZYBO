@@ -19,7 +19,12 @@
   "small_test_cycles": 73883,
   "changed_counts_vs_27bit_in_sample": 182,
   "full_frame_simulation_run": false,
-  "board_measurement": null,
+  "board_measurement": {
+    "record": "board_results.json",
+    "clocks": 3389695,
+    "ms_uart": 33.897,
+    "source": "User-supplied canonical full-set f render; 27 of 27 solvers"
+  },
   "physical_implementation": "passed after prefix arbiter rewrite and post-route AggressiveExplore",
   "round_robin_policy_check": "passed on the reduced engine request stream",
   "routed_resources": {

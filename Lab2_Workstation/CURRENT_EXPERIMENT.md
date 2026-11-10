@@ -1,6 +1,6 @@
 # Current Mandelbrot experiment - 2026-11-10
 
-**27 solvers (25 DSP-backed + two LUT-backed), 18-bit Q4.14: ready for user board run.**
+**27 solvers (25 DSP-backed + two LUT-backed), 18-bit Q4.14: board-measured at 33.897 ms.**
 Checkout: C:/Users/zk67/zybo-hybrid18
 Branch: solver-hybrid18. Hardware main remains unchanged.
 
@@ -21,15 +21,18 @@ fabric solvers use zero DSPs; the original 25 use three each. Shared test: four.
 LUT solver: 2,048 independent model vectors passed with input/output stalls.
 Mixed short engine: all 8,192 model counts and output protocol pass under
 AXI backpressure; all 27 lanes exercised; round-robin policy monitor passes.
-No repeated long full-frame simulation. No mixed-design board timing yet.
+No repeated long full-frame simulation. User board f: **33.897 ms**,
+3,389,695 clocks, 27 of 27, centre (-0.75,0), step 18641, max_iter 1000,
+STATUS 0x2. About 4.63% less render time than the 25-solver build.
+Raw UART/CSV/JSON: precision/hybrid18/board_results.* and board_uart_excerpt.txt.
 
-## User's next run
+## Manual Vitis procedure (completed by the user)
 
 In Vitis Classic, update hardware specification to the named XSA, build platform
 and app, and explicitly choose the matching named .bit in the run configuration.
 Check 27 built/active solvers and 18-bit Q4.14 (format 0x4d420e12; min step 512).
 Set max_iter 1000 and f: centre (-0.75,0), step 18641, zoom 1.
-Paste one result showing 27 of 27, exact clocks, ms and STATUS. Sweeps are optional.
+The user supplied the canonical f result above. No additional sweep is required.
 User operates Vitis and COM5; agent does not import projects or program/run board.
 The precision-aware reference mandel.c is in this checkout for manual GUI use.
 
@@ -51,3 +54,11 @@ recovered +0.017 ns. Failed attempts and final checks are archived under
 precision/hybrid18. Isolated primitive counts are not physical Slice LUT totals.
 This is the best verified mixed build tested so far, not a proof of a global maximum.
 Further precision, extra-lane and partial-DSP experiments remain future options.
+
+## Next steps (plans only)
+
+The mixed-build measurement is recorded. No further hardware build is started.
+Optional later work: check boundary/deep-zoom quality, inspect dispatch/output/DDR
+stalls, and evaluate whether one more fabric lane or a partly DSP-backed lane
+can fit and meet timing. Preserve the 25- and 27-solver measurements separately.
+Amber's Lab 1 teaching helpers and the DDR capacity/buffering question remain future work.
