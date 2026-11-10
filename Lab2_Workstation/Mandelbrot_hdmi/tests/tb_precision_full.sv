@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 // Software default view; ideal AXI sink, not a board measurement.
-module tb_precision_full;
+module tb_precision_full #(parameter SW=24, parameter NSOLV=8);
  reg clk=0;always #5 clk=~clk;
  reg rst=1,start=0,bv=0;
  wire done,busy,awv,wv,wl,br;
@@ -10,9 +10,10 @@ module tb_precision_full;
  wire [2:0] size;wire [1:0] burst;
  integer nw=0,na=0,nresp=0,np=0,t=0;
  localparam integer STEP=18641;
- mandel_engine #(.SW(24)) dut(.clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
+ localparam [7:0] ACTIVE=NSOLV;
+ mandel_engine #(.SW(SW),.NSOLV(NSOLV)) dut(.clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(-27'sd6291456-960*STEP),.ci_top(540*STEP),.step(STEP),
- .max_iter(16'd1000),.n_active(8'd8),.busy(busy),.done(done),.cycles(cycles),
+ .max_iter(16'd1000),.n_active(ACTIVE),.busy(busy),.done(done),.cycles(cycles),
  .m_awaddr(addr),.m_awlen(len),.m_awsize(size),.m_awburst(burst),
  .m_awvalid(awv),.m_awready(1'b1),.m_wdata(data),.m_wstrb(strb),
  .m_wlast(wl),.m_wvalid(wv),.m_wready(1'b1),.m_bresp(2'b00),.m_bvalid(bv),.m_bready(br));
@@ -35,7 +36,7 @@ module tb_precision_full;
   @(negedge clk);start=1;@(negedge clk);start=0;
   wait(done);@(negedge clk);
   if(np!=2073600 || nw!=777600 || na!=48600) $fatal(1,"incomplete frame");
-  $display("PRECISION FULL FRAME PASSED W=24: cycles=%0d at 100MHz = %0f ms (simulation, ideal AXI)",cycles,cycles/100000.0);
+  $display("PRECISION FULL FRAME PASSED W=%0d NSOLV=%0d: cycles=%0d at 100MHz = %0f ms (simulation, ideal AXI)",SW,NSOLV,cycles,cycles/100000.0);
   $finish;
  end
 endmodule
