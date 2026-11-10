@@ -1222,6 +1222,11 @@
         <spirit:displayName>Solver Width</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SOLVER_W">27</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>LUT_SOLVERS</spirit:name>
+        <spirit:displayName>Fabric solver count</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.LUT_SOLVERS">0</spirit:value>
+      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:choices>
@@ -1404,6 +1409,11 @@
       <spirit:name>SOLVER_W</spirit:name>
       <spirit:displayName>Solver width (18 to 27 bits, four integer bits)</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SOLVER_W">27</spirit:value>
+    </spirit:parameter>
+      <spirit:parameter>
+      <spirit:name>LUT_SOLVERS</spirit:name>
+      <spirit:displayName>Fabric solver count</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.LUT_SOLVERS">0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>

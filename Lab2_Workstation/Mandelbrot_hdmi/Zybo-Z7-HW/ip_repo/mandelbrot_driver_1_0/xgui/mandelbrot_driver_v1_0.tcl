@@ -5,6 +5,7 @@ proc init_gui { IPINST } {
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
   ipgui::add_param $IPINST -name "NSOLV" -parent ${Page_0}
   ipgui::add_param $IPINST -name "SOLVER_W" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "LUT_SOLVERS" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
@@ -111,4 +112,15 @@ proc validate_PARAM_VALUE.SOLVER_W { PARAM_VALUE.SOLVER_W } {
 }
 proc update_MODELPARAM_VALUE.SOLVER_W { MODELPARAM_VALUE.SOLVER_W PARAM_VALUE.SOLVER_W } {
     set_property value [get_property value ${PARAM_VALUE.SOLVER_W}] ${MODELPARAM_VALUE.SOLVER_W}
+}
+
+proc update_PARAM_VALUE.LUT_SOLVERS { PARAM_VALUE.LUT_SOLVERS } {}
+proc validate_PARAM_VALUE.LUT_SOLVERS { PARAM_VALUE.LUT_SOLVERS PARAM_VALUE.NSOLV } {
+    set n [get_property value ${PARAM_VALUE.LUT_SOLVERS}]
+    set total [get_property value ${PARAM_VALUE.NSOLV}]
+    if {[string is integer -strict $n] && $n >= 0 && $n <= $total} { return true }
+    return false
+}
+proc update_MODELPARAM_VALUE.LUT_SOLVERS { MODELPARAM_VALUE.LUT_SOLVERS PARAM_VALUE.LUT_SOLVERS } {
+    set_property value [get_property value ${PARAM_VALUE.LUT_SOLVERS}] ${MODELPARAM_VALUE.LUT_SOLVERS}
 }

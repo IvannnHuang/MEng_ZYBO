@@ -4,6 +4,7 @@
 
 module mandel_engine #(
     parameter NSOLV  = 8,       // solvers built
+    parameter LUT_SOLVERS = 0, // final lanes use fabric products
     parameter W      = 27,      // number width (Q4.23)
     parameter SW     = W,       // solver width; coordinates/classifier retain W bits
     parameter F      = 23,      // fractional bits
@@ -45,6 +46,10 @@ module mandel_engine #(
     input  wire                 m_bvalid,
     output wire                 m_bready
 );
+
+    initial begin
+        if (LUT_SOLVERS < 0 || LUT_SOLVERS > NSOLV) $error("Invalid LUT_SOLVERS");
+    end
 
     localparam ROWS   = 1 << RB;              // rows in the buffer
     localparam BPR    = FW * 3 / 128;         // 128-byte bursts per row (45 at 1920)
@@ -166,7 +171,7 @@ module mandel_engine #(
     genvar g;
     generate
         for (g = 0; g < NSOLV; g = g + 1) begin : SOLV
-            mandel_solver #(.W(SW), .F(SF), .IW(IW), .XW(XW), .YW(YW), .ML(ML)) u_solver (
+            mandel_solver #(.W(SW), .F(SF), .IW(IW), .XW(XW), .YW(YW), .ML(ML), .LUT_MULT(g >= NSOLV-LUT_SOLVERS)) u_solver (
                 .clk       (clk),
                 .rst       (rst),
                 .max_iter  (max_r),

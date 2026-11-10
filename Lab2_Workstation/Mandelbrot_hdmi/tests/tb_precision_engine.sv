@@ -1,7 +1,9 @@
 `timescale 1ns/1ps
-module tb_precision_engine #(parameter SW=24, parameter NSOLV=8);
+module tb_precision_engine #(parameter SW=24, parameter NSOLV=8, parameter LUT_SOLVERS=0);
+ reg [NSOLV-1:0] used_lanes=0;
  reg clk=0; always #5 clk=~clk;
  reg rst=1,start=0;
+ always @(posedge clk) if (!rst) used_lanes <= used_lanes | (E[1].NEW.dut.s_in_valid & E[1].NEW.dut.s_in_ready);
  reg signed [26:0] cr,ci,step;
  reg [15:0] max_iter;
  reg [7:0] nact;
@@ -38,7 +40,7 @@ module tb_precision_engine #(parameter SW=24, parameter NSOLV=8);
    np[g]<=np[g]+1;
  end
  end else begin: NEW
- mandel_engine #(.SW(SW),.NSOLV(NSOLV),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
+ mandel_engine #(.SW(SW),.NSOLV(NSOLV),.LUT_SOLVERS(LUT_SOLVERS),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
  .clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(cr),.ci_top(ci),.step(step),.max_iter(max_iter),.n_active(nact),
  .busy(busy[g]),.done(done[g]),.cycles(cycles[g]),
@@ -101,6 +103,8 @@ module tb_precision_engine #(parameter SW=24, parameter NSOLV=8);
   repeat(5) @(negedge clk);rst=0;
   $readmemh($sformatf("engine_w%0d_counts.mem",SW),expected);
   frame(0,-16777216,6291456,196608,1000,NSOLV);
+  $display("SOLVER COVERAGE used=%h expected_all=%h",used_lanes,{NSOLV{1'b1}});
+  if (used_lanes !== {NSOLV{1'b1}}) $fatal(1,"not all lanes exercised");
   $display("PRECISION ENGINE PASSED");$finish;
  end
 endmodule

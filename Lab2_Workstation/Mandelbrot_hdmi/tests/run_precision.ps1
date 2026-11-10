@@ -1,5 +1,6 @@
-param([switch]$FullFrame, [ValidateSet(18,21,24,27)][int]$SolverWidth=24, [ValidateRange(1,25)][int]$Solvers=8)
+param([switch]$FullFrame, [ValidateSet(18,21,24,27)][int]$SolverWidth=24, [ValidateRange(1,255)][int]$Solvers=8, [ValidateRange(0,255)][int]$LutSolvers=0, [switch]$EngineOnly)
 $ErrorActionPreference = 'Stop'
+if ($LutSolvers -gt $Solvers) {throw 'LutSolvers must not exceed Solvers'}
 $tests=$PSScriptRoot
 $src=Join-Path $tests '../Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src'
 $bin='C:/Xilinx/Vivado/2024.1/bin'
@@ -13,15 +14,16 @@ try {
  @"
 ``timescale 1ns/1ps
 module selected_precision_engine;
- tb_precision_engine #(.SW($SolverWidth), .NSOLV($Solvers)) test();
+ tb_precision_engine #(.SW($SolverWidth), .NSOLV($Solvers), .LUT_SOLVERS($LutSolvers)) test();
 endmodule
 module selected_precision_full;
- tb_precision_full #(.SW($SolverWidth), .NSOLV($Solvers)) test();
+ tb_precision_full #(.SW($SolverWidth), .NSOLV($Solvers), .LUT_SOLVERS($LutSolvers)) test();
 endmodule
 "@ | Set-Content -LiteralPath $selected -Encoding ASCII
  & "$bin/xvlog.bat" --sv "$selected"  "$src/mandel_engine.v" "$src/mandel_solver.v" "$tests/precision_baseline_engine.v" "$tests/tb_solver_precision.sv" "$tests/tb_precision_engine.sv" "$src/../hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v" "$tests/tb_precision_format.sv" "$tests/tb_precision_full.sv"
  if($LASTEXITCODE -ne 0){throw 'precision compilation failed'}
  $tops=@('tb_solver_precision','tb_precision_engine','tb_precision_format')
+ if($EngineOnly){$tops=@('tb_precision_engine')}
  if($FullFrame){$tops+='tb_precision_full'}
  foreach($top in $tops){
   $elabTop=switch($top){

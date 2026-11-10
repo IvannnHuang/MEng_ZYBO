@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 // Software default view; ideal AXI sink, not a board measurement.
-module tb_precision_full #(parameter SW=24, parameter NSOLV=8);
+module tb_precision_full #(parameter SW=24, parameter NSOLV=8, parameter LUT_SOLVERS=0);
  reg clk=0;always #5 clk=~clk;
  reg rst=1,start=0,bv=0;
  wire done,busy,awv,wv,wl,br;
@@ -11,7 +11,7 @@ module tb_precision_full #(parameter SW=24, parameter NSOLV=8);
  integer nw=0,na=0,nresp=0,np=0,t=0;
  localparam integer STEP=18641;
  localparam [7:0] ACTIVE=NSOLV;
- mandel_engine #(.SW(SW),.NSOLV(NSOLV)) dut(.clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
+ mandel_engine #(.SW(SW),.NSOLV(NSOLV),.LUT_SOLVERS(LUT_SOLVERS)) dut(.clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(-27'sd6291456-960*STEP),.ci_top(540*STEP),.step(STEP),
  .max_iter(16'd1000),.n_active(ACTIVE),.busy(busy),.done(done),.cycles(cycles),
  .m_awaddr(addr),.m_awlen(len),.m_awsize(size),.m_awburst(burst),

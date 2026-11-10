@@ -5,6 +5,7 @@
 	(
 		// Users to add parameters here
 		parameter integer SOLVER_W = 27,                 // Q4.(SOLVER_W-4) solver precision
+		parameter integer LUT_SOLVERS = 0,               // final lanes use fabric products
 		parameter integer NSOLV = 4,                     // number of solvers built
 		// User parameters ends
 		// Do not modify the parameters beyond this line
@@ -136,6 +137,7 @@
 	// Runs on the S00_AXI clock; reset by the AXI reset or the CTRL soft-reset pulse.
 	mandel_engine #(
 		.NSOLV      (NSOLV),
+		.LUT_SOLVERS(LUT_SOLVERS),
 		.SW         (SOLVER_W),
 		.AXI_DW     (C_M00_AXI_DATA_WIDTH),
 		.AXI_AW     (C_M00_AXI_ADDR_WIDTH)

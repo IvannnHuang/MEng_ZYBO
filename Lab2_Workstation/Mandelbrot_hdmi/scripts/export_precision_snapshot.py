@@ -10,14 +10,18 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--width",type=int,choices=(18,21,24,27),required=True)
     parser.add_argument("--solvers",type=int,required=True)
+    parser.add_argument("--lut-solvers",type=int,default=0)
     args=parser.parse_args()
+    if not 0<=args.lut_solvers<=args.solvers:
+        parser.error("LUT solver count must be 0..solvers")
+    suffix=f"w{args.width}_n{args.solvers}" if not args.lut_solvers else f"w{args.width}_d{args.solvers-args.lut_solvers}_l{args.lut_solvers}"
     if not 1<=args.solvers<=255:
         parser.error("solver count must be 1..255")
     lab=Path(__file__).resolve().parents[2]
     hw=lab/"Mandelbrot_hdmi/Zybo-Z7-HW"
     xsa=hw/"design_1_wrapper.xsa"
     bit=hw/"Zybo-Z7-HW.runs/impl_1/design_1_wrapper.bit"
-    tag=f"precision_w{args.width}_n{args.solvers}"
+    tag=("hybrid_" if args.lut_solvers else "precision_")+suffix
     report=lab/f"util_{tag}.rpt"
     timing=lab/f"timing_{tag}.rpt"
     files=[xsa,bit,report,timing,lab/f"util_{tag}_hier.rpt",lab/f"bus_skew_{tag}.rpt"]
@@ -33,6 +37,8 @@ def main():
         actual=(int(params.get("SOLVER_W","-1")),int(params.get("NSOLV","-1")))
         if actual!=(args.width,args.solvers):
             raise SystemExit(f"XSA is width/count {actual}, not requested {(args.width,args.solvers)}")
+        if int(params.get("LUT_SOLVERS","0"))!=args.lut_solvers:
+            raise SystemExit("XSA LUT_SOLVERS does not match requested build")
         if z.read("design_1_wrapper.bit")!=bit.read_bytes():
             raise SystemExit("XSA's embedded bitstream differs from the implementation .bit")
     raw=report.read_text()
@@ -64,9 +70,9 @@ def main():
         report_stamp=datetime.strptime(report_date,"%a %b %d %H:%M:%S %Y").timestamp()
         if report_stamp+10<bit.stat().st_mtime or abs(report_stamp-xsa.stat().st_mtime)>300:
             raise SystemExit("Report/bitstream/XSA dates do not describe the same completed build")
-    output=lab/"precision/artifacts"/f"w{args.width}_n{args.solvers}"
+    output=lab/"precision/artifacts"/suffix
     output.mkdir(parents=True,exist_ok=True)
-    copies={xsa:f"design_1_wrapper_w{args.width}_n{args.solvers}.xsa",bit:f"design_1_wrapper_w{args.width}_n{args.solvers}.bit"}
+    copies={xsa:f"design_1_wrapper_{suffix}.xsa",bit:f"design_1_wrapper_{suffix}.bit"}
     copies.update({f:f.name for f in files[2:]})
     artifacts={}
     for source,name in copies.items():
@@ -81,7 +87,7 @@ def main():
     for relative in ("src/mandel_engine.v","src/mandel_solver.v","hdl/mandelbrot_driver.v","hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v"):
         source_hashes[relative]=sha((src/relative).read_bytes())
     revision=subprocess.check_output(["git","rev-parse","HEAD"],cwd=lab).decode().strip()
-    manifest={"width":args.width,"fractional_bits":args.width-4,"built_solvers":args.solvers,"engine_clock_hz":100000000,"format_register":f"0x{(0x4d42<<16)|((args.width-4)<<8)|args.width:08x}","build_report_date":report_date,"git_head_at_export":revision,"source_sha256":source_hashes,"routed_resources":metrics,"artifacts":artifacts,"board_measurement":None,"note":"Metadata and embedded .bit verified. Board timing and visual validation require user's run; simulation is recorded separately."}
+    manifest={"width":args.width,"fractional_bits":args.width-4,"built_solvers":args.solvers,"lut_solvers":args.lut_solvers,"native_solvers":args.solvers-args.lut_solvers,"engine_clock_hz":100000000,"format_register":f"0x{(0x4d42<<16)|((args.width-4)<<8)|args.width:08x}","build_report_date":report_date,"git_head_at_export":revision,"source_sha256":source_hashes,"routed_resources":metrics,"artifacts":artifacts,"board_measurement":None,"note":"Metadata and embedded .bit verified. Board timing and visual validation require user's run; simulation is recorded separately."}
     manifest_path=output/"manifest.json"
     if manifest_path.exists():
         previous=json.loads(manifest_path.read_text())

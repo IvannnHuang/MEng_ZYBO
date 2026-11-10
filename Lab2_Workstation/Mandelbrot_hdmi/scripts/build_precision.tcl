@@ -12,7 +12,11 @@ set out  [file normalize $here/../..]
 set n    [lindex $argv 0]
 set w    [lindex $argv 1]
 if {![string is integer -strict $w] || $w < 18 || $w > 27} { error "usage: -tclargs NSOLV SOLVER_W repackage" }
+set fabric 0
+if {[llength $argv] > 3} { set fabric [lindex $argv 3] }
+if {![string is integer -strict $fabric] || $fabric < 0 || $fabric > $n} {error "Invalid fabric count"}
 set tag "precision_w${w}_n${n}"
+if {$fabric > 0} {set tag "hybrid_w${w}_d[expr {$n-$fabric}]_l${fabric}"}
 set repack [expr {[lsearch $argv repackage] >= 0}]
 if {![string is integer -strict $n] || $n < 1 || $n > 255} { error "usage: -tclargs <NSOLV 1..255> ?repackage?" }
 
@@ -35,7 +39,7 @@ if {$repack} {
 }
 
 open_bd_design [get_files design_1.bd]
-set_property -dict [list CONFIG.NSOLV $n CONFIG.SOLVER_W $w] [get_bd_cells mandelbrot_driver_0]
+set_property -dict [list CONFIG.NSOLV $n CONFIG.SOLVER_W $w CONFIG.LUT_SOLVERS $fabric] [get_bd_cells mandelbrot_driver_0]
 puts "NSOLV: mandelbrot_driver_0 NSOLV = [get_property CONFIG.NSOLV [get_bd_cells mandelbrot_driver_0]]"
 validate_bd_design
 save_bd_design
@@ -56,6 +60,16 @@ set hold  [get_property SLACK [get_timing_paths -delay_type min -max_paths 1]]
 if {$setup < 0 || $hold < 0} { error "inside-set build fails timing: setup=$setup hold=$hold" }
 set ndsp [llength [get_cells -hier -filter {REF_NAME == DSP48E1}]]
 if {$ndsp > 80} { error "inside-set build exceeds DSP budget: $ndsp" }
+# Verify the selected fabric lanes contain no DSP48 primitives.
+if {$fabric > 0} {
+    for {set i [expr {$n-$fabric}]} {$i < $n} {incr i} {
+        set literal [format {SOLV[%d].u_solver/} $i]
+        foreach cell [get_cells -hier -filter {REF_NAME == DSP48E1}] {
+            if {[string first $literal [get_property NAME $cell]] >= 0} {error "Fabric solver $i unexpectedly uses DSPs"}
+        }
+    }
+    if {$ndsp != 3*($n-$fabric)+4} {error "Unexpected hybrid DSP count: $ndsp"}
+}
 write_hw_platform -fixed -include_bit -force -file $hw/design_1_wrapper.xsa
-puts "PRECISION: built NSOLV=$n SOLVER_W=$w; XSA written"
+puts "PRECISION: built NSOLV=$n SOLVER_W=$w LUT_SOLVERS=$fabric; XSA written"
 close_project
