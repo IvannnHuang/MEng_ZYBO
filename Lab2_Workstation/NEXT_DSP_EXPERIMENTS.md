@@ -1,5 +1,10 @@
 # Next DSP experiments - handoff (2026-11-09)
 
+**Latest instruction: testing is ON HOLD.** The new handoff supersedes the older
+resumption/history below: [MANDELBROT_NEXT_STEPS_2026-11-10.md](MANDELBROT_NEXT_STEPS_2026-11-10.md).
+Next planned experiment is a higher engine clock after the measured 27-solver
+baseline. No clock or hardware change is performed in this session.
+
 ## Current update: 2026-11-10
 
 This update supersedes the older ON HOLD status and gradual sweep below.

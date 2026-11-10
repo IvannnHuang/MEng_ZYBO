@@ -1,5 +1,24 @@
 # Meeting with professor — 2026-11-10
 
+## Session wrap: next experiment is clock scaling, later
+
+27 solvers have worked on the board: 33.897 ms at 100 MHz. User requested no
+further testing now. Plan a separate frequency experiment with unchanged
+27-lane Q4.14 arithmetic; actual clock, timing closure, PS initialization and
+software cycles-to-ms conversion must match. Current setup margin is 0.017 ns.
+
+New downloadable records: Lab2_Workstation/MANDELBROT_PROGRESS_2026-11-10.md
+and Lab2_Workstation/MANDELBROT_NEXT_STEPS_2026-11-10.md. They include the full
+progression, saved hardware, DDR/M10K explanation and area-only LUT estimates:
+1,251 Slice LUTs / 417 FF / zero DSP per complete fabric solver; about 314
+extra Slice LUTs per product on average (derived). Full-chip solver-only
+estimate: 14 lanes; current support plus DSP classifier: about nine; strict
+zero-DSP sketch bypassing the classifier: about ten. These are unbuilt area
+estimates. Keeping the classifier in LUTs needs a separate cost measurement.
+
+Amber's Lab 1 C teaching-helper idea and DDR buffering remain future work.
+MEng_ZYBO stays on working branches; only the website may be pushed to main.
+
 ## Measured progress update: 2026-11-10
 
 Latest canonical full-set board result: **25 x 18-bit solvers, 35.543 ms**

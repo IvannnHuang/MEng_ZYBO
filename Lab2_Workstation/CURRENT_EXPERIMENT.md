@@ -1,5 +1,10 @@
 # Current Mandelbrot experiment - 2026-11-10
 
+**STATUS: no further hardware testing or builds for now (user request).**
+Overclocking is a future experiment, not attempted.
+New records: [Progress](MANDELBROT_PROGRESS_2026-11-10.md) and
+[Next steps](MANDELBROT_NEXT_STEPS_2026-11-10.md).
+
 **27 solvers (25 DSP-backed + two LUT-backed), 18-bit Q4.14: board-measured at 33.897 ms.**
 Checkout: C:/Users/zk67/zybo-hybrid18
 Branch: solver-hybrid18. Hardware main remains unchanged.

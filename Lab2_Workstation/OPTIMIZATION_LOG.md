@@ -35,6 +35,7 @@ So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is t
 | Native 18-bit solver | `solver-native18` | 8 | 28 (35 %) | 7,740 (43.98 %) | +0.479 | **93.522 (board, canonical)** |
 | 24-bit, ten solvers | `solver-24-n10` | 10 | 64 (80 %) | 8,666 (49.24 %) | +0.601 | **76.869 (board); 76.86912 RTL simulation** |
 | 18-bit, twenty-five solvers | `solver-18-n25` | 25 | 79 (98.75 %) | 13,045 (74.12 %) | +0.262 | **35.543 (board); no long simulation** |
+| 18-bit, 25 DSP + 2 LUT solvers | `solver-hybrid18` `258e5f4` | 27 | 79 (98.75 %) | 15,366 (87.31 %) | +0.017 | **33.897 (board, canonical)** |
 
 ### Step 1: remove HDMI input (no RTL change)
 - Block design only: `Mandelbrot_hdmi/scripts/strip_hdmi_in.tcl` deletes `dvi2rgb`, `v_vid_in_axi4s`, `v_tc_in`, `axis_subset_converter_in`, the RX reset, `axi_gpio_video`; turns off the VDMA write channel and FCLK2; moves the IP to `hp0/S01` (FCLK0). Constraints: HDMI RX pins commented out in `Zybo-Z7-Master.xdc`.
@@ -582,3 +583,13 @@ DSPs remain 79, BRAM remains 11. This configuration includes the arbiter rewrite
 No sweep or precision banner was provided; no further board testing is required. This is the best verified mixed fit tested, not a global
 maximum proof. Primitive and physical LUT totals differ; a third fabric lane
 or using the last DSP for one product remain future experiments.
+
+
+### Session wrap: documentation-only handoff
+
+No more testing now. Overclocking is planned for later, on a separate working
+branch with actual clock metadata and software time conversion updated together.
+See MANDELBROT_PROGRESS_2026-11-10.md and MANDELBROT_NEXT_STEPS_2026-11-10.md
+for the saved progression, LUT-only calculations and DDR/M10K explanation.
+Isolated solver Slice LUTs are 310 native and 1,251 fabric; the earlier
+333/1,561 figures count LUT primitives. Neither is a new synthesis result.

@@ -100,3 +100,11 @@ all LUTs or registers are used.
    precision/boundary detail. These remain separate future experiments.
 5. Preserve the DDR capacity/buffering question and Amber's Lab 1 teaching-helper
    idea as future notes; neither is implemented in this session.
+
+
+## Session wrap and new handoff
+
+User requested no further testing now. The consolidated past-work record is
+[MANDELBROT_PROGRESS_2026-11-10.md](MANDELBROT_PROGRESS_2026-11-10.md);
+future overclocking, LUT-only estimates, DDR and teaching follow-ups are in
+[MANDELBROT_NEXT_STEPS_2026-11-10.md](MANDELBROT_NEXT_STEPS_2026-11-10.md).
