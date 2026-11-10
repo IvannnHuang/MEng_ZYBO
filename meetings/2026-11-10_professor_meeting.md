@@ -146,3 +146,20 @@ Testing is on hold at the user's request. The measured 18-bit result is 93.522 m
 ## Precision versus display resolution - end-of-session clarification
 
 All 27/24/18-bit variants still produce 1920x1080 RGB888 frames. Smaller products reduce solver fractional precision from 23 to 20 to 14 bits; they can alter boundary detail and colour bands and limit useful zoom. The user's visual observation is plausible but matched-view zoom screenshots remain future work. The complete session summary is Lab2_Workstation/SESSION_SUMMARY_2026-11-09.md, with exact build/overhead steps in NEXT_DSP_EXPERIMENTS.md. Both are downloadable from the website draft's zybo.html. Further lab testing stays on hold and all commits stay on working branches.
+
+
+## Nov 10 follow-up: ten 24-bit solvers ready, shorter remaining plan
+
+Built in a separate checkout/branch, preserving the Vitis workspace:
+64 DSPs, 8,666 LUTs, 12,243 FFs, 11 BRAM tiles; overall setup +0.601 ns.
+Full-frame ideal-AXI simulation passed at 76.86912 ms. The user then measured **76.869 ms** on the canonical full-set view:
+7,686,944 clocks, only 32 clocks above simulation. Only solver count changed; Q4.20 and 100 MHz stay fixed.
+
+The user will run Vitis Classic and report the render time. Next, skip the
+intermediate configurations and attempt 25 x 18-bit (79/80 DSP budget), then
+LUT-built multipliers/solvers to investigate maximum combined utilization.
+Use targeted correctness and required resource/timing checks, with longer
+simulation only when needed. CURRENT_EXPERIMENT.md holds the exact handoff.
+
+
+Ten-solver board follow-up: user confirmed 10 of 10 solvers and canonical full-set render at **76.869 ms (7,686,944 clocks)**. The next authorized build is directly 25 x 18-bit, with short functional checks and final timing/resource verification, then LUT-based solvers. No intermediate twelve-solver/24-bit build is needed.

@@ -1,5 +1,13 @@
 # Next DSP experiments - handoff (2026-11-09)
 
+**Update 2026-11-10:** the user resumed ten solvers at 24 bits. That hardware
+is now ready for their Vitis/COM5 run; see [CURRENT_EXPERIMENT.md](CURRENT_EXPERIMENT.md).
+The remaining sequence is now **10 x 24-bit -> 25 x 18-bit -> DSP plus LUT solvers**.
+Skip twelve-solvers/24-bit and intermediate 18-bit builds unless a failure needs
+a fallback. Keep validation short and targeted; no repeated long simulations
+unless justified. The older detailed sequence below is historical.
+
+
 **STATUS: further lab testing is ON HOLD at the user's request.**
 18-bit / eight-solvers is already built and board-measured at **93.522 ms**.
 The 12 x 24-bit hardware build and DSP-plus-LUT experiments below are plans only.
