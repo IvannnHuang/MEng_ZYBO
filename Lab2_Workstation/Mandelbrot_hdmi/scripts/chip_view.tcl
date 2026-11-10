@@ -6,10 +6,11 @@ open_project [file normalize $here/../Zybo-Z7-HW/Zybo-Z7-HW.xpr]
 open_run impl_1
 set base design_1_i/mandelbrot_driver_0/inst/engine_i
 set n 0
-for {set i 0} {$i < 16} {incr i} {
+# Highlight every solver; reuse the eight verified palette colours for large arrays.
+for {set i 0} {$i < 255} {incr i} {
     set c [get_cells -quiet -hier -filter "IS_PRIMITIVE && NAME =~ ${base}/SOLV?${i}?.u_solver/*"]
     if {$c eq ""} { break }
-    highlight_objects -color_index [expr {$i + 1}] $c
+    highlight_objects -color_index [expr {($i % 8) + 1}] $c
     incr n
 }
 puts "CHIP: highlighted $n iterators"
