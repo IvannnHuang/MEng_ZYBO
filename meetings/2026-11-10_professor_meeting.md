@@ -141,3 +141,8 @@ for the Reddit-discovered lecture link and the reviewed Cornell lab/background.
 ## Presentation stop point and next work
 
 Testing is on hold at the user's request. The measured 18-bit result is 93.522 ms with eight solver pipelines, each containing three 18x18 products (24 solver DSPs + 4 shared-test DSPs). Next: compare 10/12 solvers at 24 bits and gradually scale 18-bit solvers; then measure a LUT-only solver and add fabric lanes after the useful DSP-backed limit. Native 25x18 products fit a DSP, but a 25-bit square is 25x25. A precise DSP-plus-LUT iterator ceiling remains to be measured. Full plan, overhead worksheet and illustrative LUT limits: Lab2_Workstation/NEXT_DSP_EXPERIMENTS.md. No pushes to main; hardware and website changes stay on their named working branches.
+
+
+## Precision versus display resolution - end-of-session clarification
+
+All 27/24/18-bit variants still produce 1920x1080 RGB888 frames. Smaller products reduce solver fractional precision from 23 to 20 to 14 bits; they can alter boundary detail and colour bands and limit useful zoom. The user's visual observation is plausible but matched-view zoom screenshots remain future work. The complete session summary is Lab2_Workstation/SESSION_SUMMARY_2026-11-09.md, with exact build/overhead steps in NEXT_DSP_EXPERIMENTS.md. Both are downloadable from the website draft's zybo.html. Further lab testing stays on hold and all commits stay on working branches.
