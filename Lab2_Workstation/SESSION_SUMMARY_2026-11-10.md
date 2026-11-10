@@ -12,6 +12,7 @@ cardioid/period-2 bulb test enabled. User operates Vitis Classic and COM5.
 | 8 x 18-bit | 93.522 | 9,352,158-159 | 28 | 7,740 | 11,169 | 11 | +0.479 / +0.020 |
 | 10 x 24-bit | 76.869 | 7,686,944 | 64 | 8,666 | 12,243 | 11 | +0.601 / +0.019 |
 | 25 x 18-bit | **35.543** | **3,554,303** | **79** | **13,045** | **15,607** | **11** | **+0.262 / +0.024** |
+| 27 x 18-bit (25 DSP + 2 LUT) | **33.897** | **3,389,695** | **79** | **15,366** | **16,393** | **11** | **+0.017 / +0.026** |
 
 The 25-solver result is about 2.63 times faster than eight solvers at the same
 18-bit precision. Both captures report STATUS 0x2 and all built solvers active.
@@ -76,19 +77,22 @@ Verified mixed files: C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/precision/art
 4198637c523551994e8a1def968fe39ea52d53a3142ebafa8a738153ce33d742.
 Metadata and embedded bitstream match the verified build.
 
-See CURRENT_EXPERIMENT.md for manual Vitis steps. No mixed-design board render
-time has been measured yet. Isolated primitive counts and physical Slice LUT
+User mixed-design canonical f: **33.897 ms (3,389,695 clocks)**, 27 of 27,
+STATUS 0x2, same view/step/max_iter as above. Raw UART/CSV/JSON are in
+precision/hybrid18 on solver-hybrid18. This saves 164,608 clocks / 1.64608 ms
+versus 25 solvers: about 4.63% less render time, with +2,321 LUTs and +786 FF.
+DSPs and BRAM stay at 79 and 11. The mixed build also includes the arbiter
+rewrite; this is a configuration comparison. No sweep or precision banner supplied. Isolated primitive counts and physical Slice LUT
 counts differ; neither raw LUT headroom nor occupied slices proves an absolute
 maximum. The first attempt shows how packing/routing can limit scaling before
 all LUTs or registers are used.
 
 ## Remaining work
 
-1. User loads the verified named mixed XSA/.bit in Vitis Classic and collects
-   one canonical f result showing 27 of 27, max_iter 1000, clocks and STATUS.
-   Hardware, resource/timing checks and pushed artifacts are complete.
-2. Record that board measurement against the 25-solver 35.543 ms baseline.
-   Sweeps/repeats are optional; no additional hardware build is needed now.
+1. The 27-solver board run and comparison are complete. No additional hardware
+   build or sweep is needed now. Keep both raw board records and named artifacts.
+2. Optional later validation: compare boundary/deep-zoom detail against the
+   27-bit reference. Further lane-count and stall experiments remain plans.
 3. Record the best tested fit and first failing configuration; distinguish
    measured limits from a proof of an absolute maximum.
 4. Later options: use the last DSP for one product in a partly fabric lane,

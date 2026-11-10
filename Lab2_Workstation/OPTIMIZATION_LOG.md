@@ -573,8 +573,12 @@ Embedded and implemented bitstreams match. Reproduction and manual Vitis steps
 are in precision/hybrid18/README.md. Export additionally checks route status
 and per-lane mapping for post-route-optimized hybrid hardware.
 
-Board render time remains pending. Next: user supplies one canonical f result
-showing 27 of 27 solvers, step 18641, centre (-0.75,0), max_iter 1000 and STATUS.
-A sweep is optional. This is the best verified mixed fit tested, not a global
+User board f: **33.897 ms (3,389,695 clocks)**, 27 of 27 solvers,
+step 18641, centre (-0.75,0), max_iter 1000, STATUS 0x2.
+Raw UART/CSV/JSON are in precision/hybrid18, linked from the frozen manifest.
+The 25-solver board run is 3,554,303 clocks: saved 164,608 clocks / 1.64608 ms,
+about 4.63% less render time. Resource increase: 2,321 LUTs and 786 registers;
+DSPs remain 79, BRAM remains 11. This configuration includes the arbiter rewrite.
+No sweep or precision banner was provided; no further board testing is required. This is the best verified mixed fit tested, not a global
 maximum proof. Primitive and physical LUT totals differ; a third fabric lane
 or using the last DSP for one product remain future experiments.

@@ -23,7 +23,11 @@ oracle/protocol check, including coverage of every lane. Physical fit and timing
 now pass after the arbiter rewrite and post-route optimization: 79 DSPs,
 15,366 LUTs, all 4,400 slices, setup/hold +0.017/+0.026 ns. Nine bus-skew checks
 pass. Named XSA/.bit and all reports are pushed at 9ca5c02 on solver-hybrid18.
-The next action is one user-run canonical f measurement with 27 of 27 solvers.
+User completed canonical f with 27 of 27: **33.897 ms (3,389,695 clocks)**,
+max_iter 1000, step 18641, centre (-0.75,0), STATUS 0x2.
+This is about 4.63% less render time than 25 solvers (35.543 ms).
+Raw UART/CSV/JSON and the linked manifest are saved on solver-hybrid18.
+Further experiments below remain plans; no new hardware build is started.
 This is a tested fit, not proof of an absolute maximum.
 
 See CURRENT_EXPERIMENT.md for the current status. Keep Q4.14 and 100 MHz fixed.

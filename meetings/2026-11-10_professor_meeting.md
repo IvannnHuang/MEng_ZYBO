@@ -25,8 +25,13 @@ The mixed design now fits and meets 100 MHz after an arbiter rewrite and
 post-route physical optimization: 79 DSPs, 15,366 LUTs, 16,393 registers,
 11 BRAM, all 4,400 slices; setup/hold +0.017/+0.026 ns. Nine bus-skew checks
 pass. Named XSA/.bit and reports are pushed on solver-hybrid18 at 9ca5c02.
-Next meeting result: user measures canonical f with 27 of 27 solvers and
-compares against 35.543 ms at 25. No mixed-design board render time yet.
+User measured the mixed build: **33.897 ms (3,389,695 clocks)** at the
+canonical view, 27 of 27, max_iter 1000, step 18641, STATUS 0x2.
+Compared with 35.543 ms at 25 solvers, render time decreases about 4.63%;
+the added logic costs 2,321 LUTs and 786 registers, with unchanged 79 DSPs
+and 11 BRAM. Both configurations are saved; the arbiter rewrite is included
+in the mixed-build result. Next steps are optional image-quality/stall analysis
+and future packing experiments; no further build is started.
 
 4,555 unused LUTs in the 25-lane build do not mean 4,555 placeable extra gates:
 4,336/4,400 slices are already occupied. Report routed totals and throughput
