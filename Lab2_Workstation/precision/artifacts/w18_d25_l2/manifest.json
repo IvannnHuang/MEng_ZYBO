@@ -1,0 +1,68 @@
+{
+  "width": 18,
+  "fractional_bits": 14,
+  "built_solvers": 27,
+  "lut_solvers": 2,
+  "native_solvers": 25,
+  "engine_clock_hz": 100000000,
+  "format_register": "0x4d420e12",
+  "build_report_date": "Tue Nov 10 15:21:59 2026",
+  "git_head_at_export": "a2f58e7805c609a3dfa34d5c673b3c9f0352d9fd",
+  "source_sha256": {
+    "src/mandel_engine.v": "8f35d3428b8a4f63cc0baa2f69e66b219ec89bf174c84c1093447e606d7744fb",
+    "src/mandel_solver.v": "ee3c356081511700b916ed8d7f8930b9f6b2153cca1a30a75c48212c9dd6904c",
+    "hdl/mandelbrot_driver.v": "187c2a29c31be7e6a2b4b2c9fcf32158450785d530e8f301ec24cb5e5651f445",
+    "hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v": "f209c5db3899c5efac2fa6684f119bfb54c2c4a9c79ed8d447c63943e023cd7f"
+  },
+  "routed_resources": {
+    "design_state": "Physopt postRoute",
+    "routable_nets": 30568,
+    "fully_routed_nets": 30568,
+    "routing_errors": 0,
+    "dsps": 79,
+    "luts": 15366,
+    "registers": 16393,
+    "bram_tiles": 11,
+    "occupied_slices": 4400,
+    "wns_ns": 0.017,
+    "whs_ns": 0.026,
+    "bus_skew_constraints": 9,
+    "minimum_bus_skew_slack_ns": 5.794
+  },
+  "artifacts": {
+    "design_1_wrapper_w18_d25_l2.xsa": {
+      "sha256": "4198637c523551994e8a1def968fe39ea52d53a3142ebafa8a738153ce33d742",
+      "bytes": 841765
+    },
+    "design_1_wrapper_w18_d25_l2.bit": {
+      "sha256": "8e089cd328ef226d12212d17610c91e2ac994bcb89dacef613af89c159588572",
+      "bytes": 2083852
+    },
+    "util_hybrid_w18_d25_l2.rpt": {
+      "sha256": "95c03dbc14d866501eb540fd193c81fa825409ba913a442a384bb90e65dee60a",
+      "bytes": 13285
+    },
+    "timing_hybrid_w18_d25_l2.rpt": {
+      "sha256": "b27f97fd9d6b989f1d1ed8ce1b95ec846a01d56085cc29172963d84f695be3a3",
+      "bytes": 105581
+    },
+    "util_hybrid_w18_d25_l2_hier.rpt": {
+      "sha256": "2dc44297690269dea847cd1def0e8bf21e112c8ade747ded1d28b395322b0375",
+      "bytes": 131606
+    },
+    "bus_skew_hybrid_w18_d25_l2.rpt": {
+      "sha256": "c6b8e892bcd597da4a9996b941d867cfcca15639738841e5701d93b06a9a1b2e",
+      "bytes": 160568
+    },
+    "route_status_hybrid_w18_d25_l2.rpt": {
+      "sha256": "3981d7a896ae5ae1c7c1be39715927abeae63954d601b1a7add5b8dfc277e0b2",
+      "bytes": 651
+    },
+    "physical_lane_mapping.csv": {
+      "sha256": "312525a107f8244f29c76cc7d8f6e37262f5756344c7a08ad5f1437e9934da21",
+      "bytes": 359
+    }
+  },
+  "board_measurement": null,
+  "note": "Metadata and embedded .bit verified. Board measurements, if supplied, are linked separately from simulation results."
+}

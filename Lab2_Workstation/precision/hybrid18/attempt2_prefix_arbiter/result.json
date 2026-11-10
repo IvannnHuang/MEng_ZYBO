@@ -1,0 +1,8 @@
+{
+  "status": "rejected before physical optimization; no hybrid XSA",
+  "setup_slack_ns": -0.077,
+  "hold_slack_ns": 0.026,
+  "slice_luts": 15366,
+  "critical_path": "nact_r_reg[4] to solver 7 input buffer clock-enable",
+  "board_tested": false
+}

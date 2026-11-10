@@ -25,6 +25,8 @@ def main():
     report=lab/f"util_{tag}.rpt"
     timing=lab/f"timing_{tag}.rpt"
     files=[xsa,bit,report,timing,lab/f"util_{tag}_hier.rpt",lab/f"bus_skew_{tag}.rpt"]
+    if args.lut_solvers:
+        files += [lab/f"route_status_{tag}.rpt",lab/"precision/hybrid18/physical_lane_mapping.csv"]
     for file in files:
         if not file.is_file():
             raise SystemExit(f"Missing build artifact: {file}")
@@ -41,10 +43,30 @@ def main():
             raise SystemExit("XSA LUT_SOLVERS does not match requested build")
         if z.read("design_1_wrapper.bit")!=bit.read_bytes():
             raise SystemExit("XSA's embedded bitstream differs from the implementation .bit")
-    raw=report.read_text()
-    if "Design State : Routed" not in raw:
-        raise SystemExit("Utilization is not a routed report")
-    metrics={}
+    raw=report.read_text(encoding="utf-8")
+    state=re.search(r"Design State\s*:\s*([^\r\n]+)",raw)
+    if not state or state[1].strip() not in ("Routed","Physopt postRoute"):
+        raise SystemExit("Utilization is not a routed/post-route-optimized report")
+    metrics={"design_state":state[1].strip()}
+    if args.lut_solvers:
+        route=(lab/f"route_status_{tag}.rpt").read_text(encoding="utf-8")
+        def route_count(label):
+            found=re.search(re.escape(label)+r"\.*\s*:\s*(\d+)",route)
+            if not found: raise SystemExit("Missing route status: "+label)
+            return int(found[1])
+        routable=route_count("# of routable nets")
+        fully=route_count("# of fully routed nets")
+        errors=route_count("# of nets with routing errors")
+        if not routable or fully!=routable or errors: raise SystemExit("Hybrid routing is incomplete")
+        metrics.update(routable_nets=routable,fully_routed_nets=fully,routing_errors=errors)
+        import csv
+        with (lab/"precision/hybrid18/physical_lane_mapping.csv").open(encoding="utf-8",newline="") as f:
+            lanes=list(csv.DictReader(f))
+        if len(lanes)!=args.solvers: raise SystemExit("Missing physical solver lanes")
+        for i,lane in enumerate(lanes):
+            fabric=i>=args.solvers-args.lut_solvers
+            if int(lane["lane"])!=i or int(lane["dsp48"])!=(0 if fabric else 3) or int(lane["lut_primitives"])<=0:
+                raise SystemExit("Unexpected physical DSP/LUT mapping for lane "+str(i))
     for key,label in [("dsps","DSPs"),("luts","Slice LUTs"),("registers","Slice Registers"),("bram_tiles","Block RAM Tile"),("occupied_slices","Slice")]:
         found=re.search(r"\|\s*"+re.escape(label)+r"\s*\|\s*(\d+)\s*\|",raw)
         if not found:

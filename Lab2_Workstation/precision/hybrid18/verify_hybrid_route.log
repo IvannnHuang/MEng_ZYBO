@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Nov 10 15:27:39 2026
+# Process ID: 6412
+# Current directory: C:/Users/zk67/zybo-hybrid18
+# Command line: vivado.exe -mode batch -nojournal -log verify_hybrid_route.log -source Lab2_Workstation/Mandelbrot_hdmi/scripts/verify_hybrid_route.tcl
+# Log file: C:/Users/zk67/zybo-hybrid18/verify_hybrid_route.log
+# Journal file: 
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :22497 MB
+#-----------------------------------------------------------
+source Lab2_Workstation/Mandelbrot_hdmi/scripts/verify_hybrid_route.tcl
+# set here [file dirname [file normalize [info script]]]
+# set hw [file normalize $here/../Zybo-Z7-HW]
+# set out [file normalize $here/../..]
+# open_checkpoint $hw/Zybo-Z7-HW.runs/impl_1/design_1_wrapper_routed.dcp
+Command: open_checkpoint C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/design_1_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 334.859 ; gain = 6.316
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.214 . Memory (MB): peak = 973.574 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1676 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1107.145 ; gain = 6.219
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1729.621 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1729.621 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.675 . Memory (MB): peak = 1750.398 ; gain = 20.777
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1750.398 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1769.180 ; gain = 18.781
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.886 . Memory (MB): peak = 1769.180 ; gain = 39.559
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.925 . Memory (MB): peak = 1769.180 ; gain = 39.570
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1769.180 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 40 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 35 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 3 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.1 (64-bit) build 5076996
+open_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1769.180 ; gain = 1453.586
+# report_route_status -file $out/route_status_hybrid_w18_d25_l2.rpt
+# set all [get_cells -hier -filter {IS_PRIMITIVE}]
+# set f [open $out/precision/hybrid18/physical_lane_mapping.csv w]
+# puts $f "lane,fabric_products,dsp48,lut_primitives"
+# for {set i 0} {$i < 27} {incr i} {
+#     set literal [format {SOLV[%d].u_solver/} $i]
+#     set dsp 0
+#     set lut 0
+#     foreach cell $all {
+#         if {[string first $literal [get_property NAME $cell]] < 0} {continue}
+#         set ref [get_property REF_NAME $cell]
+#         if {$ref eq "DSP48E1"} {incr dsp}
+#         if {[string match LUT* $ref]} {incr lut}
+#     }
+#     set fabric [expr {$i >= 25}]
+#     if {$dsp != ($fabric ? 0 : 3) || $lut == 0} {error "Wrong mapped solver lane $i: DSP=$dsp LUT=$lut"}
+#     puts $f "$i,$fabric,$dsp,$lut"
+# }
+# close $f
+# puts "HYBRID_MAPPING_PASS 25 native DSP lanes, 2 zero-DSP fabric lanes"
+HYBRID_MAPPING_PASS 25 native DSP lanes, 2 zero-DSP fabric lanes
+# close_design
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 10 15:28:17 2026...

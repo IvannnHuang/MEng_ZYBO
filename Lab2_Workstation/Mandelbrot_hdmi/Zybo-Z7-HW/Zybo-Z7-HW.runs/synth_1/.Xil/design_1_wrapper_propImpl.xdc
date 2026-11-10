@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/zk67/zybo-18-n25/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc rfile:../../../Zybo-Z7-HW.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/zk67/zybo-18-n25/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/constrs_1/imports/hw_src/mandel_io.xdc rfile:../../../Zybo-Z7-HW.srcs/constrs_1/imports/hw_src/mandel_io.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc rfile:../../../Zybo-Z7-HW.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.srcs/constrs_1/imports/hw_src/mandel_io.xdc rfile:../../../Zybo-Z7-HW.srcs/constrs_1/imports/hw_src/mandel_io.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:90 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H17   IOSTANDARD TMDS_33  } [get_ports { hdmi_out_clk_n }]; #IO_L13N_T2_MRCC_35 Sch=hdmi_tx_clk_n
 set_property src_info {type:XDC file:1 line:91 export:INPUT save:INPUT read:READ} [current_design]

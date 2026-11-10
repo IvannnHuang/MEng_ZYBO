@@ -1,0 +1,316 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Nov 10 15:21:00 2026
+# Process ID: 14168
+# Current directory: C:/Users/zk67/zybo-hybrid18
+# Command line: vivado.exe -mode batch -nojournal -log hybrid_postroute_physopt.log -source Lab2_Workstation/Mandelbrot_hdmi/scripts/finish_hybrid_physopt.tcl
+# Log file: C:/Users/zk67/zybo-hybrid18/hybrid_postroute_physopt.log
+# Journal file: 
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :22638 MB
+#-----------------------------------------------------------
+source Lab2_Workstation/Mandelbrot_hdmi/scripts/finish_hybrid_physopt.tcl
+# set here [file dirname [file normalize [info script]]]
+# set hw [file normalize $here/../Zybo-Z7-HW]
+# set out [file normalize $here/../..]
+# set tag hybrid_w18_d25_l2
+# open_project $hw/Zybo-Z7-HW.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 543.129 ; gain = 221.863
+# open_run impl_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.216 . Memory (MB): peak = 1013.996 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1676 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1151.539 ; gain = 9.949
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1771.363 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1771.363 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.665 . Memory (MB): peak = 1792.340 ; gain = 20.977
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1792.340 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1811.609 ; gain = 19.270
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.867 . Memory (MB): peak = 1811.609 ; gain = 40.246
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.900 . Memory (MB): peak = 1811.609 ; gain = 40.246
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1811.609 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 43 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 35 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 3 instances
+  SRLC32E => SRL16E: 3 instances
+
+open_run: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1811.609 ; gain = 1268.480
+# phys_opt_design -directive AggressiveExplore
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode 
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveExplore
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2166.207 ; gain = 282.445
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 7.00s |  WALL: 4.91s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2166.207 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+WARNING: [Place 30-34] Design utilization is very high. Please run report_utilization command to see design utilization.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.077 | TNS=-0.247 | WHS=0.026 | THS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1554e5514
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2207.723 ; gain = 41.516
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.077 | TNS=-0.247 | WHS=0.026 | THS=0.000 |
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_fpga_0. Processed net: design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/ib_ci_reg_n_0_[12].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_fpga_0. Processed net: design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0].
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/ib_inside_i_4. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.017 | TNS=0.000 | WHS=0.026 | THS=0.000 |
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.017 | TNS=0.000 | WHS=0.026 | THS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Phase 2 Critical Path Optimization | Checksum: 1554e5514
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 2473.871 ; gain = 307.664
+
+Phase 3 Hold Fix Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.017 | TNS=0.000 | WHS=0.026 | THS=0.000 |
+INFO: [Physopt 32-66] No high hold slack nets found for hold slack optimization.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.017 | TNS=0.000 | WHS=0.026 | THS=0.000 |
+Phase 3 Hold Fix Optimization | Checksum: 1554e5514
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2473.871 ; gain = 307.664
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2473.871 ; gain = 0.000
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=0.017 | TNS=0.000 | WHS=0.026 | THS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Path  |          0.094  |          0.247  |            0  |              0  |                     1  |           0  |           1  |  00:00:11  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Summary of Hold Fix Optimizations
+=================================
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization               |  WHS Gain (ns)  |  THS Gain (ns)  |  Added LUTs  |  Added FFs  |  Optimized Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT1 and ZHOLD Insertion   |          0.000  |          0.000  |           0  |          0  |               0  |           0  |           0  |  00:00:00  |
+|  Total                      |          0.000  |          0.000  |           0  |          0  |               0  |           0  |           0  |  00:00:00  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 220f2d151
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2473.871 ; gain = 307.664
+INFO: [Common 17-83] Releasing license: Implementation
+18 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:18 . Memory (MB): peak = 2473.871 ; gain = 662.262
+# report_timing_summary -file $out/precision/hybrid18/postroute_physopt_timing.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# set setup [get_property SLACK [get_timing_paths -delay_type max -max_paths 1]]
+# set hold [get_property SLACK [get_timing_paths -delay_type min -max_paths 1]]
+# if {$setup < 0 || $hold < 0} {error "Post-route optimization still fails: setup=$setup hold=$hold"}
+# set ndsp [llength [get_cells -hier -filter {REF_NAME == DSP48E1}]]
+# if {$ndsp != 79} {error "Unexpected hybrid DSP count: $ndsp"}
+# write_checkpoint -force $hw/Zybo-Z7-HW.runs/impl_1/design_1_wrapper_routed.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.246 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2473.871 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2473.871 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/design_1_wrapper_routed.dcp' has been generated.
+# write_bitstream -force $hw/Zybo-Z7-HW.runs/impl_1/design_1_wrapper.bit
+Command: write_bitstream -force C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/design_1_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[0].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+INFO: [Common 17-14] Message 'DRC DPIP-1' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A3' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A4' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A1)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A5' of cell design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A4)+((~A4)*(~A6)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 60 net(s) have no routable loads. The problem bus(es) and/or net(s) are design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], design_1_i/axi_interconnect_hp0/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], design_1_i/axi_interconnect_hp0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0]... and (the first 15 of 36 listed).
+INFO: [DRC REQP-165] writefirst: Synchronous clocking is detected for BRAM (design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 154 Warnings, 2 Advisories
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/impl_1/design_1_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2739.371 ; gain = 265.500
+# report_utilization -file $out/util_${tag}.rpt
+# report_utilization -hierarchical -file $out/util_${tag}_hier.rpt
+# report_timing_summary -file $out/timing_${tag}.rpt
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# report_bus_skew -file $out/bus_skew_${tag}.rpt
+# report_timing_summary -file $hw/Zybo-Z7-HW.runs/impl_1/design_1_wrapper_timing_summary_routed.rpt
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# write_hw_platform -fixed -include_bit -force -file $hw/design_1_wrapper.xsa
+INFO: [Project 1-1918] Creating Hardware Platform: C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa ...
+WARNING: [Project 1-645] Board images not set in Hardware Platform.
+INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Project 1-1941] Successfully created Hardware Platform: C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vivado/2024.1/data/embeddedsw) loading 0 seconds
+# puts "HYBRID_POSTROUTE_PASS setup=$setup hold=$hold DSP=$ndsp"
+HYBRID_POSTROUTE_PASS setup=0.017 hold=0.026 DSP=79
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 10 15:22:05 2026...

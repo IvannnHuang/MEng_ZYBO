@@ -43,3 +43,51 @@ Worst routed path: last_reg[3] to last_reg[14]/CE in the round-robin arbiter,
 mask/lowest-bit carry chains with constant-range OR reductions. Grant order,
 registered stages, precision, solvers and clock stay unchanged. The short engine
 check now also checks every observed pick against a sequential round-robin policy.
+
+## Final verified build: ready for the user's board run
+
+The prefix arbiter retry reduced LUTs to 15,366 but narrowly missed setup
+(-0.077 ns; hold +0.026 ns). Evidence: attempt2_prefix_arbiter/.
+Post-route phys_opt_design -directive AggressiveExplore recovered the remaining
+margin without changing RTL. Final setup +0.017 ns; hold +0.026 ns.
+All 30,568 routable nets are fully routed with zero routing errors. Nine
+bus-skew checks pass, minimum +5.794 ns. No failing setup/hold endpoints.
+
+Final: 79/80 DSPs, 15,366/17,600 LUTs (87.31%), 16,393/35,200 registers,
+11/60 BRAM tiles, all 4,400 slices occupied. The physical per-lane check verifies
+25 three-DSP native solvers and two zero-DSP fabric solvers. The shared test
+accounts for the other four DSPs. This is a tested fit, not an absolute maximum.
+
+Verified named files under ../artifacts/w18_d25_l2/:
+- design_1_wrapper_w18_d25_l2.xsa
+- design_1_wrapper_w18_d25_l2.bit
+- manifest.json, routed reports, route status and physical lane mapping CSV.
+
+XSA SHA256: 4198637c523551994e8a1def968fe39ea52d53a3142ebafa8a738153ce33d742
+XSA metadata: SOLVER_W=18, NSOLV=27, LUT_SOLVERS=2.
+Embedded .bit matches the implemented/named .bit. Format register 0x4d420e12.
+No hybrid board time has been measured yet.
+
+Reproduce in this checkout, from the repository root (Vivado 2024.1):
+1. Build via scripts/build_precision.tcl -tclargs 27 18 repackage 2.
+   The recorded default implementation narrowly fails timing; keep its reports.
+2. Run scripts/finish_hybrid_physopt.tcl to apply post-route optimization,
+   gate setup/hold and 79 DSPs, then regenerate bitstream/reports/XSA.
+3. Run scripts/verify_hybrid_route.tcl for complete routing and physical lane checks.
+4. Run scripts/export_precision_snapshot.py --width 18 --solvers 27 --lut-solvers 2.
+Paths above are under Lab2_Workstation/Mandelbrot_hdmi; use Vivado batch mode
+for Tcl scripts. Export refuses mismatched metadata/bitstreams or failing checks.
+Do not overwrite frozen files with another build; preserve each result separately.
+
+User's manual Vitis run:
+1. Update the existing platform's hardware specification to the named XSA.
+2. Build the platform and application in Vitis Classic.
+3. Explicitly select the matching named .bit in the run configuration.
+4. Confirm 27 built solvers (25 native + two fabric), 18 bits / Q4.14.
+5. Select all 27, max_iter 1000 and f. Save clocks, milliseconds and STATUS.
+No sweep or repeated long simulation is required. User controls Vitis/COM5.
+
+The raw isolated primitive estimate suggested trying two fabric lanes; it is
+not a physical area bound. The routed area increase differs because LUT packing,
+shared/control logic and optimization differ. A third lane or spending the last
+DSP on one product are future experiments, not proven impossible or implemented.

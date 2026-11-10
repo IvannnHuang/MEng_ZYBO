@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Nov 10 14:56:42 2026
-# Process ID: 10284
+# Start of session at: Tue Nov 10 15:04:38 2026
+# Process ID: 12496
 # Current directory: C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/tests/work
 # Command line: xsim.exe -log tb_precision_engine.log -mode tcl -source {xsim.dir/tb_precision_engine/xsim_script.tcl}
 # Log file: C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/tests/work/tb_precision_engine.log
@@ -19,7 +19,7 @@
 # Host memory       :34031 MB
 # Swap memory       :5100 MB
 # Total Virtual     :39131 MB
-# Available Virtual :19886 MB
+# Available Virtual :21968 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_precision_engine/xsim_script.tcl
 # xsim {tb_precision_engine} -autoloadwcfg -runall
@@ -29,7 +29,7 @@ PRECISION ENGINE MODEL PASSED W=18 NSOLV=27 frame=0 changed_count_pixels=182 of 
 PASS frame=0 max_iter=1000 nact=27 baseline=72458 optimized=73883
 SOLVER COVERAGE used=7ffffff expected_all=7ffffff
 PRECISION ENGINE PASSED
-$finish called at time : 738900 ns : File "C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/tests/tb_precision_engine.sv" Line 108
-run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 225.645 ; gain = 0.000
+$finish called at time : 738900 ns : File "C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/Mandelbrot_hdmi/tests/tb_precision_engine.sv" Line 125
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 226.098 ; gain = 0.000
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Nov 10 14:56:51 2026...
+INFO: [Common 17-206] Exiting xsim at Tue Nov 10 15:04:46 2026...
