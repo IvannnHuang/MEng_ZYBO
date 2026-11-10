@@ -3,6 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "NSOLV" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "SOLVER_W" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0} -widget comboBox
   ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
@@ -100,3 +102,13 @@ proc update_MODELPARAM_VALUE.C_M00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_M00_AXI_D
 	set_property value [get_property value ${PARAM_VALUE.C_M00_AXI_DATA_WIDTH}] ${MODELPARAM_VALUE.C_M00_AXI_DATA_WIDTH}
 }
 
+
+proc update_PARAM_VALUE.SOLVER_W { PARAM_VALUE.SOLVER_W } {}
+proc validate_PARAM_VALUE.SOLVER_W { PARAM_VALUE.SOLVER_W } {
+    set w [get_property value ${PARAM_VALUE.SOLVER_W}]
+    if {[string is integer -strict $w] && $w >= 18 && $w <= 27} { return true }
+    return false
+}
+proc update_MODELPARAM_VALUE.SOLVER_W { MODELPARAM_VALUE.SOLVER_W PARAM_VALUE.SOLVER_W } {
+    set_property value [get_property value ${PARAM_VALUE.SOLVER_W}] ${MODELPARAM_VALUE.SOLVER_W}
+}

@@ -5,6 +5,7 @@
 module mandel_engine #(
     parameter NSOLV  = 8,       // solvers built
     parameter W      = 27,      // number width (Q4.23)
+    parameter SW     = W,       // solver width; coordinates/classifier retain W bits
     parameter F      = 23,      // fractional bits
     parameter IW     = 16,      // iteration counter width
     parameter XW     = 11,      // x width (FW <= 2^XW)
@@ -152,10 +153,20 @@ module mandel_engine #(
     wire [NSOLV*YW-1:0] s_out_y;
     wire [NSOLV*IW-1:0] s_out_cnt;
 
+    // Round coordinates down only at the solver boundary. The register ABI,
+    // raster accumulator and shared conservative classifier keep full precision.
+    localparam SF = F - (W-SW);
+    wire signed [SW-1:0] solver_cr = test_cr >>> (W-SW);
+    wire signed [SW-1:0] solver_ci = test_ci >>> (W-SW);
+    initial begin
+        if (SW < 18 || SW > W || SF < 14)
+            $error("unsupported solver precision: require 18 <= SW <= W and SF >= 14");
+    end
+
     genvar g;
     generate
         for (g = 0; g < NSOLV; g = g + 1) begin : SOLV
-            mandel_solver #(.W(W), .F(F), .IW(IW), .XW(XW), .YW(YW), .ML(ML)) u_solver (
+            mandel_solver #(.W(SW), .F(SF), .IW(IW), .XW(XW), .YW(YW), .ML(ML)) u_solver (
                 .clk       (clk),
                 .rst       (rst),
                 .max_iter  (max_r),
@@ -164,8 +175,8 @@ module mandel_engine #(
                 .in_inside (test_inside && (max_r != 0)),
                 .in_x      (test_x),
                 .in_y      (test_y),
-                .in_cr     (test_cr),
-                .in_ci     (test_ci),
+                .in_cr     (solver_cr),
+                .in_ci     (solver_ci),
                 .out_valid (s_out_valid[g]),
                 .out_ready (s_out_ready[g]),
                 .out_x     (s_out_x[g*XW +: XW]),

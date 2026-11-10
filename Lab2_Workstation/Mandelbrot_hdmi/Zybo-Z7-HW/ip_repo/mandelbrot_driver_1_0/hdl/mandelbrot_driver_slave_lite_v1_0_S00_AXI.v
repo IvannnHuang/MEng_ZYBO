@@ -3,6 +3,7 @@
 	module mandelbrot_driver_slave_lite_v1_0_S00_AXI #
 	(
 		// Users to add parameters here
+		parameter integer SOLVER_W = 27,             // total solver bits (coordinate ABI remains Q4.23)
 		parameter integer NSOLV = 8,                 // solvers built in hardware (read back in N_ACTIVE)
 		// User parameters ends
 		// Do not modify the parameters beyond this line
@@ -127,6 +128,9 @@
 	localparam integer REG_CYCLES   = 7;  // R  render time in clocks
 	localparam integer REG_N_ACTIVE = 8;  // RW [7:0] solvers to use, read [15:8] = NSOLV
 	localparam integer REG_BUTTONS  = 9;  // R  [3:0] = btn, [7:4] = sw
+	localparam integer REG_FORMAT = 10; // R  0x28: magic 0x4d42, fractional bits, total bits
+	localparam [7:0] SOLVER_BITS = SOLVER_W;
+	localparam [7:0] SOLVER_FRAC = SOLVER_W-4;
 	localparam [7:0]   NSOLV8       = NSOLV;
 
 	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg_fb_addr;
@@ -382,6 +386,7 @@
 	                       (reg_raddr == REG_MAX_ITER) ? {16'b0, slv_reg_max_iter[15:0]} :
 	                       (reg_raddr == REG_CYCLES)   ? cycles_reg :
 	                       (reg_raddr == REG_N_ACTIVE) ? {16'b0, NSOLV8, slv_reg_n_active[7:0]} :
+	                       (reg_raddr == REG_FORMAT)   ? {16'h4d42, SOLVER_FRAC, SOLVER_BITS} :
 	                       (reg_raddr == REG_BUTTONS)  ? {24'b0, sw_s2, btn_s2} :
 	                       32'b0;
 	// Add user logic here

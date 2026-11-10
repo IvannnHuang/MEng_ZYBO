@@ -4,6 +4,7 @@
 	module mandelbrot_driver #
 	(
 		// Users to add parameters here
+		parameter integer SOLVER_W = 27,                 // Q4.(SOLVER_W-4) solver precision
 		parameter integer NSOLV = 4,                     // number of solvers built
 		// User parameters ends
 		// Do not modify the parameters beyond this line
@@ -88,6 +89,7 @@
 // Instantiation of Axi Bus Interface S00_AXI
 	mandelbrot_driver_slave_lite_v1_0_S00_AXI # (
 		.NSOLV(NSOLV),
+		.SOLVER_W(SOLVER_W),
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) mandelbrot_driver_slave_lite_v1_0_S00_AXI_inst (
@@ -134,6 +136,7 @@
 	// Runs on the S00_AXI clock; reset by the AXI reset or the CTRL soft-reset pulse.
 	mandel_engine #(
 		.NSOLV      (NSOLV),
+		.SW         (SOLVER_W),
 		.AXI_DW     (C_M00_AXI_DATA_WIDTH),
 		.AXI_AW     (C_M00_AXI_ADDR_WIDTH)
 	) engine_i (

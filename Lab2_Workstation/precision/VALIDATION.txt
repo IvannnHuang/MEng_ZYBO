@@ -1,0 +1,28 @@
+Precision experiment validation, 2026-11-09
+Vivado/xsim 2024.1, xc7z010clg400-1
+
+SOLVER PRECISION PASSED W=27 F=23, 2048 vectors, input gaps and output stalls
+SOLVER PRECISION PASSED W=24 F=20, 2048 vectors, input gaps and output stalls
+SOLVER PRECISION PASSED W=18 F=14, 2048 vectors, input gaps and output stalls
+SOLVER PRECISION PASSED W=21 F=17, 2048 vectors, input gaps and output stalls
+ALL SOLVER PRECISIONS PASSED
+PRECISION ENGINE MODEL PASSED frame=0 changed_count_pixels=65 of 8192
+PASS frame=0 max_iter=1000 nact=8 baseline=88684 optimized=88975
+PRECISION ENGINE PASSED
+PRECISION FORMAT REGISTER PASSED: 27-bit default and 24-bit variant with stalled AXI read
+PASS frame=0 max_iter=1000 nact=8 baseline=350132 optimized=88685
+PASS frame=1 max_iter=1000 nact=3 baseline=926475 optimized=192656
+PASS frame=2 max_iter=1000 nact=8 baseline=119912 optimized=119929
+PASS frame=3 max_iter=1000 nact=8 baseline=1028160 optimized=8426
+PASS frame=4 max_iter=1000 nact=1 baseline=8192159 optimized=24733
+PASS frame=5 max_iter=1000 nact=8 baseline=8431 optimized=8442
+PASS frame=6 max_iter=0 nact=8 baseline=8420 optimized=8425
+PASS frame=7 max_iter=1 nact=0 baseline=24723 optimized=24731
+PASS frame=8 max_iter=17 nact=255 baseline=11704 optimized=8818
+PASS frame=9 max_iter=1000 nact=8 baseline=350131 optimized=88686
+ALL ENGINE COMPARISONS PASSED
+
+ARM Cortex-A9 mandel.c syntax check passed with the Xilinx GCC/BSP headers.
+CDC: 9 constraints, min slack +6.098 ns.
+24-bit routed: DSP=52 LUT=7970 FF=11613 BRAM=11 WNS=+0.318ns WHS=+0.019ns.
+Board test pending. 93.442ms remains the measured 27-bit reference.

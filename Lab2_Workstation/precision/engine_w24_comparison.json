@@ -1,0 +1,7 @@
+{
+  "view": "128x64, left=-2, top=0.75, step=0.0234375",
+  "count_pixels_changed": 65,
+  "palette_pixels_changed": 15,
+  "max_iteration_membership_changed": 8,
+  "total_pixels": 8192
+}

@@ -22,6 +22,7 @@
 #define REG_MAX_ITER   0x18     // RW iteration limit
 #define REG_CYCLES     0x1C     // R  render time in IP clocks
 #define REG_N_ACTIVE   0x20     // RW [7:0] solvers used, [15:8] solvers built
+#define REG_FORMAT     0x28     // R magic 0x4d42, fractional bits [15:8], solver bits [7:0]
 #define REG_BUTTONS    0x24     // R  [3:0] btn, [7:4] sw
 #define ST_BUSY        0x1
 #define ST_DONE        0x2
@@ -47,6 +48,7 @@
 static double cx = FULL_CX, cy = FULL_CY, step = FULL_STEP;
 static u32    max_iter = 1000;
 static u32    n_active = 1, n_max = 1;
+static u32    solver_bits = 27, solver_frac = 23, solver_quantum = 1;
 static int    entered = 0;                      // first call sets n_active = n_max
 static u8    *frame;
 static DisplayCtrl *dc;
@@ -64,7 +66,7 @@ static QView qview(void)
 {
     QView q;
     q.step = to_q(step);
-    if (q.step < 1) q.step = 1;
+    if (q.step < (s32)solver_quantum) q.step = (s32)solver_quantum;
     q.left = to_q(cx) - (FW / 2) * q.step;
     q.top  = to_q(cy) + (FH / 2) * q.step;
     return q;
@@ -160,7 +162,7 @@ static double ps_render(void)
 static void clamp_view(void)
 {
     if (step > MAX_STEP)    step = MAX_STEP;
-    if (step < 1.0 / QF)    step = 1.0 / QF;
+    if (step < solver_quantum / QF) step = solver_quantum / QF;
     if (cx < -3.0) cx = -3.0;
     if (cx >  3.0) cx =  3.0;
     if (cy < -3.0) cy = -3.0;
@@ -192,6 +194,8 @@ static void print_view(void)
     printf("  centre (%.10f, %.10f)  zoom x%.0f  step %d LSB\r\n",
            cx, cy, FULL_STEP / (q.step / QF), (int)q.step);
     printf("  max_iter %u   solvers %u of %u\r\n", (unsigned)max_iter, (unsigned)n_active, (unsigned)n_max);
+    printf("  solver Q4.%u (%u bits), coordinate registers Q4.23, minimum step %u LSB\r\n",
+           (unsigned)solver_frac, (unsigned)solver_bits, (unsigned)solver_quantum);
 }
 
 // ------------------------------------------------------------------ input
@@ -309,6 +313,16 @@ void MandelMenu(DisplayCtrl *disp, u8 *frames[DISPLAY_NUM_FRAMES])
         xil_printf("NOT RESPONDING (FB_ADDR read 0x%08x, NSOLV %u)\r\n", rd(REG_FB_ADDR), n_max);
     else
         xil_printf("ok, %u solvers\r\n", n_max);
+    // Old bitstreams return zero at this reserved address: retain Q4.23 defaults.
+    k = rd(REG_FORMAT);
+    solver_bits = 27; solver_frac = 23; solver_quantum = 1;
+    if ((k >> 16) == 0x4d42 && (k & 0xff) >= 18 && (k & 0xff) <= 27 &&
+        ((k >> 8) & 0xff) == (k & 0xff) - 4) {
+        solver_bits = k & 0xff;
+        solver_frac = (k >> 8) & 0xff;
+        solver_quantum = 1u << (23 - solver_frac);
+    }
+    clamp_view();
     if (n_max == 0) n_max = 1;
     if (!entered || n_active > n_max) n_active = n_max; // default: all solvers
     entered = 1;
