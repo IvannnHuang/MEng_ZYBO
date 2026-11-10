@@ -1,0 +1,10 @@
+User-supplied UART measurement excerpt; repeated menu text omitted.
+The menu reports b time vs solvers (1..10). No precision banner was included.
+
+Select: f
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 10 of 10
+  FPGA render: 76.869 ms (7686944 clocks)  STATUS 0x2

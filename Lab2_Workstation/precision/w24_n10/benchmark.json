@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-10",
+  "configuration": "24-bit Q4.20, ten solvers, shared inside-set test",
+  "width": 24,
+  "fractional_bits": 20,
+  "built_solvers": 10,
+  "active_solvers": 10,
+  "engine_clock_hz": 100000000,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "max_iter": 1000,
+  "centre": [
+    -0.75,
+    0
+  ],
+  "coordinate_step_q23": 18641,
+  "rtl_ideal_axi_cycles": 7686912,
+  "rtl_ideal_axi_ms": 76.86912,
+  "same_width_eight_solver_ideal_axi_ms": 93.47473,
+  "reduced_frame_stalled_cycles": 80613,
+  "routed_resources": {
+    "dsps": 64,
+    "luts": 8666,
+    "registers": 12243,
+    "bram_tiles": 11,
+    "occupied_slices": 3779,
+    "wns_ns": 0.601,
+    "whs_ns": 0.019,
+    "bus_skew_constraints": 9,
+    "minimum_bus_skew_slack_ns": 6.464
+  },
+  "engine_clock_group_wns_ns": 0.601,
+  "board_cycles": 7686944,
+  "board_ms": 76.86944,
+  "board_status": "User measured canonical full-set view on COM5",
+  "xsa_sha256": "a3516c2a9c1d0df04a3426181e55753bbbc404a1da59503c93b03c41301cd01c",
+  "scope": "No Mandelbrot arithmetic RTL change from 24-bit baseline; only NSOLV 8 to 10 plus IP revision/regenerated project metadata",
+  "board_ms_uart": 76.869,
+  "board_extra_clocks_vs_sim": 32
+}

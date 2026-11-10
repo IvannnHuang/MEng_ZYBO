@@ -1,0 +1,59 @@
+{
+  "width": 24,
+  "fractional_bits": 20,
+  "built_solvers": 10,
+  "engine_clock_hz": 100000000,
+  "format_register": "0x4d421418",
+  "build_report_date": "Tue Nov 10 14:19:38 2026",
+  "git_head_at_export": "dee64093dc504663e84d664783914270b4531de8",
+  "source_sha256": {
+    "src/mandel_engine.v": "9c63f0f15b240fa8e609e6dec8aeb6cbdb20af37a4a62200c44badaffa4ec49f",
+    "src/mandel_solver.v": "936e4d2315f4a72ca3340b2639501276294fcf1c86b076612e3c67d25da31086",
+    "hdl/mandelbrot_driver.v": "268912da07d793b9497dad8dab2037ae4dde852490abde47dbfb430031ca790a",
+    "hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v": "f209c5db3899c5efac2fa6684f119bfb54c2c4a9c79ed8d447c63943e023cd7f"
+  },
+  "routed_resources": {
+    "dsps": 64,
+    "luts": 8666,
+    "registers": 12243,
+    "bram_tiles": 11,
+    "occupied_slices": 3779,
+    "wns_ns": 0.601,
+    "whs_ns": 0.019,
+    "bus_skew_constraints": 9,
+    "minimum_bus_skew_slack_ns": 6.464
+  },
+  "artifacts": {
+    "design_1_wrapper_w24_n10.xsa": {
+      "sha256": "a3516c2a9c1d0df04a3426181e55753bbbc404a1da59503c93b03c41301cd01c",
+      "bytes": 682201
+    },
+    "design_1_wrapper_w24_n10.bit": {
+      "sha256": "f890c4a6e11c8dbc105a997d20ab0b7f95bb203afc0f0b68384367e95ebb0981",
+      "bytes": 2083852
+    },
+    "util_precision_w24_n10.rpt": {
+      "sha256": "47bb7e295564a2a72930f81195e613a15da8c2fe45fd4e80496a31c2f5788ee1",
+      "bytes": 13292
+    },
+    "timing_precision_w24_n10.rpt": {
+      "sha256": "2ddc448dbbb8446ce26fa86874704592bd3b7673d88f839fefa0665739c87825",
+      "bytes": 107386
+    },
+    "util_precision_w24_n10_hier.rpt": {
+      "sha256": "e17e3c92cef72be7af2217dc8f707dd49ba05725cb2b2b8ad247720b308dceb8",
+      "bytes": 127289
+    },
+    "bus_skew_precision_w24_n10.rpt": {
+      "sha256": "ed19ffe816cff1e2eff0139e62b1b71c5929b1779edc6bc9dd4d6d356d78da2e",
+      "bytes": 160573
+    }
+  },
+  "board_measurement": {
+    "record": "../../w24_n10/board_results.json",
+    "clocks": 7686944,
+    "ms_uart": 76.869,
+    "source": "User supplied UART; canonical view"
+  },
+  "note": "Metadata and embedded .bit verified. Board measurements, if supplied, are linked separately from simulation results."
+}

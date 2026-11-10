@@ -74,4 +74,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_m0
 # IP: bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_1 || ORIG_REF_NAME==design_1_auto_pc_1} -quiet] -quiet
 
-# XDC: c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/design_1_ooc.xdc
+# XDC: c:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/design_1_ooc.xdc

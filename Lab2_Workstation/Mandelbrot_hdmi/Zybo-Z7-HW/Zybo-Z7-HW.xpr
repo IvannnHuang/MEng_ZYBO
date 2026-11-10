@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="67" Path="C:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.xpr">
+<Project Product="Vivado" Version="7" Minor="67" Path="C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="51cf9d94c74f4a59819fc6121157a495"/>

@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1'
+HD_PWD='C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

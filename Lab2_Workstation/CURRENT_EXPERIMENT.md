@@ -1,28 +1,31 @@
 # Current Mandelbrot experiment - 2026-11-10
 
-Status: IN PROGRESS. The user explicitly resumed work for **10 solvers at 24-bit
-Q4.20**. This supersedes yesterday's testing hold only for this experiment.
-Twelve-solver builds, further 18-bit scaling and LUT-built solvers remain future work.
+**10 x 24-bit is complete: user measured 76.869 ms on the canonical view.**
+Checkout: C:/Users/zk67/zybo-24-n10; branch solver-24-n10.
+Full record: precision/w24_n10/README.md on that branch.
+Named XSA/.bit and hashes: precision/artifacts/w24_n10/manifest.json.
 
-Checkout: C:/Users/zk67/zybo-24-n10
-Branch: solver-24-n10
-Hardware baseline: solver-precision commit 693423a (24-bit, eight solvers).
-Parameterized test/export helpers are copied from solver-native18 commit 319f9f9.
+Actual routed use: 64/80 DSPs, 8,666 LUTs,
+12,243 registers, 11 BRAM tiles.
+Overall setup/hold slack +0.601/+0.019 ns.
+Full-frame ideal-AXI simulation: 7,686,912 clocks = 76.86912 ms.
+Board: 7,686,944 clocks = 76.86944 ms, displayed 76.869 ms; STATUS 0x2.
+This is 32 clocks above simulation. The user has now supplied this measurement.
+Next authorized build: jump directly to 25 x 18-bit, then investigate LUT solvers.
 
-Change: NSOLV 8 -> 10; SOLVER_W remains 24.
-Preserve 100 MHz, 1080p RGB888, coordinate ABI, classifier and multiplier pipeline.
-No Mandelbrot arithmetic RTL is modified for the new solver count.
-DSP planning budget: 10*6 + 4 = 64/80. Actual area/timing are not yet measured.
+Load:
+C:/Users/zk67/zybo-24-n10/Lab2_Workstation/precision/artifacts/w24_n10/design_1_wrapper_w24_n10.xsa
+Use its matching design_1_wrapper_w24_n10.bit in the same folder.
+The older workstation mandel.c lacks precision reporting/zoom limits; user should
+copy the updated src/mandel/mandel.c from this checkout and build in Vitis Classic.
+Check Q4.20, 24 bits, minimum step 8 LSB and 10 built solvers. Capture canonical f
+(centre -0.75,0; step 18641; max_iter 1000), optionally b and repeats.
 
-Build: build_precision.tcl -tclargs 10 24 repackage
-Validation: run_precision.ps1 -SolverWidth 24 -Solvers 10 -FullFrame
-Export: export_precision_snapshot.py --width 24 --solvers 10
+## User's revised sequence
+1. Completed: user measured 10 x 24-bit on COM5 at 76.869 ms.
+2. Jump directly to 25 x 18-bit (79/80 DSP budget); skip intermediate builds.
+3. Measure LUT-only solvers and add fabric lanes to find the combined limit.
 
-Use only the isolated checkout. Do not import/register projects through XSCT,
-modify the user's Vitis workspace, or program/run the board from the agent.
-The user runs Vitis and board measurements on COM5. Preserve all old artifacts.
-Do not push the hardware repository's main branch.
-
-Expected named outputs after successful verification:
-Lab2_Workstation/precision/artifacts/w24_n10/design_1_wrapper_w24_n10.xsa
-Lab2_Workstation/precision/artifacts/w24_n10/design_1_wrapper_w24_n10.bit
+Keep future checks targeted: short correctness/model verification and mandatory
+resource/setup/hold/bus-skew checks. Longer simulations only when justified.
+No Vitis/XSCT imports or board runs by the agent. Do not push hardware main.

@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Nov 10 14:15:39 2026
+# Process ID: 23692
+# Current directory: C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/tests/work
+# Command line: xsim.exe -log tb_precision_format.log -mode tcl -source {xsim.dir/tb_precision_format/xsim_script.tcl}
+# Log file: C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/tests/work/tb_precision_format.log
+# Journal file: C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/tests/work\xsim.jou
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :21453 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_precision_format/xsim_script.tcl
+# xsim {tb_precision_format} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PRECISION FORMAT REGISTER PASSED: 27/24/18-bit variants with stalled AXI read
+$finish called at time : 120 ns : File "C:/Users/zk67/zybo-24-n10/Lab2_Workstation/Mandelbrot_hdmi/tests/tb_precision_format.sv" Line 28
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 10 14:15:40 2026...

@@ -5,7 +5,7 @@ Running record of every optimization step: what changed in the code, what it cos
 ## Plan (from 2026-11-09)
 1. **Track DSPs at every step**: they're the resource that limits multiplication, a core idea of the lab. Record DSPs used / 80 and multiplies per iterator for every build (table below).
 2. **DE1 vs Zybo DSP side-by-side** (done below): how many multiplies each board can do at each width.
-3. **Chip-viewer pictures** for every step: Vivado → *Open Implemented Design* → *Device* tab → highlight the Mandelbrot IP (and the solvers) → save a screenshot into `Lab2_Workstation/figures/chip_<step>.png`. Script: `Mandelbrot_hdmi/scripts/chip_view.tcl` (opens the GUI, colours the blocks; take the screenshot, then close Vivado).
+3. **Chip-viewer pictures** for every step: Vivado â†’ *Open Implemented Design* â†’ *Device* tab â†’ highlight the Mandelbrot IP (and the solvers) â†’ save a screenshot into `Lab2_Workstation/figures/chip_<step>.png`. Script: `Mandelbrot_hdmi/scripts/chip_view.tcl` (opens the GUI, colours the blocks; take the screenshot, then close Vivado).
 4. **Exact code changes per optimization** (below, as diffs), so the next step can be planned from what changed and what it cost.
 5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board timing and USB mouse interaction are confirmed; next characterize solver precision on the Zybo.
 
@@ -13,39 +13,42 @@ Running record of every optimization step: what changed in the code, what it cos
 | | DE1-SoC (Cyclone V 5CSEMA5) | Zybo Z7-10 (Zynq xc7z010) |
 |---|---|---|
 | DSP blocks | **87** | **80** (DSP48E1) |
-| Native multiplier per block | 27×27 (or 2× 18×18, or 3× 9×9) | 25×18 |
-| 27×27 multiplies possible | **87** (1 block each) | **26** (measured: 3 DSPs each) |
-| 18×18 multiplies possible | 174 | 80 |
-| Multiplies per iterator (zr², zi², zr·zi) | 3 | 3 |
+| Native multiplier per block | 27Ã—27 (or 2Ã— 18Ã—18, or 3Ã— 9Ã—9) | 25Ã—18 |
+| 27Ã—27 multiplies possible | **87** (1 block each) | **26** (measured: 3 DSPs each) |
+| 18Ã—18 multiplies possible | 174 | 80 |
+| Multiplies per iterator (zrÂ², ziÂ², zrÂ·zi) | 3 | 3 |
 | DSPs per iterator at 27-bit (Q4.23) | 3 | **9** (measured) |
 | Max iterators at 27-bit | 29 (report built 24 = 72 DSPs) | **8** (built: 72/80 DSPs) |
-| Max iterators at ≤18-bit numbers | 58 (by DSPs) | 26 (by DSPs; LUTs then limit to ~12–15) |
+| Max iterators at â‰¤18-bit numbers | 58 (by DSPs) | 26 by DSPs alone; 25 with shared test; LUT/routing ceiling unmeasured |
 
-So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is that **each Cyclone V block does a full 27×27 multiply, while a Zynq DSP48E1 only does 25×18**. A 27-bit Mandelbrot iterator costs 3× more DSPs on the Zybo.
+So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is that **each Cyclone V block does a full 27Ã—27 multiply, while a Zynq DSP48E1 only does 25Ã—18**. A 27-bit Mandelbrot iterator costs 3Ã— more DSPs on the Zybo.
 
 ## Step-by-step record
 | Step | Branch / commit | Iterators | DSPs | LUTs | WNS @100 MHz | Full set (ms) |
 |---|---|---|---|---|---|---|
 | v1 | `main` | 4 | 36 (45 %) | 11,623 (66 %) | +0.255 | 792.2 |
 | HDMI input removed | `strip-hdmi-in` `4ab3558` | 4 | 36 (45 %) | 8,187 (46.5 %) | +0.223 | 792.2 |
-| 8 iterators, original engine | `nsolv-8` `5b7b0e5` | 8 | 72 (90 %) | 11,496 (65 %) | **−0.731** | 399.9 (out of spec) |
+| 8 iterators, original engine | `nsolv-8` `5b7b0e5` | 8 | 72 (90 %) | 11,496 (65 %) | **âˆ’0.731** | 399.9 (out of spec) |
 | 8 iterators, pipelined engine | `engine-pipeline` `e226f79` | 8 | 72 (90 %) | 11,267 (64 %) | +0.147 | **399.4** |
 | Shared inside-set classifier | `shared-inside-set` `1828dd9` | 8 | 76 (95 %) | 11,707 (66.52 %) | +0.236 | **93.442 (board)** |
+| 24-bit Q4.20 solver | `solver-precision` `693423a` | 8 | 52 (65 %) | 7,970 (45.28 %) | +0.318 | 91.130 (shifted view; canonical pending) |
+| Native 18-bit solver | `solver-native18` | 8 | 28 (35 %) | 7,740 (43.98 %) | +0.479 | **93.522 (board, canonical)** |
+| 24-bit, ten solvers | `solver-24-n10` | 10 | 64 (80 %) | 8,666 (49.24 %) | +0.601 | **76.869 (board); 76.86912 RTL simulation** |
 
 ### Step 1: remove HDMI input (no RTL change)
 - Block design only: `Mandelbrot_hdmi/scripts/strip_hdmi_in.tcl` deletes `dvi2rgb`, `v_vid_in_axi4s`, `v_tc_in`, `axis_subset_converter_in`, the RX reset, `axi_gpio_video`; turns off the VDMA write channel and FCLK2; moves the IP to `hp0/S01` (FCLK0). Constraints: HDMI RX pins commented out in `Zybo-Z7-Master.xdc`.
-- Also: driver `Makefile` typo fixed in the IP (`LIBSOURCES=($wildcard *.c)` → `$(wildcard *.c)`).
-- Effect: −3,436 LUTs, −6,063 FFs, −7 BRAM, −1 MMCM, **0 DSPs**, same speed.
+- Also: driver `Makefile` typo fixed in the IP (`LIBSOURCES=($wildcard *.c)` â†’ `$(wildcard *.c)`).
+- Effect: âˆ’3,436 LUTs, âˆ’6,063 FFs, âˆ’7 BRAM, âˆ’1 MMCM, **0 DSPs**, same speed.
 
-### Step 2: 4 → 8 iterators (no RTL change)
-- One IP parameter: `NSOLV` 4 → 8 (`scripts/set_nsolv.tcl -tclargs 8`). DSPs 36 → 72.
-- Effect: 2× speed, but timing failed: the **result arbiter** (pick 1 of 8 + 8:1 data mux in one clock) and the **dispenser → solver entry** ("first free of 8" + inject + adder in one clock).
+### Step 2: 4 â†’ 8 iterators (no RTL change)
+- One IP parameter: `NSOLV` 4 â†’ 8 (`scripts/set_nsolv.tcl -tclargs 8`). DSPs 36 â†’ 72.
+- Effect: 2Ã— speed, but timing failed: the **result arbiter** (pick 1 of 8 + 8:1 data mux in one clock) and the **dispenser â†’ solver entry** ("first free of 8" + inject + adder in one clock).
 
 ### Step 3: pipeline the arbiter and the solver entry (RTL change)
 - `mandel_engine.v`: the round-robin arbiter now registers a one-hot `grant` (masked priority: requests above the last winner first), and the data moves next clock through a one-hot AND-OR mux.
 - `mandel_solver.v`: a one-pixel input buffer (`ib_*`); `in_ready = ~ib_v` is a flip-flop, so the dispenser never waits on the ring combinationally.
 - Verified: `tb_engine_compare.v` (old vs new engine, 3 frames, random AXI stalls), identical bytes, +0.35 % cycles. Same DSPs (72).
-- Exact diff (`strip-hdmi-in` → `engine-pipeline`):
+- Exact diff (`strip-hdmi-in` â†’ `engine-pipeline`):
 
 ```diff
 diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
@@ -201,7 +204,7 @@ index 26ecc59..3485426 100644
 Each colour = one iterator's LUTs/FFs/DSPs as placed by Vivado (`scripts/chip_view.tcl`, screenshot of the Device view). Together they cover most of the fabric; the DSP columns are the narrow strips they cluster around.
 
 ### Step 4: shared inside-set test (implemented 2026-11-09)
-- DSP budget: **8 DSPs free**. An exact 27-bit cardioid/bulb test needs ~5 multiplies ≈ 15 DSPs at 27-bit, too many. Options: narrower numbers for the test (it only has to be conservative), or LUT multipliers (LUTs at 64 %).
+- DSP budget: **8 DSPs free**. An exact 27-bit cardioid/bulb test needs ~5 multiplies â‰ˆ 15 DSPs at 27-bit, too many. Options: narrower numbers for the test (it only has to be conservative), or LUT multipliers (LUTs at 64 %).
 - Implemented on `shared-inside-set`, RTL/test commit `1828dd9`; baseline checkpoint `9926fd7` was committed and pushed to GitHub **before** this step began.
 - Shared eight-stage classifier ahead of the dispenser-to-solver handoff. Four 18x18 multiplies in Q4.14, with conservative inward margins: cardioid 1/128, bulb 1/512. Uncertain points keep the original Q4.23 iteration arithmetic. Accepted inside pixels use the existing solver/arbiter output path with count=max_iter.
 - Measured routed resources: **76/80 DSPs**, **11,707 LUTs (66.52%)**, **13,529 FFs**, **11 BRAM tiles**. Compared with the pipelined baseline: +4 DSPs, +440 LUTs. Classifier hierarchy: 347 total LUTs, 152 FFs, 4 DSPs (see hierarchical report; synthesis can move logic across module boundaries).
@@ -444,3 +447,63 @@ an unmeasured precision variant. Use a separate checkout while Vitis is open.
 The 21-bit mapping trades LUT logic for DSP savings. These results are specific
 to the current solver, part and synthesis flow, not a claim of native 21x21
 DSP multiplication. Narrower precision must be labeled as a different configuration.
+
+
+### Step 6: native 18-bit multiplication, eight solvers fixed (2026-11-09)
+
+Separate checkout: C:/Users/zk67/zybo-native18, branch solver-native18.
+No Mandelbrot RTL algorithm change: IP SOLVER_W=18, NSOLV=8. Coordinates remain
+Q4.23; solver arithmetic is Q4.14. The shared classifier and 100 MHz clock stay fixed.
+Three native products use three DSPs per solver; total is 24 + 4 = 28/80.
+
+Routed: 7,740 LUTs, 11,169 registers, 11 BRAM tiles, 3,268 occupied slices.
+Overall setup/hold slack +0.479/+0.020 ns; engine clock-group WNS +1.306 ns.
+Nine bus-skew checks pass, minimum +6.282 ns. XSA and matching .bit are frozen
+under precision/artifacts/w18_n8, with hashes and embedded-parameter verification.
+
+RTL: four precisions x 2,048 solver vectors pass; 18-bit reduced frame matches
+its independent oracle with AXI stalls; 27/24/18 format readbacks pass.
+Full 1080p ideal-AXI simulation: 9,352,126 cycles = 93.52126 ms.
+User board f/r/r/r: 9,352,159 / 9,352,159 / 9,352,158 / 9,352,158 clocks,
+all displayed as 93.522 ms, canonical (-0.75, 0), step 18641, max_iter 1000.
+
+At one fixed eight-solver count this saves 48 DSPs versus Q4.23 while render
+time is almost unchanged. Precision can change the iteration trajectories.
+The reduced 128x64 sample differs at 182 iteration counts, 52 palette pixels
+and 7 max-iteration classifications out of 8192; this is not a general error rate.
+Visual/zoom validation is still needed. Board sweep 1..8:
+717.683, 358.726, 239.638, 180.440, 145.292, 122.102, 106.009, 93.522 ms.
+
+Next: [NEXT_DSP_EXPERIMENTS.md](NEXT_DSP_EXPERIMENTS.md), including 12 x 24-bit,
+gradual 18-bit scaling, overhead estimates and user-run board instructions.
+Board data and validation files live in the solver-native18 branch under
+precision/native18. The DDR capacity/buffering question is recorded in
+REFERENCES_AND_OPTIMIZATION_IDEAS.md.
+
+
+### Step 7: ten solvers at 24-bit Q4.20 (2026-11-10)
+
+User resumed optimization in isolated checkout C:/Users/zk67/zybo-24-n10,
+branch solver-24-n10, based on the saved eight-solver 24-bit build 693423a.
+Changed NSOLV 8 -> 10; no Mandelbrot arithmetic RTL changes.
+Clock, shared test, coordinates and 1080p format unchanged.
+
+Routed: 64/80 DSPs, 8,666 LUTs, 12,243 registers, 11 BRAM tiles, 3,779 slices.
+Relative to eight 24-bit solvers: +12 DSPs, +696 LUTs, +630 registers.
+Overall setup/hold slack +0.601/+0.019 ns; engine group +0.601 ns.
+Nine bus-skew constraints pass; minimum slack +6.464 ns.
+
+Targeted integer-model frame and protocol/register checks passed.
+Full 1080p ideal-AXI simulation: 7,686,912 cycles = 76.86912 ms,
+versus 93.47473 ms for eight 24-bit solvers in that same simulated view.
+User board full-set run: 7,686,944 clocks = 76.86944 ms, displayed 76.869 ms,
+STATUS 0x2, ten active/built solvers and canonical view. This is 32 clocks above
+simulation. Raw UART/CSV/JSON are saved under precision/w24_n10 on solver-24-n10.
+Named XSA/.bit, manifest, reports and raw validation logs are saved on solver-24-n10.
+
+User revised the remaining sequence: after this board measurement, jump to
+25 x 18-bit (79/80 DSP budget), then try LUT-only multipliers/solvers.
+Skip 12 x 24-bit and intermediate 18-bit builds unless needed after a failure.
+Use short functional/model checks plus required resource/timing/bus-skew checks;
+avoid repeating long full-frame simulations without a reason.
+See CURRENT_EXPERIMENT.md and the experiment's precision/w24_n10/README.md.
