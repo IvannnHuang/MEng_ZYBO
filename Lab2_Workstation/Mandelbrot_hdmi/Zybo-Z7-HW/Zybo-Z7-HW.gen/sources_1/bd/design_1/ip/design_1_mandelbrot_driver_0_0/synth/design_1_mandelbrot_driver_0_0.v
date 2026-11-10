@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:mandelbrot_driver:1.0
-// IP Revision: 11
+// IP Revision: 12
 
 (* X_CORE_INFO = "mandelbrot_driver,Vivado 2024.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_mandelbrot_driver_0_0,mandelbrot_driver,{}" *)
-(* CORE_GENERATION_INFO = "design_1_mandelbrot_driver_0_0,mandelbrot_driver,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=mandelbrot_driver,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,NSOLV=8,C_M00_AXI_ADDR_WIDTH=32,C_M00_AXI_DATA_WIDTH=64,SOLVER_W=24}" *)
+(* CORE_GENERATION_INFO = "design_1_mandelbrot_driver_0_0,mandelbrot_driver,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=mandelbrot_driver,x_ipVersion=1.0,x_ipCoreRevision=12,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,NSOLV=8,C_M00_AXI_ADDR_WIDTH=32,C_M00_AXI_DATA_WIDTH=64,SOLVER_W=18}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_mandelbrot_driver_0_0 (
   btn,
@@ -199,7 +199,7 @@ output wire m00_axi_bready;
     .NSOLV(8),
     .C_M00_AXI_ADDR_WIDTH(32),
     .C_M00_AXI_DATA_WIDTH(64),
-    .SOLVER_W(24)
+    .SOLVER_W(18)
   ) inst (
     .btn(btn),
     .sw(sw),

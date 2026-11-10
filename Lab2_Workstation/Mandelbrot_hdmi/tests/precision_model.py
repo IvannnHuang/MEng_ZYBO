@@ -45,9 +45,10 @@ if __name__=='__main__':
         (work/f'precision_w{w}.mem').write_text('\n'.join(lines)+'\n')
         summary[w]={'sample_count':len(points),'iteration_counts_differ_from_27bit':sum(a!=b for a,b in zip(base,counts))}
     # Pixel-addressed engine oracle, preserving original Q4.23 raster coordinates.
-    engine=[]
-    for y in range(64):
-        for x in range(128): engine.append(count(-16777216+x*196608,6291456-y*196608,24))
-    (work/'engine_w24_counts.mem').write_text('\n'.join(f'{n:04x}' for n in engine)+'\n')
+    for w in [27,24,21,18]:
+        engine=[]
+        for y in range(64):
+            for x in range(128): engine.append(count(-16777216+x*196608,6291456-y*196608,w))
+        (work/f'engine_w{w}_counts.mem').write_text('\n'.join(f'{n:04x}' for n in engine)+'\n')
     (work/'precision_model_summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(json.dumps(summary))

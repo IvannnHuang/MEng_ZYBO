@@ -40,3 +40,7 @@ objects.mk
 sources.mk
 subdir.mk
 *.prj
+
+# Local precision simulation scratch files
+/Lab2_Workstation/Mandelbrot_hdmi/tests/work/
+/xelab.pb

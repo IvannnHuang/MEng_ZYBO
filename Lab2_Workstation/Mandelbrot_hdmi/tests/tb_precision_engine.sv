@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module tb_precision_engine;
+module tb_precision_engine #(parameter SW=24, parameter NSOLV=8);
  reg clk=0; always #5 clk=~clk;
  reg rst=1,start=0;
  reg signed [26:0] cr,ci,step;
@@ -23,7 +23,7 @@ module tb_precision_engine;
  genvar g;
  generate for(g=0;g<2;g=g+1) begin: E
  if(g==0) begin: OLD
- precision_baseline_engine #(.NSOLV(8),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
+ precision_baseline_engine #(.NSOLV(NSOLV),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
  .clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(cr),.ci_top(ci),.step(step),.max_iter(max_iter),.n_active(nact),
  .busy(busy[g]),.done(done[g]),.cycles(cycles[g]),
@@ -38,7 +38,7 @@ module tb_precision_engine;
    np[g]<=np[g]+1;
  end
  end else begin: NEW
- mandel_engine #(.SW(24),.NSOLV(8),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
+ mandel_engine #(.SW(SW),.NSOLV(NSOLV),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
  .clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(cr),.ci_top(ci),.step(step),.max_iter(max_iter),.n_active(nact),
  .busy(busy[g]),.done(done[g]),.cycles(cycles[g]),
@@ -90,17 +90,17 @@ module tb_precision_engine;
 
   different=0;
   for(k=0;k<8192;k=k+1) begin
-   if(counts[k+8192]!==expected[k]) $fatal(1,"independent 24bit model mismatch pixel=%0d got=%0d expected=%0d",k,counts[k+8192],expected[k]);
+   if(counts[k+8192]!==expected[k]) $fatal(1,"independent model mismatch W=%0d pixel=%0d got=%0d expected=%0d",SW,k,counts[k+8192],expected[k]);
    if(counts[k]!==counts[k+8192]) different=different+1;
   end
-  $display("PRECISION ENGINE MODEL PASSED frame=%0d changed_count_pixels=%0d of 8192",id,different);
+  $display("PRECISION ENGINE MODEL PASSED W=%0d NSOLV=%0d frame=%0d changed_count_pixels=%0d of 8192",SW,NSOLV,id,different);
   $display("PASS frame=%0d max_iter=%0d nact=%0d baseline=%0d optimized=%0d",id,it,active,cycles[0],cycles[1]);
  end endtask
  initial begin
-  cr=0;ci=0;step=0;max_iter=1000;nact=8;np[0]=0;np[1]=0;
+  cr=0;ci=0;step=0;max_iter=1000;nact=NSOLV;np[0]=0;np[1]=0;
   repeat(5) @(negedge clk);rst=0;
-  $readmemh("engine_w24_counts.mem",expected);
-  frame(0,-16777216,6291456,196608,1000,8);
+  $readmemh($sformatf("engine_w%0d_counts.mem",SW),expected);
+  frame(0,-16777216,6291456,196608,1000,NSOLV);
   $display("PRECISION ENGINE PASSED");$finish;
  end
 endmodule

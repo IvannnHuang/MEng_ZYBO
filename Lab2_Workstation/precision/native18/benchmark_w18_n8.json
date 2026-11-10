@@ -1,0 +1,28 @@
+{
+  "width": 18,
+  "fractional_bits": 14,
+  "built_solvers": 8,
+  "active_solvers": 8,
+  "engine_clock_hz": 100000000,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "max_iter": 1000,
+  "centre": [
+    -0.75,
+    0
+  ],
+  "coordinate_step_q23": 18641,
+  "rtl_ideal_axi_cycles": 9352126,
+  "rtl_ideal_axi_ms": 93.52126,
+  "board_cycles": [
+    9352159,
+    9352159,
+    9352158,
+    9352158
+  ],
+  "board_ms": 93.522,
+  "board_status": "User supplied f, three r repeats, and b at canonical view",
+  "visual_zoom_validation": "Pending"
+}

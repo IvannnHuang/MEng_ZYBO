@@ -1,5 +1,10 @@
 # Solver precision experiment (eight iterators fixed)
 
+Latest follow-up: **18-bit / eight solvers is board-measured at 93.522 ms**.
+See [native18/README.md](native18/README.md) and
+[../NEXT_DSP_EXPERIMENTS.md](../NEXT_DSP_EXPERIMENTS.md).
+Further testing is on hold. The 24-bit reference notes below remain historical.
+
 Reference board configuration: 27-bit Q4.23 solvers + shared conservative
 inside-set test, 93.442 ms, 76 DSPs, 11,707 LUTs, WNS +0.236 ns at 100 MHz.
 Saved branch: `shared-inside-set`, checkpoint `aa8c828`.

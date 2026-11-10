@@ -1,0 +1,7 @@
+{
+  "pixels": 8192,
+  "count_differences_vs_27": 182,
+  "palette_differences_vs_27": 52,
+  "max_iter_classification_differences": 7,
+  "note": "One specified 128x64 view; RTL counts match the independent 18-bit integer model. Not a population-wide error rate."
+}

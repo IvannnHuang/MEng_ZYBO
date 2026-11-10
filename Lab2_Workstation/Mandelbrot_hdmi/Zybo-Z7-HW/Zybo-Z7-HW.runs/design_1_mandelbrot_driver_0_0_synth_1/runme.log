@@ -8,18 +8,18 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Mon Nov  9 20:00:59 2026
+  **** Start of session at: Mon Nov  9 21:29:29 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_mandelbrot_driver_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 519.809 ; gain = 200.637
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 518.602 ; gain = 200.352
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.ipdefs/repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.cache/ip 
+Current IP cache path is c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.cache/ip 
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_mandelbrot_driver_0_0
 Command: synth_design -top design_1_mandelbrot_driver_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -29,27 +29,27 @@ INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10528
+INFO: [Synth 8-7075] Helper process launched with PID 8248
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1383.070 ; gain = 446.922
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1384.270 ; gain = 447.535
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_mandelbrot_driver_0_0' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver.v:4]
-INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:208]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:344]
-INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
-INFO: [Synth 8-6157] synthesizing module 'mandel_engine' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mandel_solver' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mandel_solver' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mandel_inside' [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:426]
-INFO: [Synth 8-6155] done synthesizing module 'mandel_inside' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:426]
-INFO: [Synth 8-6155] done synthesizing module 'mandel_engine' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/hdl/mandelbrot_driver.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_mandelbrot_driver_0_0' (0#1) [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element fb_r_reg was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:75]
-WARNING: [Synth 8-3936] Found unconnected internal register 'w1_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:236]
-WARNING: [Synth 8-3936] Found unconnected internal register 'mx_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:225]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mandelbrot_driver_0_0' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver.v:4]
+INFO: [Synth 8-6157] synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:208]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:344]
+INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mandel_engine' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mandel_solver' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_solver' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mandel_inside' [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:426]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_inside' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:426]
+INFO: [Synth 8-6155] done synthesizing module 'mandel_engine' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mandelbrot_driver' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/hdl/mandelbrot_driver.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mandelbrot_driver_0_0' (0#1) [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0/synth/design_1_mandelbrot_driver_0_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element fb_r_reg was removed.  [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:75]
+WARNING: [Synth 8-3936] Found unconnected internal register 'w1_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:236]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mx_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:225]
 WARNING: [Synth 8-7129] Port m_bresp[1] in module mandel_engine is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_bresp[0] in module mandel_engine is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module mandelbrot_driver_slave_lite_v1_0_S00_AXI is either unconnected or has no load
@@ -61,45 +61,45 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module mandelbrot_driver_slave_l
 WARNING: [Synth 8-7129] Port m00_axi_aclk in module mandelbrot_driver is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m00_axi_aresetn in module mandelbrot_driver is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.914 ; gain = 579.766
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1516.668 ; gain = 579.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.914 ; gain = 579.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1516.668 ; gain = 579.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1515.914 ; gain = 579.766
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1516.668 ; gain = 579.934
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1515.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1516.668 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1631.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1617.566 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1639.691 ; gain = 7.973
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1623.168 ; gain = 5.602
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
@@ -120,7 +120,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'mandelbrot_driver_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -131,9 +131,9 @@ Detailed RTL Component Info :
 	   2 Input   37 Bit       Adders := 2     
 	   3 Input   37 Bit       Adders := 1     
 	   2 Input   27 Bit       Adders := 2     
-	   4 Input   26 Bit       Adders := 8     
-	   2 Input   26 Bit       Adders := 8     
-	   2 Input   25 Bit       Adders := 8     
+	   4 Input   20 Bit       Adders := 8     
+	   2 Input   20 Bit       Adders := 8     
+	   2 Input   19 Bit       Adders := 8     
 	   2 Input   18 Bit       Adders := 3     
 	   2 Input   16 Bit       Adders := 8     
 	   3 Input   14 Bit       Adders := 1     
@@ -147,12 +147,10 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
 	               64 Bit    Registers := 1     
-	               48 Bit    Registers := 48    
-	               36 Bit    Registers := 4     
+	               36 Bit    Registers := 28    
 	               32 Bit    Registers := 7     
 	               27 Bit    Registers := 20    
-	               24 Bit    Registers := 120   
-	               18 Bit    Registers := 9     
+	               18 Bit    Registers := 129   
 	               16 Bit    Registers := 42    
 	               12 Bit    Registers := 8     
 	               11 Bit    Registers := 117   
@@ -172,8 +170,8 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit        Muxes := 6     
 	   8 Input   32 Bit        Muxes := 6     
 	   2 Input   27 Bit        Muxes := 2     
-	   2 Input   24 Bit        Muxes := 40    
-	   3 Input   24 Bit        Muxes := 16    
+	   2 Input   18 Bit        Muxes := 40    
+	   3 Input   18 Bit        Muxes := 16    
 	   2 Input   16 Bit        Muxes := 24    
 	   2 Input   11 Bit        Muxes := 16    
 	   2 Input    8 Bit        Muxes := 4     
@@ -200,64 +198,16 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-6014] Unused sequential element SOLV[0].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[0].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[0].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[1].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[1].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[1].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[2].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[2].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[2].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[3].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[3].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[3].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[4].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[4].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[4].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[5].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[5].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[5].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[6].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[6].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[6].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[7].u_solver/m_prr_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[7].u_solver/m_pri_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-6014] Unused sequential element SOLV[7].u_solver/m_pii_reg[1] was removed.  [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:110]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pii_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:187]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_pri_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/m_prr_reg[1]' and it is trimmed from '48' to '31' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_solver.v:186]
-WARNING: [Synth 8-3936] Found unconnected internal register 'xx2_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:466]
-WARNING: [Synth 8-3936] Found unconnected internal register 'xx1_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/4948/src/mandel_engine.v:483]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[7].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[0].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[1].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[2].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[3].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[4].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[5].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'SOLV[6].u_solver/o_y_reg' and it is trimmed from '11' to '3' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_solver.v:110]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx2_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:466]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx1_reg' and it is trimmed from '36' to '32' bits. [c:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.gen/sources_1/bd/design_1/ipshared/46b8/src/mandel_engine.v:483]
 DSP Report: Generating DSP yy2_reg, operation Mode is: (A2*B2)'.
 DSP Report: register y0_reg is absorbed into DSP yy2_reg.
 DSP Report: register y0_reg is absorbed into DSP yy2_reg.
@@ -283,221 +233,101 @@ DSP Report: register b0_reg is absorbed into DSP bb2_reg.
 DSP Report: register bb2_reg is absorbed into DSP bb2_reg.
 DSP Report: register bb1_reg is absorbed into DSP bb2_reg.
 DSP Report: operator bb10 is absorbed into DSP bb2_reg.
-DSP Report: Generating DSP SOLV[1].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[1].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[1].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[1].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[1].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[1].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[1].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[1].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[1].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[1].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[1].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[1].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[1].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[1].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[1].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[1].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[1].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[1].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[1].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[1].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[1].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[1].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[1].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[1].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[2].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[2].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[2].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[2].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[2].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[2].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[2].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[2].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[2].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[2].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[2].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[2].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[2].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[2].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[2].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[2].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[2].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[2].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[2].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[2].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[2].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[2].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[2].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[2].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[2].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[2].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[2].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[2].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[2].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[2].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[2].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[3].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[3].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[3].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[3].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[3].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[3].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[3].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[3].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[3].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[3].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[3].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[3].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[3].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[3].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[3].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[3].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[3].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[3].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[3].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[3].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[3].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[3].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[3].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[3].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[3].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[3].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[3].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[3].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[3].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[3].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[3].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[4].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[4].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[4].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[4].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[4].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[4].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[4].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[4].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[4].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[4].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[4].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[4].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[4].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[4].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[4].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[4].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[4].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[4].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[4].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[4].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[4].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[4].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[4].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[4].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[4].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[4].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[4].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[4].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[4].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[4].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[4].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[5].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[5].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[5].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[5].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[5].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[5].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[5].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[5].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[5].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[5].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[5].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[5].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[5].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[5].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[5].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[5].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[5].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[5].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[5].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[5].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[5].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[5].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[5].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[5].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[5].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[5].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[5].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[5].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[5].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[5].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[5].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[6].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[6].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[6].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[6].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[6].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[6].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[6].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[6].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[6].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[6].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[6].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[6].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[6].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[6].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[6].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[6].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[6].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[6].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[6].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[6].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[6].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[6].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[6].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[6].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[6].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[6].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[6].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[6].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[6].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[6].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[6].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[7].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[7].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[7].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[7].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[7].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[7].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[7].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[7].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[7].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[7].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[7].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[7].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[7].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[7].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[7].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[7].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[7].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[7].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[7].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[7].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[7].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[7].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[7].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[7].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[7].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[7].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[7].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[7].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[7].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[7].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[7].u_solver/m_prr_reg[1].
-DSP Report: Generating DSP SOLV[0].u_solver/m_pri_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[0].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[0].u_solver/m_pri_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[0].u_solver/m_pri_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pri_reg[0].
-DSP Report: Generating DSP SOLV[0].u_solver/m_pri_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[0].u_solver/m_pri_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[0].u_solver/m_pri_reg[1] is absorbed into DSP SOLV[0].u_solver/m_pri_reg[1].
 DSP Report: register SOLV[0].u_solver/m_pri_reg[0] is absorbed into DSP SOLV[0].u_solver/m_pri_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pri_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pri_reg[1].
-DSP Report: Generating DSP SOLV[0].u_solver/m_pii_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[0].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[0].u_solver/m_pii_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[0].u_solver/m_pii_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pii_reg[0].
-DSP Report: Generating DSP SOLV[0].u_solver/m_pii_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[0].u_solver/m_pii_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[0].u_solver/m_pii_reg[1] is absorbed into DSP SOLV[0].u_solver/m_pii_reg[1].
 DSP Report: register SOLV[0].u_solver/m_pii_reg[0] is absorbed into DSP SOLV[0].u_solver/m_pii_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pii_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_pii_reg[1].
-DSP Report: Generating DSP SOLV[0].u_solver/m_prr_reg[0], operation Mode is: (A*B)'.
-DSP Report: register SOLV[0].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[0].u_solver/m_prr_reg[0].
-DSP Report: operator p_1_out is absorbed into DSP SOLV[0].u_solver/m_prr_reg[0].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_prr_reg[0].
-DSP Report: Generating DSP SOLV[0].u_solver/m_prr_reg[1], operation Mode is: (PCIN>>17)+(A*B)'.
+DSP Report: Generating DSP SOLV[0].u_solver/m_prr_reg[1], operation Mode is: (A*B)'.
 DSP Report: register SOLV[0].u_solver/m_prr_reg[1] is absorbed into DSP SOLV[0].u_solver/m_prr_reg[1].
 DSP Report: register SOLV[0].u_solver/m_prr_reg[0] is absorbed into DSP SOLV[0].u_solver/m_prr_reg[1].
-DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_prr_reg[1].
 DSP Report: operator p_0_out is absorbed into DSP SOLV[0].u_solver/m_prr_reg[1].
 INFO: [Synth 8-3917] design design_1_mandelbrot_driver_0_0 has port m00_axi_awlock driven by constant 0
 INFO: [Synth 8-3917] design design_1_mandelbrot_driver_0_0 has port m00_axi_awcache[3] driven by constant 0
@@ -522,60 +352,36 @@ WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module design_1_mandelbrot_dri
 WARNING: [Synth 8-7129] Port m00_axi_aclk in module design_1_mandelbrot_driver_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m00_axi_aresetn in module design_1_mandelbrot_driver_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
  Sort Area is  product6_reg_3 : 0 0 : 2604 2604 : Used 1 time 100
  Sort Area is  bb2_reg_5 : 0 0 : 2586 2586 : Used 1 time 100
  Sort Area is  xx2_reg_2 : 0 0 : 2586 2586 : Used 1 time 100
  Sort Area is  yy2_reg_0 : 0 0 : 2586 2586 : Used 1 time 100
- Sort Area is  SOLV[0].u_solver/m_pii_reg[0]_1e : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[0].u_solver/m_pii_reg[0]_1e : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[0].u_solver/m_pri_reg[0]_1d : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[0].u_solver/m_pri_reg[0]_1d : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[0].u_solver/m_prr_reg[0]_1f : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[0].u_solver/m_prr_reg[0]_1f : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_pii_reg[0]_9 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_pii_reg[0]_9 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_pri_reg[0]_6 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_pri_reg[0]_6 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_prr_reg[0]_a : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[1].u_solver/m_prr_reg[0]_a : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_pii_reg[0]_c : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_pii_reg[0]_c : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_pri_reg[0]_b : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_pri_reg[0]_b : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_prr_reg[0]_d : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[2].u_solver/m_prr_reg[0]_d : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_pii_reg[0]_f : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_pii_reg[0]_f : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_pri_reg[0]_e : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_pri_reg[0]_e : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_prr_reg[0]_10 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[3].u_solver/m_prr_reg[0]_10 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_pii_reg[0]_12 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_pii_reg[0]_12 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_pri_reg[0]_11 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_pri_reg[0]_11 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_prr_reg[0]_13 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[4].u_solver/m_prr_reg[0]_13 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_pii_reg[0]_15 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_pii_reg[0]_15 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_pri_reg[0]_14 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_pri_reg[0]_14 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_prr_reg[0]_16 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[5].u_solver/m_prr_reg[0]_16 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_pii_reg[0]_18 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_pii_reg[0]_18 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_pri_reg[0]_17 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_pri_reg[0]_17 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_prr_reg[0]_19 : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[6].u_solver/m_prr_reg[0]_19 : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_pii_reg[0]_1b : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_pii_reg[0]_1b : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_pri_reg[0]_1a : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_pri_reg[0]_1a : 0 1 : 1094 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_prr_reg[0]_1c : 0 0 : 3348 4442 : Used 1 time 0
- Sort Area is  SOLV[7].u_solver/m_prr_reg[0]_1c : 0 1 : 1094 4442 : Used 1 time 0
+ Sort Area is  SOLV[0].u_solver/m_pii_reg[1]_1d : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[0].u_solver/m_pri_reg[1]_1c : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[0].u_solver/m_prr_reg[1]_1e : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[1].u_solver/m_pii_reg[1]_8 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[1].u_solver/m_pri_reg[1]_6 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[1].u_solver/m_prr_reg[1]_9 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[2].u_solver/m_pii_reg[1]_b : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[2].u_solver/m_pri_reg[1]_a : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[2].u_solver/m_prr_reg[1]_c : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[3].u_solver/m_pii_reg[1]_e : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[3].u_solver/m_pri_reg[1]_d : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[3].u_solver/m_prr_reg[1]_f : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[4].u_solver/m_pii_reg[1]_11 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[4].u_solver/m_pri_reg[1]_10 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[4].u_solver/m_prr_reg[1]_12 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[5].u_solver/m_pii_reg[1]_14 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[5].u_solver/m_pri_reg[1]_13 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[5].u_solver/m_prr_reg[1]_15 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[6].u_solver/m_pii_reg[1]_17 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[6].u_solver/m_pri_reg[1]_16 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[6].u_solver/m_prr_reg[1]_18 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[7].u_solver/m_pii_reg[1]_1a : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[7].u_solver/m_pri_reg[1]_19 : 0 0 : 2550 2550 : Used 1 time 0
+ Sort Area is  SOLV[7].u_solver/m_prr_reg[1]_1b : 0 0 : 2550 2550 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -599,62 +405,38 @@ Distributed RAM: Preliminary Mapping Report (see note below)
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+--------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name   | DSP Mapping       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+--------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mandel_inside | (A2*B2)'          | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | (A2*B2)'          | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | (A''*B2)'         | 18     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | (A2*B2)'          | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|mandel_solver | (PCIN>>17)+(A*B)' | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-+--------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mandel_inside | (A2*B2)'    | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A2*B2)'    | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A''*B2)'   | 18     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | (A2*B2)'    | 18     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | (A*B)'      | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -664,13 +446,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -702,7 +484,7 @@ INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_1 (imp
 INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/engine_i/rowbuf_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -720,37 +502,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -765,11 +547,11 @@ Static Shift Register Report:
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/bulb6_reg            | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/xs_reg[7][10]        | 8      | 11    | NO           | NO                 | YES               | 11     | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/ys_reg[7][2]         | 8      | 3     | NO           | NO                 | YES               | 3      | 0       | 
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/crs_reg[7][26]       | 8      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/crs_reg[7][26]       | 8      | 7     | NO           | NO                 | YES               | 7      | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/crs_reg[7][19]       | 4      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/cis_reg[7][26]       | 8      | 24    | NO           | NO                 | YES               | 24     | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/cis_reg[7][26]       | 8      | 18    | NO           | NO                 | YES               | 18     | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/m_f_reg[1]   | 3      | 136   | NO           | NO                 | YES               | 136    | 0       | 
-|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/h_ci_reg[23] | 4      | 496   | NO           | NO                 | YES               | 496    | 0       | 
+|design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/h_ci_reg[17] | 4      | 400   | NO           | NO                 | YES               | 400    | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/v_reg[7]             | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/u_inside/eligible_reg[6]      | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
 |design_1_mandelbrot_driver_0_0 | inst/engine_i/SOLV[1].u_solver/h_v_reg      | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
@@ -783,62 +565,38 @@ Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name   | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_solver | (A*B)'             | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|mandel_solver | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | ((A''*B'')')'      | 30     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | ((A'*B')')'        | 30     | 18     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | ((A''*B')')'       | 30     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|mandel_inside | ((A'*B')')'        | 30     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-+--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_solver | ((A*B)')'     | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A''*B'')')' | 30     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A'*B')')'   | 30     | 18     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A''*B')')'  | 30     | 18     | -      | -      | 36     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|mandel_inside | ((A'*B')')'   | 30     | 18     | -      | -      | 36     | 1    | 1    | -    | -    | -     | 1    | 1    | 
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -851,49 +609,49 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |   410|
-|2     |DSP48E1  |    52|
-|7     |LUT1     |    79|
-|8     |LUT2     |  1195|
-|9     |LUT3     |   757|
-|10    |LUT4     |   797|
-|11    |LUT5     |   363|
-|12    |LUT6     |  1244|
-|13    |MUXF7    |     2|
-|14    |MUXF8    |     1|
-|15    |RAM32M   |    11|
-|16    |RAMB36E1 |     4|
-|17    |SRL16E   |   757|
-|18    |FDRE     |  3105|
-|19    |FDSE     |   384|
+|1     |CARRY4   |   354|
+|2     |DSP48E1  |    28|
+|6     |LUT1     |    79|
+|7     |LUT2     |   871|
+|8     |LUT3     |   221|
+|9     |LUT4     |   610|
+|10    |LUT5     |   738|
+|11    |LUT6     |  1284|
+|12    |MUXF7    |     2|
+|13    |MUXF8    |     1|
+|14    |RAM32M   |    11|
+|15    |RAMB36E1 |     4|
+|16    |SRL16E   |   649|
+|17    |FDRE     |  2757|
+|18    |FDSE     |   288|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1623.168 ; gain = 686.434
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 69 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 1639.691 ; gain = 579.766
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1639.691 ; gain = 703.543
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1623.168 ; gain = 579.934
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1623.168 ; gain = 686.434
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1639.691 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 480 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1623.168 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 400 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1639.691 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1624.473 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 11 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 11 instances
 
-Synth Design complete | Checksum: 6431605
+Synth Design complete | Checksum: 5740841c
 INFO: [Common 17-83] Releasing license: Synthesis
-55 Infos, 83 Warnings, 0 Critical Warnings and 0 Errors encountered.
+55 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1639.691 ; gain = 1104.961
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1639.691 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mandelbrot_driver_0_0, cache-ID = fa663fc47abcfe5b
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1624.473 ; gain = 1090.266
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1624.473 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mandelbrot_driver_0_0, cache-ID = ce17969df039f50d
 INFO: [Coretcl 2-1174] Renamed 12 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1639.691 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/zybo-precision/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1624.473 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/design_1_mandelbrot_driver_0_0_synth_1/design_1_mandelbrot_driver_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_mandelbrot_driver_0_0_utilization_synth.rpt -pb design_1_mandelbrot_driver_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 20:01:44 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  9 21:30:11 2026...

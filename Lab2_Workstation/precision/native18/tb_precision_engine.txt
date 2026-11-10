@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# xsim v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov  9 21:37:10 2026
+# Process ID: 27320
+# Current directory: C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/tests/work
+# Command line: xsim.exe -log tb_precision_engine.log -mode tcl -source {xsim.dir/tb_precision_engine/xsim_script.tcl}
+# Log file: C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/tests/work/tb_precision_engine.log
+# Journal file: C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/tests/work\xsim.jou
+# Running On        :EN-EC-LPH238-59
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :34031 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39131 MB
+# Available Virtual :19968 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_precision_engine/xsim_script.tcl
+# xsim {tb_precision_engine} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PRECISION ENGINE MODEL PASSED W=18 NSOLV=8 frame=0 changed_count_pixels=182 of 8192
+PASS frame=0 max_iter=1000 nact=8 baseline=88684 optimized=90007
+PRECISION ENGINE PASSED
+$finish called at time : 900140 ns : File "C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/tests/tb_precision_engine.sv" Line 104
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov  9 21:37:16 2026...

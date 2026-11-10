@@ -1,0 +1,46 @@
+User-supplied UART measurement lines; repeated menu text omitted.
+The pasted excerpt did not include a precision banner/register readback.
+
+Select: f
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 8 of 8
+  FPGA render: 93.522 ms (9352159 clocks)  STATUS 0x2
+
+Select: r
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 8 of 8
+  FPGA render: 93.522 ms (9352159 clocks)  STATUS 0x2
+
+Select: r
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 8 of 8
+  FPGA render: 93.522 ms (9352158 clocks)  STATUS 0x2
+
+Select: r
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 8 of 8
+  FPGA render: 93.522 ms (9352158 clocks)  STATUS 0x2
+
+Select: b
+
+ solvers   FPGA ms
+    1       717.683
+    2       358.726
+    3       239.638
+    4       180.440
+    5       145.292
+    6       122.102
+    7       106.009
+    8       93.522
