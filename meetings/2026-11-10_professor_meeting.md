@@ -131,3 +131,13 @@ USB mouse pan/zoom is complete (user confirmed). Keep the existing board results
 as the baseline; next measure solver precision versus resources, image fidelity
 and zoom depth on this Zybo. See `Lab2_Workstation/REFERENCES_AND_OPTIMIZATION_IDEAS.md`
 for the Reddit-discovered lecture link and the reviewed Cornell lab/background.
+
+
+## Next DSP experiments and the DDR question (2026-11-09)
+
+18-bit / eight-solvers hardware is built in the separate zybo-native18 checkout and measured by the user at **93.522 ms**, canonical view, using 28/80 DSPs. The repeat spread is one clock. The exact 18-bit board steps, 12 x 24-bit build commands, resource overhead and gradual scaling plan are in Lab2_Workstation/NEXT_DSP_EXPERIMENTS.md. The DDR capacity/caching/double-buffer question is recorded in Lab2_Workstation/REFERENCES_AND_OPTIMIZATION_IDEAS.md. The user runs the board on COM5; do not modify or import the Vitis workspace from headless tools.
+
+
+## Presentation stop point and next work
+
+Testing is on hold at the user's request. The measured 18-bit result is 93.522 ms with eight solver pipelines, each containing three 18x18 products (24 solver DSPs + 4 shared-test DSPs). Next: compare 10/12 solvers at 24 bits and gradually scale 18-bit solvers; then measure a LUT-only solver and add fabric lanes after the useful DSP-backed limit. Native 25x18 products fit a DSP, but a 25-bit square is 25x25. A precise DSP-plus-LUT iterator ceiling remains to be measured. Full plan, overhead worksheet and illustrative LUT limits: Lab2_Workstation/NEXT_DSP_EXPERIMENTS.md. No pushes to main; hardware and website changes stay on their named working branches.
