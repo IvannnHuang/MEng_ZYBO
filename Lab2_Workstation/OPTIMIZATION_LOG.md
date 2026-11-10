@@ -7,7 +7,7 @@ Running record of every optimization step: what changed in the code, what it cos
 2. **DE1 vs Zybo DSP side-by-side** (done below): how many multiplies each board can do at each width.
 3. **Chip-viewer pictures** for every step: Vivado → *Open Implemented Design* → *Device* tab → highlight the Mandelbrot IP (and the solvers) → save a screenshot into `Lab2_Workstation/figures/chip_<step>.png`. Script: `Mandelbrot_hdmi/scripts/chip_view.tcl` (opens the GUI, colours the blocks; take the screenshot, then close Vivado).
 4. **Exact code changes per optimization** (below, as diffs), so the next step can be planned from what changed and what it cost.
-5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board timing is now measured; record each configuration before another optimization.
+5. Shared cardioid + period-2-bulb test implemented on `shared-inside-set` (step 4 below); board timing and USB mouse interaction are confirmed; next characterize solver precision on the Zybo.
 
 ## DSPs: how many multiplications fit
 | | DE1-SoC (Cyclone V 5CSEMA5) | Zybo Z7-10 (Zynq xc7z010) |
@@ -276,8 +276,8 @@ Raw UART capture: `Mandelbrot_hdmi/tests/BOARD-RESULTS-inside-set-2026-11-09.txt
 
 The one-active-solver result is now 717.474 ms because it also benefits from
 the shared classifier. Keep the preceding configuration's solver sweep as
-historical data. Pan/zoom visual confirmation and a new chip-view screenshot
-remain open; no further RTL optimization was made with this results update.
+historical data. USB mouse pan/zoom is now confirmed complete by the user. A new chip-view screenshot
+remains open; no further RTL optimization was made with this results update.
 
 #### Exact RTL diff (`9926fd7` -> `1828dd9`, zero context)
 
@@ -407,3 +407,12 @@ index 3485426..20dafd7 100644
 -    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : {IW{1'b0}};
 +    wire        [IW-1:0] e_cnt  = recirc ? h_cnt  : (ib_inside ? max_iter : {IW{1'b0}});
 ```
+
+### Next experiment: precision versus Zybo multiplier cost
+
+USB mouse completed and confirmed by the user. Reference/discovery notes and the
+review of the Cornell lab are in `REFERENCES_AND_OPTIMIZATION_IDEAS.md`.
+First measure several solver widths with eight iterators fixed. Record numerical
+changes separately from performance; only then consider adding iterators.
+The current board configuration remains the 27-bit reference, not replaced by
+an unmeasured precision variant. Use a separate checkout while Vitis is open.

@@ -32,7 +32,7 @@ remain historical; the old inside-test projections are superseded by this run.
 
 ## 1. Where we are: Mandelbrot IP v1
 - Working on the Zybo Z7-10: the IP renders the full set at **1920×1080** and writes the frame **straight into DDR** (AXI master on HP0); the VDMA shows it over HDMI.
-- The ARM only sets the view (centre, zoom, max_iter) and starts a render. The menu takes UART keys, board buttons, and a USB mouse (pan / click to zoom, same as the DE1 lab; mouse driver still being brought up).
+- The ARM only sets the view (centre, zoom, max_iter) and starts a render. The menu takes UART keys, board buttons, and a USB mouse (pan / click to zoom, same as the DE1 lab; USB mouse implementation now confirmed complete by the user).
 - v1 = **4 solvers** (`NSOLV = 4`), Q4.23 fixed point (same as the DE1 lab), 100 MHz.
 - Overview page with the register map, how to connect it, and all source: `zybo-docs/Mandelbrot_overview.html` on the website.
 
@@ -124,3 +124,10 @@ Order of attack, by expected gain. Measure resources and render time after every
 - Which number widths are worth offering students (Q4.23 like the DE1, or narrower for more iterators)?
 - Does the proposed split (students: solver + parallel engine + timing; given: AXI path, view math, mouse) match what you want the lab to teach?
 - Keep 1080p, or offer a lower resolution so the lab maps more directly onto the DE1 version?
+
+## Reference discovery and next experiment
+
+USB mouse pan/zoom is complete (user confirmed). Keep the existing board results
+as the baseline; next measure solver precision versus resources, image fidelity
+and zoom depth on this Zybo. See `Lab2_Workstation/REFERENCES_AND_OPTIMIZATION_IDEAS.md`
+for the Reddit-discovered lecture link and the reviewed Cornell lab/background.
