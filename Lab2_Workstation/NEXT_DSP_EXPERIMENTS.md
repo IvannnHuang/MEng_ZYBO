@@ -19,8 +19,12 @@ A complete zero-DSP solver costs 1,561 LUT primitives / 417 FF in isolated
 synthesis; the native solver costs 333 LUT primitives / 285 FF / three DSPs.
 The fabric implementation passed 2,048 independent model vectors with stalls.
 The 27-lane mixed candidate (25 native + two fabric) passed a reduced engine
-oracle/protocol check, including coverage of every lane. Physical fit/timing
-is being checked; a working mixed-design limit has not yet been established.
+oracle/protocol check, including coverage of every lane. Physical fit and timing
+now pass after the arbiter rewrite and post-route optimization: 79 DSPs,
+15,366 LUTs, all 4,400 slices, setup/hold +0.017/+0.026 ns. Nine bus-skew checks
+pass. Named XSA/.bit and all reports are pushed at 9ca5c02 on solver-hybrid18.
+The next action is one user-run canonical f measurement with 27 of 27 solvers.
+This is a tested fit, not proof of an absolute maximum.
 
 See CURRENT_EXPERIMENT.md for the current status. Keep Q4.14 and 100 MHz fixed.
 Do not repeat long full-frame simulation unless a failure justifies it.

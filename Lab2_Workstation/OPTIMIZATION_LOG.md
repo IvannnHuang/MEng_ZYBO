@@ -534,3 +534,47 @@ different quantities. Next measure a complete zero-DSP LUT solver and route
 additional same-width lanes to find the actual combined limit. Do not infer
 a guaranteed count from the raw LUT remainder. The chip-view script now
 highlights beyond 16 instances and cycles eight colours for large arrays.
+
+
+### Step 9: 25 DSP-backed plus two fabric solvers, 18-bit (2026-11-10)
+
+Branch solver-hybrid18, isolated checkout C:/Users/zk67/zybo-hybrid18.
+Based on the board-measured 25-solver build at 0d3043b. Source, named XSA/.bit,
+verified manifest, routed reports and failed attempts are pushed at 9ca5c02.
+User controls Vitis/COM5; no headless workspace imports or board programming.
+
+Change: add LUT_MULT to the solver and LUT_SOLVERS to the engine/packaged IP.
+The final two lanes implement all three signed products in LUT fabric.
+Q4.14 arithmetic, saturation, shared classifier, pipeline latency, 1080p and
+100 MHz stay fixed. Native lanes use three DSPs each; fabric lanes use zero.
+25*3 + shared 4 = 79 DSPs. All 27 physical lane mappings are verified.
+
+Complete isolated native/fabric solvers: 3/0 DSPs, 333/1,561 LUT primitives,
+285/417 FF primitives. The fabric solver passes 2,048 integer-model vectors
+with stalls. The short mixed engine matches all 8,192 independent model
+counts under AXI backpressure; all lanes exercised. Round-robin policy monitor
+passes after its rewrite. No long full-frame simulation repeated.
+
+Attempt 1 fits but fails setup (-0.618 ns): 15,611 LUTs, all 4,400 slices.
+Worst routed path is the round-robin last-register selection feedback.
+Replace arithmetic mask/priority carry chains with constant-range OR reductions,
+keeping grant order and registered stages. Retry: 15,366 LUTs; setup -0.077 ns
+in dispatch. Post-route phys_opt_design -directive AggressiveExplore recovers
+setup +0.017 ns, hold +0.026 ns. Timing has a small positive margin.
+
+Final: 79/80 DSPs, 15,366/17,600 LUTs (87.31%), 16,393/35,200 registers,
+11/60 BRAM, 4,400/4,400 occupied slices. All 30,568 routable nets fully routed,
+zero routing errors. Nine bus-skew checks pass, minimum +5.794 ns.
+
+Named pair: precision/artifacts/w18_d25_l2/design_1_wrapper_w18_d25_l2.xsa
+and matching .bit; XSA parameters SOLVER_W=18, NSOLV=27, LUT_SOLVERS=2.
+SHA256: 4198637c523551994e8a1def968fe39ea52d53a3142ebafa8a738153ce33d742.
+Embedded and implemented bitstreams match. Reproduction and manual Vitis steps
+are in precision/hybrid18/README.md. Export additionally checks route status
+and per-lane mapping for post-route-optimized hybrid hardware.
+
+Board render time remains pending. Next: user supplies one canonical f result
+showing 27 of 27 solvers, step 18641, centre (-0.75,0), max_iter 1000 and STATUS.
+A sweep is optional. This is the best verified mixed fit tested, not a global
+maximum proof. Primitive and physical LUT totals differ; a third fabric lane
+or using the last DSP for one product remain future experiments.

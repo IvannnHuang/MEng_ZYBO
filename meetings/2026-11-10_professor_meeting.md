@@ -21,8 +21,12 @@ primitives and 417 FF primitives. Native comparison: three DSPs, 333 LUT
 primitives and 285 FF. The fabric solver passed 2,048 independent model
 vectors with stalls. The first candidate is 25 native + two fabric = 27
 solvers. All 27 lanes were exercised in a reduced engine/model/protocol check.
-Physical packing and 100 MHz timing are being tested in solver-hybrid18;
-there is no measured mixed-design render time yet.
+The mixed design now fits and meets 100 MHz after an arbiter rewrite and
+post-route physical optimization: 79 DSPs, 15,366 LUTs, 16,393 registers,
+11 BRAM, all 4,400 slices; setup/hold +0.017/+0.026 ns. Nine bus-skew checks
+pass. Named XSA/.bit and reports are pushed on solver-hybrid18 at 9ca5c02.
+Next meeting result: user measures canonical f with 27 of 27 solvers and
+compares against 35.543 ms at 25. No mixed-design board render time yet.
 
 4,555 unused LUTs in the 25-lane build do not mean 4,555 placeable extra gates:
 4,336/4,400 slices are already occupied. Report routed totals and throughput
