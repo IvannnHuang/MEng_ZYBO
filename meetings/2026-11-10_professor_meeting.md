@@ -1,5 +1,37 @@
 # Meeting with professor — 2026-11-10
 
+## Measured progress update: 2026-11-10
+
+Latest canonical full-set board result: **25 x 18-bit solvers, 35.543 ms**
+(3,554,303 clocks, STATUS 0x2). Centre (-0.75,0), step 18641,
+max_iter 1000, all 25 solvers active, 1920x1080 at 100 MHz.
+Routed: 79/80 DSPs, 13,045/17,600 LUTs, 15,607 registers, 11 BRAM tiles;
+setup/hold +0.262/+0.024 ns. Saved and pushed on solver-18-n25 at 0d3043b.
+
+The preceding 10 x 24-bit build measured **76.869 ms** (7,686,944 clocks)
+for the same canonical view. It uses 64 DSPs / 8,666 LUTs and is pushed on
+solver-24-n10 at 6df2bae. Each precision remains a separate dataset.
+Eight 18-bit solvers measured 93.522 ms. Reducing arithmetic width keeps
+1920x1080 output pixels but reduces numerical precision and useful deep zoom.
+
+The user chose to skip intermediate counts and long repeated simulations.
+Next: use LUT multipliers after exhausting useful DSP-backed solver capacity.
+A complete fabric-only Q4.14 solver synthesizes to zero DSPs, 1,561 LUT
+primitives and 417 FF primitives. Native comparison: three DSPs, 333 LUT
+primitives and 285 FF. The fabric solver passed 2,048 independent model
+vectors with stalls. The first candidate is 25 native + two fabric = 27
+solvers. All 27 lanes were exercised in a reduced engine/model/protocol check.
+Physical packing and 100 MHz timing are being tested in solver-hybrid18;
+there is no measured mixed-design render time yet.
+
+4,555 unused LUTs in the 25-lane build do not mean 4,555 placeable extra gates:
+4,336/4,400 slices are already occupied. Report routed totals and throughput
+before claiming a practical limit. The user runs Vitis and COM5; the agent
+builds hardware in isolated checkouts and does not touch the GUI workspace.
+
+The earlier eight-iterator measurements below remain historical references.
+
+
 Topic: porting ECE 5760 Lab 2 (Mandelbrot) from the DE1-SoC to the Zybo Z7-10.
 
 ## Latest measured configuration: eight iterators + shared inside-set test

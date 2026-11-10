@@ -1,5 +1,34 @@
 # Next DSP experiments - handoff (2026-11-09)
 
+## Current update: 2026-11-10
+
+This update supersedes the older ON HOLD status and gradual sweep below.
+The user chose fewer builds: 10 x 24-bit, then directly 25 x 18-bit, then
+additional LUT-based solvers. The user continues all Vitis and board runs.
+
+| Completed configuration | Canonical board f | DSPs | Routed LUTs | Setup slack |
+|---|---:|---:|---:|---:|
+| 10 x 24-bit, solver-24-n10 at 6df2bae | 76.869 ms | 64 | 8,666 | +0.601 ns |
+| 25 x 18-bit, solver-18-n25 at 0d3043b | 35.543 ms | 79 | 13,045 | +0.262 ns |
+
+Both named XSA/.bit pairs, routed reports and raw board measurements are pushed
+on their respective branches. Hardware main remains unchanged.
+
+The active LUT experiment is in C:/Users/zk67/zybo-hybrid18 on solver-hybrid18.
+A complete zero-DSP solver costs 1,561 LUT primitives / 417 FF in isolated
+synthesis; the native solver costs 333 LUT primitives / 285 FF / three DSPs.
+The fabric implementation passed 2,048 independent model vectors with stalls.
+The 27-lane mixed candidate (25 native + two fabric) passed a reduced engine
+oracle/protocol check, including coverage of every lane. Physical fit/timing
+is being checked; a working mixed-design limit has not yet been established.
+
+See CURRENT_EXPERIMENT.md for the current status. Keep Q4.14 and 100 MHz fixed.
+Do not repeat long full-frame simulation unless a failure justifies it.
+If the candidate fails placement or timing, record why and reduce the fabric
+count or revise multiplier pipelining before exporting a verified XSA.
+
+## Historical handoff
+
 **Update 2026-11-10:** the user resumed ten solvers at 24 bits. That hardware
 is now ready for their Vitis/COM5 run; see [CURRENT_EXPERIMENT.md](CURRENT_EXPERIMENT.md).
 The remaining sequence is now **10 x 24-bit -> 25 x 18-bit -> DSP plus LUT solvers**.

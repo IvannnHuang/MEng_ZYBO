@@ -23,8 +23,17 @@ is available in this checkout; no application/workspace change is made by the ag
 XSA/.bit, reports and raw board data are pushed on that branch.
 
 ## Next
-The user supplied the 25-solver measurement. Next synthesize a complete LUT-only solver,
-verify zero DSP use and the same integer arithmetic, then add fabric lanes.
-Measure actual packing/timing/throughput, not a LUT-only arithmetic upper bound.
+The user supplied the 25-solver measurement. LUT-stage work is now in
+C:/Users/zk67/zybo-hybrid18, branch solver-hybrid18, separate from Vitis.
+Complete isolated solver synthesis: native 3 DSP / 333 LUT primitives / 285 FF;
+fabric 0 DSP / 1,561 LUT primitives / 417 FF. Fabric arithmetic passed 2,048
+independent model vectors with input gaps and output stalls.
+
+First mixed candidate: 25 native + 2 fabric = 27 total Q4.14 solvers.
+The short engine check passed against the independent 18-bit model with AXI
+backpressure; all 27 lanes were exercised. Physical implementation is in progress.
+Do not use its root XSA until timing and named export verification pass.
+Three fabric lanes exceed the baseline raw LUT remainder before control overhead;
+two is a candidate, not a proven fit or global maximum.
 Skip intermediate physical builds. Longer simulation only if a new change or
 failure needs it. Preserve Vitis; user programs/runs the board. No hardware-main push.
