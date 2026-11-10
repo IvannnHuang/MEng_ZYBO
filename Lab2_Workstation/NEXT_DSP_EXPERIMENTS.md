@@ -1,5 +1,11 @@
 # Next DSP experiments - handoff (2026-11-09)
 
+**STATUS: further lab testing is ON HOLD at the user's request.**
+18-bit / eight-solvers is already built and board-measured at **93.522 ms**.
+The 12 x 24-bit hardware build and DSP-plus-LUT experiments below are plans only.
+Do not push or merge main. Resume tests only when the user asks.
+
+
 ## Start here
 
 The immediate experiment is **18-bit Q4.14, eight built solvers**, at the same
