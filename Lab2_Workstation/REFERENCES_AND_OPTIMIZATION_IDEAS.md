@@ -39,3 +39,13 @@ point. Precision variants must be separate, explicitly labeled configurations.
 
 USB mouse implementation is complete, including pan/zoom interaction (reported
 by the user). Prior notes that only enumeration was verified are historical.
+
+## Experiment completed after this review
+
+`solver-precision` source/test commit b4c3372, routed snapshot 693423a.
+The isolated 24-bit / eight-iterator design uses 52 DSPs and 7,970 LUTs,
+WNS +0.318 ns; full-view RTL simulation is 93.47473 ms, board time pending.
+The resource savings create room for later parallelism experiments; no fixed-eight
+speed gain is claimed. See OPTIMIZATION_LOG step 5 and the experiment branch's
+`Lab2_Workstation/precision/README.md`. The original working checkout remains the
+27-bit, 93.442 ms board-tested configuration.

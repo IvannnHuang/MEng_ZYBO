@@ -416,3 +416,31 @@ First measure several solver widths with eight iterators fixed. Record numerical
 changes separately from performance; only then consider adding iterators.
 The current board configuration remains the 27-bit reference, not replaced by
 an unmeasured precision variant. Use a separate checkout while Vitis is open.
+
+### Step 5: solver precision experiment, eight iterators fixed (2026-11-09)
+
+- Branch `solver-precision`, source/test commit `b4c3372`, isolated checkout `C:/Users/zk67/zybo-precision`.
+- Saved/pushed the website, mouse completion and references before starting this experiment (`aa8c828` lab; `357d569` website). The workstation checkout remains the 27-bit board-tested baseline.
+- Added synthesis parameter `SOLVER_W` (18-27 bits, default 27). The experimental build selects **24-bit Q4.20 solvers**, retaining eight iterators, 100 MHz, the shared inside-set test and Q4.23 coordinate registers/accumulators.
+- Coordinate truncation occurs at the solver boundary; this changes numerical precision. New read-only register 0x28 reports total/fractional bits with signature 0x4d42. The updated software reports precision and limits zoom to at least one solver LSB; old bitstreams retain 27-bit fallback behavior.
+- **Routed resources:** 52/80 DSPs, 7,970 LUTs (45.28%), 11,613 FFs, 11 BRAM tiles. Relative to the eight-iterator + shared-test reference: **24 DSPs and 3,737 LUTs freed**.
+- **Timing:** +0.318 ns WNS at 100 MHz, +0.019 ns worst overall hold slack. All setup/hold/pulse-width checks pass. Nine CDC bus-skew constraints pass, minimum slack +6.098 ns.
+- **Simulation, not board time:** 1920x1080, max_iter 1000, eight solvers, full default view: 9,347,473 clocks = **93.47473 ms** with ideal AXI, compared with 9,344,200 clocks for 27-bit. This fixed-eight experiment saves resources; it has not shown a rendering speedup.
+- **Accuracy:** the 128x64 oracle test changes 65 iteration counts, 15 displayed palette pixels, and 8 max-iteration classifications out of 8192 compared with 27-bit. All 24-bit RTL results match the independent 24-bit integer model. Separate 2048-point mixed samples quantify additional width differences; they are not general image error rates.
+- **Checks:** all 27/24/21/18-bit solver vector tests pass with stalls; new format register passes stalled AXI reads; all ten default-27-bit baseline regression frames remain byte/count identical; ARM software passes Xilinx GCC syntax checking. The full 1080p 24-bit RTL benchmark passes all result/beat/burst counts.
+- **Artifacts:** worktree bitstream and `Mandelbrot_hdmi/Zybo-Z7-HW/design_1_wrapper.xsa` generated. Detailed reports, reproduction steps, source diff and board instructions are under `Lab2_Workstation/precision/` on the experiment branch.
+- **Board validation pending:** use a separate Vitis workspace with the experiment XSA and application source (including updated `mandel.c`), then record `f`, `b`, boundary views and mouse pan/zoom. The UART should report Q4.20, 24 bits, minimum step 8 LSB. Keep **93.442 ms as the measured 27-bit reference**.
+- Next possible step after validation: measure additional iterators at a fixed precision. At six DSPs per 24-bit solver, 12 solvers plus four shared-test DSPs would use 76 DSPs arithmetically; LUT/routing/timing feasibility and speed still require a build and test.
+
+#### Isolated-solver synthesis (not routed whole-system area)
+
+| Solver bits | Fractional bits | DSPs | LUT primitives | FF primitives |
+|---|---|---:|---:|---:|
+| 27 | 23 | 9 | 979 | 573 |
+| 24 | 20 | 6 | 411 | 339 |
+| 21 | 17 | 3 | 774 | 462 |
+| 18 | 14 | 3 | 333 | 285 |
+
+The 21-bit mapping trades LUT logic for DSP savings. These results are specific
+to the current solver, part and synthesis flow, not a claim of native 21x21
+DSP multiplication. Narrower precision must be labeled as a different configuration.
