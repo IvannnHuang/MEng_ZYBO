@@ -163,3 +163,8 @@ simulation only when needed. CURRENT_EXPERIMENT.md holds the exact handoff.
 
 
 Ten-solver board follow-up: user confirmed 10 of 10 solvers and canonical full-set render at **76.869 ms (7,686,944 clocks)**. The next authorized build is directly 25 x 18-bit, with short functional checks and final timing/resource verification, then LUT-based solvers. No intermediate twelve-solver/24-bit build is needed.
+
+
+## Direct 25-solver native-width build
+
+25 x 18-bit is routed and meets timing at 100 MHz: **79/80 DSPs, 13,045 LUTs, 15,607 FFs, 11 BRAM**, setup/hold +0.262/+0.024 ns. Short model/protocol checks passed; full-frame simulation skipped as requested. User board render: **35.543 ms (3,554,303 clocks)**, canonical view, 25 of 25 solvers. The next LUT-only solver experiment must account for 4,555 free LUTs residing largely in already occupied slices (98.55% slices occupied), then measure actual hybrid packing and speed. Named verified XSA/.bit and records are on solver-18-n25. CURRENT_EXPERIMENT.md holds the handoff.

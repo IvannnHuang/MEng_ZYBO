@@ -34,6 +34,7 @@ So the DE1 has slightly more DSP blocks (87 vs 80), but the real difference is t
 | 24-bit Q4.20 solver | `solver-precision` `693423a` | 8 | 52 (65 %) | 7,970 (45.28 %) | +0.318 | 91.130 (shifted view; canonical pending) |
 | Native 18-bit solver | `solver-native18` | 8 | 28 (35 %) | 7,740 (43.98 %) | +0.479 | **93.522 (board, canonical)** |
 | 24-bit, ten solvers | `solver-24-n10` | 10 | 64 (80 %) | 8,666 (49.24 %) | +0.601 | **76.869 (board); 76.86912 RTL simulation** |
+| 18-bit, twenty-five solvers | `solver-18-n25` | 25 | 79 (98.75 %) | 13,045 (74.12 %) | +0.262 | **35.543 (board); no long simulation** |
 
 ### Step 1: remove HDMI input (no RTL change)
 - Block design only: `Mandelbrot_hdmi/scripts/strip_hdmi_in.tcl` deletes `dvi2rgb`, `v_vid_in_axi4s`, `v_tc_in`, `axis_subset_converter_in`, the RX reset, `axi_gpio_video`; turns off the VDMA write channel and FCLK2; moves the IP to `hp0/S01` (FCLK0). Constraints: HDMI RX pins commented out in `Zybo-Z7-Master.xdc`.
@@ -507,3 +508,29 @@ Skip 12 x 24-bit and intermediate 18-bit builds unless needed after a failure.
 Use short functional/model checks plus required resource/timing/bus-skew checks;
 avoid repeating long full-frame simulations without a reason.
 See CURRENT_EXPERIMENT.md and the experiment's precision/w24_n10/README.md.
+
+
+### Step 8: direct 25-solver 18-bit build (2026-11-10)
+
+User requested skipping the intermediate physical configurations. Based on
+solver-native18 at 319f9f9 in isolated checkout C:/Users/zk67/zybo-18-n25,
+branch solver-18-n25. Only NSOLV 8 -> 25; no arithmetic RTL change.
+Q4.14, 100 MHz, shared test, Q4.23 coordinate interface and 1080p RGB888 stay fixed.
+
+Actual routed use: 79 DSPs, 13,045 LUTs, 15,607 registers, 11 BRAM tiles,
+4,336/4,400 occupied slices. Overall setup/hold +0.262/+0.024 ns; engine group
++0.262 ns. Nine bus-skew checks pass, minimum +6.139 ns.
+The named XSA/.bit pair has verified width/count metadata and hashes.
+
+Short 128x64 frame test matches the independent 18-bit model under AXI stalls;
+all 8,192 pixels/output protocol checked. Its 73,883 cycles are a small test
+only, not a 1080p prediction. No long full-frame simulation was repeated.
+User board f measurement: **35.543 ms**, 3,554,303 clocks, canonical view,
+25 active/built solvers, step 18641, max_iter 1000, STATUS 0x2.
+Raw UART, CSV and JSON are saved under precision/w18_n25. No sweep requested.
+
+4,555 LUTs remain unused, but only 64 slices are completely empty. These are
+different quantities. Next measure a complete zero-DSP LUT solver and route
+additional same-width lanes to find the actual combined limit. Do not infer
+a guaranteed count from the raw LUT remainder. The chip-view script now
+highlights beyond 16 instances and cycles eight colours for large arrays.
