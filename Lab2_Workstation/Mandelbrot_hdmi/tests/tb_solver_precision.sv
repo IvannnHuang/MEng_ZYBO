@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module precision_case #(parameter SW=24)(output reg done=0);
+module precision_case #(parameter SW=24, LUT_MULT=0)(output reg done=0);
  reg clk=0;always #5 clk=~clk;
  reg rst=1,iv=0,accepted=0,ready=0;
  wire ir,ov,idle;
@@ -11,7 +11,7 @@ module precision_case #(parameter SW=24)(output reg done=0);
  reg [86:0] vectors[0:2047];reg [2047:0] seen=0;
  reg [31:0] rng=32'h56ae13+SW;
  integer sent=0,received=0,t=0;
- mandel_solver #(.W(SW),.F(SW-4),.XW(12),.YW(12)) dut(
+ mandel_solver #(.W(SW),.F(SW-4),.XW(12),.YW(12),.LUT_MULT(LUT_MULT)) dut(
  .clk(clk),.rst(rst),.max_iter(16'd1000),.in_inside(hit),.in_valid(iv),.in_ready(ir),
  .in_x(tag),.in_y(~tag),.in_cr(scr),.in_ci(sci),.out_valid(ov),.out_ready(ready),
  .out_x(ox),.out_y(oy),.out_count(cnt),.idle(idle));

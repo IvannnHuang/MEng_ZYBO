@@ -8,7 +8,8 @@ module mandel_solver #(
     parameter IW = 16,      // iteration counter width
     parameter XW = 11,      // x coordinate width
     parameter YW = 11,      // y coordinate width
-    parameter ML = 2        // multiplier register levels (>= 1)
+    parameter ML = 2,       // multiplier register levels (>= 1)
+    parameter LUT_MULT = 0 // 1: implement products in fabric
 )(
     input  wire                 clk,
     input  wire                 rst,        // synchronous, active high
@@ -173,6 +174,20 @@ module mandel_solver #(
     reg signed [2*W-1:0]  m_pii [0:ML-1];    // zi' * zi'
     reg signed [2*W-1:0]  m_pri [0:ML-1];    // zr' * zi'
 
+    wire signed [2*W-1:0] product_rr, product_ii, product_ri;
+    generate if (LUT_MULT) begin : FABRIC_PRODUCTS
+        (* use_dsp = "no" *) wire signed [2*W-1:0] rr = a_zr * a_zr;
+        (* use_dsp = "no" *) wire signed [2*W-1:0] ii = a_zi * a_zi;
+        (* use_dsp = "no" *) wire signed [2*W-1:0] ri = a_zr * a_zi;
+        assign product_rr = rr;
+        assign product_ii = ii;
+        assign product_ri = ri;
+    end else begin : DSP_PRODUCTS
+        assign product_rr = a_zr * a_zr;
+        assign product_ii = a_zi * a_zi;
+        assign product_ri = a_zr * a_zi;
+    end endgenerate
+
     integer k;
     always @(posedge clk) begin
         if (rst) m_v[0] <= 1'b0;
@@ -183,9 +198,9 @@ module mandel_solver #(
         m_cr[0]  <= a_cr;
         m_ci[0]  <= a_ci;
         m_cnt[0] <= a_cnt;
-        m_prr[0] <= a_zr * a_zr;
-        m_pii[0] <= a_zi * a_zi;
-        m_pri[0] <= a_zr * a_zi;
+        m_prr[0] <= product_rr;
+        m_pii[0] <= product_ii;
+        m_pri[0] <= product_ri;
         for (k = 1; k < ML; k = k + 1) begin
             if (rst) m_v[k] <= 1'b0;
             else     m_v[k] <= m_v[k-1];
