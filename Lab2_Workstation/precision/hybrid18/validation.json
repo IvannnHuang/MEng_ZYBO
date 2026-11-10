@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-10",
+  "solver_width": 18,
+  "fractional_bits": 14,
+  "native_solvers": 25,
+  "fabric_solvers": 2,
+  "total_solvers": 27,
+  "solver_vectors": 2048,
+  "solver_arithmetic_model": "passed with input gaps and output stalls",
+  "engine_frame": [
+    128,
+    64
+  ],
+  "engine_pixel_results_checked": 8192,
+  "engine_oracle": "independent integer model at 18 bits",
+  "engine_protocol": "passed under synthetic AXI backpressure",
+  "lane_coverage_mask": "0x7ffffff",
+  "all_lanes_exercised": true,
+  "small_test_cycles": 73883,
+  "changed_counts_vs_27bit_in_sample": 182,
+  "full_frame_simulation_run": false,
+  "board_measurement": null,
+  "physical_implementation": "pending"
+}

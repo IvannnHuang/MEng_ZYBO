@@ -29,3 +29,17 @@ synthesis/placement/routing at the unchanged 100 MHz. No long full-frame sim.
 Build: build_precision.tcl -tclargs 27 18 repackage 2
 Export: export_precision_snapshot.py --width 18 --solvers 27 --lut-solvers 2
 Artifacts must use w18_d25_l2 names so they cannot be confused with all-DSP builds.
+
+## Attempt 1: fits physically, rejected for timing
+
+27 solvers placed/routed: 79 DSPs, 15,611 LUTs (88.70%), 16,393 registers,
+11 BRAM, 4,400/4,400 occupied slices. Setup -0.618 ns; hold +0.020 ns.
+No hybrid XSA was exported and this bitstream is not approved for a board run.
+The root XSA still belongs to the baseline and must not be used as a hybrid XSA.
+Archived evidence is in attempt1_arithmetic_arbiter/.
+
+Worst routed path: last_reg[3] to last_reg[14]/CE in the round-robin arbiter,
+73.8% routing delay. It is not a multiplier path. Retry replaces arithmetic
+mask/lowest-bit carry chains with constant-range OR reductions. Grant order,
+registered stages, precision, solvers and clock stay unchanged. The short engine
+check now also checks every observed pick against a sequential round-robin policy.

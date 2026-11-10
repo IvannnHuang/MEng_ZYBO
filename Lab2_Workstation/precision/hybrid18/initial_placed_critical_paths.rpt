@@ -1,0 +1,735 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Nov 10 15:02:18 2026
+| Host         : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -max_paths 10 -nworst 1 -file C:/Users/zk67/zybo-hybrid18/Lab2_Workstation/precision/hybrid18/initial_placed_critical_paths.rpt
+| Design       : design_1_wrapper
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Physopt postPlace
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.039ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/h_v_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/a_zr_reg[15]/D
+                            (rising edge-triggered cell FDSE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.645ns  (logic 3.662ns (37.968%)  route 5.983ns (62.032%))
+  Logic Levels:           11  (CARRY4=6 LUT2=2 LUT3=2 LUT6=1)
+  Clock Path Skew:        -0.237ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.718ns = ( 12.718 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.039ns
+    Clock Pessimism Removal (CPR):    0.084ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.731     3.039    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/s00_axi_aclk
+    SLICE_X38Y65         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/h_v_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y65         FDRE (Prop_fdre_C_Q)         0.518     3.557 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/h_v_reg/Q
+                         net (fo=3, estimated)        1.432     4.989    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/h_v
+    SLICE_X19Y68         LUT3 (Prop_lut3_I2_O)        0.149     5.138 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___0_i_2/O
+                         net (fo=145, estimated)      1.115     6.253    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/recirc
+    SLICE_X9Y79          LUT3 (Prop_lut3_I2_O)        0.326     6.579 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___3_0/O
+                         net (fo=2, estimated)        1.013     7.592    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___3_0_n_0
+    SLICE_X9Y79          LUT6 (Prop_lut6_I0_O)        0.326     7.918 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___399_i_7/O
+                         net (fo=1, routed)           0.000     7.918    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___399_i_7_n_0
+    SLICE_X9Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.468 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___399_i_1/CO[3]
+                         net (fo=1, estimated)        0.000     8.468    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___399_i_1_n_0
+    SLICE_X9Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.582 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___395_i_1/CO[3]
+                         net (fo=1, estimated)        0.000     8.582    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___395_i_1_n_0
+    SLICE_X9Y81          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.696 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___391_i_1/CO[3]
+                         net (fo=1, estimated)        0.000     8.696    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___391_i_1_n_0
+    SLICE_X9Y82          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.810 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___387_i_1/CO[3]
+                         net (fo=1, estimated)        0.000     8.810    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___387_i_1_n_0
+    SLICE_X9Y83          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.144 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___385_i_1/O[1]
+                         net (fo=5, estimated)        1.275    10.419    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___385_i_1_n_6
+    SLICE_X25Y83         LUT2 (Prop_lut2_I0_O)        0.303    10.722 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___385/O
+                         net (fo=1, routed)           0.000    10.722    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___385_n_0
+    SLICE_X25Y83         CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    11.179 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___386_i_1/CO[1]
+                         net (fo=18, estimated)       1.148    12.327    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___386_i_1_n_2
+    SLICE_X21Y86         LUT2 (Prop_lut2_I1_O)        0.357    12.684 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___387/O
+                         net (fo=1, routed)           0.000    12.684    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/i___387_n_0
+    SLICE_X21Y86         FDSE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/a_zr_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.480    12.718    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/s00_axi_aclk
+    SLICE_X21Y86         FDSE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/a_zr_reg[15]/C
+                         clock pessimism              0.084    12.802    
+                         clock uncertainty           -0.154    12.648    
+    SLICE_X21Y86         FDSE (Setup_fdse_C_D)        0.075    12.723    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[25].u_solver/a_zr_reg[15]
+  -------------------------------------------------------------------
+                         required time                         12.723    
+                         arrival time                         -12.684    
+  -------------------------------------------------------------------
+                         slack                                  0.039    
+
+Slack (MET) :             0.058ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_ci_reg[5]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.407ns  (logic 1.758ns (18.688%)  route 7.649ns (81.312%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.176ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.725ns = ( 12.725 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        0.627     9.929    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X22Y49         LUT6 (Prop_lut6_I5_O)        0.124    10.053 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__6/O
+                         net (fo=2, estimated)        0.601    10.654    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s_in_valid[15]
+    SLICE_X18Y51         LUT2 (Prop_lut2_I0_O)        0.124    10.778 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3/O
+                         net (fo=51, estimated)       1.613    12.391    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3_n_0
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_ci_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.487    12.725    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s00_axi_aclk
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_ci_reg[5]/C
+                         clock pessimism              0.083    12.808    
+                         clock uncertainty           -0.154    12.654    
+    SLICE_X25Y19         FDRE (Setup_fdre_C_CE)      -0.205    12.449    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_ci_reg[5]
+  -------------------------------------------------------------------
+                         required time                         12.449    
+                         arrival time                         -12.391    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+Slack (MET) :             0.058ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[10]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.407ns  (logic 1.758ns (18.688%)  route 7.649ns (81.312%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.176ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.725ns = ( 12.725 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        0.627     9.929    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X22Y49         LUT6 (Prop_lut6_I5_O)        0.124    10.053 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__6/O
+                         net (fo=2, estimated)        0.601    10.654    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s_in_valid[15]
+    SLICE_X18Y51         LUT2 (Prop_lut2_I0_O)        0.124    10.778 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3/O
+                         net (fo=51, estimated)       1.613    12.391    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3_n_0
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[10]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.487    12.725    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s00_axi_aclk
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[10]/C
+                         clock pessimism              0.083    12.808    
+                         clock uncertainty           -0.154    12.654    
+    SLICE_X25Y19         FDRE (Setup_fdre_C_CE)      -0.205    12.449    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[10]
+  -------------------------------------------------------------------
+                         required time                         12.449    
+                         arrival time                         -12.391    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+Slack (MET) :             0.058ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[13]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.407ns  (logic 1.758ns (18.688%)  route 7.649ns (81.312%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.176ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.725ns = ( 12.725 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        0.627     9.929    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X22Y49         LUT6 (Prop_lut6_I5_O)        0.124    10.053 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__6/O
+                         net (fo=2, estimated)        0.601    10.654    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s_in_valid[15]
+    SLICE_X18Y51         LUT2 (Prop_lut2_I0_O)        0.124    10.778 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3/O
+                         net (fo=51, estimated)       1.613    12.391    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3_n_0
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[13]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.487    12.725    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s00_axi_aclk
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[13]/C
+                         clock pessimism              0.083    12.808    
+                         clock uncertainty           -0.154    12.654    
+    SLICE_X25Y19         FDRE (Setup_fdre_C_CE)      -0.205    12.449    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[13]
+  -------------------------------------------------------------------
+                         required time                         12.449    
+                         arrival time                         -12.391    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+Slack (MET) :             0.058ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[16]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.407ns  (logic 1.758ns (18.688%)  route 7.649ns (81.312%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.176ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.725ns = ( 12.725 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        0.627     9.929    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X22Y49         LUT6 (Prop_lut6_I5_O)        0.124    10.053 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__6/O
+                         net (fo=2, estimated)        0.601    10.654    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s_in_valid[15]
+    SLICE_X18Y51         LUT2 (Prop_lut2_I0_O)        0.124    10.778 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3/O
+                         net (fo=51, estimated)       1.613    12.391    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__3_n_0
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[16]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.487    12.725    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/s00_axi_aclk
+    SLICE_X25Y19         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[16]/C
+                         clock pessimism              0.083    12.808    
+                         clock uncertainty           -0.154    12.654    
+    SLICE_X25Y19         FDRE (Setup_fdre_C_CE)      -0.205    12.449    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_cr_reg[16]
+  -------------------------------------------------------------------
+                         required time                         12.449    
+                         arrival time                         -12.391    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+Slack (MET) :             0.064ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[13]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.482ns  (logic 1.758ns (18.540%)  route 7.724ns (81.460%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.095ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.806ns = ( 12.806 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        1.104    10.406    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X33Y38         LUT6 (Prop_lut6_I5_O)        0.124    10.530 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__2/O
+                         net (fo=2, estimated)        0.745    11.275    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/v_reg[7][7]
+    SLICE_X35Y32         LUT2 (Prop_lut2_I0_O)        0.124    11.399 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__1/O
+                         net (fo=51, estimated)       1.067    12.466    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/E[0]
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[13]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.568    12.806    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/s00_axi_aclk
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[13]/C
+                         clock pessimism              0.083    12.889    
+                         clock uncertainty           -0.154    12.735    
+    SLICE_X36Y18         FDRE (Setup_fdre_C_CE)      -0.205    12.530    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[13]
+  -------------------------------------------------------------------
+                         required time                         12.530    
+                         arrival time                         -12.466    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.064ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.482ns  (logic 1.758ns (18.540%)  route 7.724ns (81.460%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.095ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.806ns = ( 12.806 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        1.104    10.406    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X33Y38         LUT6 (Prop_lut6_I5_O)        0.124    10.530 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__2/O
+                         net (fo=2, estimated)        0.745    11.275    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/v_reg[7][7]
+    SLICE_X35Y32         LUT2 (Prop_lut2_I0_O)        0.124    11.399 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__1/O
+                         net (fo=51, estimated)       1.067    12.466    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/E[0]
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.568    12.806    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/s00_axi_aclk
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[1]/C
+                         clock pessimism              0.083    12.889    
+                         clock uncertainty           -0.154    12.735    
+    SLICE_X36Y18         FDRE (Setup_fdre_C_CE)      -0.205    12.530    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_ci_reg[1]
+  -------------------------------------------------------------------
+                         required time                         12.530    
+                         arrival time                         -12.466    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.064ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[4]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.482ns  (logic 1.758ns (18.540%)  route 7.724ns (81.460%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.095ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.806ns = ( 12.806 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.083ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        1.104    10.406    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X33Y38         LUT6 (Prop_lut6_I5_O)        0.124    10.530 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__2/O
+                         net (fo=2, estimated)        0.745    11.275    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/v_reg[7][7]
+    SLICE_X35Y32         LUT2 (Prop_lut2_I0_O)        0.124    11.399 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__1/O
+                         net (fo=51, estimated)       1.067    12.466    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/E[0]
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[4]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.568    12.806    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/s00_axi_aclk
+    SLICE_X36Y18         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[4]/C
+                         clock pessimism              0.083    12.889    
+                         clock uncertainty           -0.154    12.735    
+    SLICE_X36Y18         FDRE (Setup_fdre_C_CE)      -0.205    12.530    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[4]
+  -------------------------------------------------------------------
+                         required time                         12.530    
+                         arrival time                         -12.466    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.080ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[5]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.491ns  (logic 1.758ns (18.523%)  route 7.733ns (81.477%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.070ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.729ns = ( 12.729 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.185ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        1.104    10.406    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X33Y38         LUT6 (Prop_lut6_I5_O)        0.124    10.530 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__2/O
+                         net (fo=2, estimated)        0.745    11.275    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/v_reg[7][7]
+    SLICE_X35Y32         LUT2 (Prop_lut2_I0_O)        0.124    11.399 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__1/O
+                         net (fo=51, estimated)       1.076    12.475    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/E[0]
+    SLICE_X17Y28         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.491    12.729    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/s00_axi_aclk
+    SLICE_X17Y28         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[5]/C
+                         clock pessimism              0.185    12.914    
+                         clock uncertainty           -0.154    12.760    
+    SLICE_X17Y28         FDRE (Setup_fdre_C_CE)      -0.205    12.555    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[5]
+  -------------------------------------------------------------------
+                         required time                         12.555    
+                         arrival time                         -12.475    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (required time - arrival time)
+  Source:                 design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[7]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.491ns  (logic 1.758ns (18.523%)  route 7.733ns (81.477%))
+  Logic Levels:           10  (LUT2=2 LUT4=1 LUT6=7)
+  Clock Path Skew:        -0.070ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.729ns = ( 12.729 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.984ns
+    Clock Pessimism Removal (CPR):    0.185ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.207     1.207    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     1.308 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.676     2.984    design_1_i/mandelbrot_driver_0/inst/engine_i/s00_axi_aclk
+    SLICE_X20Y45         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y45         FDRE (Prop_fdre_C_Q)         0.518     3.502 f  design_1_i/mandelbrot_driver_0/inst/engine_i/nact_r_reg[2]/Q
+                         net (fo=33, estimated)       1.069     4.571    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/Q[2]
+    SLICE_X14Y49         LUT6 (Prop_lut6_I1_O)        0.124     4.695 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/ib_inside_i_23/O
+                         net (fo=4, estimated)        1.005     5.700    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/ib_inside_i_21
+    SLICE_X22Y50         LUT6 (Prop_lut6_I1_O)        0.124     5.824 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/i___0_i_43/O
+                         net (fo=5, estimated)        0.188     6.012    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/i___0_i_32_0
+    SLICE_X22Y50         LUT6 (Prop_lut6_I2_O)        0.124     6.136 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/ib_inside_i_17/O
+                         net (fo=5, estimated)        0.483     6.619    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/ib_inside_i_15
+    SLICE_X24Y53         LUT4 (Prop_lut4_I1_O)        0.124     6.743 f  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/i___0_i_29/O
+                         net (fo=4, estimated)        0.509     7.252    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_3
+    SLICE_X18Y51         LUT6 (Prop_lut6_I4_O)        0.124     7.376 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15/O
+                         net (fo=1, estimated)        0.323     7.699    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_15_n_0
+    SLICE_X20Y50         LUT6 (Prop_lut6_I0_O)        0.124     7.823 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5/O
+                         net (fo=1, estimated)        0.601     8.424    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_5_n_0
+    SLICE_X18Y51         LUT6 (Prop_lut6_I0_O)        0.124     8.548 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__21/O
+                         net (fo=12, estimated)       0.630     9.178    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_v_reg_9
+    SLICE_X17Y50         LUT2 (Prop_lut2_I0_O)        0.124     9.302 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0/O
+                         net (fo=6, estimated)        1.104    10.406    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_3__0_n_0
+    SLICE_X33Y38         LUT6 (Prop_lut6_I5_O)        0.124    10.530 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_2__2/O
+                         net (fo=2, estimated)        0.745    11.275    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/v_reg[7][7]
+    SLICE_X35Y32         LUT2 (Prop_lut2_I0_O)        0.124    11.399 r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/ib_inside_i_1__1/O
+                         net (fo=51, estimated)       1.076    12.475    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/E[0]
+    SLICE_X17Y28         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, estimated)        1.147    11.147    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    11.238 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=12426, estimated)    1.491    12.729    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/s00_axi_aclk
+    SLICE_X17Y28         FDRE                                         r  design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[7]/C
+                         clock pessimism              0.185    12.914    
+                         clock uncertainty           -0.154    12.760    
+    SLICE_X17Y28         FDRE (Setup_fdre_C_CE)      -0.205    12.555    design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/ib_cr_reg[7]
+  -------------------------------------------------------------------
+                         required time                         12.555    
+                         arrival time                         -12.475    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+
+
+

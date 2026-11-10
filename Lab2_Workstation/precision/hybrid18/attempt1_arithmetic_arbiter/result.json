@@ -1,0 +1,16 @@
+{
+  "status": "rejected: setup timing failed; no hybrid XSA exported",
+  "native_solvers": 25,
+  "fabric_solvers": 2,
+  "total_solvers": 27,
+  "dsp": 79,
+  "slice_luts": 15611,
+  "slice_registers": 16393,
+  "occupied_slices": 4400,
+  "bram_tiles": 11,
+  "setup_slack_ns": -0.618,
+  "hold_slack_ns": 0.02,
+  "critical_path": "round-robin arbiter last register to last clock-enable",
+  "critical_path_route_fraction_percent": 73.791,
+  "board_tested": false
+}

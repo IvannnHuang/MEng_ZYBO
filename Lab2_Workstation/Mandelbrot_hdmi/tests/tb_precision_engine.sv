@@ -40,6 +40,23 @@ module tb_precision_engine #(parameter SW=24, parameter NSOLV=8, parameter LUT_S
    np[g]<=np[g]+1;
  end
  end else begin: NEW
+ // Check the actual request stream against a sequential round-robin policy.
+ integer rr_last=NSOLV-1,rr_offset,rr_index;
+ reg rr_found;
+ reg [NSOLV-1:0] rr_expected;
+ always @(posedge clk) begin
+  if(rst) rr_last=NSOLV-1;
+  else begin
+   rr_found=0;rr_expected=0;
+   for(rr_offset=1;rr_offset<=NSOLV;rr_offset=rr_offset+1) begin
+    rr_index=(rr_last+rr_offset)%NSOLV;
+    if(!rr_found && dut.req[rr_index]) begin rr_expected[rr_index]=1;rr_found=1;end
+   end
+   if(dut.pick !== rr_expected) $fatal(1,"round-robin grant order mismatch");
+   if(rr_found) for(rr_index=0;rr_index<NSOLV;rr_index=rr_index+1)
+    if(rr_expected[rr_index]) rr_last=rr_index;
+  end
+ end
  mandel_engine #(.SW(SW),.NSOLV(NSOLV),.LUT_SOLVERS(LUT_SOLVERS),.FW(128),.FH(64),.XW(7),.YW(7),.RB(2)) dut (
  .clk(clk),.rst(rst),.start(start),.fb_addr(32'h10000000),
  .cr_left(cr),.ci_top(ci),.step(step),.max_iter(max_iter),.n_active(nact),

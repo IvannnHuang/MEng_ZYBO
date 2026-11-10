@@ -201,10 +201,21 @@ module mandel_engine #(
     reg  [NSOLV-1:0] grant;                   // stage 1 result, one-hot or zero
     reg  [NSOLV-1:0] last;                    // one-hot of the most recent winner
     wire [NSOLV-1:0] req     = s_out_valid & ~grant;
-    wire [NSOLV-1:0] above   = ~((last << 1) - 1'b1) & ~last;   // positions strictly above the last winner
-    wire [NSOLV-1:0] req_hi  = req & above;
-    wire [NSOLV-1:0] pick_hi = req_hi & (~req_hi + 1'b1);       // lowest set bit
-    wire [NSOLV-1:0] pick_lo = req    & (~req    + 1'b1);
+    // Constant-range reductions avoid cascaded wide arithmetic carry chains.
+    // last is one-hot: bit i is above it iff no last bit exists at i or higher.
+    wire [NSOLV-1:0] above, pick_hi, pick_lo;
+    wire [NSOLV-1:0] req_hi = req & above;
+    genvar a;
+    generate for (a = 0; a < NSOLV; a = a + 1) begin : ARB_PREFIX
+        assign above[a] = ~(|last[NSOLV-1:a]);
+        if (a == 0) begin : FIRST
+            assign pick_hi[a] = req_hi[a];
+            assign pick_lo[a] = req[a];
+        end else begin : REST
+            assign pick_hi[a] = req_hi[a] & ~(|req_hi[a-1:0]);
+            assign pick_lo[a] = req[a] & ~(|req[a-1:0]);
+        end
+    end endgenerate
     wire [NSOLV-1:0] pick    = (|req_hi) ? pick_hi : pick_lo;
 
     always @(posedge clk) begin
