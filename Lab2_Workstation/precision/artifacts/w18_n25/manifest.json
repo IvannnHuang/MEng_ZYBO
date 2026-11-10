@@ -1,0 +1,59 @@
+{
+  "width": 18,
+  "fractional_bits": 14,
+  "built_solvers": 25,
+  "engine_clock_hz": 100000000,
+  "format_register": "0x4d420e12",
+  "build_report_date": "Tue Nov 10 14:37:08 2026",
+  "git_head_at_export": "e1180b8bc0ef79f68bad145e81ded7eabc634c31",
+  "source_sha256": {
+    "src/mandel_engine.v": "9c63f0f15b240fa8e609e6dec8aeb6cbdb20af37a4a62200c44badaffa4ec49f",
+    "src/mandel_solver.v": "936e4d2315f4a72ca3340b2639501276294fcf1c86b076612e3c67d25da31086",
+    "hdl/mandelbrot_driver.v": "268912da07d793b9497dad8dab2037ae4dde852490abde47dbfb430031ca790a",
+    "hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v": "f209c5db3899c5efac2fa6684f119bfb54c2c4a9c79ed8d447c63943e023cd7f"
+  },
+  "routed_resources": {
+    "dsps": 79,
+    "luts": 13045,
+    "registers": 15607,
+    "bram_tiles": 11,
+    "occupied_slices": 4336,
+    "wns_ns": 0.262,
+    "whs_ns": 0.024,
+    "bus_skew_constraints": 9,
+    "minimum_bus_skew_slack_ns": 6.139
+  },
+  "artifacts": {
+    "design_1_wrapper_w18_n25.xsa": {
+      "sha256": "4b13c83d1e01251f80c468aa0d80669594ef4b2fc6b61ffbd82fdb05f0edc366",
+      "bytes": 791063
+    },
+    "design_1_wrapper_w18_n25.bit": {
+      "sha256": "4a5109b20f83173a4c35cb3246e386c9e37cd56dc2ab84addfa371a35524d10c",
+      "bytes": 2083852
+    },
+    "util_precision_w18_n25.rpt": {
+      "sha256": "f8630094ca5aefc0293fbbd5cbf77555bccd77e5d30d051195f87a40c4be641e",
+      "bytes": 13246
+    },
+    "timing_precision_w18_n25.rpt": {
+      "sha256": "a1e76e14aecf23e729a64856e7c97d89dee2f7ab8d2309b0eea47c5231611aa6",
+      "bytes": 105998
+    },
+    "util_precision_w18_n25_hier.rpt": {
+      "sha256": "7b635f07e253df39af2a484ae4873398ab1b85287fc3764da2781f080151fe41",
+      "bytes": 131055
+    },
+    "bus_skew_precision_w18_n25.rpt": {
+      "sha256": "be7582508ea0e42ea9c4652635e2a7351ad4272f18d76833c1e59bf37de22f53",
+      "bytes": 160555
+    }
+  },
+  "board_measurement": {
+    "record": "../../w18_n25/board_results.json",
+    "clocks": 3554303,
+    "ms_uart": 35.543,
+    "source": "User-supplied canonical full-set f render"
+  },
+  "note": "Metadata and embedded .bit verified. Board measurements, if supplied, are linked separately from simulation results."
+}

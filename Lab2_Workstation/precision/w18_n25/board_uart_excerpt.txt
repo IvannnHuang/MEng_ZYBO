@@ -1,0 +1,10 @@
+User supplied full-set f render; repeated menu text omitted.
+
+  x [-2.8832931519, 1.3810709715]
+  y [-1.1977552176, 1.1999773979]
+  centre (-0.7500000000, 0.0000000000)  zoom x1  step 18641 LSB
+  max_iter 1000   solvers 25 of 25
+  FPGA render: 35.543 ms (3554303 clocks)  STATUS 0x2
+
+Menu confirms b time vs solvers (1..25).
+User confirms 35.543 ms is the f full render time.

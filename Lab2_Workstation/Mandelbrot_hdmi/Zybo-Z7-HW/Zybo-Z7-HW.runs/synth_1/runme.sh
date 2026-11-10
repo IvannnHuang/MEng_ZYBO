@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/zk67/zybo-native18/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1'
+HD_PWD='C:/Users/zk67/zybo-18-n25/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/Zybo-Z7-HW.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

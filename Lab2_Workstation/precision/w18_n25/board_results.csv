@@ -1,0 +1,2 @@
+solver_bits,built_solvers,active_solvers,max_iter,centre_real,centre_imag,step_q23,command,clocks,ms_uart,status
+18,25,25,1000,-0.75,0,18641,f,3554303,35.543,0x2

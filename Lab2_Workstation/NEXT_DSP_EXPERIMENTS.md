@@ -1,5 +1,13 @@
 # Next DSP experiments - handoff (2026-11-09)
 
+**Update 2026-11-10:** the user resumed ten solvers at 24 bits. That hardware
+is now ready for their Vitis/COM5 run; see [CURRENT_EXPERIMENT.md](CURRENT_EXPERIMENT.md).
+The remaining sequence is now **10 x 24-bit -> 25 x 18-bit -> DSP plus LUT solvers**.
+Skip twelve-solvers/24-bit and intermediate 18-bit builds unless a failure needs
+a fallback. Keep validation short and targeted; no repeated long simulations
+unless justified. The older detailed sequence below is historical.
+
+
 **STATUS: further lab testing is ON HOLD at the user's request.**
 18-bit / eight-solvers is already built and board-measured at **93.522 ms**.
 The 12 x 24-bit hardware build and DSP-plus-LUT experiments below are plans only.
@@ -327,3 +335,8 @@ cost and routed base before choosing a target. Re-run the same study at
 ## End-of-session summary and precision clarification
 
 See [SESSION_SUMMARY_2026-11-09.md](SESSION_SUMMARY_2026-11-09.md) for the complete session record. All three variants still render 1920x1080 RGB888. Reducing solver width changes fractional arithmetic precision (23/20/14 bits), boundary detail and sampling zoom limits, not the framebuffer pixel count. The user's visual impression is plausible; matched-view zoom screenshots remain to be collected. The summary and full plan are downloadable from the website draft's zybo.html. Testing remains on hold; no main branch is pushed.
+
+
+## 2026-11-10 direct 25-solver result
+
+The 10 x 24-bit board result is complete at 76.869 ms. The direct 25 x 18-bit build now fits and meets timing: 79 DSPs, 13,045 LUTs, 15,607 FFs, 11 BRAM tiles, setup +0.262 ns. Short checks pass; no long full-frame simulation repeated. The user will measure the board. Next is a complete LUT-only solver and hybrid lanes; remaining LUTs 4,555, occupied slices 98.55%. See CURRENT_EXPERIMENT.md for exact paths and status.

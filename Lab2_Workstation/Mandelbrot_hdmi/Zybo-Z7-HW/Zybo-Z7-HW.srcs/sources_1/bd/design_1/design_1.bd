@@ -2914,13 +2914,13 @@
       },
       "mandelbrot_driver_0": {
         "vlnv": "xilinx.com:user:mandelbrot_driver:1.0",
-        "ip_revision": "12",
+        "ip_revision": "13",
         "xci_name": "design_1_mandelbrot_driver_0_0",
         "xci_path": "ip\\design_1_mandelbrot_driver_0_0\\design_1_mandelbrot_driver_0_0.xci",
         "inst_hier_path": "mandelbrot_driver_0",
         "parameters": {
           "NSOLV": {
-            "value": "8"
+            "value": "25"
           },
           "SOLVER_W": {
             "value": "18"

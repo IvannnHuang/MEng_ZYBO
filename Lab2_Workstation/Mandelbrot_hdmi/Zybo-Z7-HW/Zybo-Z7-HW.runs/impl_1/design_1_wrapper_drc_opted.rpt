@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Mon Nov  9 21:31:29 2026
+| Date         : Tue Nov 10 14:35:01 2026
 | Host         : EN-EC-LPH238-59 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 | Design       : design_1_wrapper
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 50
+             Violations found: 152
 +----------+----------+------------------+------------+
 | Rule     | Severity | Description      | Violations |
 +----------+----------+------------------+------------+
-| DPIP-1   | Warning  | Input pipelining | 48         |
+| DPIP-1   | Warning  | Input pipelining | 150        |
 | REQP-165 | Advisory | writefirst       | 1          |
 | REQP-181 | Advisory | writefirst       | 1          |
 +----------+----------+------------------+------------+
@@ -67,212 +67,722 @@ Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#12 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[10].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#15 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#16 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#17 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#18 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[11].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#19 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#20 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#21 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#22 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#23 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#24 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[12].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#25 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#26 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#27 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#28 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#29 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#30 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[13].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#31 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#32 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#33 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#34 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#35 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#36 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[14].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#37 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#38 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#39 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#40 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#41 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#42 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[15].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#43 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#44 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#45 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#46 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#47 Warning
 Input pipelining  
-DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#48 Warning
 Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[16].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[17].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[18].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[19].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[1].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#73 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#74 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#75 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#76 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#77 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#78 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[20].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#79 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#80 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#81 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#82 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#83 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#84 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[21].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#85 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#86 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#87 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#88 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#89 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#90 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[22].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#91 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#92 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#93 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#94 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#95 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#96 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[23].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#97 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#98 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#99 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#100 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#101 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#102 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[24].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#103 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#104 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#105 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#106 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#107 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#108 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[2].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#109 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#110 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#111 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#112 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#113 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#114 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[3].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#115 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#116 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#117 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#118 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#119 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#120 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[4].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#121 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#122 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#123 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#124 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#125 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#126 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[5].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#127 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#128 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#129 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#130 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#131 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#132 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[6].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#133 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#134 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#135 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#136 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#137 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#138 Warning
+Input pipelining  
 DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[7].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#139 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#140 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#141 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#142 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#143 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#144 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[8].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#145 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pii_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#146 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pii_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pii_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#147 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pri_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#148 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pri_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_pri_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#149 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_prr_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#150 Warning
+Input pipelining  
+DSP design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_prr_reg[1] input design_1_i/mandelbrot_driver_0/inst/engine_i/SOLV[9].u_solver/m_prr_reg[1]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 REQP-165#1 Advisory

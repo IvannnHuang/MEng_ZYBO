@@ -4,7 +4,7 @@
     "xci_name": "design_1_mandelbrot_driver_0_0",
     "cell_name": "mandelbrot_driver_0",
     "component_reference": "xilinx.com:user:mandelbrot_driver:1.0",
-    "ip_revision": "12",
+    "ip_revision": "13",
     "gen_directory": "../../../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0",
     "parameters": {
       "component_parameters": {
@@ -13,7 +13,7 @@
         "C_S00_AXI_BASEADDR": [ { "value": "0xFFFFFFFF", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_S00_AXI_HIGHADDR": [ { "value": "0x00000000", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "Component_Name": [ { "value": "design_1_mandelbrot_driver_0_0", "resolve_type": "user", "usage": "all" } ],
-        "NSOLV": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "NSOLV": [ { "value": "25", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_M00_AXI_ADDR_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_M00_AXI_DATA_WIDTH": [ { "value": "64", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SOLVER_W": [ { "value": "18", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ]
@@ -21,7 +21,7 @@
       "model_parameters": {
         "C_S00_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S00_AXI_ADDR_WIDTH": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "NSOLV": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "NSOLV": [ { "value": "25", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_M00_AXI_ADDR_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_M00_AXI_DATA_WIDTH": [ { "value": "64", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "SOLVER_W": [ { "value": "18", "resolve_type": "generated", "format": "long", "usage": "all" } ]
@@ -42,7 +42,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "12" } ],
+        "IPREVISION": [ { "value": "13" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../Zybo-Z7-HW.gen/sources_1/bd/design_1/ip/design_1_mandelbrot_driver_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

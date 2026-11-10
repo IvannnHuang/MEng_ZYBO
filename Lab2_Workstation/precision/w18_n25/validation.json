@@ -1,0 +1,17 @@
+{
+  "solver_bits": 18,
+  "fractional_bits": 14,
+  "built_solvers": 25,
+  "short_model_frame": [
+    128,
+    64
+  ],
+  "max_iter": 1000,
+  "reduced_frame_cycles_with_synthetic_axi_stalls": 73883,
+  "changed_count_pixels_vs_27": 182,
+  "model_pixels": 8192,
+  "integer_oracle_match": true,
+  "full_frame_simulation_run": false,
+  "board_measurement": null,
+  "reason": "User requested fewer tests: short functional verification plus final physical resource/timing checks."
+}
