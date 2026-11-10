@@ -1,0 +1,93 @@
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver.v
+index 41198c5..76419ce 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver.v
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver.v
+@@ -6,0 +7 @@
++		parameter integer SOLVER_W = 27,                 // Q4.(SOLVER_W-4) solver precision
+@@ -90,0 +92 @@
++		.SOLVER_W(SOLVER_W),
+@@ -136,0 +139 @@
++		.SW         (SOLVER_W),
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v
+index d0e4c6e..fd8f0f3 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v
+@@ -5,0 +6 @@
++		parameter integer SOLVER_W = 27,             // total solver bits (coordinate ABI remains Q4.23)
+@@ -129,0 +131,3 @@
++	localparam integer REG_FORMAT = 10; // R  0x28: magic 0x4d42, fractional bits, total bits
++	localparam [7:0] SOLVER_BITS = SOLVER_W;
++	localparam [7:0] SOLVER_FRAC = SOLVER_W-4;
+@@ -384,0 +389 @@
++	                       (reg_raddr == REG_FORMAT)   ? {16'h4d42, SOLVER_FRAC, SOLVER_BITS} :
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
+index 7541fea..1256b87 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/src/mandel_engine.v
+@@ -7,0 +8 @@ module mandel_engine #(
++    parameter SW     = W,       // solver width; coordinates/classifier retain W bits
+@@ -154,0 +156,10 @@ module mandel_engine #(
++    // Round coordinates down only at the solver boundary. The register ABI,
++    // raster accumulator and shared conservative classifier keep full precision.
++    localparam SF = F - (W-SW);
++    wire signed [SW-1:0] solver_cr = test_cr >>> (W-SW);
++    wire signed [SW-1:0] solver_ci = test_ci >>> (W-SW);
++    initial begin
++        if (SW < 18 || SW > W || SF < 14)
++            $error("unsupported solver precision: require 18 <= SW <= W and SF >= 14");
++    end
++
+@@ -158 +169 @@ module mandel_engine #(
+-            mandel_solver #(.W(W), .F(F), .IW(IW), .XW(XW), .YW(YW), .ML(ML)) u_solver (
++            mandel_solver #(.W(SW), .F(SF), .IW(IW), .XW(XW), .YW(YW), .ML(ML)) u_solver (
+@@ -167,2 +178,2 @@ module mandel_engine #(
+-                .in_cr     (test_cr),
+-                .in_ci     (test_ci),
++                .in_cr     (solver_cr),
++                .in_ci     (solver_ci),
+diff --git a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/xgui/mandelbrot_driver_v1_0.tcl b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/xgui/mandelbrot_driver_v1_0.tcl
+index 81ee9dc..ab9ff18 100644
+--- a/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/xgui/mandelbrot_driver_v1_0.tcl
++++ b/Lab2_Workstation/Mandelbrot_hdmi/Zybo-Z7-HW/ip_repo/mandelbrot_driver_1_0/xgui/mandelbrot_driver_v1_0.tcl
+@@ -5,0 +6,2 @@ proc init_gui { IPINST } {
++  ipgui::add_param $IPINST -name "NSOLV" -parent ${Page_0}
++  ipgui::add_param $IPINST -name "SOLVER_W" -parent ${Page_0}
+@@ -102,0 +105,10 @@ proc update_MODELPARAM_VALUE.C_M00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_M00_AXI_D
++
++proc update_PARAM_VALUE.SOLVER_W { PARAM_VALUE.SOLVER_W } {}
++proc validate_PARAM_VALUE.SOLVER_W { PARAM_VALUE.SOLVER_W } {
++    set w [get_property value ${PARAM_VALUE.SOLVER_W}]
++    if {[string is integer -strict $w] && $w >= 18 && $w <= 27} { return true }
++    return false
++}
++proc update_MODELPARAM_VALUE.SOLVER_W { MODELPARAM_VALUE.SOLVER_W PARAM_VALUE.SOLVER_W } {
++    set_property value [get_property value ${PARAM_VALUE.SOLVER_W}] ${MODELPARAM_VALUE.SOLVER_W}
++}
+diff --git a/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c b/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c
+index 97da439..19822b0 100644
+--- a/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c
++++ b/Lab2_Workstation/Mandelbrot_workspace_workstation/Zybo-Z7-10-HDMI/src/mandel/mandel.c
+@@ -24,0 +25 @@
++#define REG_FORMAT     0x28     // R magic 0x4d42, fractional bits [15:8], solver bits [7:0]
+@@ -49,0 +51 @@ static u32    n_active = 1, n_max = 1;
++static u32    solver_bits = 27, solver_frac = 23, solver_quantum = 1;
+@@ -67 +69 @@ static QView qview(void)
+-    if (q.step < 1) q.step = 1;
++    if (q.step < (s32)solver_quantum) q.step = (s32)solver_quantum;
+@@ -163 +165 @@ static void clamp_view(void)
+-    if (step < 1.0 / QF)    step = 1.0 / QF;
++    if (step < solver_quantum / QF) step = solver_quantum / QF;
+@@ -194,0 +197,2 @@ static void print_view(void)
++    printf("  solver Q4.%u (%u bits), coordinate registers Q4.23, minimum step %u LSB\r\n",
++           (unsigned)solver_frac, (unsigned)solver_bits, (unsigned)solver_quantum);
+@@ -311,0 +316,10 @@ void MandelMenu(DisplayCtrl *disp, u8 *frames[DISPLAY_NUM_FRAMES])
++    // Old bitstreams return zero at this reserved address: retain Q4.23 defaults.
++    k = rd(REG_FORMAT);
++    solver_bits = 27; solver_frac = 23; solver_quantum = 1;
++    if ((k >> 16) == 0x4d42 && (k & 0xff) >= 18 && (k & 0xff) <= 27 &&
++        ((k >> 8) & 0xff) == (k & 0xff) - 4) {
++        solver_bits = k & 0xff;
++        solver_frac = (k >> 8) & 0xff;
++        solver_quantum = 1u << (23 - solver_frac);
++    }
++    clamp_view();

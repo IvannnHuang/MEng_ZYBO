@@ -1145,11 +1145,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:15:57 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:01:44 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:484a7981</spirit:value>
+            <spirit:value>9:780f3888</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1163,11 +1163,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:14:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:00:50 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:484a7981</spirit:value>
+            <spirit:value>9:780f3888</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1178,7 +1178,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:484a7981</spirit:value>
+            <spirit:value>9:780f3888</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1194,11 +1194,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:14:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:00:50 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:727e2270</spirit:value>
+            <spirit:value>9:3aca653c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1214,11 +1214,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:14:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:00:50 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:727e2270</spirit:value>
+            <spirit:value>9:3aca653c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1234,11 +1234,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:14:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:00:50 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:484a7981</spirit:value>
+            <spirit:value>9:780f3888</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1254,11 +1254,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 09 23:14:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Nov 10 01:00:50 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:484a7981</spirit:value>
+            <spirit:value>9:780f3888</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1936,6 +1936,11 @@
         <spirit:displayName>C M00 Axi Data Width</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M00_AXI_DATA_WIDTH">64</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>SOLVER_W</spirit:name>
+        <spirit:displayName>Solver Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SOLVER_W">24</spirit:value>
+      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:choices>
@@ -2021,19 +2026,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/src/mandel_engine.v</spirit:name>
+        <spirit:name>../../ipshared/4948/src/mandel_engine.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/src/mandel_solver.v</spirit:name>
+        <spirit:name>../../ipshared/4948/src/mandel_solver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/hdl/mandelbrot_driver.v</spirit:name>
+        <spirit:name>../../ipshared/4948/hdl/mandelbrot_driver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2048,19 +2053,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/4948/hdl/mandelbrot_driver_slave_lite_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/src/mandel_engine.v</spirit:name>
+        <spirit:name>../../ipshared/4948/src/mandel_engine.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/src/mandel_solver.v</spirit:name>
+        <spirit:name>../../ipshared/4948/src/mandel_solver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4fe2/hdl/mandelbrot_driver.v</spirit:name>
+        <spirit:name>../../ipshared/4948/hdl/mandelbrot_driver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2144,11 +2149,16 @@
       <spirit:displayName>C M00 Axi Data Width</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXI_DATA_WIDTH">64</spirit:value>
     </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SOLVER_W</spirit:name>
+      <spirit:displayName>Solver width (18 to 27 bits, four integer bits)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SOLVER_W">24</spirit:value>
+    </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>mandelbrot_driver_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>9</xilinx:coreRevision>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXI.ARUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -2229,6 +2239,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_CLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NSOLV" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SOLVER_W" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
@@ -2236,10 +2247,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ae6280ad"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="f5e8f170"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7ffe6f36"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="249a2923"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="900d6f50"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="519d70c1"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7f8c540a"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3bb251fd"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="4ffae486"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

@@ -119,3 +119,10 @@ separate CDC check. Arithmetic precision, not pipeline clock or iterator count,
 is the changed performance variable. No claim of a faster board render is made.
 
 CDC bus-skew report: 9 constraints, minimum slack +6.098 ns.
+
+Full 1920x1080 default-view RTL benchmark passed: **9,347,473 cycles = 93.47473 ms**
+at 100 MHz with an ideal AXI sink. The 27-bit ideal-AXI reference was 9,344,200
+cycles (93.442 ms): at eight solvers the lower precision saves resources and
+slightly changes numerical work; it does not improve this simulated render time.
+The full-frame check counted 2,073,600 results, 777,600 data beats and 48,600 bursts.
+A new board time and visual/zoom validation remain pending.

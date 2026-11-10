@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:mandelbrot_driver:1.0
-// IP Revision: 9
+// IP Revision: 11
 
 `timescale 1ns/1ps
 
@@ -197,7 +197,8 @@ output wire m00_axi_bready;
     .C_S00_AXI_ADDR_WIDTH(6),  // Width of S_AXI address bus
     .NSOLV(8),
     .C_M00_AXI_ADDR_WIDTH(32),
-    .C_M00_AXI_DATA_WIDTH(64)
+    .C_M00_AXI_DATA_WIDTH(64),
+    .SOLVER_W(24)
   ) inst (
     .btn(btn),
     .sw(sw),
