@@ -4,7 +4,7 @@
 /*                                                                      */
 /************************************************************************/
 
-#include "video_demo_instructor.h"
+#include "video_demo.h"
 
 #include "display_ctrl/display_ctrl.h"
 #include "lorenz_dda/lorenz_dda_instructor.h"
