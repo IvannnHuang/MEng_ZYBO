@@ -1,4 +1,4 @@
-#include "lorenz_dda_instructor.h"
+#include "lorenz_dda.h"
 
 #include "xil_io.h"
 #include <stdio.h>
