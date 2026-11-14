@@ -1,0 +1,120 @@
+17:41:55 **** Build of configuration Debug for project Zybo-Z7-10-HDMI ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/timer_ps/timer_ps.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/timer_ps/timer_ps.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/timer_ps/timer_ps.d" -MT"src/timer_ps/timer_ps.o" -o "src/timer_ps/timer_ps.o" "../src/timer_ps/timer_ps.c"
+'Finished building: ../src/timer_ps/timer_ps.c'
+' '
+'Building file: ../src/mandel/mandel.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/mandel/mandel.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/mandel/mandel.d" -MT"src/mandel/mandel.o" -o "src/mandel/mandel.o" "../src/mandel/mandel.c"
+In file included from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_i.h:52,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:297,
+                 from ../src/mandel/../display_ctrl/display_ctrl.h:56,
+                 from ../src/mandel/mandel.h:6,
+                 from ../src/mandel/mandel.c:11:
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+'Finished building: ../src/mandel/mandel.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+In file included from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_i.h:52,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:297,
+                 from ../src/display_ctrl/display_ctrl.h:56,
+                 from ../src/display_ctrl/display_ctrl.c:63:
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+../src/display_ctrl/display_ctrl.c: In function 'DisplayChangeFrame':
+../src/display_ctrl/display_ctrl.c:456:49: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  456 |                 xdbg_printf(XDBG_DEBUG_GENERAL, "Change frame: current index = %d next index = %d\r\n", dispPtr->curFrame, frameIndex);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~
+      |                                                                                                                |
+      |                                                                                                                u32 {aka long unsigned int}
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:57:73: note: in definition of macro 'xdbg_printf'
+   57 | #define xdbg_printf(type, ...) (((type) & xdbg_current_types) ? printf (__VA_ARGS__) : 0)
+      |                                                                         ^~~~~~~~~~~
+../src/display_ctrl/display_ctrl.c:456:81: note: format string is defined here
+  456 |                 xdbg_printf(XDBG_DEBUG_GENERAL, "Change frame: current index = %d next index = %d\r\n", dispPtr->curFrame, frameIndex);
+      |                                                                                ~^
+      |                                                                                 |
+      |                                                                                 int
+      |                                                                                %ld
+../src/display_ctrl/display_ctrl.c:456:49: warning: format '%d' expects argument of type 'int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  456 |                 xdbg_printf(XDBG_DEBUG_GENERAL, "Change frame: current index = %d next index = %d\r\n", dispPtr->curFrame, frameIndex);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                     ~~~~~~~~~~
+      |                                                                                                                            |
+      |                                                                                                                            u32 {aka long unsigned int}
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:57:73: note: in definition of macro 'xdbg_printf'
+   57 | #define xdbg_printf(type, ...) (((type) & xdbg_current_types) ? printf (__VA_ARGS__) : 0)
+      |                                                                         ^~~~~~~~~~~
+../src/display_ctrl/display_ctrl.c:456:97: note: format string is defined here
+  456 |                 xdbg_printf(XDBG_DEBUG_GENERAL, "Change frame: current index = %d next index = %d\r\n", dispPtr->curFrame, frameIndex);
+      |                                                                                                ~^
+      |                                                                                                 |
+      |                                                                                                 int
+      |                                                                                                %ld
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: ../src/video_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/video_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+In file included from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_i.h:52,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:297,
+                 from ../src/video_demo.c:7:
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+'Finished building: ../src/video_demo.c'
+' '
+'Building file: ../removed_src/video_capture/video_capture.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"removed_src/video_capture/video_capture.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"removed_src/video_capture/video_capture.d" -MT"removed_src/video_capture/video_capture.o" -o "removed_src/video_capture/video_capture.o" "../removed_src/video_capture/video_capture.c"
+In file included from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_i.h:52,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:297,
+                 from ../removed_src/video_capture/video_capture.h:75,
+                 from ../removed_src/video_capture/video_capture.c:105:
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+'Finished building: ../removed_src/video_capture/video_capture.c'
+' '
+'Building file: ../removed_src/intc/intc.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -ID:/Zybo-Z7-SW/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"removed_src/intc/intc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"removed_src/intc/intc.d" -MT"removed_src/intc/intc.o" -o "removed_src/intc/intc.o" "../removed_src/intc/intc.c"
+In file included from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xil_exception.h:80,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xscugic_hw.h:90,
+                 from D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xscugic.h:165,
+                 from ../removed_src/intc/intc.h:66,
+                 from ../removed_src/intc/intc.c:54:
+D:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+'Finished building: ../removed_src/intc/intc.c'
+' '
+'Building target: Zybo-Z7-10-HDMI.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/xilinx/projects/MEng_ZYBO/Lab2/Mandelbrot_hdmi/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "Zybo-Z7-10-HDMI.elf"  ./src/timer_ps/timer_ps.o  ./src/mandel/mandel.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o  ./removed_src/video_capture/video_capture.o  ./removed_src/intc/intc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Zybo-Z7-10-HDMI.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Zybo-Z7-10-HDMI.elf  |tee "Zybo-Z7-10-HDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 110963	   3536	24908784	25023283	17dd333	Zybo-Z7-10-HDMI.elf
+'Finished building: Zybo-Z7-10-HDMI.elf.size'
+' '
+
+17:41:59 Build Finished (took 3s.806ms)
+

@@ -10,6 +10,16 @@ Drop screenshots here; pages reference them by name. If the file exists it is sh
 - A `<name>-web.jpg` copy, if present, is used instead of `<name>.jpg` (keep large photos small: 2000 px wide is plenty). The 41 MB `step-board-cabling.jpg` original is kept; the page uses `step-board-cabling-web.jpg`.
 - Names describe the content, not the page, so one file is used in every page that references it.
 
+## Videos
+
+- Videos are `.mp4` (H.264 + AAC), named `walkthrough-<slug>-web.mp4` for the compressed copy the pages embed.
+- GitHub rejects files over 100 MB, so raw screen recordings stay local (`*.mp4` is gitignored here except `*-web.mp4`). Make the web copy with:
+  `ffmpeg -i "<raw>.mp4" -c:v libx264 -preset slow -crf 28 -maxrate 700k -bufsize 1400k -pix_fmt yuv420p -c:a aac -b:a 64k -movflags +faststart walkthrough-<slug>-web.mp4`
+
+| File | Source | Caption | Used on |
+|---|---|---|---|
+| `walkthrough-tool-flow-web.mp4` | `Screen Recording 2026-09-29 150230.mp4` (899 MB, local only) | Project flow through the tool interfaces (13 min 30 s) | index.html, full:index.html |
+
 ## Status
 
 | Expected name | Status | Caption | Used on |

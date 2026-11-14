@@ -1,0 +1,162 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 13 16:34:04 2026
+| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mandelbrot_driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mandelbrot_driver_0_0 (xilinx.com:user:mandelbrot_driver:1.0) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 13 16:12:03 2026
+| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mandelbrot_driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mandelbrot_driver_0_0 (xilinx.com:user:mandelbrot_driver:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 13 15:52:45 2026
+| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mandelbrot_driver_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mandelbrot_driver_0_0 (xilinx.com:user:mandelbrot_driver:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 13 14:29:24 2026
+| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mandelbrot_driver_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_mandelbrot_driver_0_0 (xilinx.com:user:mandelbrot_driver:1.0) from (Rev. 2) to (Rev. 3)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_mandelbrot_driver_0_0'.
+
+
+-Upgrade has added interface 'M00_AXI' (xilinx.com:interface:aximm:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 13 14:09:24 2026
+| Host         : IvanLaptop running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mandelbrot_driver_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_mandelbrot_driver_0_0 (xilinx.com:user:mandelbrot_driver:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_mandelbrot_driver_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'btn'
+
+-Upgrade has added port 'm00_axi_aclk'
+
+-Upgrade has added port 'm00_axi_aresetn'
+
+-Upgrade has added port 'm00_axi_awaddr'
+
+-Upgrade has added port 'm00_axi_awburst'
+
+-Upgrade has added port 'm00_axi_awcache'
+
+-Upgrade has added port 'm00_axi_awlen'
+
+-Upgrade has added port 'm00_axi_awlock'
+
+-Upgrade has added port 'm00_axi_awprot'
+
+-Upgrade has added port 'm00_axi_awqos'
+
+-Upgrade has added port 'm00_axi_awready'
+
+-Upgrade has added port 'm00_axi_awsize'
+
+-Upgrade has added port 'm00_axi_awvalid'
+
+-Upgrade has added port 'm00_axi_bready'
+
+-Upgrade has added port 'm00_axi_bresp'
+
+-Upgrade has added port 'm00_axi_bvalid'
+
+-Upgrade has added port 'm00_axi_wdata'
+
+-Upgrade has added port 'm00_axi_wlast'
+
+-Upgrade has added port 'm00_axi_wready'
+
+-Upgrade has added port 'm00_axi_wstrb'
+
+-Upgrade has added port 'm00_axi_wvalid'
+
+-Upgrade has added port 'sw'
+
+
