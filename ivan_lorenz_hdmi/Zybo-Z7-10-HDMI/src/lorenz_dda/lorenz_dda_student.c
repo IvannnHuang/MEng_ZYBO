@@ -1,3 +1,5 @@
+#include "lorenz_dda.h"
+
 #include "xil_io.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,27 +11,24 @@
 // 1. MACROS AND MEMORY MAP
 // ==============================================================================
 
-/* TODO: Define your AXI4-Lite PIO offsets here (match your Vivado Block Design) */
+/* TODO: Define your AXI4-Lite PIO byte offsets here (match your Vivado Block Design) */
 #define LORENZ_DDA_CTRL_OFFSET   0x00 /* R/W  bit0=enable(pulse), bit1=load(pulse) */
 #define LORENZ_DDA_STATUS_OFFSET 0x04 /* R    bit0=done (1 AXI-clock pulse only) */
-#define LORENZ_DDA_XINIT_OFFSET  0x08 
-// ... Define offsets for YINIT, ZINIT, SIGMA, RHO, BETA, DT, XNEXT, YNEXT, ZNEXT
+// TODO: Define the remaining offsets for XINIT, YINIT, ZINIT, SIGMA, RHO, BETA, DT, XNEXT, YNEXT, ZNEXT
 
 #define LORENZ_DDA_CTRL_ENABLE_BIT 0x1u
 #define LORENZ_DDA_CTRL_LOAD_BIT   0x2u
 
-/* TODO: Define Q6.20 fixed point <-> float macros */
+/* TODO: Define Q6.20 fixed point <-> float conversion macros */
 typedef signed int lorenz_fix;
-// Hint: Multiply/divide by 2^20 (1048576.0f)
+// Hint: Multiply or divide by 2^20 (1048576.0f) and cast appropriately
 #define LORENZ_FLOAT2FIX(f) /* YOUR CODE HERE */
 #define LORENZ_FIX2FLOAT(a) /* YOUR CODE HERE */
-
 
 // ==============================================================================
 // 2. GRAPHICS & FONT PRIMITIVES (Provided)
 // ==============================================================================
 
-/* 5x7 bitmap font: digits, '-', '.', ':', and uppercase letters needed for panel labels. */
 static const u8 font5x7_digits[10][7] = {
     {0x0E,0x11,0x13,0x15,0x19,0x11,0x0E}, /* 0 */
     {0x04,0x0C,0x04,0x04,0x04,0x04,0x0E}, /* 1 */
@@ -88,9 +87,7 @@ static void ClearRect(u8 *frame, u32 stride, u32 xOrigin, u32 yOrigin, u32 width
     }
 }
 
-static void DrawGlyph(u8 *frame, u32 stride, const u8 rows[7],
-                       u32 xOrigin, u32 yOrigin, u32 scale,
-                       u8 red, u8 blue, u8 green)
+static void DrawGlyph(u8 *frame, u32 stride, const u8 rows[7], u32 xOrigin, u32 yOrigin, u32 scale, u8 red, u8 blue, u8 green)
 {
     u32 row, col, sx, sy, x, y, pixelAddr;
     for (row = 0; row < 7; row++)
@@ -116,23 +113,18 @@ static void DrawGlyph(u8 *frame, u32 stride, const u8 rows[7],
     }
 }
 
-static void DrawLabel(u8 *frame, u32 stride, const char *label,
-                       u32 xOrigin, u32 yOrigin, u32 scale,
-                       u8 red, u8 blue, u8 green)
+static void DrawLabel(u8 *frame, u32 stride, const char *label, u32 xOrigin, u32 yOrigin, u32 scale, u8 red, u8 blue, u8 green)
 {
     u32 i, glyphAdvance = (5 + 1) * scale;
     for (i = 0; label[i] != '\0'; i++)
     {
         const u8 *glyph = ResolveGlyph(label[i]);
         if (glyph != NULL)
-            DrawGlyph(frame, stride, glyph, xOrigin + i * glyphAdvance, yOrigin,
-                      scale, red, blue, green);
+            DrawGlyph(frame, stride, glyph, xOrigin + i * glyphAdvance, yOrigin, scale, red, blue, green);
     }
 }
 
-static void LorenzDDAPlot_DrawFloat(u8 *frame, u32 stride, float value, int decimals,
-                                     u32 xOrigin, u32 yOrigin, u32 scale,
-                                     u8 red, u8 blue, u8 green)
+static void LorenzDDAPlot_DrawFloat(u8 *frame, u32 stride, float value, int decimals, u32 xOrigin, u32 yOrigin, u32 scale, u8 red, u8 blue, u8 green)
 {
     char text[16];
     u32 i, len, glyphAdvance = (5 + 1) * scale;
@@ -146,8 +138,7 @@ static void LorenzDDAPlot_DrawFloat(u8 *frame, u32 stride, float value, int deci
     {
         const u8 *glyph = ResolveGlyph(text[i]);
         if (glyph != NULL)
-            DrawGlyph(frame, stride, glyph, xOrigin + i * glyphAdvance, yOrigin,
-                      scale, red, blue, green);
+            DrawGlyph(frame, stride, glyph, xOrigin + i * glyphAdvance, yOrigin, scale, red, blue, green);
     }
 }
 
@@ -197,8 +188,7 @@ static void PhasePlot_DrawDot(u8 *frame, u32 stride, PhasePlot *plot, int px, in
     }
 }
 
-static void PhasePlot_DrawLine(u8 *frame, u32 stride, int x0, int y0, int x1, int y1,
-                                u8 red, u8 blue, u8 green)
+static void PhasePlot_DrawLine(u8 *frame, u32 stride, int x0, int y0, int x1, int y1, u8 red, u8 blue, u8 green)
 {
     int dx = (x1 > x0) ? (x1 - x0) : (x0 - x1);
     int dy = (y1 > y0) ? (y0 - y1) : (y1 - y0);
@@ -298,12 +288,9 @@ static void DrawPanelLabels(u8 *frame, u32 stride)
 
 void LorenzDDAPlot_Init(void)
 {
-    PhasePlot_Init(&plotXY, QUAD_MARGIN, QUAD_MARGIN, PLOT_W, PLOT_H,
-                   -20.0f, 20.0f, -25.0f, 25.0f, 255, 0, 0);
-    PhasePlot_Init(&plotYZ, QUAD_W + QUAD_MARGIN, QUAD_MARGIN, PLOT_W, PLOT_H,
-                   -25.0f, 25.0f, 0.0f, 50.0f, 0, 0, 255);
-    PhasePlot_Init(&plotXZ, QUAD_MARGIN, QUAD_H + QUAD_MARGIN, PLOT_W, PLOT_H,
-                   -20.0f, 20.0f, 0.0f, 50.0f, 0, 255, 0);
+    PhasePlot_Init(&plotXY, QUAD_MARGIN, QUAD_MARGIN, PLOT_W, PLOT_H, -20.0f, 20.0f, -25.0f, 25.0f, 255, 0, 0);
+    PhasePlot_Init(&plotYZ, QUAD_W + QUAD_MARGIN, QUAD_MARGIN, PLOT_W, PLOT_H, -25.0f, 25.0f, 0.0f, 50.0f, 0, 0, 255);
+    PhasePlot_Init(&plotXZ, QUAD_MARGIN, QUAD_H + QUAD_MARGIN, PLOT_W, PLOT_H, -20.0f, 20.0f, 0.0f, 50.0f, 0, 255, 0);
 }
 
 void LorenzDDAPlot_ClearAll(u8 *frame, u32 stride)
@@ -320,8 +307,7 @@ void LorenzDDAPlot_ClearAll(u8 *frame, u32 stride)
     DrawPanelLabels(frame, stride);
 }
 
-void LorenzDDAPlot_ShowInitValues(u8 *frame, u32 stride, float x0, float y0, float z0,
-                                   float sigma, float rho, float beta, u32 dtShift)
+void LorenzDDAPlot_ShowInitValues(u8 *frame, u32 stride, float x0, float y0, float z0, float sigma, float rho, float beta, u32 dtShift)
 {
     LorenzDDAPlot_DrawFloat(frame, stride, x0,    2, PANEL_LEFT_NUM_X, PANEL_LINE_Y(0), PANEL_TEXT_SCALE, 255, 0,   0);
     LorenzDDAPlot_DrawFloat(frame, stride, y0,    2, PANEL_LEFT_NUM_X, PANEL_LINE_Y(1), PANEL_TEXT_SCALE, 0,   0,   255);
@@ -343,10 +329,9 @@ static void DrawCurrentValues(u8 *frame, u32 stride, float x, float y, float z)
 // 3. HARDWARE ABSTRACTION LAYER (HAL)
 // ==============================================================================
 
-void LorenzDDA_SetParams(u32 baseAddr, float x0, float y0, float z0,
-                          float sigma, float rho, float beta, u32 dtShift)
+void LorenzDDA_SetParams(u32 baseAddr, float x0, float y0, float z0, float sigma, float rho, float beta, u32 dtShift)
 {
-    /* TODO: Convert floats to Q6.20 and write to the corresponding AXI offsets using Xil_Out32 */
+    /* TODO: Convert float arguments to Q6.20 fixed-point and write them to the corresponding AXI offsets using Xil_Out32 */
     
 }
 
@@ -364,73 +349,31 @@ void LorenzDDA_Step(u32 baseAddr)
 
 void LorenzDDA_ReadState(u32 baseAddr, float *x, float *y, float *z)
 {
-    /* TODO: Read the 32-bit state from AXI using Xil_In32, convert from Q6.20 to float, and store in pointers */
+    /* TODO: Read the 32-bit state registers from AXI using Xil_In32, convert them from Q6.20 to float, and store them in the pointers */
     
 }
 
 // ==============================================================================
-// 4. MAIN APPLICATION & COMMAND UI
+// 4. GRAPHICS UPDATE LOOP (Provided)
 // ==============================================================================
+#define LORENZ_DDA_STEPS_PER_UPDATE 16u
 
-/* Hint: Standard C getchar() will block or may not work in bare-metal.
- * Use this Xilinx BSP function to read a character from the UART console. */
-extern char inbyte(void);
+void LorenzDDAPlot_Update(u8 *frame, u32 stride, u32 baseAddr)
+{
+    float x, y, z;
+    u32 i;
 
-int main() {
-    /* Base address of your custom IP in the Vivado address editor */
-    u32 lorenz_base = 0x43C00000; // Update with your actual base address
-    
-    // Assume frame buffer pointer and stride are set up here via VDMA/DisplayPort drivers
-    u8 *frame = (u8*)0x10000000; 
-    u32 stride = 1920 * 3;
-
-    // --- State Variables ---
-    float x_curr, y_curr, z_curr;
-    float sigma = 10.0, rho = 28.0, beta = 2.666;
-    float x0 = -1.0, y0 = 0.1, z0 = 25.0;
-    u32 dtShift = 8; // (1/256)
-    
-    bool paused = false;
-    u32 steps_per_frame = 16;
-    char command;
-
-    /* Initialize the graphics plots */
-    LorenzDDAPlot_Init();
-    LorenzDDAPlot_ClearAll(frame, stride);
-    
-    /* TODO: Send initial parameters to hardware and load them */
-    
-    /* TODO: Display initial parameters on the screen using LorenzDDAPlot_ShowInitValues */
-
-    printf("\n=== LORENZ DDA AXI CONTROL ===\n");
-    printf("[p] Pause/Resume  [c] Clear Screen  [r] Reset/New ICs\n");
-    printf("[+] Speed Up      [-] Slow Down     [s] Change Parameters\n");
-
-    // Main UI Loop
-    while (1) {
-        // 1. Non-blocking console check (pseudo-code provided, adapt to your UART setup)
-        /* 
-         * TODO: Implement the command interpreter here.
-         * Requirements from Week 3 Syllabus:
-         * - 'p': pause/resume animation
-         * - 'c': clear the screen
-         * - '+': speed up (increase steps_per_frame)
-         * - '-': slow down (decrease steps_per_frame)
-         * - 's': set new parameters (sigma, rho, beta) dynamically
-         * - 'r': reset system with new initial conditions
-         */
-
-        // 2. Hardware Compute & Plotting
-        if (!paused) {
-            /* TODO: Step the hardware 'steps_per_frame' times */
-            
-            /* TODO: Read the state back */
-            
-            /* TODO: Plot the points on the screen and update the UI numbers */
-            // PhasePlot_AddPoint(frame, stride, &plotXY, x_curr, y_curr);
-            // DrawCurrentValues(frame, stride, x_curr, y_curr, z_curr);
-        }
+    /* Step the hardware and read back the resulting coordinates */
+    for (i = 0; i < LORENZ_DDA_STEPS_PER_UPDATE; i++) {
+        LorenzDDA_Step(baseAddr);
     }
-    
-    return 0;
+    LorenzDDA_ReadState(baseAddr, &x, &y, &z);
+
+    /* Draw the new segment onto the frame buffer */
+    PhasePlot_AddPoint(frame, stride, &plotXY, x, y);
+    PhasePlot_AddPoint(frame, stride, &plotYZ, y, z);
+    PhasePlot_AddPoint(frame, stride, &plotXZ, x, z);
+
+    /* Update the live readout on the panel */
+    DrawCurrentValues(frame, stride, x, y, z);
 }
